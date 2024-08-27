@@ -1,2 +1,2 @@
-# indilabs-base
- Indilabs Core product version
+# indilabs-smfg-poc1
+ Poc made for smfg
