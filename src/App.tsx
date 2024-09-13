@@ -75,6 +75,7 @@ import SettlementPool from "./pages/Monitoring Recovery/Settlement Recovery/Sett
 import SettlementPoolRecovery from "./pages/Monitoring Recovery/Settlement Recovery/SettlementPool/Index";
 import NewSettlementRecovery from "./pages/Monitoring Recovery/Settlement Recovery/NewSettlement/Index";
 import Cohort from "./pages/Monitoring Recovery/Settlement Recovery/Cohort";
+import Treatments from "./NewPages/Recoveryindex";
 
 function App() {
   // console.log(process.env.REACT_APP_EMAIL, "REACT_APP_API_KEY");
@@ -82,7 +83,7 @@ function App() {
   const navigate = useNavigate();
   const location = useLocation();
   const [moduleName, setmoduleName] = useState<any>("Recovery");
-
+  const [selectedSegment, setSelectedSegment] = useState<any>("Very High Risk");
   // useEffect(() => {
   //   const pathArr = location.pathname.split("/");
   //   if (pathArr.includes("recovery")) {
@@ -233,6 +234,10 @@ function App() {
             element={<ReviewPerformance />}
           />
           {/* </Route> */}
+          <Route
+  path="/strategy/allocationEngine/reviewPerformance/recovery"
+  element={<Treatments    />}
+/>
 
           {/* <Route
             path="/strategy/allocationEngine/optimizeStrategy"

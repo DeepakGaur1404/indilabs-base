@@ -71,8 +71,9 @@ function SegVolumeBadTableRecovery(props: Props) {
     localStorage.setItem("segment", JSON.stringify(segment));
   };
 
+  
   const navigateToReviewPerformance = () => {
-    navigate("/strategy/simulationengine");
+    navigate("/strategy/allocationEngine/reviewPerformance/recovery");
   };
 
   return (
@@ -160,7 +161,7 @@ function SegVolumeBadTableRecovery(props: Props) {
                   (idx === 1 || idx === 3) && "relative left-[4px]"
                 }`}
                 onClick={() => {
-                  // navigateToReviewPerformance();
+                  navigateToReviewPerformance();
                 }}
               >
                 {each.Performance}

@@ -106,6 +106,8 @@ const StrategyRecovery = () => {
           <PaidNotPaid />
           <Performance />
         </div>
+       
+      
 
         <div className="w-full mt-3 flex justify-end  items-center gap-2 flex-wrap">
           <button

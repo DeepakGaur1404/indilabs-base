@@ -26,6 +26,7 @@ import AllocationStackedBarChartRecovery from "./AllocationEngine/allocationStac
 import PaidNotPaid from "../components/Monitoring/PaidNotPaid";
 import SegVolumeBadTableRecovery from "./AllocationEngine/segVolumebadTableRecovery";
 import PerformanceDashboard from "../components/PerformanceDashboardHeader/PerformanceDashboard";
+import RecoveryTreatment from "./RecoveryTreatment";
 // import "./Allocation.scss";
 // import { ResponsiveContainer } from "recharts";
 
@@ -68,7 +69,7 @@ const ReviewExecutionRecovery = () => {
   const [minAllocationData, setMinAllocationData] = useState<number>();
   const [resultArrayList, setResultArrayList] = useState<number[]>([]);
   const [selectedSegment, setSelectedSegment] = useState<string>("All");
-
+ 
   const cities = [
     { id: "all", name: "All" },
     { id: "pune", name: "Pune" },
@@ -450,6 +451,7 @@ const ReviewExecutionRecovery = () => {
             <AllocationStackedBarChartRecovery
               selectedSegment={selectedSegment}
             />
+            {/* <RecoveryTreatment    selectedSegment={selectedSegment} />  */}
           </div>
         </>
 
