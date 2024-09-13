@@ -601,6 +601,123 @@ const staticUniqueAgency: any =
       
               
         },
+        {
+          "state": "ROMG",
+          "bars": [
+                           
+             
+              {
+                  "bar": {
+                      "sub_segment": "Very Small",
+                      "value": 12.301375563859978
+                  }
+              },
+              {
+                  "bar": {
+                      "sub_segment": "Small",
+                      "value": 23.7734178059034
+                  }
+              },
+              {
+                  "bar": {
+                      "sub_segment": "Med",
+                      "value": 33.468426619136274
+                  }
+              },
+              {
+                "bar": {
+                    "sub_segment": "Large",
+                    "value":29.8344696978116
+                }
+              },
+            //   {
+            //       "bar": {
+            //           "sub_segment": "Inhouse",
+            //           "value": 0.6393668510896953
+            //       }
+            //   }
+          ],
+      
+              
+        },
+        {
+          "state": "KOLKATA",
+          "bars": [
+                           
+             
+              {
+                  "bar": {
+                      "sub_segment": "Very Small",
+                      "value": 15.301375563859978
+                  }
+              },
+              {
+                  "bar": {
+                      "sub_segment": "Small",
+                      "value": 20.7734178059034
+                  }
+              },
+              {
+                  "bar": {
+                      "sub_segment": "Med",
+                      "value": 33.468426619136274
+                  }
+              },
+              {
+                "bar": {
+                    "sub_segment": "Large",
+                    "value":29.8344696978116
+                }
+              },
+            //   {
+            //       "bar": {
+            //           "sub_segment": "Inhouse",
+            //           "value": 0.6393668510896953
+            //       }
+            //   }
+          ],
+      
+              
+        },
+        {
+          "state": "Others",
+          "bars": [
+                           
+             
+              {
+                  "bar": {
+                      "sub_segment": "Very Small",
+                      "value": 12.301375563859978
+                  }
+              },
+              {
+                  "bar": {
+                      "sub_segment": "Small",
+                      "value": 23.7734178059034
+                  }
+              },
+              {
+                  "bar": {
+                      "sub_segment": "Med",
+                      "value": 33.468426619136274
+                  }
+              },
+              {
+                "bar": {
+                    "sub_segment": "Large",
+                    "value":29.8344696978116
+                }
+              },
+            //   {
+            //       "bar": {
+            //           "sub_segment": "Inhouse",
+            //           "value": 0.6393668510896953
+            //       }
+            //   }
+          ],
+      
+              
+        },
              {
           "state": "DELHI",
           "bars": [
@@ -3306,6 +3423,15 @@ const AgencyRecovery: React.FC = () => {
     //   setdelinquencyUniqueGraphTitle("Average Payment Size")
     // }
   };
+
+  //houver functionality
+  const [hoveredState, setHoveredState] = useState(false);
+  const [selectedStateH, setSelectedStateH] = useState(null);
+  const [hoveredSubSegment, setHoveredSubSegment] = useState(null);
+  const handleStateHover = (state: any) => {
+    setSelectedStateH(state);
+  };
+ 
   return (
     <div className="CommonBodyWrap bg-[#fafafb]">
       <div className="px-[6px] lg:px-[59px] lg:pt-[59px] bg-[#fafafb] flex flex-col gap-5 w-full">
@@ -3487,6 +3613,7 @@ const AgencyRecovery: React.FC = () => {
               // data={stateData?.bars.map((b: any) => b.bar) || []}
               uniquedata={uniqueStateData?.bars.map((b: any) => b.bar) || []}
               activeButton={activeButton}
+             
             />
             <ForwardFlowRatesAgencyRecovery
               // staticDataRecoveryPerformance={staticDataRecoveryPerformance}
@@ -3504,12 +3631,19 @@ const AgencyRecovery: React.FC = () => {
               data={stateData?.bars.map((b: any) => b.bar) || []}
               // uniquedata={uniqueStateData?.bars.map((b: any) => b.bar) || []}
               activeButton={activeButton}
+
+              handleStateHover={handleStateHover}
+              setHoveredState={setHoveredState}
+              setHoveredSubSegment={setHoveredSubSegment}
             />
             <TrendsLineGraph
               staticDataRecoveryPerformance={staticDataRecoveryPerformance}
               selectedCategoryButton={selectedCategoryButton}
               activeButton={activeButton}
               staticDataUniqueAgency={staticDataUniqueAgency}
+              selectedStateH={selectedStateH}
+              hoveredState={hoveredState}
+              hoveredSubSegment={hoveredSubSegment}
             />
           </div>
         )}

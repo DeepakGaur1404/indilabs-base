@@ -34,6 +34,7 @@ type Props = {
   staticDataUniquePerformance: any;
   selectedState: any;
   hoveredState: any;
+  hoveredSubSegment:any
 };
 
 interface DataItem {
@@ -77,6 +78,7 @@ const ForwardFlowRatesPerformanceRecovery = ({
   staticDataUniquePerformance,
   selectedState,
   hoveredState,
+  hoveredSubSegment
 }: Props) => {
   const [selectedActiveButton, setselectedActiveButton] = useState("");
   const [selectedCategories, setselectedCategory] = useState("");
@@ -264,23 +266,48 @@ const ForwardFlowRatesPerformanceRecovery = ({
   }, [] as DataItem[]);
   console.log("vintage data", data);
 
+  // const filterDataBySelectedState = (
+  //   data: DataItem[],
+  //   selectedState: string
+  // ): DataItem[] => {
+  //   if (!selectedState && hoveredState) return data;
+
+  //   return data
+  //     .map((item) => {
+  //       const filteredItem: DataItem = { month: item.month };
+  //       if (item[selectedState] !== undefined) {
+  //         filteredItem[selectedState] = item[selectedState];
+  //       }
+  //       return filteredItem;
+  //     })
+  //     .filter((item) => Object.keys(item).length > 1); // Filter out items that only have the 'month' key
+  // };
+  // const filteredData = filterDataBySelectedState(data, selectedState);
   const filterDataBySelectedState = (
     data: DataItem[],
     selectedState: string
   ): DataItem[] => {
-    if (!selectedState && hoveredState) return data;
-
-    return data
-      .map((item) => {
-        const filteredItem: DataItem = { month: item.month };
-        if (item[selectedState] !== undefined) {
-          filteredItem[selectedState] = item[selectedState];
+    return data.map((item) => {
+      const filteredItem: DataItem = { month: item.month };
+  
+      // Include all sub-segments
+      Object.keys(item).forEach((key) => {
+        if (key !== "month") {
+          filteredItem[key] = item[key];
         }
-        return filteredItem;
-      })
-      .filter((item) => Object.keys(item).length > 1); // Filter out items that only have the 'month' key
+      });
+  
+      return filteredItem;
+    });
   };
+  
   const filteredData = filterDataBySelectedState(data, selectedState);
+  const getOpacityBySubSegment = (subSegment: string | null) => {
+    if (!hoveredSubSegment) {
+      return 1; // Default opacity when no bar is hovered
+    }
+    return subSegment === hoveredSubSegment ? 1 : 0.2; // Highlight hovered line, dim others
+  };  
 
   const dataUnique: DataItem[] = seriesUniqueData.reduce(
     (acc: any, series: any) => {
@@ -301,26 +328,51 @@ const ForwardFlowRatesPerformanceRecovery = ({
     [] as DataItem[]
   );
   // console.log(dataUnique,"dataUnique......");
+  // const filterDataBySelectedStateUnique = (
+  //   data: DataItem[],
+  //   selectedState: string
+  // ): DataItem[] => {
+  //   if (!selectedState && hoveredState) return data;
+
+  //   return data
+  //     .map((item) => {
+  //       const filteredItem: DataItem = { month: item.month };
+  //       if (item[selectedState] !== undefined) {
+  //         filteredItem[selectedState] = item[selectedState];
+  //       }
+  //       return filteredItem;
+  //     })
+  //     .filter((item) => Object.keys(item).length > 1); // Filter out items that only have the 'month' key
+  // };
+  // const filteredDataUnique = filterDataBySelectedStateUnique(
+  //   dataUnique,
+  //   selectedState
+  // );
   const filterDataBySelectedStateUnique = (
     data: DataItem[],
     selectedState: string
   ): DataItem[] => {
+    // If no specific state is selected, return all data
     if (!selectedState && hoveredState) return data;
-
-    return data
-      .map((item) => {
-        const filteredItem: DataItem = { month: item.month };
-        if (item[selectedState] !== undefined) {
-          filteredItem[selectedState] = item[selectedState];
-        }
-        return filteredItem;
-      })
-      .filter((item) => Object.keys(item).length > 1); // Filter out items that only have the 'month' key
+  
+    // If a state is selected, return the data with all sub-segments
+    return data.map((item) => {
+      const filteredItem: DataItem = { month: item.month };
+  
+      // Add all sub-segments, but only keep the selectedState's data visible
+      Object.keys(item).forEach((key) => {
+        filteredItem[key] = item[key];
+      });
+  
+      return filteredItem;
+    });
   };
+  
   const filteredDataUnique = filterDataBySelectedStateUnique(
     dataUnique,
     selectedState
   );
+  
   const arrTicks: any = (data: DataItem[]): number[] => {
     let arr: number[] = [];
     let maxNum = 0;
@@ -629,10 +681,11 @@ const ForwardFlowRatesPerformanceRecovery = ({
                 type="linear"
                 dataKey={series.sub_segment}
                 name={`${series.sub_segment}`}
-                stroke={colors[index]}
+                stroke={colors[index % colors.length]}
                 strokeWidth={3}
                 dot={false}
                 activeDot={{ r: 8 }}
+                opacity={getOpacityBySubSegment(series.sub_segment)} 
               />
             ))}
           </LineChart>
@@ -696,10 +749,11 @@ const ForwardFlowRatesPerformanceRecovery = ({
                 type="linear"
                 dataKey={series.sub_segment}
                 name={`${series.sub_segment}`}
-                stroke={colors[index]}
+                stroke={colors[index % colors.length]}
                 strokeWidth={3}
                 dot={false}
                 activeDot={{ r: 8 }}
+                opacity={getOpacityBySubSegment(series.sub_segment)}
               />
             ))}
           </LineChart>

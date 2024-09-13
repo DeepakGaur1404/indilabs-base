@@ -20,13 +20,17 @@ interface DataItem {
 interface CustomizeBarScatterAgencyChartProps {
   data: DataItem[];
   activeButton: string;
+  handleStateHover:any;
+  setHoveredState:any;
+  setHoveredSubSegment:any
 }
 
 const colors = ["#4169E1", "#FFB200"];
 
 const CustomizeBarScatterAgencyTrendsChart: React.FC<
   CustomizeBarScatterAgencyChartProps
-> = ({ data, activeButton }) => {
+> = ({ data, activeButton,  handleStateHover,
+  setHoveredState,setHoveredSubSegment}) => {
 
     const arrTicks: any = (data: any[]): number[] => {
         let arr: number[] = [];
@@ -90,6 +94,17 @@ const CustomizeBarScatterAgencyTrendsChart: React.FC<
       return [`₹ : ${Math.floor(value).toLocaleString()}`];
     }
     return [value, name];
+  };
+//houre
+  const handleMouseOver = (state: any, idx: any) => {
+    // setHoveredState(state);
+    handleStateHover(state); // Pass state to parent or other component if necessary
+    setHoveredState(false); // Reset active index on bar leave
+    setHoveredSubSegment(state)
+  };
+  const handleBarLeave = () => {
+    setHoveredState(true); // Reset active index on bar leave
+    setHoveredSubSegment(null)
   };
 
   return (
@@ -160,6 +175,11 @@ const CustomizeBarScatterAgencyTrendsChart: React.FC<
                 data={data}
                 fill={colors[0]}
                 radius={[5, 5, 5, 5]}
+                onMouseOver={(data, idx) =>
+                
+                  handleMouseOver(data.sub_segment, idx)
+                }
+                onMouseLeave={handleBarLeave}
               />
             </ComposedChart>
           </ResponsiveContainer>

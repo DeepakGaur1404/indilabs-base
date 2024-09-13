@@ -25,6 +25,7 @@ type Props = {
   staticDataUniquePerformance: any;
   staticDataRecoveryPerformance: any;
   setHoveredState: any;
+  setHoveredSubSegment:any
 };
 
 const colors = ["#4169E1", "#FFB200"];
@@ -39,6 +40,7 @@ const CustomizeBarScatterPeroformanceRecovery = ({
   staticDataUniquePerformance,
   staticDataRecoveryPerformance,
   setHoveredState,
+  setHoveredSubSegment
 }: Props) => {
   const [data, setData] = useState<
     { Placements: string; B1: number; Target: number; value: any }[]
@@ -108,10 +110,13 @@ const CustomizeBarScatterPeroformanceRecovery = ({
   const handleMouseOver = (state: any, idx: any) => {
     // setHoveredState(state);
     handleStateHover(state); // Pass state to parent or other component if necessary
-    setHoveredState(false); // Reset active index on bar leave
+    setHoveredState(false); 
+    // Reset active index on bar leave
+    setHoveredSubSegment(state)
   };
   const handleBarLeave = () => {
     setHoveredState(true); // Reset active index on bar leave
+    setHoveredSubSegment(null)
   };
 
   const tooltipFormatter = (value: any, name: any) => {
@@ -196,16 +201,16 @@ const CustomizeBarScatterPeroformanceRecovery = ({
       return "0";
     } else if (num >= 1e7) {
       // 10 million and above
-      return (num / 1e6).toFixed(2) ;
+      return (num / 1e6).toFixed(2);
     } else if (num >= 1e6) {
       // 1 million to 10 million
-      return (num / 1e6).toFixed(2) ;
+      return (num / 1e6).toFixed(2);
     } else if (num >= 1e5) {
       // 100,000 to 1 million
       return (num / 1e6).toFixed(2);
     } else {
       // Less than 100,000
-      return (num / 1e6).toFixed(2) ; // You can adjust this if needed
+      return (num / 1e6).toFixed(2); // You can adjust this if needed
     }
   };
 
@@ -224,7 +229,7 @@ const CustomizeBarScatterPeroformanceRecovery = ({
       return arr;
     }
 
-    const numTicks =7;
+    const numTicks = 7;
     const step = Math.ceil(maxNum / numTicks);
 
     if (step <= 0 || !isFinite(step)) {
@@ -432,7 +437,7 @@ const CustomizeBarScatterPeroformanceRecovery = ({
                 fill={colors[0]}
                 radius={[5, 5, 5, 5]}
                 onMouseOver={(data, idx) =>
-                  selectedCategory === "location" &&
+                  //  selectedCategory === "location" &&
                   handleMouseOver(data.Placements, idx)
                 }
                 onMouseLeave={handleBarLeave}
@@ -491,7 +496,8 @@ const CustomizeBarScatterPeroformanceRecovery = ({
                 // barSize={62}
                 radius={[5, 5, 5, 5]}
                 onMouseOver={(dataUnique, idx) =>
-                  selectedCategory === "location" &&
+                  // selectedCategory === "location"
+                  // &&
                   handleMouseOver(dataUnique.Placements, idx)
                 }
                 onMouseLeave={handleBarLeave}

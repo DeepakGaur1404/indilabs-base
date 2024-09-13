@@ -1521,12 +1521,21 @@ const PerformanceRecovery: React.FC = () => {
 
   const [performanceRecoveryGraphData, setperformanceRecoveryGraphData] =
     useState<any>();
-  const [hoveredState, setHoveredState] = useState(false);
+    const [isWide, setIsWide] = useState(false);
 
   const [
     performanceRecoveryUniquePayerGraphData,
     setperformanceRecoveryUniquePayerGraphData,
   ] = useState<any>();
+
+
+  const [hoveredState, setHoveredState] = useState(false);
+  const [hoveredSubSegment, setHoveredSubSegment] = useState(null);
+  const handleStateHover = (state: any) => {
+    setSelectedState(state);
+  };
+  const [selectedState, setSelectedState] = useState(null);
+
   let navigate = useNavigate();
   const handleProductClick = async (buttonId: string) => {
     setActiveButton(buttonId);
@@ -1570,7 +1579,7 @@ const PerformanceRecovery: React.FC = () => {
   const handleSubCategoryUniquePayerSegmentClick = async (cityId: string) => {
     setselectedSubCategoryUniquePayerSegments(cityId);
   };
-  const [isWide, setIsWide] = useState(false);
+ 
   useEffect(() => {
     // fetchNewdata();
     // fetchNewWithoutCorsData();
@@ -1655,11 +1664,9 @@ const PerformanceRecovery: React.FC = () => {
       })
       .catch((error) => console.error("Error fetching data:", error));
   };
-  const [selectedState, setSelectedState] = useState(null);
+ 
 
-  const handleStateHover = (state: any) => {
-    setSelectedState(state);
-  };
+
 
   return (
     <div className="CommonBodyWrap bg-[#fafafb]">
@@ -1724,6 +1731,7 @@ const PerformanceRecovery: React.FC = () => {
             staticDataUniquePerformance={staticDataUniquePerformance}
             staticDataRecoveryPerformance={staticDataRecoveryPerformance}
             setHoveredState={setHoveredState}
+            setHoveredSubSegment={setHoveredSubSegment}
           />
           <ForwardFlowRatesPerformanceRecovery
             forwardFlowRatePerformanceTitle={forwardFlowRatePerformanceTitle}
@@ -1745,6 +1753,7 @@ const PerformanceRecovery: React.FC = () => {
             staticDataUniquePerformance={staticDataUniquePerformance}
             selectedState={selectedState}
             hoveredState={hoveredState}
+            hoveredSubSegment={hoveredSubSegment}
           />
         </div>
         <div className="w-full flex items-center justify-end gap-5 mt-8">

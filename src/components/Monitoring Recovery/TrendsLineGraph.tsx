@@ -14,6 +14,9 @@ type Props = {
   selectedCategoryButton: string;
   activeButton: any;
   staticDataUniqueAgency: any;
+  selectedStateH: any;
+  hoveredState: any;
+  hoveredSubSegment:any
 };
 
 interface SeriesData {
@@ -22,7 +25,10 @@ interface SeriesData {
     value: number[];
   };
 }
-
+interface DataItem {
+  month: string;
+  [key: string]: number | string;
+}
 // Define the type for state
 interface State {
   state: string;
@@ -94,6 +100,9 @@ const TrendsLineGraph = ({
   selectedCategoryButton,
   activeButton,
   staticDataUniqueAgency,
+  selectedStateH,
+  hoveredState,
+  hoveredSubSegment
 }: Props) => {
   const [selectedCategories, setselectedCategory] = useState("");
 
@@ -105,23 +114,7 @@ const TrendsLineGraph = ({
     }
   };
 
-  // const colors = [
-  //   "#6F91EA",
-  //   "#4339F2",
-  //   "#34B53A",
-  //   "#FFB200",
-  //   "#FA7B33",
-  //   "#79747E",
-  //   "#3182bd",
-  //   "#9F90D4",
-  //   "#5C4E8E",
-  //   "#6A7691",
-  //   "#4169E1",
-  //   "#E5E3ED",
-  //   "#C9C4D9",
-  //   "#776BA1",
-  //   "#EF4444",
-  // ];
+ 
   const valueColorMapping: { [key: string]: string } = {
     "Very Small": "#6F91EA",
     Small: "#4339F2",
@@ -133,7 +126,7 @@ const TrendsLineGraph = ({
     if (subSegment && valueColorMapping[subSegment]) {
       return valueColorMapping[subSegment];
     }
-    return "#79747E"; // default color if sub_segment is null or not found
+    return "#79747E"; 
   };
 
   useEffect(() => {
@@ -162,14 +155,10 @@ const TrendsLineGraph = ({
       return [0];
     }
 
-    const numberOfTicks = 6; // You can adjust the number of ticks as needed
+    const numberOfTicks = 6; 
     let stepSize = maxNum / numberOfTicks;
-
-    // Adjust maxNum to the next multiple of stepSize
     maxNum = Math.ceil(maxNum / stepSize) * stepSize;
-
     let num1 = 0;
-
     for (let i = 0; i <= numberOfTicks; i++) {
       arr.push(parseFloat(num1.toFixed(1)));
       num1 += stepSize;
@@ -177,42 +166,7 @@ const TrendsLineGraph = ({
 
     return arr;
   };
-  // const arrTicks: any = (chartData: any[]): number[] => {
-  //   let arr: number[] = [];
-  //   let maxNum = 0;
-  
-  //   if (chartData && chartData.length > 0) {
-  //     const numericValues = chartData.flatMap((item) => {
-  //       return Object.values(item).filter(
-  //         (value): value is number | undefined =>
-  //           typeof value === "number" || value === undefined
-  //       );
-  //     }).filter((value): value is number => typeof value === "number");
-  
-  //     // If there are no numeric values, set maxNum to 0
-  //     maxNum = numericValues.length > 0 ? Math.max(...numericValues) : 0;
-  //   }
-  
-  //   const numberOfTicks = 6; // You can adjust the number of ticks as needed
-  //   let stepSize = maxNum / numberOfTicks;
-  
-  //   // If stepSize is NaN or less than or equal to 0, set it to a default value
-  //   if (isNaN(stepSize) || stepSize <= 0) {
-  //     stepSize = 1; // Default step size
-  //   }
-  
-  //   // Adjust maxNum to the next multiple of stepSize
-  //   maxNum = Math.ceil(maxNum / stepSize) * stepSize;
-  
-  //   let num1 = 0;
-  
-  //   for (let i = 0; i <= numberOfTicks; i++) {
-  //     arr.push(parseFloat(num1.toFixed(1)));
-  //     num1 += stepSize;
-  //   }
-  
-  //   return arr;
-  // };
+
   
   const getChartData = (series: SeriesData[]) => {
     let chartData: any[] = new Array(allMonths.length)
@@ -236,65 +190,53 @@ const TrendsLineGraph = ({
     getStateData(selectedCategories) || staticDataRecoveryPerformance.states[0];
   const chartData = getChartData(selectedStateData.series);
 
-  //unique pair
-  const getStateUniqueData = (stateName: string) => {
-    return staticDataUniqueAgency.states.find(
-      (state: State) => state.state === stateName
-    );
-  };
+  // const filterDataBySelectedState = (
+  //   data: DataItem[],
+  //   selectedStateH: any
+  // ): DataItem[] => {
+  //   if (!selectedStateH && hoveredState) return data;
 
-  const getChartUniqueData = (series: SeriesData[]) => {
-    let chartData: any[] = new Array(allMonths.length)
-      .fill(null)
-      .map((_, i) => ({
-        month: allMonths[i],
-      }));
-
-    series.forEach((seriesData) => {
-      const startIndex = getStartIndex(seriesData.series.value.length);
-      seriesData.series.value.forEach((value, index) => {
-        chartData[startIndex + index][seriesData.series.sub_segment || "NULL"] =
-          value;
+  //   return data
+  //     .map((item) => {
+  //       const filteredItem: DataItem = { month: item.month };
+  //       if (item[selectedStateH] !== undefined) {
+  //         filteredItem[selectedStateH] = item[selectedStateH];
+  //       }
+  //       return filteredItem;
+  //     })
+  //     .filter((item) => Object.keys(item).length > 1); // Filter out items that only have the 'month' key
+  // };
+  // const filteredData = filterDataBySelectedState(chartData, selectedStateH);
+ 
+ 
+  const filterDataBySelectedState = (
+    data: DataItem[],
+    selectedStateH: any
+  ): DataItem[] => {
+    if (!selectedStateH && hoveredState) return data;
+  
+    return data.map((item) => {
+      const filteredItem: DataItem = { month: item.month };
+      Object.keys(item).forEach((key) => {
+        // Ensure all sub-segments are included
+        if (key !== "month") {
+          filteredItem[key] = item[key];
+        }
       });
+      return filteredItem;
     });
-
-    return chartData;
+  };
+  
+  const filteredData = filterDataBySelectedState(chartData, selectedStateH);
+  
+  const getOpacityBySubSegment = (subSegment: string | null) => {
+    if (!hoveredSubSegment) {
+      return 1; // Default opacity when no bar is hovered
+    }
+    return subSegment === hoveredSubSegment ? 1 : 0.2; // Highlight hovered line, dim others
   };
 
-  const selectedStateUniqueData =
-    getStateUniqueData(selectedCategories) || staticDataUniqueAgency.states[0];
-  const chartUniqueData = getChartUniqueData(selectedStateUniqueData.series);
-  const arrUniqueTicks: any = (chartUniqueData: any[]): number[] => {
-    let arr: number[] = [];
-    let maxNum = 0;
-
-    if (chartUniqueData && chartUniqueData.length > 0) {
-      maxNum = Math.max(
-        ...chartUniqueData.flatMap((item) => {
-          return Object.values(item).filter(
-            (value): value is number => typeof value === "number"
-          );
-        })
-      );
-    } else {
-      return [0];
-    }
-
-    const numberOfTicks = 10;
-    let stepSize = maxNum / numberOfTicks;
-
-    // Adjust maxNum to the next multiple of stepSize
-    maxNum = Math.ceil(maxNum / stepSize) * stepSize;
-
-    let num1 = 0;
-
-    for (let i = 0; i <= numberOfTicks; i++) {
-      arr.push(parseFloat(num1.toFixed(1)));
-      num1 += stepSize;
-    }
-
-    return arr;
-  };
+ 
 
   return (
     <div className="w-full xl:w-[48%] h-[380px] mt-10 rounded-lg py-4 p-3 -mr-2 shadow-md bg-white">
@@ -331,7 +273,7 @@ const TrendsLineGraph = ({
       {activeButton === "$Recovery" && (
         <ResponsiveContainer width="99%" height={300}>
           <LineChart
-            data={chartData}
+            data={selectedStateH && !hoveredState ? filteredData : chartData}
             margin={{ left: 15, top: 25, bottom: 25 }}
           >
             <CartesianGrid strokeDasharray="3 3" vertical={false} />
@@ -377,61 +319,13 @@ const TrendsLineGraph = ({
                 strokeWidth={3}
                 dot={false}
                 activeDot={{ r: 8 }}
+                opacity={getOpacityBySubSegment(seriesData.series.sub_segment)}
               />
             ))}
           </LineChart>
         </ResponsiveContainer>
       )}
-      {activeButton !== "$Recovery" && (
-        <ResponsiveContainer width="99%" height={290}>
-          <LineChart data={chartUniqueData} margin={{ left: 14, top: 8 }}>
-            <CartesianGrid strokeDasharray="3 3" vertical={false} />
-            <XAxis
-              dataKey="month"
-              fontWeight={400}
-              fontSize={12}
-              fontFamily="DM Sans"
-              fill={"#3B414B"}
-              axisLine={false}
-              tickLine={false}
-              padding={{ left: 25, right: 25 }}
-            />
-            <YAxis
-              fontSize={11}
-              fontWeight={400}
-              fontFamily="DM Sans"
-              fill={"#3B414B"}
-              width={25}
-              axisLine={false}
-              tickLine={false}
-              tickFormatter={formatYAxisTick}
-              domain={[0, "dataMax"]}
-              ticks={arrUniqueTicks(chartUniqueData)}
-            />
-            <Tooltip
-              formatter={(value, name) => {
-                const formattedValue =
-                  typeof value === "number" ? `${value.toFixed(2)}%` : value;
-                return [formattedValue, `${name}`];
-              }}
-            />{" "}
-            {selectedStateUniqueData.series.map(
-              (seriesData: any, index: any) => (
-                <Line
-                  key={index}
-                  type="linear"
-                  dataKey={seriesData.series.sub_segment || "NULL"}
-                  name={seriesData.series.sub_segment || "NULL"}
-                  stroke={getColorBySubSegment(seriesData.series.sub_segment)}
-                  strokeWidth={3}
-                  dot={false}
-                  activeDot={{ r: 8 }}
-                />
-              )
-            )}
-          </LineChart>
-        </ResponsiveContainer>
-      )}
+    
     </div>
   );
 };
