@@ -14,61 +14,61 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
       "Very High Risk": [
         {
           name: "Bucket Slope",
-          data: [0, 0, 0, 0, 0],
+          data: [8, 8, 8],
           color: "#ffffff",
         },
         {
           name: "Marine Sprite",
-          data: [0, 0, 8, 0, 0],
+          data: [8, 0, 8],
           color: "#00B050",
         },
         {
           name: "Striking Calf",
-          data: [7, 13, 12, 0, 0],
+          data: [7, 13, 12],
           color: "#7030A0",
         },
         {
           name: "Tank Picture",
-          data: [15, 14, 7, 0, 0],
+          data: [15, 14, 7],
           color: "#ED7D31",
         },
         {
           name: "Bucket Slope",
-          data: [8, 3, 3, 0, 0],
+          data: [8, 3, 3 ],
           color: "#FF0000",
         },
       ],
       "High Risk": [
         {
           name: "Bucket Slope",
-          data: [7, 0, 0, 0, 0],
+          data: [7, 8, 8],
           color: "#ffffff",
         },
         {
           name: "Marine Sprite",
-          data: [15, 3, 7, 0, 0],
+          data: [15, 3, 7],
           color: "#00B050",
         },
         {
           name: "Striking Calf",
-          data: [8, 11, 11, 0, 0],
+          data: [8, 11, 11],
           color: "#7030A0",
         },
         {
           name: "Tank Picture",
-          data: [0, 13, 10, 0, 0],
+          data: [0, 13, 10],
           color: "#ED7D31",
         },
         {
           name: "Bucket Slope",
-          data: [0, 3, 2, 0, 0],
+          data: [0, 3, 2],
           color: "#FF0000",
         },
       ],
       All: [
         {
           name: "Bucket Slope",
-          data: [0, 0, 0, 6, 0],
+          data: [8, 8, 8, 6, 8],
           color: "#ffffff",
         },
         {
@@ -95,27 +95,27 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
       "Medium Risk": [
         {
           name: "Bucket Slope",
-          data: [0, 0, 0, 0, 0],
+          data: [8, 9, 9],
           color: "#ffffff",
         },
         {
           name: "Marine Sprite",
-          data: [0, 0, 8, 0, 0],
+          data: [0, 0, 8],
           color: "#00B050",
         },
         {
           name: "Striking Calf",
-          data: [7, 13, 12, 0, 0],
+          data: [7, 13, 12],
           color: "#7030A0",
         },
         {
           name: "Tank Picture",
-          data: [15, 14, 7, 0, 0],
+          data: [15, 14, 7],
           color: "#ED7D31",
         },
         {
           name: "Bucket Slope",
-          data: [8, 3, 3, 0, 0],
+          data: [8, 3, 3],
           color: "#FF0000",
         },
       ],
@@ -123,54 +123,54 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
       "Low Risk": [
         {
           name: "Bucket Slope",
-          data: [0, 3, 0, 0, 0],
+          data: [3, 3, 8],
           color: "#ffffff",
         },
         {
           name: "Marine Sprite",
-          data: [0, 0, 10, 0, 0],
+          data: [8, 8, 10],
           color: "#00B050",
         },
         {
           name: "Striking Calf",
-          data: [15, 10, 10, 0, 0],
+          data: [15, 10, 10],
           color: "#7030A0",
         },
         {
           name: "Tank Picture",
-          data: [7, 14, 5, 0, 0],
+          data: [7, 14, 5],
           color: "#ED7D31",
         },
         {
           name: "Bucket Slope",
-          data: [8, 3, 5, 0, 0],
+          data: [8, 3, 5],
           color: "#FF0000",
         },
       ],
       "H Balance": [
         {
           name: "Bucket Slope",
-          data: [0, 0, 0, 0, 0],
+          data: [9, 8, 8],
           color: "#ffffff",
         },
         {
           name: "Marine Sprite",
-          data: [0, 0, 8, 0, 0],
+          data: [0, 0, 8],
           color: "#00B050",
         },
         {
           name: "Striking Calf",
-          data: [7, 13, 12, 0, 0],
+          data: [7, 13, 12],
           color: "#7030A0",
         },
         {
           name: "Tank Picture",
-          data: [15, 14, 7, 0, 0],
+          data: [15, 14, 7],
           color: "#ED7D31",
         },
         {
           name: "Bucket Slope",
-          data: [8, 3, 3, 0, 0],
+          data: [8, 3, 3],
           color: "#FF0000",
         },
       ],
@@ -305,7 +305,7 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
           </div>
         </div>
       </div>
-      <div className="w-[100%] flex flex-col sm:flex-row items-start justify-start">
+      <div className="w-[100%] mt-8 flex flex-col sm:flex-row items-start justify-start">
         {props.selectedSegment !== "All" && (
           <table cellPadding={13} className="w-[90%] sm:w-[30%] mt-9">
             <tbody>

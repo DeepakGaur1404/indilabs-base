@@ -1,7 +1,7 @@
 import React from "react";
-// import TestPipeLine from "./TestPipeLine";
-// import Performance from "./performance";
-// import PLImpactChart from "./PLImpactChart";
+import TestPipeLine from "./AllocationEngine/TestPipeLine";
+import Performance from "./AllocationEngine/performance";
+import PLImpactChart from "./AllocationEngine/PLImpactChart";
 // import SegmentTable from "./SegmentTable";
 import { useEffect, useState } from "react";
 // import { HiPlus } from "react-icons/hi";
@@ -13,7 +13,7 @@ import HomeDashboard from "../components/PerformanceDashboardHeader/HomeDashboar
 // import DashboardHeader from "../../components/DshboardHeader/DashboardHeader";
 // import AllocationStackedBarChart from "./allocationStackedBarChart";
 // import OptimizeStackedBarChart from "./optimizeStackedBarChart";
-import Treatments from "../NewPages/RecoveryTreatment";
+import Treatments from "./RecoveryStackBar";
 
 const getSegmentFromLocalStorage = () => {
   const segValue = localStorage.getItem("segment");
@@ -47,9 +47,9 @@ const ReviewPerformance: React.FC = () => {
   ];
 
   const Breadcrumbs = [
-    { id: 0, label: "Pune" },
-    { id: 1, label: "All" },
-    { id: 2, label: "B1" },
+    { id: 0, label: "All" },
+    { id: 1, label: "B1" },
+    { id: 2, label: "Pune" },
     { id: 3, label: "Very High Risk" },
   ];
 
@@ -199,13 +199,13 @@ const ReviewPerformance: React.FC = () => {
           </table>
         </div> */}
       </div>
-      {/* {!showTestIdComp && ( */}
-      {/* <div className=" mr-3 flex ml-2 gap-2 xl:ml-8 md:mr-0 flex-wrap">
+       {/* {!showTestIdComp && (
+      <div className=" mr-3 flex ml-2 gap-2 xl:ml-8 md:mr-0 flex-wrap">
         <TestPipeLine />
         <PLImpactChart />
         <Performance />
-      </div> */}
-      {/* )} */}
+      </div> 
+     )}  */}
       {/* {showTestIdComp && (
         <div className="flex gap-6 ml-5 flex-wrap">
           <div className="flex flex-col gap-2">

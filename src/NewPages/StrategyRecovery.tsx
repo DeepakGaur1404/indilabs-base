@@ -61,7 +61,7 @@ const StrategyRecovery = () => {
 
   const navigateToReviewExecution = () => {
     setReviewBtn(true);
-    navigate("/strategy/reviewExecution/recovery");
+    navigate("/strategy/reviewExecution");
   };
 
   const navigateToReviewPerformance = () => {

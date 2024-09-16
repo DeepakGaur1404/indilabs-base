@@ -67,7 +67,7 @@ function SegVolumeBadTable(props: Props) {
   };
 
   const navigateToReviewPerformance = () => {
-    navigate("/strategy/allocationEngine/reviewPerformance");
+    navigate("/strategy/allocationEngine/reviewPerformance/recovery");
   };
 
   return (

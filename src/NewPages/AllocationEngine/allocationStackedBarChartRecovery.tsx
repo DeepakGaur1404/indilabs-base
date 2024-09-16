@@ -45,7 +45,7 @@ const AllocationStackedBarChartRecovery: React.FC<Props> = (props) => {
         },
         {
           name: "Non-Contacted",
-          data: [8, 10, 20, 22, 24],
+          data: [80, 10, 20, 22, 24],
           color: "#FFB200",
         },
       ],
