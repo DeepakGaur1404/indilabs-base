@@ -6,6 +6,7 @@ import darkorangeimpactball from "../../assets/images/darkorangeimpactball.png";
 import redimpactball from "../../assets/images/redimpactball.png";
 import peachimpactball from "../../assets/images/peachimpactball.png";
 import "../../NewPages/AllocationEngine/Allocation.scss";
+import Monitoring from "../../assets/images/monitoringrisk.svg";
 import {
   ScatterChart,
   Scatter,
@@ -444,10 +445,17 @@ const ImpactAssessmentRecovery = ({
 
   return (
     <div className="relative w-[100%]  h-[555px] p-3 bg-white rounded-xl shadow flex-col justify-start ml-6 flex gap-5 2xl:w-[58%]">
-      <h1 className="text-black text-base font-medium font-['DM Sans'] text-center customClassOpper -mt-[2px] mb-[18px]">
+      <div className="mt-[15px] px-2 flex justify-between items-center">
+      <h1 className="text-black text-base font-medium font-['DM Sans'] text-left customClassOpper ">
         Impact Assessment
       </h1>
-      <div className="w-[100%] flex flex-col justify-center items-center -mt-6 -mr-4">
+      <div className="border-[#FFA39B] rounded-lg border-[2px] w-[max] flex items-center gap-2 py-1 px-3 m">
+        <img src={Monitoring} alt="" />
+        <p className="text-[black] font-[500] text-[14px] font-['DM Sans']">Value at Risk:</p>
+        <span className="text-[#EF0000] font-[700] text-[16px] font-['DM Sans']">$3,092,12</span>
+      </div>
+      </div>
+      {/* <div className="w-[100%] flex flex-col justify-center items-center -mt-6 -mr-4">
         <div className="w-[85%] h-2  bg-gradient-to-r from-[#09FF4E] via-[#FFF509] to-[#ED0E00]">
           {" "}
         </div>
@@ -459,7 +467,7 @@ const ImpactAssessmentRecovery = ({
             High Risk
           </p>
         </div>
-      </div>
+      </div> */}
       <p
         className="
      text-[14px] italic text-[#6A7691] font-[400] 

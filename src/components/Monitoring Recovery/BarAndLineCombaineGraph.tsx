@@ -14,6 +14,7 @@ import {
   LineChart,
   ReferenceLine,
   ComposedChart,
+  Cell,
 } from "recharts";
 
 type Props = {
@@ -39,6 +40,7 @@ type SubCategories = [
     sub_segment: any;
     active_recovery_balance: any;
     recovery: any;
+    benchmark_recovery:any
   },
   {
     month: any;
@@ -52,6 +54,7 @@ interface Entry {
   sub_segment: string;
   active_recovery_balance: number;
   recovery: number;
+  benchmark_recovery:any
   value: number;
 }
 
@@ -153,287 +156,115 @@ const BarAndLineCombaineGraph = ({
           month: item[1].month,
           recovery: item[1].recovery,
           "%Recovery": item[1]["%Recovery"],
+          benchmark_recovery:item[1].benchmark_recovery
         }))
-      : selectedSubCategories === "V0" &&
-        selectedCategories === "mob" &&
-        selectedActiveButton === "$Recovery"
-      ? portfolioRecoveryGraphData?.mob
-          .filter((item: SubCategories) => item[1].sub_segment === "V0")
-          .map((item: any) => {
-            const newItem: {
-              month: any;
-              recovery: any;
-              "%Recovery"?: any;
-            } = {
-              month: item[1].month,
-              recovery: item[1].recovery,
-            };
-
-            // Add average_recovery_balance only if it's not 0 or "0"
-            if (item[1]["%Recovery"] !== 0 && item[1]["%Recovery"] !== "0") {
-              newItem["%Recovery"] = item[1]["%Recovery"];
-            } else {
-              newItem["%Recovery"] = null;
-            }
-
-            return newItem;
-          })
+      // : selectedSubCategories === "V0" &&
+      //   selectedCategories === "mob" &&
+      //   selectedActiveButton === "$Recovery"
+      // ? portfolioRecoveryGraphData?.mob
+      // .map((item: any) => ({
+      //   month: item[1].month,
+      //   recovery: item[1].recovery,
+      //   "%Recovery": item[1]["%Recovery"],
+      //   benchmark_recovery:item[1].benchmark_recovery
+      // }))
       : selectedSubCategories === "V1" &&
         selectedCategories === "mob" &&
         selectedActiveButton === "$Recovery"
       ? portfolioRecoveryGraphData?.mob
           .filter((item: SubCategories) => item[1].sub_segment === "V1")
-          .map((item: any) => {
-            const newItem: {
-              month: any;
-              recovery: any;
-              "%Recovery"?: any;
-            } = {
-              month: item[1].month,
-              recovery: item[1].recovery,
-            };
+          .map((item: any) => ({
+            month: item[1].month,
+            recovery: item[1].recovery,
+            "%Recovery": item[1]["%Recovery"],
+            benchmark_recovery:item[1].benchmark_recovery
+          }))
+          //   const newItem: {
+          //     month: any;
+          //     recovery: any;
+          //     "%Recovery"?: any;
+          //   } = {
+          //     month: item[1].month,
+          //     recovery: item[1].recovery,
+          //   };
 
-            // Add average_recovery_balance only if it's not 0 or "0"
-            if (item[1]["%Recovery"] !== 0 && item[1]["%Recovery"] !== "0") {
-              newItem["%Recovery"] = item[1]["%Recovery"];
-            } else {
-              newItem["%Recovery"] = null;
-            }
+          //   // Add average_recovery_balance only if it's not 0 or "0"
+          //   if (item[1]["%Recovery"] !== 0 && item[1]["%Recovery"] !== "0") {
+          //     newItem["%Recovery"] = item[1]["%Recovery"];
+          //   } else {
+          //     newItem["%Recovery"] = null;
+          //   }
 
-            return newItem;
-          })
+          //   return newItem;
+          // })
       : selectedSubCategories === "V2" &&
         selectedCategories === "mob" &&
         selectedActiveButton === "$Recovery"
       ? portfolioRecoveryGraphData?.mob
           .filter((item: SubCategories) => item[1].sub_segment === "V2")
-          .map((item: any) => {
-            const newItem: {
-              month: any;
-              recovery: any;
-              "%Recovery"?: any;
-            } = {
-              month: item[1].month,
-              recovery: item[1].recovery,
-            };
-
-            // Add average_recovery_balance only if it's not 0 or "0"
-            if (item[1]["%Recovery"] !== 0 && item[1]["%Recovery"] !== "0") {
-              newItem["%Recovery"] = item[1]["%Recovery"];
-            } else {
-              newItem["%Recovery"] = null;
-            }
-
-            return newItem;
-          })
+          .map((item: any) => ({
+            month: item[1].month,
+            recovery: item[1].recovery,
+            "%Recovery": item[1]["%Recovery"],
+            benchmark_recovery:item[1].benchmark_recovery
+          }))
+            
       : selectedSubCategories === "V3" &&
         selectedCategories === "mob" &&
         selectedActiveButton === "$Recovery"
       ? portfolioRecoveryGraphData?.mob
           .filter((item: SubCategories) => item[1].sub_segment === "V3")
-          .map((item: any) => {
-            const newItem: {
-              month: any;
-              recovery: any;
-              "%Recovery"?: any;
-            } = {
-              month: item[1].month,
-              recovery: item[1].recovery,
-            };
-
-            // Add average_recovery_balance only if it's not 0 or "0"
-            if (item[1]["%Recovery"] !== 0 && item[1]["%Recovery"] !== "0") {
-              newItem["%Recovery"] = item[1]["%Recovery"];
-            } else {
-              newItem["%Recovery"] = null;
-            }
-
-            return newItem;
-          })
+          .map((item: any) => ({
+            month: item[1].month,
+            recovery: item[1].recovery,
+            "%Recovery": item[1]["%Recovery"],
+            benchmark_recovery:item[1].benchmark_recovery
+          }))
       : selectedSubCategories === "V4" &&
         selectedCategories === "mob" &&
         selectedActiveButton === "$Recovery"
       ? portfolioRecoveryGraphData?.mob
           .filter((item: SubCategories) => item[1].sub_segment === "V4")
-          .map((item: any) => {
-            const newItem: {
-              month: any;
-              recovery: any;
-              "%Recovery"?: any;
-            } = {
-              month: item[1].month,
-              recovery: item[1].recovery,
-            };
-
-            // Add average_recovery_balance only if it's not 0 or "0"
-            if (item[1]["%Recovery"] !== 0 && item[1]["%Recovery"] !== "0") {
-              newItem["%Recovery"] = item[1]["%Recovery"];
-            } else {
-              newItem["%Recovery"] = null;
-            }
-
-            return newItem;
-          })
+          .map((item: any) => ({
+            month: item[1].month,
+            recovery: item[1].recovery,
+            "%Recovery": item[1]["%Recovery"],
+            benchmark_recovery:item[1].benchmark_recovery
+          }))
       : selectedSubCategories === "V5" &&
         selectedCategories === "mob" &&
         selectedActiveButton === "$Recovery"
       ? portfolioRecoveryGraphData?.mob
           .filter((item: SubCategories) => item[1].sub_segment === "V5")
-          .map((item: any) => {
-            const newItem: {
-              month: any;
-              recovery: any;
-              "%Recovery"?: any;
-            } = {
-              month: item[1].month,
-              recovery: item[1].recovery,
-            };
-
-            // Add average_recovery_balance only if it's not 0 or "0"
-            if (item[1]["%Recovery"] !== 0 && item[1]["%Recovery"] !== "0") {
-              newItem["%Recovery"] = item[1]["%Recovery"];
-            } else {
-              newItem["%Recovery"] = null;
-            }
-
-            return newItem;
-          })
+          .map((item: any) =>({
+            month: item[1].month,
+            recovery: item[1].recovery,
+            "%Recovery": item[1]["%Recovery"],
+            benchmark_recovery:item[1].benchmark_recovery
+          }))
       : selectedSubCategories === "V6" &&
         selectedCategories === "mob" &&
         selectedActiveButton === "$Recovery"
       ? portfolioRecoveryGraphData?.mob
           .filter((item: SubCategories) => item[1].sub_segment === "V6")
-          .map((item: any) => {
-            const newItem: {
-              month: any;
-              recovery: any;
-              "%Recovery"?: any;
-            } = {
-              month: item[1].month,
-              recovery: item[1].recovery,
-            };
-
-            // Add average_recovery_balance only if it's not 0 or "0"
-            if (item[1]["%Recovery"] !== 0 && item[1]["%Recovery"] !== "0") {
-              newItem["%Recovery"] = item[1]["%Recovery"];
-            } else {
-              newItem["%Recovery"] = null;
-            }
-
-            return newItem;
-          })
+          .map((item: any) =>({
+            month: item[1].month,
+            recovery: item[1].recovery,
+            "%Recovery": item[1]["%Recovery"],
+            benchmark_recovery:item[1].benchmark_recovery
+          }))
       : selectedSubCategories === "V7" &&
         selectedCategories === "mob" &&
         selectedActiveButton === "$Recovery"
       ? portfolioRecoveryGraphData?.mob
           .filter((item: SubCategories) => item[1].sub_segment === "V7")
-          .map((item: any) => {
-            const newItem: {
-              month: any;
-              recovery: any;
-              "%Recovery"?: any;
-            } = {
-              month: item[1].month,
-              recovery: item[1].recovery,
-            };
-
-            // Add average_recovery_balance only if it's not 0 or "0"
-            if (item[1]["%Recovery"] !== 0 && item[1]["%Recovery"] !== "0") {
-              newItem["%Recovery"] = item[1]["%Recovery"];
-            } else {
-              newItem["%Recovery"] = null;
-            }
-
-            return newItem;
-          })
-      : // : selectedSubCategories === "24-36" &&
-      //   selectedCategories === "mob" &&
-      //   selectedActiveButton === "$Recovery"
-      // ? portfolioRecoveryGraphData?.mob
-      //     .filter((item: SubCategories) => item[0].sub_segment === "24-36")
-      //     .map((item: any) => ({
-      //       month: item[0].month,
-      //       active_recovery_balance: item[0].active_recovery_balance,
-      //       recovery: item[0].recovery,
-      //       value: item[1].value,
-      //     }))
-      // : selectedSubCategories === "36+" &&
-      //   selectedCategories === "mob" &&
-      //   selectedActiveButton === "$Recovery"
-      // ? portfolioRecoveryGraphData?.mob
-      //     .filter((item: SubCategories) => item[0].sub_segment === "36+")
-      //     .map((item: any) => ({
-      //       month: item[0].month,
-      //       active_recovery_balance: item[0].active_recovery_balance,
-      //       recovery: item[0].recovery,
-      //       value: item[1].value,
-      //     }))
-      // : selectedSubCategoriesTwo === "1" &&
-      //   selectedCategories === "placement" &&
-      //   selectedActiveButton === "$Recovery"
-      // ? portfolioRecoveryGraphData?.placement
-      //     .filter((item: SubCategories) => item[0].sub_segment === "1")
-      //     .map((item: any) => ({
-      //       month: item[0].month,
-      //       active_recovery_balance: item[0].active_recovery_balance,
-      //       recovery: item[0].recovery,
-      //       value: item[1].value,
-      //     }))
-      // : selectedSubCategoriesTwo === "2" &&
-      //   selectedCategories === "placement" &&
-      //   selectedActiveButton === "$Recovery"
-      // ? portfolioRecoveryGraphData?.placement
-      //     .filter((item: SubCategories) => item[0].sub_segment === "2")
-      //     .map((item: any) => ({
-      //       month: item[0].month,
-      //       active_recovery_balance: item[0].active_recovery_balance,
-      //       recovery: item[0].recovery,
-      //       value: item[1].value,
-      //     }))
-      // : selectedSubCategoriesTwo === "3" &&
-      //   selectedCategories === "placement" &&
-      //   selectedActiveButton === "$Recovery"
-      // ? portfolioRecoveryGraphData?.placement
-      //     .filter((item: SubCategories) => item[0].sub_segment === "3")
-      //     .map((item: any) => ({
-      //       month: item[0].month,
-      //       active_recovery_balance: item[0].active_recovery_balance,
-      //       recovery: item[0].recovery,
-      //       value: item[1].value,
-      //     }))
-      // : selectedSubCategoriesTwo === "4" &&
-      //   selectedCategories === "placement" &&
-      //   selectedActiveButton === "$Recovery"
-      // ? portfolioRecoveryGraphData?.placement
-      //     .filter((item: SubCategories) => item[0].sub_segment === "4")
-      //     .map((item: any) => ({
-      //       month: item[0].month,
-      //       active_recovery_balance: item[0].active_recovery_balance,
-      //       recovery: item[0].recovery,
-      //       value: item[1].value,
-      //     }))
-      // : selectedSubCategoriesTwo === "5" &&
-      //   selectedCategories === "placement" &&
-      //   selectedActiveButton === "$Recovery"
-      // ? portfolioRecoveryGraphData?.placement
-      //     .filter((item: SubCategories) => item[0].sub_segment === "5")
-      //     .map((item: any) => ({
-      //       month: item[0].month,
-      //       active_recovery_balance: item[0].active_recovery_balance,
-      //       recovery: item[0].recovery,
-      //       value: item[1].value,
-      //     }))
-      // : selectedSubCategoriesTwo === "6+" &&
-      //   selectedCategories === "placement" &&
-      //   selectedActiveButton === "$Recovery"
-      // ? portfolioRecoveryGraphData?.placement
-      //     .filter((item: SubCategories) => item[0].sub_segment === "6+")
-      //     .map((item: any) => ({
-      //       month: item[0].month,
-      //       active_recovery_balance: item[0].active_recovery_balance,
-      //       recovery: item[0].recovery,
-      //       value: item[1].value,
-      //     }))
+          .map((item: any) => ({
+            month: item[1].month,
+            recovery: item[1].recovery,
+            "%Recovery": item[1]["%Recovery"],
+            benchmark_recovery:item[1].benchmark_recovery
+          }))
+      :
       selectedSubCategoriesLocation === "UP" &&
         selectedCategories === "location" &&
         selectedActiveButton === "$Recovery"
@@ -443,7 +274,7 @@ const BarAndLineCombaineGraph = ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            // value: item[1].value,
+            benchmark_recovery:item[1].benchmark_recovery
           }))
       : selectedSubCategoriesLocation === "MH" &&
         selectedCategories === "location" &&
@@ -454,7 +285,7 @@ const BarAndLineCombaineGraph = ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            // value: item[1].value,
+            benchmark_recovery:item[1].benchmark_recovery
           }))
       : selectedSubCategoriesLocation === "TN" &&
         selectedCategories === "location" &&
@@ -465,7 +296,7 @@ const BarAndLineCombaineGraph = ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            // value: item[1].value,
+            benchmark_recovery:item[1].benchmark_recovery
           }))
       : selectedSubCategoriesLocation === "MP" &&
         selectedCategories === "location" &&
@@ -476,7 +307,7 @@ const BarAndLineCombaineGraph = ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            // value: item[1].value,
+            benchmark_recovery:item[1].benchmark_recovery
           }))
       : selectedSubCategoriesLocation === "KA" &&
         selectedCategories === "location" &&
@@ -487,20 +318,20 @@ const BarAndLineCombaineGraph = ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            // value: item[1].value,
+            benchmark_recovery:item[1].benchmark_recovery
           }))
       : selectedSubCategoriesLocation === "HR" &&
         selectedCategories === "location" &&
         selectedActiveButton === "$Recovery"
       ? portfolioRecoveryGraphData?.location
           .filter((item: SubCategories) => item[1].sub_segment === "HR")
-          .map((item: any) => ({
+          .map((item: any) =>({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            // value: item[1].value,
+            benchmark_recovery:item[1].benchmark_recovery
           }))
-      : selectedSubCategoriesLocation === "AP" &&
+          : selectedSubCategoriesLocation === "AP" &&
         selectedCategories === "location" &&
         selectedActiveButton === "$Recovery"
       ? portfolioRecoveryGraphData?.location
@@ -509,42 +340,18 @@ const BarAndLineCombaineGraph = ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            // value: item[1].value,
+            benchmark_recovery:item[1].benchmark_recovery
           }))
-      : selectedSubCategoriesLocation === "TG" &&
-        selectedCategories === "location" &&
-        selectedActiveButton === "$Recovery"
-      ? portfolioRecoveryGraphData?.location
-          .filter((item: SubCategories) => item[1].sub_segment === "TG")
-          .map((item: any) => {
-            const newItem: {
-              month: any;
-              recovery: any;
-              "%Recovery"?: any;
-            } = {
-              month: item[1].month,
-              recovery: item[1].recovery,
-            };
-
-            // Add average_recovery_balance only if it's not 0 or "0"
-            if (item[1]["%Recovery"] !== 0 && item[1]["%Recovery"] !== "0") {
-              newItem["%Recovery"] = item[1]["%Recovery"];
-            } else {
-              newItem["%Recovery"] = null;
-            }
-
-            return newItem;
-          })
       : selectedSubCategoriesLocation === "GJ" &&
         selectedCategories === "location" &&
         selectedActiveButton === "$Recovery"
       ? portfolioRecoveryGraphData?.location
           .filter((item: SubCategories) => item[1].sub_segment === "GJ")
-          .map((item: any) => ({
+          .map((item: any) =>({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            // value: item[1].value,
+            benchmark_recovery:item[1].benchmark_recovery
           }))
       : selectedSubCategoriesLocation === "DL" &&
         selectedCategories === "location" &&
@@ -555,7 +362,18 @@ const BarAndLineCombaineGraph = ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            // value: item[1].value,
+            benchmark_recovery:item[1].benchmark_recovery
+          }))
+      : selectedSubCategoriesLocation === "TG" &&
+        selectedCategories === "location" &&
+        selectedActiveButton === "$Recovery"
+      ? portfolioRecoveryGraphData?.location
+          .filter((item: SubCategories) => item[1].sub_segment === "TG")
+          .map((item: any) =>({
+            month: item[1].month,
+            recovery: item[1].recovery,
+            "%Recovery": item[1]["%Recovery"],
+            benchmark_recovery:item[1].benchmark_recovery
           }))
       : selectedSubCategoriesLocation === "OTHERS" &&
         selectedCategories === "location" &&
@@ -566,18 +384,18 @@ const BarAndLineCombaineGraph = ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            // value: item[1].value,
+            benchmark_recovery:item[1].benchmark_recovery
           }))
       : selectedSubCategoriesTOS === "<1L" &&
         selectedCategories === "pos" &&
         selectedActiveButton === "$Recovery"
       ? portfolioRecoveryGraphData?.pos
           .filter((item: SubCategories) => item[1].sub_segment === "<1L")
-          .map((item: any) => ({
+          .map((item: any) =>({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            // value: item[1].value,
+            benchmark_recovery:item[1].benchmark_recovery
           }))
       : selectedSubCategoriesTOS === "1-5L" &&
         selectedCategories === "pos" &&
@@ -588,18 +406,18 @@ const BarAndLineCombaineGraph = ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            // value: item[1].value,
+            benchmark_recovery:item[1].benchmark_recovery
           }))
       : selectedSubCategoriesTOS === "5-10L" &&
         selectedCategories === "pos" &&
         selectedActiveButton === "$Recovery"
       ? portfolioRecoveryGraphData?.pos
           .filter((item: SubCategories) => item[1].sub_segment === "5-10L")
-          .map((item: any) => ({
+          .map((item: any) =>({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            // value: item[1].value,
+            benchmark_recovery:item[1].benchmark_recovery
           }))
       : selectedSubCategoriesTOS === "10L+" &&
         selectedCategories === "pos" &&
@@ -610,247 +428,55 @@ const BarAndLineCombaineGraph = ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            // value: item[1].value,
+            benchmark_recovery:item[1].benchmark_recovery
           }))
-      : // : selectedSubCategoriesTOS === "20-25L" &&
-      //   selectedCategories === "tos" &&
-      //   selectedActiveButton === "$Recovery"
-      // ? portfolioRecoveryGraphData?.tos
-      //     .filter((item: SubCategories) => item[1].sub_segment === "20-25L")
-      //     .map((item: any) => ({
-      //       month: item[1].month,
-      //       recovery: item[1].recovery,
-      //       "%Recovery": item[1]["%Recovery"],
-      //       // value: item[1].value,
-      //     }))
-      // selectedSubCategoriesTOS === "10L" &&
-      //   selectedCategories === "pos" &&
-      //   selectedActiveButton === "$Recovery"
-      // ? portfolioRecoveryGraphData?.pos
-      //     .filter((item: SubCategories) => item[1].sub_segment === "10L")
-      //     .map((item: any) => ({
-      //       month: item[1].month,
-      //       recovery: item[1].recovery,
-      //       "%Recovery": item[1]["%Recovery"],
-      //       // value: item[1].value,
-      //     }))
+      : 
       selectedSubCategoriesAgency === "Very Small" &&
         selectedCategories === "agency" &&
         selectedActiveButton === "$Recovery"
       ? portfolioRecoveryGraphData?.agency
           .filter((item: SubCategories) => item[1].sub_segment === "Very Small")
-          .map((item: any) => {
-            const newItem: {
-              month: any;
-              recovery: any;
-              "%Recovery"?: any;
-            } = {
-              month: item[1].month,
-              recovery: item[1].recovery,
-            };
-
-            // Add average_recovery_balance only if it's not 0 or "0"
-            if (item[1]["%Recovery"] !== 0 && item[1]["%Recovery"] !== "0") {
-              newItem["%Recovery"] = item[1]["%Recovery"];
-            } else {
-              newItem["%Recovery"] = null;
-            }
-
-            return newItem;
-          })
+          .map((item: any) =>({
+            month: item[1].month,
+            recovery: item[1].recovery,
+            "%Recovery": item[1]["%Recovery"],
+            benchmark_recovery:item[1].benchmark_recovery
+          }))
       : selectedSubCategoriesAgency === "Small" &&
         selectedCategories === "agency" &&
         selectedActiveButton === "$Recovery"
       ? portfolioRecoveryGraphData?.agency
           .filter((item: SubCategories) => item[1].sub_segment === "Small")
-          .map((item: any) => {
-            const newItem: {
-              month: any;
-              recovery: any;
-              "%Recovery"?: any;
-            } = {
-              month: item[1].month,
-              recovery: item[1].recovery,
-            };
-
-            // Add average_recovery_balance only if it's not 0 or "0"
-            if (item[1]["%Recovery"] !== 0 && item[1]["%Recovery"] !== "0") {
-              newItem["%Recovery"] = item[1]["%Recovery"];
-            } else {
-              newItem["%Recovery"] = null;
-            }
-
-            return newItem;
-          })
+          .map((item: any) =>({
+            month: item[1].month,
+            recovery: item[1].recovery,
+            "%Recovery": item[1]["%Recovery"],
+            benchmark_recovery:item[1].benchmark_recovery
+          }))
       : selectedSubCategoriesAgency === "Medium" &&
         selectedCategories === "agency" &&
         selectedActiveButton === "$Recovery"
       ? portfolioRecoveryGraphData?.agency
           .filter((item: SubCategories) => item[1].sub_segment === "Medium")
-          .map((item: any) => {
-            const newItem: {
-              month: any;
-              recovery: any;
-              "%Recovery"?: any;
-            } = {
-              month: item[1].month,
-              recovery: item[1].recovery,
-            };
-
-            // Add average_recovery_balance only if it's not 0 or "0"
-            if (item[1]["%Recovery"] !== 0 && item[1]["%Recovery"] !== "0") {
-              newItem["%Recovery"] = item[1]["%Recovery"];
-            } else {
-              newItem["%Recovery"] = null;
-            }
-
-            return newItem;
-          })
+          .map((item: any) => ({
+            month: item[1].month,
+            recovery: item[1].recovery,
+            "%Recovery": item[1]["%Recovery"],
+            benchmark_recovery:item[1].benchmark_recovery
+          }))
       : selectedSubCategoriesAgency === "Large" &&
         selectedCategories === "agency" &&
         selectedActiveButton === "$Recovery" &&
         portfolioRecoveryGraphData?.agency
           .filter((item: SubCategories) => item[1].sub_segment === "Large")
-          .map((item: any) => {
-            const newItem: {
-              month: any;
-              recovery: any;
-              "%Recovery"?: any;
-            } = {
-              month: item[1].month,
-              recovery: item[1].recovery,
-            };
+          .map((item: any) => ({
+            month: item[1].month,
+            recovery: item[1].recovery,
+            "%Recovery": item[1]["%Recovery"],
+            benchmark_recovery:item[1].benchmark_recovery
+          }))
 
-            // Add average_recovery_balance only if it's not 0 or "0"
-            if (item[1]["%Recovery"] !== 0 && item[1]["%Recovery"] !== "0") {
-              newItem["%Recovery"] = item[1]["%Recovery"];
-            } else {
-              newItem["%Recovery"] = null;
-            }
-
-            return newItem;
-          });
-
-  // : selectedSubCategoriesAgency === "DCA5" &&
-  //   selectedCategories === "agency" &&
-  //   selectedActiveButton === "$Recovery"
-  //  portfolioRecoveryGraphData?.agency
-  //     .filter((item: SubCategories) => item[0].sub_segment === "DCA5")
-  //     .map((item: any) => ({
-  //       month: item[0].month,
-  //       active_recovery_balance: item[0].active_recovery_balance,
-  //       recovery: item[0].recovery,
-  //       value: item[1].value,
-  //     }))
-  // : selectedSubCategoriesSegments === "Score" &&
-  //   selectedCategories === "segments" &&
-  //   selectedActiveButton === "$Recovery"
-  // ? portfolioRecoveryGraphData?.segments
-  //     .filter((item: SubCategories) => item[0].sub_segment === "Score")
-  //     .map((item: any) => ({
-  //       month: item[0].month,
-  //       active_recovery_balance: item[0].active_recovery_balance,
-  //       recovery: item[0].recovery,
-  //       value: item[1].value,
-  //     }))
-  // : selectedSubCategoriesSegments === "Age" &&
-  //   selectedCategories === "segments" &&
-  //   selectedActiveButton === "$Recovery"
-  // ? portfolioRecoveryGraphData?.segments
-  //     .filter((item: SubCategories) => item[0].sub_segment === "Age")
-  //     .map((item: any) => ({
-  //       month: item[0].month,
-  //       active_recovery_balance: item[0].active_recovery_balance,
-  //       recovery: item[0].recovery,
-  //       value: item[1].value,
-  //     }))
-  // : selectedSubCategoriesSegments === "Industry" &&
-  //   selectedCategories === "segments" &&
-  //   selectedActiveButton === "$Recovery"
-  // ? portfolioRecoveryGraphData?.segments
-  //     .filter((item: SubCategories) => item[0].sub_segment === "Industry")
-  //     .map((item: any) => ({
-  //       month: item[0].month,
-  //       active_recovery_balance: item[0].active_recovery_balance,
-  //       recovery: item[0].recovery,
-  //       value: item[1].value,
-  //     }))
-  // : selectedSubCategoriesSegments === "Employment" &&
-  //   selectedCategories === "segments" &&
-  //   selectedActiveButton === "$Recovery"
-  // ? portfolioRecoveryGraphData?.segments
-  //     .filter((item: SubCategories) => item[0].sub_segment === "Employment")
-  //     .map((item: any) => ({
-  //       month: item[0].month,
-  //       active_recovery_balance: item[0].active_recovery_balance,
-  //       recovery: item[0].recovery,
-  //       value: item[1].value,
-  //     }))
-  // : selectedSubCategoriesSegments === "Seg5" &&
-  //   selectedCategories === "segments" &&
-  //   selectedActiveButton === "$Recovery"
-  // ? portfolioRecoveryGraphData?.segments
-  //     .filter((item: SubCategories) => item[0].sub_segment === "Seg5")
-  //     .map((item: any) => ({
-  //       month: item[0].month,
-  //       active_recovery_balance: item[0].active_recovery_balance,
-  //       recovery: item[0].recovery,
-  //       value: item[1].value,
-  //     }))
-  // : selectedSubCategoriesSegments === "Others" &&
-  //   selectedCategories === "segments" &&
-  //   selectedActiveButton === "$Recovery"
-  // ? portfolioRecoveryGraphData?.segments
-  //     .filter((item: SubCategories) => item[0].sub_segment === "Others")
-  //     .map((item: any) => ({
-  //       month: item[0].month,
-  //       active_recovery_balance: item[0].active_recovery_balance,
-  //       recovery: item[0].recovery,
-  //       value: item[1].value,
-  //     }))
-  // : selectedSubCategoriesPayment === "PA" &&
-  //   selectedCategories === "payment" &&
-  //   selectedActiveButton === "$Recovery"
-  // ? portfolioRecoveryGraphData?.payment
-  //     .filter((item: SubCategories) => item[0].sub_segment === "PA")
-  //     .map((item: any) => ({
-  //       month: item[0].month,
-  //       active_recovery_balance: item[0].active_recovery_balance,
-  //       recovery: item[0].recovery,
-  //       value: item[1].value,
-  //     }))
-  // : selectedSubCategoriesPayment === "FFS" &&
-  //   selectedCategories === "payment" &&
-  //   selectedActiveButton === "$Recovery" &&
-  //   portfolioRecoveryGraphData?.payment
-  //     .filter((item: SubCategories) => item[0].sub_segment === "FFS")
-  //     .map((item: any) => ({
-  //       month: item[0].month,
-  //       active_recovery_balance: item[0].active_recovery_balance,
-  //       recovery: item[0].recovery,
-  //       value: item[1].value,
-  //     }));
-
-  // const formatNumber = (num: any) => {
-  //   if (num >= 1e7) {
-  //     return (num / 1e7).toFixed(2);
-  //   } else if (num >= 1e5) {
-  //     return (num / 1e7).toFixed(2);
-  //   } else {
-  //     return num.toString();
-  //   }
-  // };
-  // const formatNumberLakh = (num: any) => {
-  //   if (num >= 1e5) {
-  //     // 1 lakh is 100,000
-  //     return (num / 1e5).toFixed(1);
-  //   } else if (num >= 1e4) {
-  //     // handle numbers greater than 10,000 but less than 1 lakh
-  //     return (num / 1e5).toFixed(1);
-  //   } else {
-  //     return num.toFixed(0).toString();
-  //   }
-  // };
+  
   const formatNumberCroreBar = (num: any) => {
     if (num >= 1e7) {
       // 1 crore and above
@@ -1507,116 +1133,7 @@ const BarAndLineCombaineGraph = ({
             return newItem;
           });
 
-  // : selectedSubCategoriesAgencyUniquePayer === "DCA5" &&
-  //   selectedCategories === "agency" &&
-  //   selectedActiveButton === "uniquePayer"
-  // ? portfolioRecoveryUniquePayerGraphData?.agency
-  //     .filter((item: SubCategories) => item[0].sub_segment === "DCA5")
-  //     .map((item: any) => ({
-  //       month: item[0].month,
-  //       active_recovery_balance: item[0].active_recovery_balance,
-  //       recovery: item[0].recovery,
-  //       value: item[1].value,
-  //     }))
-  // : selectedSubCategoriesAgencyUniquePayer === "Others" &&
-  //   selectedCategories === "agency" &&
-  //   selectedActiveButton === "uniquePayer"
-  // ? portfolioRecoveryUniquePayerGraphData?.agency
-  //     .filter((item: SubCategories) => item[0].sub_segment === "Others")
-  //     .map((item: any) => ({
-  //       month: item[0].month,
-  //       active_recovery_balance: item[0].active_recovery_balance,
-  //       recovery: item[0].recovery,
-  //       value: item[1].value,
-  //     }))
-  // : selectedSubCategoriesSegmentsUniquePayer === "Seg1" &&
-  //   selectedCategories === "segments" &&
-  //   selectedActiveButton === "uniquePayer"
-  // ? portfolioRecoveryUniquePayerGraphData?.segments
-  //     .filter((item: SubCategories) => item[0].sub_segment === "Seg1")
-  //     .map((item: any) => ({
-  //       month: item[0].month,
-  //       active_recovery_balance: item[0].active_recovery_balance,
-  //       recovery: item[0].recovery,
-  //       value: item[1].value,
-  //     }))
-  // : selectedSubCategoriesSegmentsUniquePayer === "Seg2" &&
-  //   selectedCategories === "segments" &&
-  //   selectedActiveButton === "uniquePayer"
-  // ? portfolioRecoveryUniquePayerGraphData?.segments
-  //     .filter((item: SubCategories) => item[0].sub_segment === "Seg2")
-  //     .map((item: any) => ({
-  //       month: item[0].month,
-  //       active_recovery_balance: item[0].active_recovery_balance,
-  //       recovery: item[0].recovery,
-  //       value: item[1].value,
-  //     }))
-  // : selectedSubCategoriesSegmentsUniquePayer === "Seg3" &&
-  //   selectedCategories === "segments" &&
-  //   selectedActiveButton === "uniquePayer"
-  // ? portfolioRecoveryUniquePayerGraphData?.segments
-  //     .filter((item: SubCategories) => item[0].sub_segment === "Seg3")
-  //     .map((item: any) => ({
-  //       month: item[0].month,
-  //       active_recovery_balance: item[0].active_recovery_balance,
-  //       recovery: item[0].recovery,
-  //       value: item[1].value,
-  //     }))
-  // : selectedSubCategoriesSegmentsUniquePayer === "Seg4" &&
-  //   selectedCategories === "segments" &&
-  //   selectedActiveButton === "uniquePayer"
-  // ? portfolioRecoveryUniquePayerGraphData?.segments
-  //     .filter((item: SubCategories) => item[0].sub_segment === "Seg4")
-  //     .map((item: any) => ({
-  //       month: item[0].month,
-  //       active_recovery_balance: item[0].active_recovery_balance,
-  //       recovery: item[0].recovery,
-  //       value: item[1].value,
-  //     }))
-  // : selectedSubCategoriesSegmentsUniquePayer === "Seg5" &&
-  //   selectedCategories === "segments" &&
-  //   selectedActiveButton === "uniquePayer"
-  // ? portfolioRecoveryUniquePayerGraphData?.segments
-  //     .filter((item: SubCategories) => item[0].sub_segment === "Seg5")
-  //     .map((item: any) => ({
-  //       month: item[0].month,
-  //       active_recovery_balance: item[0].active_recovery_balance,
-  //       recovery: item[0].recovery,
-  //       value: item[1].value,
-  //     }))
-  // : selectedSubCategoriesSegmentsUniquePayer === "Others" &&
-  //   selectedCategories === "segments" &&
-  //   selectedActiveButton === "uniquePayer"
-  // ? portfolioRecoveryUniquePayerGraphData?.segments
-  //     .filter((item: SubCategories) => item[0].sub_segment === "Others")
-  //     .map((item: any) => ({
-  //       month: item[0].month,
-  //       active_recovery_balance: item[0].active_recovery_balance,
-  //       recovery: item[0].recovery,
-  //       value: item[1].value,
-  //     }))
-  // : selectedSubCategoriesPayment === "PA" &&
-  //   selectedCategories === "payment" &&
-  //   selectedActiveButton === "uniquePayer"
-  // ? portfolioRecoveryUniquePayerGraphData?.payment
-  //     .filter((item: SubCategories) => item[0].sub_segment === "PA")
-  //     .map((item: any) => ({
-  //       month: item[0].month,
-  //       active_recovery_balance: item[0].active_recovery_balance,
-  //       recovery: item[0].recovery,
-  //       value: item[1].value,
-  //     }))
-  // : selectedSubCategoriesPayment === "FFS" &&
-  //   selectedCategories === "payment" &&
-  //   selectedActiveButton === "uniquePayer" &&
-  //   portfolioRecoveryUniquePayerGraphData?.payment
-  //     .filter((item: SubCategories) => item[0].sub_segment === "FFS")
-  //     .map((item: any) => ({
-  //       month: item[0].month,
-  //       active_recovery_balance: item[0].active_recovery_balance,
-  //       average_recovery_balance: item[0].average_recovery_balance,
-  //       // value: item[1].value,
-  //     }));
+ 
 
   const arrGraphUniqueTicks = () => {
     let arr = [];
@@ -1635,9 +1152,10 @@ const BarAndLineCombaineGraph = ({
     }
     return arr;
   };
+  var maxNum = 0;
   const arrGraphUniqueleft = () => {
     let arr = [];
-    let maxNum = 0;
+  
     if (uniqueGraphData) {
       maxNum = Math.max(
         ...uniqueGraphData?.map((item: any) => item?.unique_payers)
@@ -1664,6 +1182,26 @@ const BarAndLineCombaineGraph = ({
       return num.toString();
     }
   };
+
+ // Check and ensure graphData is an array
+const safeGraphData = Array.isArray(graphData) ? graphData : [];
+
+// Calculate maxNum safely
+const maxbe= safeGraphData.length > 0 
+  ? Math.max(...safeGraphData.map((item: any) => item?.recovery ?? 0))
+  : 0; 
+const benchmark = maxbe/ 2;
+
+
+const safeGraphUniqueData = Array.isArray(uniqueGraphData) ? uniqueGraphData : [];
+
+// Calculate maxNum safely
+const maxUnique= safeGraphUniqueData.length > 0 
+  ? Math.max(...safeGraphUniqueData.map((item: any) => item?.unique_payers ?? 0))
+  : 0; 
+const benchmarkUnique = maxUnique/ 2;
+console.log(benchmarkUnique, "benchmarkUnique....",);
+
   return (
     <div className="w-full xl:w-[100%] ml-3 h-[405px]  flex flex-col justify-center items-center shadow-md p-3 rounded-lg bg-white py-3">
       <div className="w-full flex flex-wrap md:flex justify-between lg:px-0 my-3">
@@ -1709,6 +1247,21 @@ const BarAndLineCombaineGraph = ({
               {delinquencyUniqueGraphTitle === "Payer%"
                 ? "% Payer (right scale) "
                 : "% Recovery (right scale)"}
+            </span>
+          </div>
+          <div className="flex items-center">
+            <div
+              className="legend-color"
+              style={{
+                backgroundColor: "#DC3C49",
+                width: "13px",
+                height: "13px",
+                marginRight: "5px",
+                borderRadius: "3px",
+              }}
+            />
+            <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
+            Benchmark
             </span>
           </div>
         </div>
@@ -1776,15 +1329,31 @@ const BarAndLineCombaineGraph = ({
     return [formattedValue, `${name}`];
   }}
 />
+{/* <ReferenceLine
+          y={benchmark}
+          yAxisId="left"
+          stroke="#DC3C49"
+          strokeWidth={3}  
+          strokeDasharray="5 5"
+          // label={{ position: 'right', value: '100M', fill: 'red' }}
+        /> */}
               <Bar
                 yAxisId="left"
                 dataKey="recovery"
                 name="Recovery"
                 stackId="a"
-                fill={colors[0]}
+                // fill={colors[0]}
                 barSize={10}
                 radius={[10, 10, 10, 10]}
-              />
+              >
+               
+          {safeGraphData.map((entry: any, index: any) => (
+            <Cell
+              key={`cell-${index}`}
+              fill={entry.recovery < entry.benchmark_recovery ? '#DC3C49' : '#4169E1'}
+            />
+          ))}
+              </Bar>
               <Line
                 yAxisId="right"
                 type="linear"
@@ -1795,9 +1364,23 @@ const BarAndLineCombaineGraph = ({
                 dot={false}
                 activeDot={{ r: 8 }}
               />
+               <Line
+                yAxisId="left"
+                type="linear"
+                dataKey="benchmark_recovery"
+                name="benchmark_recovery"
+                stroke="#DC3C49"
+                strokeWidth={3}
+                 strokeDasharray="5 5"
+                dot={false}
+                activeDot={{ r: 8 }}
+              />
             </ComposedChart>
           </ResponsiveContainer>
         )}
+
+
+
       {delinquencyUniqueGraphTitle === "Payer%" &&
         selectedActiveButton === "uniquePayer" && (
           <ResponsiveContainer width="99%" height={315}>
@@ -1861,16 +1444,30 @@ const BarAndLineCombaineGraph = ({
     return [formattedValue, `${name}`];
   }}
 />
-
+<ReferenceLine
+          y={benchmarkUnique}
+          yAxisId="left"
+          stroke="#DC3C49"
+          strokeDasharray="5 5"
+          strokeWidth={3}  
+          // label={{ position: 'right', value: '100M', fill: 'red' }}
+        />
               <Bar
                 yAxisId="left"
                 dataKey="unique_payers"
                 name="Payers"
                 stackId="a"
-                fill={colors[0]}
+                // fill={colors[0]}
                 barSize={10}
                 radius={[10, 10, 10, 10]}
-              />
+              >
+                   {safeGraphUniqueData.map((entry:any, index:any) => (
+            <Cell
+              key={`cell-${index}`}
+              fill={entry.unique_payers < benchmarkUnique ? '#DC3C49' : '#4169E1'}
+            />
+          ))}
+              </Bar>
               {/* <Bar
                 yAxisId="left"
                 dataKey="recovery"

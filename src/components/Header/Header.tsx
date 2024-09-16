@@ -5,6 +5,9 @@ import SearchIcon from "../../assets/icons/search.svg";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./Header.scss";
+import SentinelImage from "../../assets/images/Sentinel.svg";
+import DyanamoImage from "../../assets/images/Dynamo.svg";
+import OptiumsImage from "../../assets/images/Optimus.svg";
 
 type Props = {
   // moduleNameShow: any;
@@ -20,6 +23,7 @@ const Header = ({
   setmoduleName,
 }: Props) => {
   const [pageName, setPageName] = useState("");
+  const [logo, setlogo] = useState<any>();
   // const [moduleName, setmoduleName] = useState("Collection");
   const [profileUsername, setProfileUsername] = useState<any>();
   const [pathName] = useState(window.location.pathname);
@@ -29,54 +33,68 @@ const Header = ({
     const pathName = location.pathname;
     if (pathName === "/home/recovery") {
       setPageName("Home");
+      setlogo(null)
     } else if (pathName === "/monitoring") {
       setPageName("Risk Monitoring");
     } else if (pathName === "/monitoring/recovery") {
       setPageName("Monitoring");
-
+      setlogo(SentinelImage)
     } else if (pathName==="/monitoring/recovery/portfolio") {
       setPageName("Portfolio"); 
+      setlogo(SentinelImage)
     }  else if (pathName==="/monitoring/recovery/location") {
       setPageName("Performance"); 
+      setlogo(SentinelImage)
     }  else if (pathName==="/monitoring/recovery/distribution") {
       setPageName("Distribution"); 
+      setlogo(SentinelImage)
     } else if (pathName==="/monitoring/recovery/vintage") {
       setPageName("Vintage"); 
+      setlogo(SentinelImage)
     } else if (pathName==="/monitoring/recovery/placement") {
       setPageName("Placement"); 
+      setlogo(SentinelImage)
     } else if (pathName==="/monitoring/recovery/agency") {
       setPageName("Agency"); 
+      setlogo(SentinelImage)
     } 
     else if (pathName==="/monitoring/recovery/settlement/new-settlement") {
       setPageName("New Settlement");
+      setlogo(SentinelImage)
       
     } 
     else if (pathName==="/monitoring/recovery/settlement/settlement-pool") {
       setPageName("Settlement Pool");
+      setlogo(SentinelImage)
       
     } else if (pathName==="/monitoring/recovery/settlement/cohort") {
       setPageName("Cohort");
+      setlogo(SentinelImage)
       
     }  else if (pathName.startsWith("/monitoring/recovery")) {
       setPageName("Dashboard");
     } else if (pathName === "/diagnostics/recovery") {
       setPageName("Diagnostics");
+      setlogo(DyanamoImage)
     } else if (pathName === "/diagnostics") {
       setPageName("Diagnostics");
     } else if (pathName === "/strategy") {
       setPageName("Strategy");
     } else if (pathName === "/strategy/recovery") {
       setPageName("Strategy");
+      setlogo(DyanamoImage)
     } else if (pathName === "/execution") {
       setPageName("Execution");
     } else if (pathName === "/execution/recovery") {
       setPageName("Execution");
+      setlogo(OptiumsImage)
     } else if (pathName === "/data") {
       setPageName("Data");
     } else if (pathName === "/dashboard") {
       setPageName("Dashboard");
     } else if (pathName === "/dashboard/recovery") {
       setPageName("Dashboard");
+      setlogo(null)
     } else if (pathName === "/strategy/allocationEngine") {
       setPageName("Agency Allocation");
     } else if (pathName === "/strategy/changeControl") {
@@ -363,9 +381,9 @@ const Header = ({
 
             <div className="flex justify-start items-center items-end gap-[12px] inline-flex profileIConHeader">
               <div className="nameHeader">
-                <p className="text-black text-sm lg:text-base font-medium">
-                  {profileUsername}
-                </p>
+                <div className="text-black text-sm lg:text-base font-medium">
+                  <img src={logo} alt=""/>
+                </div>
                 <p className="text-gray-400 text-xs lg:text-sm font-normal">
                   {}
                 </p>
