@@ -40,7 +40,7 @@ type SubCategories = [
     sub_segment: any;
     active_recovery_balance: any;
     recovery: any;
-    benchmark_recovery:any
+    benchmark_recovery: any;
   },
   {
     month: any;
@@ -54,7 +54,7 @@ interface Entry {
   sub_segment: string;
   active_recovery_balance: number;
   recovery: number;
-  benchmark_recovery:any
+  benchmark_recovery: any;
   value: number;
 }
 
@@ -156,19 +156,11 @@ const BarAndLineCombaineGraph = ({
           month: item[1].month,
           recovery: item[1].recovery,
           "%Recovery": item[1]["%Recovery"],
-          benchmark_recovery:item[1].benchmark_recovery
+          benchmark_recovery: item[1].benchmark_recovery,
+          benchmark_rate:item[1].benchmark_rate
         }))
-      // : selectedSubCategories === "V0" &&
-      //   selectedCategories === "mob" &&
-      //   selectedActiveButton === "$Recovery"
-      // ? portfolioRecoveryGraphData?.mob
-      // .map((item: any) => ({
-      //   month: item[1].month,
-      //   recovery: item[1].recovery,
-      //   "%Recovery": item[1]["%Recovery"],
-      //   benchmark_recovery:item[1].benchmark_recovery
-      // }))
-      : selectedSubCategories === "V1" &&
+      : 
+      selectedSubCategories === "V1" &&
         selectedCategories === "mob" &&
         selectedActiveButton === "$Recovery"
       ? portfolioRecoveryGraphData?.mob
@@ -177,27 +169,28 @@ const BarAndLineCombaineGraph = ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            benchmark_recovery:item[1].benchmark_recovery
+            benchmark_recovery: item[1].benchmark_recovery,
+            benchmark_rate:item[1].benchmark_rate
           }))
-          //   const newItem: {
-          //     month: any;
-          //     recovery: any;
-          //     "%Recovery"?: any;
-          //   } = {
-          //     month: item[1].month,
-          //     recovery: item[1].recovery,
-          //   };
+      : //   const newItem: {
+      //     month: any;
+      //     recovery: any;
+      //     "%Recovery"?: any;
+      //   } = {
+      //     month: item[1].month,
+      //     recovery: item[1].recovery,
+      //   };
 
-          //   // Add average_recovery_balance only if it's not 0 or "0"
-          //   if (item[1]["%Recovery"] !== 0 && item[1]["%Recovery"] !== "0") {
-          //     newItem["%Recovery"] = item[1]["%Recovery"];
-          //   } else {
-          //     newItem["%Recovery"] = null;
-          //   }
+      //   // Add average_recovery_balance only if it's not 0 or "0"
+      //   if (item[1]["%Recovery"] !== 0 && item[1]["%Recovery"] !== "0") {
+      //     newItem["%Recovery"] = item[1]["%Recovery"];
+      //   } else {
+      //     newItem["%Recovery"] = null;
+      //   }
 
-          //   return newItem;
-          // })
-      : selectedSubCategories === "V2" &&
+      //   return newItem;
+      // })
+      selectedSubCategories === "V2" &&
         selectedCategories === "mob" &&
         selectedActiveButton === "$Recovery"
       ? portfolioRecoveryGraphData?.mob
@@ -206,9 +199,9 @@ const BarAndLineCombaineGraph = ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            benchmark_recovery:item[1].benchmark_recovery
+            benchmark_recovery: item[1].benchmark_recovery,
+            benchmark_rate:item[1].benchmark_rate
           }))
-            
       : selectedSubCategories === "V3" &&
         selectedCategories === "mob" &&
         selectedActiveButton === "$Recovery"
@@ -218,7 +211,8 @@ const BarAndLineCombaineGraph = ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            benchmark_recovery:item[1].benchmark_recovery
+            benchmark_recovery: item[1].benchmark_recovery,
+            benchmark_rate:item[1].benchmark_rate
           }))
       : selectedSubCategories === "V4" &&
         selectedCategories === "mob" &&
@@ -229,29 +223,32 @@ const BarAndLineCombaineGraph = ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            benchmark_recovery:item[1].benchmark_recovery
+            benchmark_recovery: item[1].benchmark_recovery,
+            benchmark_rate:item[1].benchmark_rate
           }))
       : selectedSubCategories === "V5" &&
         selectedCategories === "mob" &&
         selectedActiveButton === "$Recovery"
       ? portfolioRecoveryGraphData?.mob
           .filter((item: SubCategories) => item[1].sub_segment === "V5")
-          .map((item: any) =>({
+          .map((item: any) => ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            benchmark_recovery:item[1].benchmark_recovery
+            benchmark_recovery: item[1].benchmark_recovery,
+            benchmark_rate:item[1].benchmark_rate
           }))
       : selectedSubCategories === "V6" &&
         selectedCategories === "mob" &&
         selectedActiveButton === "$Recovery"
       ? portfolioRecoveryGraphData?.mob
           .filter((item: SubCategories) => item[1].sub_segment === "V6")
-          .map((item: any) =>({
+          .map((item: any) => ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            benchmark_recovery:item[1].benchmark_recovery
+            benchmark_recovery: item[1].benchmark_recovery,
+            benchmark_rate:item[1].benchmark_rate
           }))
       : selectedSubCategories === "V7" &&
         selectedCategories === "mob" &&
@@ -262,10 +259,10 @@ const BarAndLineCombaineGraph = ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            benchmark_recovery:item[1].benchmark_recovery
+            benchmark_recovery: item[1].benchmark_recovery,
+            benchmark_rate:item[1].benchmark_rate
           }))
-      :
-      selectedSubCategoriesLocation === "UP" &&
+      : selectedSubCategoriesLocation === "UP" &&
         selectedCategories === "location" &&
         selectedActiveButton === "$Recovery"
       ? portfolioRecoveryGraphData?.location
@@ -274,7 +271,8 @@ const BarAndLineCombaineGraph = ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            benchmark_recovery:item[1].benchmark_recovery
+            benchmark_recovery: item[1].benchmark_recovery,
+            benchmark_rate:item[1].benchmark_rate
           }))
       : selectedSubCategoriesLocation === "MH" &&
         selectedCategories === "location" &&
@@ -285,7 +283,8 @@ const BarAndLineCombaineGraph = ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            benchmark_recovery:item[1].benchmark_recovery
+            benchmark_recovery: item[1].benchmark_recovery,
+            benchmark_rate:item[1].benchmark_rate
           }))
       : selectedSubCategoriesLocation === "TN" &&
         selectedCategories === "location" &&
@@ -296,7 +295,8 @@ const BarAndLineCombaineGraph = ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            benchmark_recovery:item[1].benchmark_recovery
+            benchmark_recovery: item[1].benchmark_recovery,
+            benchmark_rate:item[1].benchmark_rate
           }))
       : selectedSubCategoriesLocation === "MP" &&
         selectedCategories === "location" &&
@@ -307,7 +307,8 @@ const BarAndLineCombaineGraph = ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            benchmark_recovery:item[1].benchmark_recovery
+            benchmark_recovery: item[1].benchmark_recovery,
+            benchmark_rate:item[1].benchmark_rate
           }))
       : selectedSubCategoriesLocation === "KA" &&
         selectedCategories === "location" &&
@@ -318,20 +319,22 @@ const BarAndLineCombaineGraph = ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            benchmark_recovery:item[1].benchmark_recovery
+            benchmark_recovery: item[1].benchmark_recovery,
+            benchmark_rate:item[1].benchmark_rate
           }))
       : selectedSubCategoriesLocation === "HR" &&
         selectedCategories === "location" &&
         selectedActiveButton === "$Recovery"
       ? portfolioRecoveryGraphData?.location
           .filter((item: SubCategories) => item[1].sub_segment === "HR")
-          .map((item: any) =>({
+          .map((item: any) => ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            benchmark_recovery:item[1].benchmark_recovery
+            benchmark_recovery: item[1].benchmark_recovery,
+            benchmark_rate:item[1].benchmark_rate
           }))
-          : selectedSubCategoriesLocation === "AP" &&
+      : selectedSubCategoriesLocation === "AP" &&
         selectedCategories === "location" &&
         selectedActiveButton === "$Recovery"
       ? portfolioRecoveryGraphData?.location
@@ -340,18 +343,20 @@ const BarAndLineCombaineGraph = ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            benchmark_recovery:item[1].benchmark_recovery
+            benchmark_recovery: item[1].benchmark_recovery,
+            benchmark_rate:item[1].benchmark_rate
           }))
       : selectedSubCategoriesLocation === "GJ" &&
         selectedCategories === "location" &&
         selectedActiveButton === "$Recovery"
       ? portfolioRecoveryGraphData?.location
           .filter((item: SubCategories) => item[1].sub_segment === "GJ")
-          .map((item: any) =>({
+          .map((item: any) => ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            benchmark_recovery:item[1].benchmark_recovery
+            benchmark_recovery: item[1].benchmark_recovery,
+            benchmark_rate:item[1].benchmark_rate
           }))
       : selectedSubCategoriesLocation === "DL" &&
         selectedCategories === "location" &&
@@ -362,18 +367,20 @@ const BarAndLineCombaineGraph = ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            benchmark_recovery:item[1].benchmark_recovery
+            benchmark_recovery: item[1].benchmark_recovery,
+            benchmark_rate:item[1].benchmark_rate
           }))
       : selectedSubCategoriesLocation === "TG" &&
         selectedCategories === "location" &&
         selectedActiveButton === "$Recovery"
       ? portfolioRecoveryGraphData?.location
           .filter((item: SubCategories) => item[1].sub_segment === "TG")
-          .map((item: any) =>({
+          .map((item: any) => ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            benchmark_recovery:item[1].benchmark_recovery
+            benchmark_recovery: item[1].benchmark_recovery,
+            benchmark_rate:item[1].benchmark_rate
           }))
       : selectedSubCategoriesLocation === "OTHERS" &&
         selectedCategories === "location" &&
@@ -384,18 +391,20 @@ const BarAndLineCombaineGraph = ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            benchmark_recovery:item[1].benchmark_recovery
+            benchmark_recovery: item[1].benchmark_recovery,
+            benchmark_rate:item[1].benchmark_rate
           }))
       : selectedSubCategoriesTOS === "<1L" &&
         selectedCategories === "pos" &&
         selectedActiveButton === "$Recovery"
       ? portfolioRecoveryGraphData?.pos
           .filter((item: SubCategories) => item[1].sub_segment === "<1L")
-          .map((item: any) =>({
+          .map((item: any) => ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            benchmark_recovery:item[1].benchmark_recovery
+            benchmark_recovery: item[1].benchmark_recovery,
+            benchmark_rate:item[1].benchmark_rate
           }))
       : selectedSubCategoriesTOS === "1-5L" &&
         selectedCategories === "pos" &&
@@ -406,18 +415,20 @@ const BarAndLineCombaineGraph = ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            benchmark_recovery:item[1].benchmark_recovery
+            benchmark_recovery: item[1].benchmark_recovery,
+            benchmark_rate:item[1].benchmark_rate
           }))
       : selectedSubCategoriesTOS === "5-10L" &&
         selectedCategories === "pos" &&
         selectedActiveButton === "$Recovery"
       ? portfolioRecoveryGraphData?.pos
           .filter((item: SubCategories) => item[1].sub_segment === "5-10L")
-          .map((item: any) =>({
+          .map((item: any) => ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            benchmark_recovery:item[1].benchmark_recovery
+            benchmark_recovery: item[1].benchmark_recovery,
+            benchmark_rate:item[1].benchmark_rate
           }))
       : selectedSubCategoriesTOS === "10L+" &&
         selectedCategories === "pos" &&
@@ -428,30 +439,32 @@ const BarAndLineCombaineGraph = ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            benchmark_recovery:item[1].benchmark_recovery
+            benchmark_recovery: item[1].benchmark_recovery,
+            benchmark_rate:item[1].benchmark_rate
           }))
-      : 
-      selectedSubCategoriesAgency === "Very Small" &&
+      : selectedSubCategoriesAgency === "Very Small" &&
         selectedCategories === "agency" &&
         selectedActiveButton === "$Recovery"
       ? portfolioRecoveryGraphData?.agency
           .filter((item: SubCategories) => item[1].sub_segment === "Very Small")
-          .map((item: any) =>({
+          .map((item: any) => ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            benchmark_recovery:item[1].benchmark_recovery
+            benchmark_recovery: item[1].benchmark_recovery,
+            benchmark_rate:item[1].benchmark_rate
           }))
       : selectedSubCategoriesAgency === "Small" &&
         selectedCategories === "agency" &&
         selectedActiveButton === "$Recovery"
       ? portfolioRecoveryGraphData?.agency
           .filter((item: SubCategories) => item[1].sub_segment === "Small")
-          .map((item: any) =>({
+          .map((item: any) => ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            benchmark_recovery:item[1].benchmark_recovery
+            benchmark_recovery: item[1].benchmark_recovery,
+            benchmark_rate:item[1].benchmark_rate
           }))
       : selectedSubCategoriesAgency === "Medium" &&
         selectedCategories === "agency" &&
@@ -462,7 +475,8 @@ const BarAndLineCombaineGraph = ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            benchmark_recovery:item[1].benchmark_recovery
+            benchmark_recovery: item[1].benchmark_recovery,
+            benchmark_rate:item[1].benchmark_rate
           }))
       : selectedSubCategoriesAgency === "Large" &&
         selectedCategories === "agency" &&
@@ -473,45 +487,42 @@ const BarAndLineCombaineGraph = ({
             month: item[1].month,
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
-            benchmark_recovery:item[1].benchmark_recovery
-          }))
+            benchmark_recovery: item[1].benchmark_recovery,
+            benchmark_rate:item[1].benchmark_rate
+          }));
 
-  
   const formatNumberCroreBar = (num: any) => {
     if (num >= 1e7) {
       // 1 crore and above
-      return (num / 1e7).toFixed(2) 
+      return (num / 1e7).toFixed(2);
     } else if (num >= 1e6) {
       // 10 lakh to 1 crore
-      return (num / 1e7).toFixed(2) 
+      return (num / 1e7).toFixed(2);
     } else if (num >= 1e5) {
       // 1 lakh to 10 lakh
-      return (num / 1e7).toFixed(3)
+      return (num / 1e7).toFixed(3);
     } else if (num == 0) {
-      
-      return "0"
-    } 
-    else {
+      return "0";
+    } else {
       // Less than 1 lakh
-      return (num / 1e7).toFixed(3)  // You can adjust this if needed
+      return (num / 1e7).toFixed(3); // You can adjust this if needed
     }
-    
   };
   const formatNumberMillion = (num: any) => {
     if (num === 0) {
       return "0";
     } else if (num >= 1e7) {
       // 10 million and above
-      return (num / 1e6).toFixed(0) ;
+      return (num / 1e6).toFixed(0);
     } else if (num >= 1e6) {
       // 1 million to 10 million
-      return (num / 1e6).toFixed(2) ;
+      return (num / 1e6).toFixed(2);
     } else if (num >= 1e5) {
       // 100,000 to 1 million
       return (num / 1e6).toFixed(2);
     } else {
       // Less than 100,000
-      return (num / 1e6).toFixed(2) ; // You can adjust this if needed
+      return (num / 1e6).toFixed(2); // You can adjust this if needed
     }
   };
   const arrGraphTicks = () => {
@@ -1133,8 +1144,6 @@ const BarAndLineCombaineGraph = ({
             return newItem;
           });
 
- 
-
   const arrGraphUniqueTicks = () => {
     let arr = [];
     let maxNum = 0;
@@ -1155,7 +1164,7 @@ const BarAndLineCombaineGraph = ({
   var maxNum = 0;
   const arrGraphUniqueleft = () => {
     let arr = [];
-  
+
     if (uniqueGraphData) {
       maxNum = Math.max(
         ...uniqueGraphData?.map((item: any) => item?.unique_payers)
@@ -1183,24 +1192,29 @@ const BarAndLineCombaineGraph = ({
     }
   };
 
- // Check and ensure graphData is an array
-const safeGraphData = Array.isArray(graphData) ? graphData : [];
+  // Check and ensure graphData is an array
+  const safeGraphData = Array.isArray(graphData) ? graphData : [];
 
-// Calculate maxNum safely
-const maxbe= safeGraphData.length > 0 
-  ? Math.max(...safeGraphData.map((item: any) => item?.recovery ?? 0))
-  : 0; 
-const benchmark = maxbe/ 2;
+  // Calculate maxNum safely
+  const maxbe =
+    safeGraphData.length > 0
+      ? Math.max(...safeGraphData.map((item: any) => item?.recovery ?? 0))
+      : 0;
+  const benchmark = maxbe / 2;
 
+  const safeGraphUniqueData = Array.isArray(uniqueGraphData)
+    ? uniqueGraphData
+    : [];
 
-const safeGraphUniqueData = Array.isArray(uniqueGraphData) ? uniqueGraphData : [];
-
-// Calculate maxNum safely
-const maxUnique= safeGraphUniqueData.length > 0 
-  ? Math.max(...safeGraphUniqueData.map((item: any) => item?.unique_payers ?? 0))
-  : 0; 
-const benchmarkUnique = maxUnique/ 2;
-console.log(benchmarkUnique, "benchmarkUnique....",);
+  // Calculate maxNum safely
+  const maxUnique =
+    safeGraphUniqueData.length > 0
+      ? Math.max(
+          ...safeGraphUniqueData.map((item: any) => item?.unique_payers ?? 0)
+        )
+      : 0;
+  const benchmarkUnique = maxUnique / 2;
+  console.log(benchmarkUnique, "benchmarkUnique....");
 
   return (
     <div className="w-full xl:w-[100%] ml-3 h-[405px]  flex flex-col justify-center items-center shadow-md p-3 rounded-lg bg-white py-3">
@@ -1261,7 +1275,7 @@ console.log(benchmarkUnique, "benchmarkUnique....",);
               }}
             />
             <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
-            Benchmark
+              Benchmark
             </span>
           </div>
         </div>
@@ -1318,18 +1332,21 @@ console.log(benchmarkUnique, "benchmarkUnique....",);
                 tickFormatter={formatYAxisTick}
                 ticks={arrGraphTicks()}
               />
-             <Tooltip
-  formatter={(value: any, name) => {
-    const formattedValue =
-      typeof value === "number" && name === "% Recovery"
-        ? `${(value).toFixed(1)}%`
-        : typeof value === "number"
-        ? `₹ ${Math.floor(value).toLocaleString()}`
-        : `₹ ${parseFloat(value.toFixed(2)).toLocaleString()}`;
-    return [formattedValue, `${name}`];
-  }}
-/>
-{/* <ReferenceLine
+              <Tooltip
+                formatter={(value: any, name) => {
+                  const formattedValue =
+                    typeof value === "number" && name === "% Recovery"?
+                     `${value.toFixed(1)}%`
+                     :typeof value === "number" && name === "Benchmark Rate"
+                      ? `${value.toFixed(2)}%`
+                      : typeof value === "number"
+                      ? `₹ ${Math.floor(value).toLocaleString()}`
+                      : `₹ ${parseFloat(value.toFixed(2)).toLocaleString()}`
+                      
+                  return [formattedValue, `${name}`];
+                }}
+              />
+              {/* <ReferenceLine
           y={benchmark}
           yAxisId="left"
           stroke="#DC3C49"
@@ -1346,13 +1363,16 @@ console.log(benchmarkUnique, "benchmarkUnique....",);
                 barSize={10}
                 radius={[10, 10, 10, 10]}
               >
-               
-          {safeGraphData.map((entry: any, index: any) => (
-            <Cell
-              key={`cell-${index}`}
-              fill={entry.recovery < entry.benchmark_recovery ? '#DC3C49' : '#4169E1'}
-            />
-          ))}
+                {safeGraphData.map((entry: any, index: any) => (
+                  <Cell
+                    key={`cell-${index}`}
+                    fill={
+                      entry.recovery < entry.benchmark_recovery
+                        ? "#DC3C49"
+                        : "#4169E1"
+                    }
+                  />
+                ))}
               </Bar>
               <Line
                 yAxisId="right"
@@ -1364,22 +1384,20 @@ console.log(benchmarkUnique, "benchmarkUnique....",);
                 dot={false}
                 activeDot={{ r: 8 }}
               />
-               <Line
-                yAxisId="left"
+              <Line
+                yAxisId="right"
                 type="linear"
-                dataKey="benchmark_recovery"
-                name="benchmark_recovery"
+                dataKey="benchmark_rate"
+                name="Benchmark Rate"
                 stroke="#DC3C49"
                 strokeWidth={3}
-                 strokeDasharray="5 5"
+                strokeDasharray="5 5"
                 dot={false}
                 activeDot={{ r: 8 }}
               />
             </ComposedChart>
           </ResponsiveContainer>
         )}
-
-
 
       {delinquencyUniqueGraphTitle === "Payer%" &&
         selectedActiveButton === "uniquePayer" && (
@@ -1432,26 +1450,26 @@ console.log(benchmarkUnique, "benchmarkUnique....",);
                 tickLine={false}
                 ticks={arrGraphUniqueTicks()}
               />
-<Tooltip
-  formatter={(value: any, name) => {
-    const formattedValue =
-      typeof value === "number" && name === "% Payers"
-      // ? `${value.toFixed(2)}%`
-        ? `${(value).toFixed(1)}%`
-        : typeof value === "number"
-        ? `₹ ${Math.floor(value).toLocaleString()}`
-        : `₹ ${parseFloat(value.toFixed(2)).toLocaleString()}`;
-    return [formattedValue, `${name}`];
-  }}
-/>
-<ReferenceLine
-          y={benchmarkUnique}
-          yAxisId="left"
-          stroke="#DC3C49"
-          strokeDasharray="5 5"
-          strokeWidth={3}  
-          // label={{ position: 'right', value: '100M', fill: 'red' }}
-        />
+              <Tooltip
+                formatter={(value: any, name) => {
+                  const formattedValue =
+                    typeof value === "number" && name === "% Payers"
+                      ? // ? `${value.toFixed(2)}%`
+                        `${value.toFixed(1)}%`
+                      : typeof value === "number"
+                      ? `₹ ${Math.floor(value).toLocaleString()}`
+                      : `₹ ${parseFloat(value.toFixed(2)).toLocaleString()}`;
+                  return [formattedValue, `${name}`];
+                }}
+              />
+              <ReferenceLine
+                y={benchmarkUnique}
+                yAxisId="left"
+                stroke="#DC3C49"
+                strokeDasharray="5 5"
+                strokeWidth={3}
+                // label={{ position: 'right', value: '100M', fill: 'red' }}
+              />
               <Bar
                 yAxisId="left"
                 dataKey="unique_payers"
@@ -1461,12 +1479,16 @@ console.log(benchmarkUnique, "benchmarkUnique....",);
                 barSize={10}
                 radius={[10, 10, 10, 10]}
               >
-                   {safeGraphUniqueData.map((entry:any, index:any) => (
-            <Cell
-              key={`cell-${index}`}
-              fill={entry.unique_payers < benchmarkUnique ? '#DC3C49' : '#4169E1'}
-            />
-          ))}
+                {safeGraphUniqueData.map((entry: any, index: any) => (
+                  <Cell
+                    key={`cell-${index}`}
+                    fill={
+                      entry.unique_payers < benchmarkUnique
+                        ? "#DC3C49"
+                        : "#4169E1"
+                    }
+                  />
+                ))}
               </Bar>
               {/* <Bar
                 yAxisId="left"
