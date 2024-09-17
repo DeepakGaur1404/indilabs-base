@@ -161,7 +161,48 @@ const staticRecoveryData =
           ],
           "percentage": [
           ]
-      }
+      },
+      {
+        "Q": "Q7",
+        "sub_segment": null,
+        "mob": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+        ],
+        "percentage": [
+            1.543420712374272,
+            3.519286435667304,
+            7.446374781389511,
+            8.236568467686634,
+            9.934099348337703,
+            10.457722823984836,
+            11.901623399446422,
+            12.497737968425243,
+            13.951350410815342,
+            14.504341562834477,
+            15.941073965717048,
+            16.133881353516653,
+            17.497729084479769,
+            18.602160053908997,
+            19.286869115152863,
+            
+        ]
+    },
   ],
   "pos_seg": [
       {
@@ -315,6 +356,47 @@ const staticRecoveryData =
           ]
       },
       {
+        "Q": "Q7",
+        "sub_segment": "<1L",
+        "mob": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+        ],
+        "percentage": [
+            1.543420712374272,
+            16.519286435667304,
+            21.446374781389511,
+            26.236568467686634,
+            28.934099348337703,
+            30.457722823984836,
+            31.901623399446422,
+            33.497737968425243,
+            36.951350410815342,
+            40.504341562834477,
+            43.941073965717048,
+            46.133881353516653,
+            49.497729084479769,
+            51.602160053908997,
+            52.286869115152863,
+            
+        ]
+    },
+      {
           "Q": "Q1",
           "sub_segment": "1-5L",
           "mob": [
@@ -464,6 +546,48 @@ const staticRecoveryData =
           "percentage": [
           ]
       },
+      {
+        "Q": "Q7",
+        "sub_segment": "1-5L",
+        "mob": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+        ],
+        "percentage": [
+            1.543420712374272,
+            3.519286435667304,
+            7.446374781389511,
+            8.236568467686634,
+            9.934099348337703,
+            10.457722823984836,
+            11.901623399446422,
+            12.497737968425243,
+            13.951350410815342,
+            14.504341562834477,
+            14.941073965717048,
+            15.133881353516653,
+            15.497729084479769,
+            16.602160053908997,
+            17.286869115152863,
+            
+        ]
+    },
+      
       {
           "Q": "Q1",
           "sub_segment": "5-10L",
@@ -615,6 +739,47 @@ const staticRecoveryData =
           ]
       },
       {
+        "Q": "Q7",
+        "sub_segment": "5-10L",
+        "mob": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+        ],
+        "percentage": [
+            1.543420712374272,
+            2.519286435667304,
+            3.446374781389511,
+            5.236568467686634,
+            5.634099348337703,
+            6.257722823984836,
+            6.401623399446422,
+            7.497737968425243,
+            7.651350410815342,
+            8.204341562834477,
+            8.441073965717048,
+            8.633881353516653,
+            8.997729084479769,
+            9.602160053908997,
+            9.986869115152863,
+          
+        ]
+    },
+      {
           "Q": "Q1",
           "sub_segment": ">=10L",
           "mob": [
@@ -763,17 +928,54 @@ const staticRecoveryData =
           ],
           "percentage": [
           ]
-      }
+      },
+      {
+        "Q": "Q7",
+        "sub_segment": ">=10L",
+        "mob": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+        ],
+        "percentage": [
+            1.543420712374272,
+            2.519286435667304,
+            3.446374781389511,
+            4.236568467686634,
+            4.934099348337703,
+            5.457722823984836,
+            5.901623399446422,
+            6.197737968425243,
+            6.251350410815342,
+            6.404341562834477,
+            6.641073965717048,
+            7.133881353516653,
+            7.497729084479769,
+            7.602160053908997,
+            7.86869115152863,
+            
+        ]
+    },
   ]
 }
 
 const lineColors = [
-  "#1967D2",
-  "#FFB200",
-  "#5C4E8E",
-  "#34B53A",
-  "#6A7691",
-  "#DC3C49",
+   "#FFB200","#34B53A", "#5C4E8E", "#4339F2","#20DFD9", "#158BDF", "#DC3C49"
+
 ];
 type Props = {
   activeButton: string;
@@ -810,7 +1012,8 @@ const VintageRecoveryChart = ({
         ...dataRecovery?.map((item: any) => (item["Q3"] ? item["Q3"] : 0)),
         ...dataRecovery?.map((item: any) => (item["Q4"] ? item["Q4"] : 0)),
         ...dataRecovery?.map((item: any) => (item["Q5"] ? item["Q5"] : 0)),
-        ...dataRecovery?.map((item: any) => (item["Q6"] ? item["Q6"] : 0))
+        ...dataRecovery?.map((item: any) => (item["Q6"] ? item["Q6"] : 0)),
+        ...dataRecovery?.map((item: any) => (item["Q7"] ? item["Q7"] : 0))
       );
     } else {
       return [0];
@@ -827,7 +1030,7 @@ const VintageRecoveryChart = ({
 
   const tooltipFormatter = (value: any, name: any) => {
     if (name === "Q1") {
-      return [`${value.toFixed(2)}%`, `Q4 FY2022`];
+      return [`${value.toFixed(2)}%`, `Q4 FY2023`];
     } else if (name === "Q2") {
       return [`${value.toFixed(2)}%`, `Q1 FY2024`];
     } else if (name === "Q3") {
@@ -838,6 +1041,8 @@ const VintageRecoveryChart = ({
       return [`${value.toFixed(2)}%`, `Q4 FY2024`];
     } else if (name === "Q6") {
       return [`${value.toFixed(2)}%`, `Q1 FY2025`];
+    }else if (name === "Q7") {
+      return [`${value.toFixed(2)}%`, `Benchmark`];
     } else {
       return null;
     }
@@ -881,6 +1086,7 @@ const VintageRecoveryChart = ({
       Q4: param[3]?.percentage[i],
       Q5: param[4]?.percentage[i],
       Q6: param[5]?.percentage[i],
+      Q7: param[6]?.percentage[i],
     }));
     setDataRecovery(data);
   };
@@ -1037,7 +1243,7 @@ const VintageRecoveryChart = ({
             <div
               className="legend-color"
               style={{
-                backgroundColor: "#1967D2",
+                backgroundColor: "#FFB200",
                 width: "13px",
                 height: "13px",
                 marginRight: "5px",
@@ -1045,14 +1251,14 @@ const VintageRecoveryChart = ({
               }}
             />
             <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
-              Q4 FY2022
+              Q4 FY2023
             </span>
           </div>
           <div className="flex items-center">
             <div
               className="legend-color"
               style={{
-                backgroundColor: "#FFB200",
+                backgroundColor: "#34B53A",
                 width: "13px",
                 height: "13px",
                 marginRight: "5px",
@@ -1082,7 +1288,7 @@ const VintageRecoveryChart = ({
             <div
               className="legend-color"
               style={{
-                backgroundColor: "#34B53A",
+                backgroundColor: "#4339F2",
 
                 width: "13px",
                 height: "13px",
@@ -1098,7 +1304,7 @@ const VintageRecoveryChart = ({
             <div
               className="legend-color"
               style={{
-                backgroundColor: "#6A7691",
+                backgroundColor: "#20DFD9",
                 width: "13px",
                 height: "13px",
                 marginRight: "5px",
@@ -1113,7 +1319,7 @@ const VintageRecoveryChart = ({
             <div
               className="legend-color"
               style={{
-                backgroundColor: "#DC3C49",
+                backgroundColor: "#158BDF",
                 width: "13px",
                 height: "13px",
                 marginRight: "5px",
@@ -1122,6 +1328,21 @@ const VintageRecoveryChart = ({
             />
             <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
             Q1 FY2025
+            </span>
+          </div>
+          <div className="flex items-center">
+            <div
+              className="legend-color"
+              style={{
+                backgroundColor: "#DC3C49",
+                width: "13px",
+                height: "13px",
+                marginRight: "5px",
+                borderRadius: "3px",
+              }}
+            />
+            <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
+            Benchmark
             </span>
           </div>
         </div>
@@ -1151,8 +1372,9 @@ const VintageRecoveryChart = ({
               ticks={arrTicks()}
             />
             <Tooltip formatter={tooltipFormatter} />
+         
             {lineColors.map((item, idx) => (
-              <Line
+                idx < 6 && <Line
                 type="monotone"
                 dataKey={`Q${idx + 1}`}
                 stroke={item}
@@ -1160,6 +1382,15 @@ const VintageRecoveryChart = ({
                 dot={false}
               />
             ))}
+               <Line
+        type="linear"             
+        dataKey="Q7"      
+        stroke="#DC3C49"                 
+        strokeWidth={3}              
+        strokeDasharray="7 7"        
+        dot={false}                  
+        legendType="none"            
+      />
           </LineChart>
         </ResponsiveContainer>
       )}

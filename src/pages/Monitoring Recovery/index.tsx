@@ -18,6 +18,8 @@ import MonitoringRecoveryPieChart from "../../components/Monitoring Recovery/Mon
 import RiskMonitoringRecoveryMonthlyView from "../../components/Monitoring Recovery/RiskMonitoringMonthlyView";
 import MonitoringRecoveryLineChart from "../../components/Monitoring Recovery/MonitoringRecoveryLineChart";
 import HomeDashboard from "../../components/PerformanceDashboardHeader/HomeDashboard";
+import RiskMonitoringHotspot from "../../components/Monitoring Recovery/RiskmonitoringHotspot";
+import HeatmapChart from "../../components/Monitoring Recovery/HeatmapChart";
 // import MonitoringRecoveryLineChart from "../../components/Monitoring Recovery/MonitoringRecoveryLineChart";
 const downloadReports = () => {};
 // import { useHistory } from "react-router-dom";
@@ -549,7 +551,7 @@ const MonitoringRecovery = (props: Props) => {
   const [categoriesMatric, setCategoriesMatric] = useState("Location");
 
   const [categoriesMatricHeatMap, setCategoriesMatricHeatMap] =
-    useState("ROMG_Payer%");
+    useState("Location");
   const [isCategoryVisible, setIsCategoryVisible] = useState(true);
   const location = useLocation();
   let navigate = useNavigate();
@@ -851,20 +853,28 @@ const MonitoringRecovery = (props: Props) => {
         {activeButton === "Heatmap" && (
           <div className="flex flex-wrap  items-start  justify-center  px-[6px] lg:px-[6px] ml-0 lg:ml-2 bg-[#fafafb]">
             <div className=" w-full flex items-start gap-4 justify-start flex-wrap">
-              <RiskMonitoringRecoveryMonthlyView
+              {/* <RiskMonitoringRecoveryMonthlyView
                 setCategory={setCategories}
                 setCategoriesMatricHeatMap={setCategoriesMatricHeatMap}
                 isCategoryVisible={isCategoryVisible}
                 setIsCategoryVisible={setIsCategoryVisible}
-              />
+              /> */}
 
-              <MonitoringRecoveryPieChart
+              {/* <MonitoringRecoveryPieChart
                 categoriesMatricHeatMap={categoriesMatricHeatMap}
-              />
-              <MonitoringRecoveryLineChart
+              /> */}
+
+              {/* <MonitoringRecoveryLineChart
                 categoriesMatricHeatMap={categoriesMatricHeatMap}
                 staticDataRecoveryPerformance={staticDataRecoveryPerformance}
+              /> */}
+             <RiskMonitoringHotspot
+                setCategory={setCategories}
+                setCategoriesMatric={setCategoriesMatric}
+                isCategoryVisible={isCategoryVisible}
+                setIsCategoryVisible={setIsCategoryVisible}
               />
+               <HeatmapChart/>
             </div>
           </div>
         )}

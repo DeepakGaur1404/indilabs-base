@@ -89,7 +89,7 @@ const ExpandRecovery = () => {
           </div>
         </div>
       </div>
-      <ResponsiveContainer width={350} height={300} >
+      <ResponsiveContainer  width="99%"  height={300} >
         <LineChart
             // width={350}
             // height={300}
