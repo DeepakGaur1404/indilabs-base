@@ -566,316 +566,141 @@ const BarAndLineCombaineGraph = ({
           month: item[0].month,
           unique_payers: item[1].unique_payers,
           "%Unique_payers": item[0]["%Unique_payers"],
+          benchmark_recov_accounts:item[1].benchmark_recov_accounts,
+          benchmark_rate:item[0].benchmark_rate
         }))
       : selectedSubCategories === "V0" &&
         selectedCategories === "mob" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.mob
           .filter((item: SubCategories) => item[0].sub_segment === "V0")
-          .map((item: any) => {
-            const newItem: {
-              month: any;
-              unique_payers: any;
-              "%Unique_payers"?: any;
-            } = {
-              month: item[0].month,
-              unique_payers: item[1].unique_payers,
-            };
-            if (
-              item[0]["%Unique_payers"] !== 0 &&
-              item[0]["%Unique_payers"] !== "0"
-            ) {
-              newItem["%Unique_payers"] = item[0]["%Unique_payers"];
-            } else {
-              newItem["%Unique_payers"] = null;
-            }
-            return newItem;
-          })
+          .map((item: any) => ({
+            month: item[0].month,
+            unique_payers: item[1].unique_payers,
+            "%Unique_payers": item[0]["%Unique_payers"],
+            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
+            benchmark_rate:item[0].benchmark_rate
+          }))
       : selectedSubCategories === "V1" &&
         selectedCategories === "mob" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.mob
           .filter((item: SubCategories) => item[0].sub_segment === "V1")
-          .map((item: any) => {
-            const newItem: {
-              month: any;
-              unique_payers: any;
-              "%Unique_payers"?: any;
-            } = {
-              month: item[0].month,
-              unique_payers: item[1].unique_payers,
-            };
-            if (
-              item[0]["%Unique_payers"] !== 0 &&
-              item[0]["%Unique_payers"] !== "0"
-            ) {
-              newItem["%Unique_payers"] = item[0]["%Unique_payers"];
-            } else {
-              newItem["%Unique_payers"] = null;
-            }
-            return newItem;
-          })
+          .map((item: any) =>  ({
+            month: item[0].month,
+            unique_payers: item[1].unique_payers,
+            "%Unique_payers": item[0]["%Unique_payers"],
+            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
+            benchmark_rate:item[0].benchmark_rate
+          }))
       : selectedSubCategories === "V2" &&
         selectedCategories === "mob" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.mob
           .filter((item: SubCategories) => item[0].sub_segment === "V2")
-          .map((item: any) => {
-            const newItem: {
-              month: any;
-              unique_payers: any;
-              "%Unique_payers"?: any;
-            } = {
-              month: item[0].month,
-              unique_payers: item[1].unique_payers,
-            };
-            if (
-              item[0]["%Unique_payers"] !== 0 &&
-              item[0]["%Unique_payers"] !== "0"
-            ) {
-              newItem["%Unique_payers"] = item[0]["%Unique_payers"];
-            } else {
-              newItem["%Unique_payers"] = null;
-            }
-            return newItem;
-          })
+          .map((item: any) => ({
+            month: item[0].month,
+            unique_payers: item[1].unique_payers,
+            "%Unique_payers": item[0]["%Unique_payers"],
+            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
+            benchmark_rate:item[0].benchmark_rate
+          }))
       : selectedSubCategories === "V3" &&
         selectedCategories === "mob" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.mob
           .filter((item: SubCategories) => item[0].sub_segment === "V3")
-          .map((item: any) => {
-            const newItem: {
-              month: any;
-              unique_payers: any;
-              "%Unique_payers"?: any;
-            } = {
-              month: item[0].month,
-              unique_payers: item[1].unique_payers,
-            };
-            if (
-              item[0]["%Unique_payers"] !== 0 &&
-              item[0]["%Unique_payers"] !== "0"
-            ) {
-              newItem["%Unique_payers"] = item[0]["%Unique_payers"];
-            } else {
-              newItem["%Unique_payers"] = null;
-            }
-            return newItem;
-          })
+          .map((item: any) =>  ({
+            month: item[0].month,
+            unique_payers: item[1].unique_payers,
+            "%Unique_payers": item[0]["%Unique_payers"],
+            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
+            benchmark_rate:item[0].benchmark_rate
+          }))
       : selectedSubCategories === "V4" &&
         selectedCategories === "mob" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.mob
           .filter((item: SubCategories) => item[0].sub_segment === "V4")
-          .map((item: any) => {
-            const newItem: {
-              month: any;
-              unique_payers: any;
-              "%Unique_payers"?: any;
-            } = {
-              month: item[0].month,
-              unique_payers: item[1].unique_payers,
-            };
-            if (
-              item[0]["%Unique_payers"] !== 0 &&
-              item[0]["%Unique_payers"] !== "0"
-            ) {
-              newItem["%Unique_payers"] = item[0]["%Unique_payers"];
-            } else {
-              newItem["%Unique_payers"] = null;
-            }
-            return newItem;
-          })
+          .map((item: any) =>  ({
+            month: item[0].month,
+            unique_payers: item[1].unique_payers,
+            "%Unique_payers": item[0]["%Unique_payers"],
+            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
+            benchmark_rate:item[0].benchmark_rate
+          }))
       : selectedSubCategories === "V5" &&
         selectedCategories === "mob" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.mob
           .filter((item: SubCategories) => item[0].sub_segment === "V5")
-          .map((item: any) => {
-            const newItem: {
-              month: any;
-              unique_payers: any;
-              "%Unique_payers"?: any;
-            } = {
-              month: item[0].month,
-              unique_payers: item[1].unique_payers,
-            };
-            if (
-              item[0]["%Unique_payers"] !== 0 &&
-              item[0]["%Unique_payers"] !== "0"
-            ) {
-              newItem["%Unique_payers"] = item[0]["%Unique_payers"];
-            } else {
-              newItem["%Unique_payers"] = null;
-            }
-            return newItem;
-          })
+          .map((item: any) => ({
+            month: item[0].month,
+            unique_payers: item[1].unique_payers,
+            "%Unique_payers": item[0]["%Unique_payers"],
+            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
+            benchmark_rate:item[0].benchmark_rate
+          }))
       : selectedSubCategories === "V6" &&
         selectedCategories === "mob" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.mob
           .filter((item: SubCategories) => item[0].sub_segment === "V6")
-          .map((item: any) => {
-            const newItem: {
-              month: any;
-              unique_payers: any;
-              "%Unique_payers"?: any;
-            } = {
-              month: item[0].month,
-              unique_payers: item[1].unique_payers,
-            };
-            if (
-              item[0]["%Unique_payers"] !== 0 &&
-              item[0]["%Unique_payers"] !== "0"
-            ) {
-              newItem["%Unique_payers"] = item[0]["%Unique_payers"];
-            } else {
-              newItem["%Unique_payers"] = null;
-            }
-            return newItem;
-          })
+          .map((item: any) =>  ({
+            month: item[0].month,
+            unique_payers: item[1].unique_payers,
+            "%Unique_payers": item[0]["%Unique_payers"],
+            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
+            benchmark_rate:item[0].benchmark_rate
+          }))
       : selectedSubCategories === "V7" &&
         selectedCategories === "mob" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.mob
           .filter((item: SubCategories) => item[0].sub_segment === "V7")
-          .map((item: any) => {
-            const newItem: {
-              month: any;
-              unique_payers: any;
-              "%Unique_payers"?: any;
-            } = {
-              month: item[0].month,
-              unique_payers: item[1].unique_payers,
-            };
-            if (
-              item[0]["%Unique_payers"] !== 0 &&
-              item[0]["%Unique_payers"] !== "0"
-            ) {
-              newItem["%Unique_payers"] = item[0]["%Unique_payers"];
-            } else {
-              newItem["%Unique_payers"] = null;
-            }
-            return newItem;
-          })
-      : // : selectedSubCategories === "24-36" &&
-      //   selectedCategories === "mob" &&
-      //   selectedActiveButton === "uniquePayer"
-      // ? portfolioRecoveryUniquePayerGraphData?.mob
-      //     .filter((item: SubCategories) => item[0].sub_segment === "24-36")
-      //     .map((item: any) => ({
-      //       month: item[0].month,
-      //       active_recovery_balance: item[0].active_recovery_balance,
-      //       recovery: item[0].recovery,
-      //       value: item[1].value,
-      //     }))
-      // : selectedSubCategories === "36+" &&
-      //   selectedCategories === "mob" &&
-      //   selectedActiveButton === "uniquePayer"
-      // ? portfolioRecoveryUniquePayerGraphData?.mob
-      //     .filter((item: SubCategories) => item[0].sub_segment === "36+")
-      //     .map((item: any) => ({
-      //       month: item[0].month,
-      //       active_recovery_balance: item[0].active_recovery_balance,
-      //       recovery: item[0].recovery,
-      //       value: item[1].value,
-      //     }))
-      // : selectedSubCategoriesTwo === "1" &&
-      //   selectedCategories === "placement" &&
-      //   selectedActiveButton === "uniquePayer"
-      // ? portfolioRecoveryUniquePayerGraphData?.placement
-      //     .filter((item: SubCategories) => item[0].sub_segment === "1")
-      //     .map((item: any) => ({
-      //       month: item[0].month,
-      //       active_recovery_balance: item[0].active_recovery_balance,
-      //       recovery: item[0].recovery,
-      //       value: item[1].value,
-      //     }))
-      // : selectedSubCategoriesTwo === "2" &&
-      //   selectedCategories === "placement" &&
-      //   selectedActiveButton === "uniquePayer"
-      // ? portfolioRecoveryUniquePayerGraphData?.placement
-      //     .filter((item: SubCategories) => item[0].sub_segment === "2")
-      //     .map((item: any) => ({
-      //       month: item[0].month,
-      //       active_recovery_balance: item[0].active_recovery_balance,
-      //       recovery: item[0].recovery,
-      //       value: item[1].value,
-      //     }))
-      // : selectedSubCategoriesTwo === "3" &&
-      //   selectedCategories === "placement" &&
-      //   selectedActiveButton === "uniquePayer"
-      // ? portfolioRecoveryUniquePayerGraphData?.placement
-      //     .filter((item: SubCategories) => item[0].sub_segment === "3")
-      //     .map((item: any) => ({
-      //       month: item[0].month,
-      //       active_recovery_balance: item[0].active_recovery_balance,
-      //       recovery: item[0].recovery,
-      //       value: item[1].value,
-      //     }))
-      // : selectedSubCategoriesTwo === "4" &&
-      //   selectedCategories === "placement" &&
-      //   selectedActiveButton === "uniquePayer"
-      // ? portfolioRecoveryUniquePayerGraphData?.placement
-      //     .filter((item: SubCategories) => item[0].sub_segment === "4")
-      //     .map((item: any) => ({
-      //       month: item[0].month,
-      //       active_recovery_balance: item[0].active_recovery_balance,
-      //       recovery: item[0].recovery,
-      //       value: item[1].value,
-      //     }))
-      // : selectedSubCategoriesTwo === "5" &&
-      //   selectedCategories === "placement" &&
-      //   selectedActiveButton === "uniquePayer"
-      // ? portfolioRecoveryUniquePayerGraphData?.placement
-      //     .filter((item: SubCategories) => item[0].sub_segment === "5")
-      //     .map((item: any) => ({
-      //       month: item[0].month,
-      //       active_recovery_balance: item[0].active_recovery_balance,
-      //       recovery: item[0].recovery,
-      //       value: item[1].value,
-      //     }))
-      // : selectedSubCategoriesTwo === "6+" &&
-      //   selectedCategories === "placement" &&
-      //   selectedActiveButton === "uniquePayer"
-      // ? portfolioRecoveryUniquePayerGraphData?.placement
-      //     .filter((item: SubCategories) => item[0].sub_segment === "6+")
-      //     .map((item: any) => ({
-      //       month: item[0].month,
-      //       active_recovery_balance: item[0].active_recovery_balance,
-      //       recovery: item[0].recovery,
-      //       value: item[1].value,
-      //     }))
+          .map((item: any) =>  ({
+            month: item[0].month,
+            unique_payers: item[1].unique_payers,
+            "%Unique_payers": item[0]["%Unique_payers"],
+            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
+            benchmark_rate:item[0].benchmark_rate
+          }))
+      : 
       selectedSubCategoriesLocation === "UP" &&
         selectedCategories === "location" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.location
           .filter((item: SubCategories) => item[0].sub_segment === "UP")
-          .map((item: any) => ({
+          .map((item: any) =>  ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
+            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
+            benchmark_rate:item[0].benchmark_rate
           }))
       : selectedSubCategoriesLocation === "MH" &&
         selectedCategories === "location" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.location
           .filter((item: SubCategories) => item[0].sub_segment === "MH")
-          .map((item: any) => ({
+          .map((item: any) =>  ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
+            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
+            benchmark_rate:item[0].benchmark_rate
           }))
       : selectedSubCategoriesLocation === "TN" &&
         selectedCategories === "location" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.location
           .filter((item: SubCategories) => item[0].sub_segment === "TN")
-          .map((item: any) => ({
+          .map((item: any) =>  ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
+            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
+            benchmark_rate:item[0].benchmark_rate
           }))
       : selectedSubCategoriesLocation === "MP" &&
         selectedCategories === "location" &&
@@ -886,167 +711,142 @@ const BarAndLineCombaineGraph = ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
+            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
+            benchmark_rate:item[0].benchmark_rate
           }))
       : selectedSubCategoriesLocation === "KA" &&
         selectedCategories === "location" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.location
           .filter((item: SubCategories) => item[0].sub_segment === "KA")
-          .map((item: any) => ({
+          .map((item: any) =>  ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
+            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
+            benchmark_rate:item[0].benchmark_rate
           }))
       : selectedSubCategoriesLocation === "HR" &&
         selectedCategories === "location" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.location
           .filter((item: SubCategories) => item[0].sub_segment === "HR")
-          .map((item: any) => ({
+          .map((item: any) =>  ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
+            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
+            benchmark_rate:item[0].benchmark_rate
           }))
       : selectedSubCategoriesLocation === "AP" &&
         selectedCategories === "location" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.location
           .filter((item: SubCategories) => item[0].sub_segment === "AP")
-          .map((item: any) => ({
+          .map((item: any) =>  ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
+            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
+            benchmark_rate:item[0].benchmark_rate
           }))
       : selectedSubCategoriesLocation === "TG" &&
         selectedCategories === "location" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.location
           .filter((item: SubCategories) => item[0].sub_segment === "TG")
-          .map((item: any) => {
-            const newItem: {
-              month: any;
-              unique_payers: any;
-              "%Unique_payers"?: any;
-            } = {
-              month: item[0].month,
-              unique_payers: item[1].unique_payers,
-            };
-            if (
-              item[0]["%Unique_payers"] !== 0 &&
-              item[0]["%Unique_payers"] !== "0"
-            ) {
-              newItem["%Unique_payers"] = item[0]["%Unique_payers"];
-            } else {
-              newItem["%Unique_payers"] = null;
-            }
-            return newItem;
-          })
+          .map((item: any) =>  ({
+            month: item[0].month,
+            unique_payers: item[1].unique_payers,
+            "%Unique_payers": item[0]["%Unique_payers"],
+            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
+            benchmark_rate:item[0].benchmark_rate
+          }))
       : selectedSubCategoriesLocation === "GJ" &&
         selectedCategories === "location" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.location
           .filter((item: SubCategories) => item[0].sub_segment === "GJ")
-          .map((item: any) => {
-            const newItem: {
-              month: any;
-              unique_payers: any;
-              "%Unique_payers"?: any;
-            } = {
-              month: item[0].month,
-              unique_payers: item[1].unique_payers,
-            };
-            if (
-              item[0]["%Unique_payers"] !== 0 &&
-              item[0]["%Unique_payers"] !== "0"
-            ) {
-              newItem["%Unique_payers"] = item[0]["%Unique_payers"];
-            } else {
-              newItem["%Unique_payers"] = null;
-            }
-            return newItem;
-          })
+          .map((item: any) =>  ({
+            month: item[0].month,
+            unique_payers: item[1].unique_payers,
+            "%Unique_payers": item[0]["%Unique_payers"],
+            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
+            benchmark_rate:item[0].benchmark_rate
+          }))
       : selectedSubCategoriesLocation === "DL" &&
         selectedCategories === "location" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.location
           .filter((item: SubCategories) => item[0].sub_segment === "DL")
-          .map((item: any) => ({
+          .map((item: any) =>  ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
+            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
+            benchmark_rate:item[0].benchmark_rate
           }))
       : selectedSubCategoriesLocation === "OTHERS" &&
         selectedCategories === "location" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.location
           .filter((item: SubCategories) => item[0].sub_segment === "OTHERS")
-          .map((item: any) => ({
+          .map((item: any) =>  ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
+            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
+            benchmark_rate:item[0].benchmark_rate
           }))
       : selectedSubCategoriesTOS === "<1L" &&
         selectedCategories === "pos" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.pos
           .filter((item: SubCategories) => item[0].sub_segment === "<1L")
-          .map((item: any) => ({
+          .map((item: any) =>  ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
+            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
+            benchmark_rate:item[0].benchmark_rate
           }))
       : selectedSubCategoriesTOS === "1-5L" &&
         selectedCategories === "pos" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.pos
           .filter((item: SubCategories) => item[0].sub_segment === "1-5L")
-          .map((item: any) => ({
+          .map((item: any) =>  ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
-            // value: item[1].value,
+            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
+            benchmark_rate:item[0].benchmark_rate
           }))
       : selectedSubCategoriesTOS === "5-10L" &&
         selectedCategories === "pos" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.pos
           .filter((item: SubCategories) => item[0].sub_segment === "5-10L")
-          .map((item: any) => ({
+          .map((item: any) =>  ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
+            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
+            benchmark_rate:item[0].benchmark_rate
           }))
       : selectedSubCategoriesTOS === "10L+" &&
         selectedCategories === "pos" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.pos
           .filter((item: SubCategories) => item[0].sub_segment === "10L+")
-          .map((item: any) => ({
+          .map((item: any) =>  ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
+            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
+            benchmark_rate:item[0].benchmark_rate
           }))
-      : // : // : selectedSubCategoriesTOS === "20-25L" &&
-      //   selectedCategories === "tos" &&
-      //   selectedActiveButton === "uniquePayer"
-      // ? portfolioRecoveryUniquePayerGraphData?.tos
-      //     .filter((item: SubCategories) => item[0].sub_segment === "20-25L")
-      //     .map((item: any) => ({
-      //       month: item[0].month,
-      //       active_recovery_accounts: item[0].active_recovery_accounts,
-      //       "%Unique_payers": item[0]["%Unique_payers"],
-      //     }))
-      // selectedSubCategoriesTOS === "20L+" &&
-      //   selectedCategories === "pos" &&
-      //   selectedActiveButton === "uniquePayer"
-      // ? portfolioRecoveryUniquePayerGraphData?.pos
-      //     .filter((item: SubCategories) => item[0].sub_segment === "20L+")
-      //     .map((item: any) => ({
-      //       month: item[0].month,
-      //       active_recovery_accounts: item[0].active_recovery_accounts,
-      //       "%Unique_payers": item[0]["%Unique_payers"],
-      //     }))
-      //AGENCY
+      : 
       selectedSubCategoriesAgency === "Very Small" &&
         selectedCategories === "agency" &&
         selectedActiveButton === "uniquePayer"
@@ -1456,20 +1256,15 @@ const BarAndLineCombaineGraph = ({
                     typeof value === "number" && name === "% Payers"
                       ? // ? `${value.toFixed(2)}%`
                         `${value.toFixed(1)}%`
+                        :typeof value === "number" && name === "Benchmark Rate"
+                      ? `${value.toFixed(1)}%`
                       : typeof value === "number"
                       ? `₹ ${Math.floor(value).toLocaleString()}`
                       : `₹ ${parseFloat(value.toFixed(2)).toLocaleString()}`;
                   return [formattedValue, `${name}`];
                 }}
               />
-              <ReferenceLine
-                y={benchmarkUnique}
-                yAxisId="left"
-                stroke="#DC3C49"
-                strokeDasharray="5 5"
-                strokeWidth={3}
-                // label={{ position: 'right', value: '100M', fill: 'red' }}
-              />
+             
               <Bar
                 yAxisId="left"
                 dataKey="unique_payers"
@@ -1483,21 +1278,14 @@ const BarAndLineCombaineGraph = ({
                   <Cell
                     key={`cell-${index}`}
                     fill={
-                      entry.unique_payers < benchmarkUnique
+                      entry.unique_payers < entry.benchmark_recov_accounts
                         ? "#DC3C49"
                         : "#4169E1"
                     }
                   />
                 ))}
               </Bar>
-              {/* <Bar
-                yAxisId="left"
-                dataKey="recovery"
-                stackId="a"
-                fill={colors[1]}
-                barSize={10}
-                radius={[10, 10, 0, 0]}
-              /> */}
+            
               <Line
                 yAxisId="right"
                 type="linear"
@@ -1505,6 +1293,17 @@ const BarAndLineCombaineGraph = ({
                 name="% Payers"
                 stroke="#FF7A00"
                 strokeWidth={3}
+                dot={false}
+                activeDot={{ r: 8 }}
+              />
+              <Line
+                yAxisId="right"
+                type="linear"
+                dataKey="benchmark_rate"
+                name="Benchmark Rate"
+                stroke="#DC3C49"
+                strokeWidth={3}
+                strokeDasharray="5 5"
                 dot={false}
                 activeDot={{ r: 8 }}
               />
