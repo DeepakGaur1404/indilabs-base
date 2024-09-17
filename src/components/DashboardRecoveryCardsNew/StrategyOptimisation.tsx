@@ -1,6 +1,6 @@
 import { IoIosArrowForward } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
-
+import DynamoImage from "../../assets/images/Dynamo.svg";
 import {
   BarChart,
   Bar,
@@ -74,11 +74,12 @@ const StrategyOptimisation = () => {
   };
 
   return (
-    <div className="w-[32%] h-full rounded-xl shadow p-4 gap-3  bg-[#FFF8F2]">
-      <div className="border border-[#9F90D4] bg-white w-max px-[8px] customClassStrategyOptimisationSixth rounded-[4px] cursor-pointer">
-        <p className="font-[400] text-black text-center text-[13px] font-['DM Sans'] w-[130px] h-[20px] mt-1 leading-4 customClassSixth">
+    <div className="lg:w-[32%] sm:w-[90%] h-full rounded-xl shadow p-4 gap-3  bg-[#FFF8F2]">
+      <div className="border border-[#F3A359] bg-white w-max customClassStrategyOptimisationSixth rounded-[4px] cursor-pointer">
+        {/* <p className="font-[400] text-black text-center text-[13px] font-['DM Sans'] w-[130px] h-[20px] mt-1 leading-4 customClassSixth">
           Strategy Optimisation
-        </p>
+        </p> */}
+              <img className="h-[30px] py-[6px] px-2" src={DynamoImage} alt="DynamoImage" />
       </div>
       <div className="bg-white h-[116px] p-1 rounded-xl mt-4 flex flex-col items-center ">
         <span className="font-['DM Sans'] text-[32px] text-[#10B981] font-[500] customClassThird">
@@ -92,7 +93,7 @@ const StrategyOptimisation = () => {
           Improvement Opportunity: $15Ok
         </p>
       </div>
-      <div className="h-[364px] p-2  bg-white  rounded-xl mt-3">
+      <div className="h-[364px] p-2 w-[100%]  bg-white  rounded-xl mt-3">
         <div className="flex justify-between p-2">
           <p className="font-[DM Sans] font-[500] text-[14px] leading-[18px] text-[#000000] customClassThird">
             Return on Investment
@@ -109,11 +110,15 @@ const StrategyOptimisation = () => {
         </div>
 
         <div className="flex flex-col items-center mt-1 w-[100%]  rounded-xl">
+        <ResponsiveContainer
+           width="100%"
+          height={280}  
+          >
           <ComposedChart
-            width={400}
-            height={280}
+            // width={400}
+            // height={280}
             data={data}
-            // margin={{ top: 10, right: 30, left: 20, bottom: 5 }}
+            margin={{ top: 10, right: -35, left: -25, bottom: 5 }}
             barGap={0}
             barCategoryGap={0}
           >
@@ -200,7 +205,7 @@ const StrategyOptimisation = () => {
               dot={false}
             />
           </ComposedChart>
-
+</ResponsiveContainer>
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-1">
               <div className="w-[8px] h-[8px] bg-[#4339F2] rounded-xl"></div>

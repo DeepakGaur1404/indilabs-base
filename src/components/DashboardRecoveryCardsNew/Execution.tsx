@@ -1,6 +1,6 @@
 import { IoIosArrowForward } from "react-icons/io";
 import downorangeArrow from "../../assets/icons/down-orange-shift.svg";
-
+import OptimusImage from "../../assets/images/Optimus.svg";
 import React, { PureComponent } from "react";
 import {
   PieChart,
@@ -22,7 +22,7 @@ interface DataItem {
 }
 
 const datakey: DataItem[] = [
-  { name: "Payment%", percentage: 5 },
+  { name: "Payment", percentage: 5 },
   { name: "Contacts", percentage: 10 },
   { name: "No Contacts", percentage: 85 },
 ];
@@ -71,11 +71,12 @@ const CUSTOM_LEGEND_COLORS = ["black", "black", "black"];
 
 const Execution = () => {
   return (
-    <div className="w-[32%] h-full rounded-xl shadow p-4 gap-3 bg-[#E8F3ED]">
-      <div className="border border-[#9F90D4] bg-white w-max px-[8px] py-[4px] rounded-[4px] customClassExecutionSeventh cursor-pointer">
-        <p className="font-[400] text-black text-center text-[13px] font-['DM Sans'] w-[60px] h-[16px] -mt-[2px] leading-4 customClassSeventh">
+    <div className="lg:w-[32%] sm:w-[90%] h-full rounded-xl shadow p-4 gap-3 bg-[#E8F3ED]">
+      <div className="border border-[#4EAD5B] bg-white w-max rounded-[4px] customClassExecutionSeventh cursor-pointer">
+        {/* <p className="font-[400] text-black text-center text-[13px] font-['DM Sans'] w-[60px] h-[16px] -mt-[2px] leading-4 customClassSeventh">
           Execution
-        </p>
+        </p> */}
+         <img className="h-[30px] py-[6px] px-2" src={OptimusImage} alt="OptimusImage" />
       </div>
       <div className="bg-white p-1 h-[116px] rounded-xl mt-4 flex flex-col items-center">
         <span className="font-['DM Sans'] text-[32px] text-[#EF4444] font-[500] customClassThird">
@@ -117,7 +118,7 @@ const Execution = () => {
               cx="50%"
               cy="50%"
               labelLine={false}
-              outerRadius={80}
+              outerRadius={100}
               fill="#8884d8"
               dataKey="percentage"
             >
@@ -153,7 +154,7 @@ const Execution = () => {
           </div>
         </div>
       </div>
-      <div className="h-[364px] p-2  bg-white  rounded-xl mt-3">
+      <div className="h-[364px] p-2 w-[100%]  bg-white  rounded-xl mt-3">
         <div className="flex justify-between p-3">
           <p className="font-[DM Sans] text-[#000000] font-[500] text-[14px] leading-[18px] customClassThird">
             Operational Controls
@@ -167,7 +168,7 @@ const Execution = () => {
         </div>
         <div className="flex flex-col items-center w-[100%]">
           <ResponsiveContainer
-            width={360}
+           width="100%"
             height={280}
             className="mr-12 mt-2 w-[100%]"
           >
@@ -175,19 +176,18 @@ const Execution = () => {
               // width={400}
               // height={100}
               data={data}
-              // margin={{
-              //   top: 20,
-              //   right: 30,
-              //   left: 20,
-              //   bottom: 5,
-              // }}
+              margin={{
+                top: 5,
+                right: 3,
+                left: -3,
+                bottom: 5,
+              }}
             >
               <CartesianGrid strokeDasharray="3 3" vertical={false} />
               <XAxis
                 dataKey="name"
                 axisLine={false}
                 tickLine={false}
-                // className="text-[#3B414B] text-[10px] font['DM Sans'] font-[400]"
                 fontWeight={400}
                 fontSize={10}
                 fontFamily="DM Sans"
@@ -197,8 +197,7 @@ const Execution = () => {
                 axisLine={false}
                 tickLine={false}
                 domain={[0, 10]}
-                ticks={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-                // className="text-[#3B414B] text-[9px] font['DM Sans'] font-[400]"
+                ticks={[0, 1, 2, 3, 4, 5, 6, 7, 8,9, 10]}
                 fontWeight={400}
                 fontSize={10}
                 fontFamily="DM Sans"

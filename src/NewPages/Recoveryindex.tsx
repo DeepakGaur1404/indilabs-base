@@ -80,7 +80,8 @@ const ReviewPerformance: React.FC = () => {
       <div className="w-[96%] bg-[#FAFAFB] flex items-center gap-2 justify-between ml-6 flex-wrap">
         <div className="w-[100%] mt-2">
           {/* <DashboardHeader /> */}
-         <PerformanceDashboard />
+         {/* <PerformanceDashboard /> */}
+         <HomeDashboard />
         </div>
         <div className="bg-[#FAFAFB] flex justify-between p-2 ml-2 gap-1 flex-wrap">
           {/* <div className="min-w-[310px] flex justify-start  rounded-xl B1TabsContain overflow-x-auto flex-wrap">

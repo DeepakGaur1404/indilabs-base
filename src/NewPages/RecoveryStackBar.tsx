@@ -250,15 +250,15 @@ const RecoveryTreatment: React.FC<Props> = (props) => {
   (state.options.chart as any).type = "bar";
   // state.options.xaxis.show = false;
 
-  useEffect(() => {
-    // Hide the menu icon after the chart is rendered
-    const menuIcon = document.querySelector(
-      ".apexcharts-menu-icon"
-    ) as HTMLElement;
-    if (menuIcon) {
-      menuIcon.style.display = "none";
-    }
-  });
+  // useEffect(() => {
+  //   // Hide the menu icon after the chart is rendered
+  //   const menuIcon = document.querySelector(
+  //     ".apexcharts-menu-icon"
+  //   ) as HTMLElement;
+  //   if (menuIcon) {
+  //     menuIcon.style.display = "none";
+  //   }
+  // });
 
   useEffect(() => {
     setSelectedReactApexCharts(true);
@@ -267,7 +267,7 @@ const RecoveryTreatment: React.FC<Props> = (props) => {
   return (
     <div
       id="chart"
-      className="min-w-[300px] w-[100%]  xl:w-[53%] 2xl:w-[96%] bg-white border-2 p-3 rounded-xl ml-8 "
+      className="min-w-[300px] w-[100%]  xl:w-[53%] 2xl:w-[96%] bg-white shadow p-3 rounded-xl ml-8 "
     >
       <div className="flex justify-between items-start ml-3 mr-5">
         <h1 className="text-[#000000] font-[500] text-[16px] font-['DM Sans']">
@@ -310,7 +310,7 @@ const RecoveryTreatment: React.FC<Props> = (props) => {
             LEGAL
           </button> */}
           <div className="flex items-center gap-2">
-            <div className="w-[20px] h-[8px] bg-[#FFFFFF] border rounded-[4px]"></div>
+            <div className="w-[20px] h-[8px] bg-[#FFFFFF] border-[black] border-[1px] rounded-[4px]"></div>
             <div className="text-[#333333] font-[400] text-[12px] font-['DM Sans']">
               Hold
             </div>
@@ -365,7 +365,7 @@ const RecoveryTreatment: React.FC<Props> = (props) => {
                 Action
               </td>
             </tr>
-            <tr className="h-[20px]  border-b-[1px]">
+            <tr className="h-[20px]  border-b-[1px] border-r-[1px]">
               <td>Champion</td>
               <td>80%</td>
               <td>52,000</td>
@@ -377,11 +377,11 @@ const RecoveryTreatment: React.FC<Props> = (props) => {
 
               <td className="text-[#68349A]">Pause</td>
             </tr>
-            <tr className="h-[20px]  border-b-[1px]">
+            <tr className="h-[20px]  border-b-[1px] border-r-[1px]">
               <td>Challenger 1</td>
               <td>10%</td>
-              <td>18%</td>
               <td>6500</td>
+              <td>18%</td>
               <td className="flex gap-1 items-center  h-full">
                 <p className="bg-[green] h-[10px] w-[10px] rounded-full"></p>
                 <span>Active</span>
@@ -389,7 +389,7 @@ const RecoveryTreatment: React.FC<Props> = (props) => {
 
               <td className="text-[#68349A]">Pause</td>
             </tr>
-            <tr className="h-[20px]  border-b-[1px]">
+            <tr className="h-[20px]  border-b-[1px] border-r-[1px]">
               <td>Challenger 2</td>
               <td>10%</td>
               <td>65,000</td>
@@ -405,7 +405,7 @@ const RecoveryTreatment: React.FC<Props> = (props) => {
         </table>
         {/* )} */}
         <div
-          className={` w-[60%]  mt-14   border-l-[1px]
+          className={` w-[60%]  mt-[57px] 
           ${props.selectedSegment === "Medium Risk" ? "w-[100%]  " : "w-[100%]"}
            `}
         >

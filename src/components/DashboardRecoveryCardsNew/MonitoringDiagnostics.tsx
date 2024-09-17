@@ -8,6 +8,7 @@ import graphBallRecovery from "../../assets/images/graphBallRecovery.png";
 import { useNavigate } from "react-router-dom";
 import UporangeArrow from "../../assets/icons/shift-orange.svg";
 import arrow from "../../assets/images/HotspotArrow.svg";
+import SentinelImage from "../../assets/images/Sentinel.svg";
 
 const Riskmonitoringscore = [
   {
@@ -88,14 +89,15 @@ const MonitoringDiagnostics = () => {
     navigate("/monitoring/recovery");
   };
   return (
-    <div className="w-[32%] h-full rounded-xl shadow p-4 gap-3   bg-[#F2EFFE]">
+    <div className="lg:w-[32%] sm:w-[90%]  h-full rounded-xl shadow p-4 gap-3   bg-[#F2EFFE]">
       {/* <p className="font-[400] text-[13px] font-['DM Sans'] cursor-pointer leading-4 border border-[#9F90D4] bg-white w-max px-[8px] py-[4px] rounded-[4px]">
           Monitoring & Diagnostics
         </p> */}
-      <div className="border border-[#9F90D4] bg-white w-max px-[8px] customClassFifth rounded-[4px] cursor-pointer">
-        <p className="font-[400] text-black text-center text-[13px] font-['DM Sans'] w-[150px] h-[20px] mt-1 customClassFifth leading-4">
+      <div className="border border-[#9080CC] bg-white w-max  customClassFifth rounded-[4px] cursor-pointer">
+        {/* <p className="font-[400] text-black text-center text-[13px] font-['DM Sans'] w-[150px] h-[20px] mt-1 customClassFifth leading-4">
           Monitoring & Diagnostics
-        </p>
+        </p> */}
+         <img className="h-[30px] py-[6px] px-2" src={SentinelImage} alt="SentinelImage" />
       </div>
 
       <div className="bg-white h-[116px] p-1  rounded-xl mt-4 flex flex-col items-center ">

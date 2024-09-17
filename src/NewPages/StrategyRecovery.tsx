@@ -7,6 +7,7 @@ import DashboardHeader from "../components/DshboardHeader/DashboardHeader";
 import PaidNotPaid from "../components/Monitoring/PaidNotPaid";
 import Performance from "./AllocationEngine/performance";
 import PerformanceDashboard from "../components/PerformanceDashboardHeader/PerformanceDashboard";
+import HomeDashboard from "../components/PerformanceDashboardHeader/HomeDashboard";
 
 // import {
 //   Allocation,
@@ -77,8 +78,8 @@ const StrategyRecovery = () => {
     <div className="p-0 lg:px-[28px] responsivePageWrapper  bg-[#FAFAFB] relative">
       {/* <DashboardHeader /> */}
     
-      <PerformanceDashboard />
-  
+      {/* <PerformanceDashboard /> */}
+  <HomeDashboard />
      
       <div className="bg-[#FAFAFB] rounded-xl p-2 lg:p-[28px] mt-5 ml-2 flex flex-col">
          <div className=" w-full flex flex-wrap justify-between items-center">

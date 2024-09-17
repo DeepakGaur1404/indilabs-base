@@ -12,6 +12,7 @@ import TwoCards from "../../components/Diagnostics/TwoCards";
 import ActualBalance from "../../components/Diagnostics/ActualBalance";
 import AI from "../../components/Diagnostics/AI";
 import Segmentation from "../../components/Diagnostics/Segmentation";
+import HomeDashboard from "../../components/PerformanceDashboardHeader/HomeDashboard";
 const reviewHotspots = () => {};
 
 const Diagnostics: React.FC = () => {
@@ -29,8 +30,8 @@ const Diagnostics: React.FC = () => {
   return (
     <>
       <div className="px-[6px] h-full  lg:px-[49px]  lg:pt-[59px] -mt-10 lg:pb-20  bg-[#fafafb]">
-        <PerformanceDashboard />
-
+        {/* <PerformanceDashboard /> */}
+<HomeDashboard />
         <NewDiagnostics />
         <div className="flex flex-wrap gap-5 mt-3 ml-2 w-[100%]">
           <Top5Drivers />

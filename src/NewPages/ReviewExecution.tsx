@@ -23,6 +23,7 @@ import {
 import DashboardHeader from "../components/DshboardHeader/DashboardHeader";
 import "../NewPages/AllocationEngine/Custom.scss";
 import PerformanceDashboard from "../components/PerformanceDashboardHeader/PerformanceDashboard";
+import HomeDashboard from "../components/PerformanceDashboardHeader/HomeDashboard";
 // import "./Allocation.scss";
 // import { ResponsiveContainer } from "recharts";
 
@@ -224,33 +225,11 @@ const ReviewExecution = () => {
   return (
     <div className="p-0 lg:p-[28px] responsivePageWrapper bg-[#FAFAFB] relative">
       {/* <DashboardHeader /> */}
-      <PerformanceDashboard />
+      {/* <PerformanceDashboard /> */}
+      <HomeDashboard />
       {/* {loader ? <Loader /> : ""} */}
       <div className="bg-[#FAFAFB] rounded-xl p-2 lg:p-[28px] mt-5 flex flex-col">
         <div className=" w-full flex flex-col gap-5 ml-1">
-          <div className="flex gap-11 ">
-            <div className="flex items-center text-[#000000] font-[500] text-[16px] font-['DM Sans']">
-              Products:
-            </div>
-            <div className=" flex justify-between rounded-xl B1TabsContain">
-              {Buttons.map((buttons, index) => (
-                <div
-                  key={buttons.id}
-                  onClick={() => handleProductClick(buttons.id)}
-                  className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-10 w-full p-4 border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
-                    activeButton === buttons.id
-                      ? " bg-[#E8DEF8] "
-                      : "bg-[#fafafb]"
-                  } ${index === 0 ? "rounded-l-[4px]" : ""} ${
-                    index === Buttons.length - 1 ? "rounded-r-[4px]" : ""
-                  }`}
-                >
-                  {buttons.label}
-                </div>
-              ))}
-            </div>
-          </div>
-
           <div className="flex gap-[53px] ">
             <div className="flex items-center text-[#000000] font-[500] text-[16px] font-['DM Sans']">
               Buckets:
@@ -290,6 +269,28 @@ const ReviewExecution = () => {
                   }`}
                 >
                   {city.name}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="flex gap-11 ">
+            <div className="flex items-center text-[#000000] font-[500] text-[16px] font-['DM Sans']">
+              Products:
+            </div>
+            <div className=" flex justify-between rounded-xl B1TabsContain">
+              {Buttons.map((buttons, index) => (
+                <div
+                  key={buttons.id}
+                  onClick={() => handleProductClick(buttons.id)}
+                  className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-10 w-full p-4 border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
+                    activeButton === buttons.id
+                      ? " bg-[#E8DEF8] "
+                      : "bg-[#fafafb]"
+                  } ${index === 0 ? "rounded-l-[4px]" : ""} ${
+                    index === Buttons.length - 1 ? "rounded-r-[4px]" : ""
+                  }`}
+                >
+                  {buttons.label}
                 </div>
               ))}
             </div>

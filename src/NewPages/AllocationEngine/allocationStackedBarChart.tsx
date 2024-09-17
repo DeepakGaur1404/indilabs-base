@@ -274,7 +274,7 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
         </h1>
         <div className="flex items-center gap-5 flex-wrap">
           <div className="flex items-center gap-2">
-            <div className="w-[20px] h-[8px] bg-[#FFFFFF] border rounded-[4px]"></div>
+            <div className="w-[20px] h-[8px] bg-[#FFFFFF] border-[black] border-[1px] rounded-[4px]"></div>
             <div className="text-[#333333] font-[400] text-[12px] font-['DM Sans']">
               Hold
             </div>

@@ -9,6 +9,7 @@ import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import indilabslogo from "../../assets/images/indliabs.png";
 import PerformanceDashboard from "../../components/PerformanceDashboardHeader/PerformanceDashboard";
+import HomeDashboard from "../../components/PerformanceDashboardHeader/HomeDashboard";
 
 type Props = {};
 
@@ -229,7 +230,8 @@ const DashboardRecoveryNew = (props: Props) => {
         </div>
       </div>
       <div className="px-[6px] lg:px-[59px] lg:pt-[59px] bg-[#fafafb] flex flex-col gap-5 w-full">
-        <PerformanceDashboard />
+        {/* <PerformanceDashboard /> */}
+        <HomeDashboard />
         <div className="w-full flex justify-end items-center mt-1">
           <div
             className="w-[150px] h-[40px] flex justify-around items-center cursor-pointer"
@@ -246,11 +248,12 @@ const DashboardRecoveryNew = (props: Props) => {
             </div>
           </div>
         </div>
-        <div className="flex justify-between gap-10 ml-5 mb-6">
+        <div className="flex flex-col lg:flex-row justify-between gap-10 ml-5 mb-6">
           <MonitoringDiagnostics />
           <StrategyOptimisation />
           <Execution />
         </div>
+
         <div
           id="indilabslogo"
           className="flex items-center justify-center gap-1  text-['italic'] font-[500] text-[#000000] h-[20px] mt-2 mb-8 hidden"
