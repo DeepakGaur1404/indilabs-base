@@ -445,8 +445,8 @@ const ImpactAssessmentRecovery = ({
 
   return (
     <div className="relative w-[100%]  h-[555px] p-3 bg-white rounded-xl shadow flex-col justify-start ml-6 flex gap-5 2xl:w-[58%]">
-      <div className="mt-[15px] px-2 flex justify-between items-center">
-      <h1 className="text-black text-base font-medium font-['DM Sans'] text-left customClassOpper ">
+      <div className="px-2 flex justify-between items-center">
+      <h1 className="text-black text-base font-medium font-['DM Sans'] text-left -ml-1 customClassOpper ">
         Impact Assessment
       </h1>
       <div className="border-[#FFA39B] rounded-lg border-[2px] w-[max] flex items-center gap-2 py-1 px-3 m">
@@ -468,7 +468,7 @@ const ImpactAssessmentRecovery = ({
           </p>
         </div>
       </div> */}
-      <p
+      {/* <p
         className="
      text-[14px] italic text-[#6A7691] font-[400] 
     font-['DM Sans' !important] 
@@ -478,7 +478,7 @@ const ImpactAssessmentRecovery = ({
         style={{ zIndex: 100 }}
       >
         Likelihood
-      </p>
+      </p> */}
       {loader ? (
         <Loader />
       ) : (
@@ -544,9 +544,9 @@ const ImpactAssessmentRecovery = ({
             </ScatterChart>
           </ResponsiveContainer>
 
-          <p className="-mt-[22px]  text-center text-[14px] italic text-[#6A7691] font-[400] font-['DM Sans'] benchmark_text customClasssix ">
+          {/* <p className="-mt-[22px]  text-center text-[14px] italic text-[#6A7691] font-[400] font-['DM Sans'] benchmark_text customClasssix ">
             Severity
-          </p>
+          </p> */}
         </>
       )}
       <svg width="0" height="0">

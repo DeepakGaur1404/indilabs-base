@@ -14,6 +14,7 @@ import HomeDashboard from "../components/PerformanceDashboardHeader/HomeDashboar
 // import AllocationStackedBarChart from "./allocationStackedBarChart";
 // import OptimizeStackedBarChart from "./optimizeStackedBarChart";
 import Treatments from "./RecoveryStackBar";
+import PerformanceDashboard from "../components/PerformanceDashboardHeader/PerformanceDashboard";
 
 const getSegmentFromLocalStorage = () => {
   const segValue = localStorage.getItem("segment");
@@ -79,7 +80,7 @@ const ReviewPerformance: React.FC = () => {
       <div className="w-[96%] bg-[#FAFAFB] flex items-center gap-2 justify-between ml-6 flex-wrap">
         <div className="w-[100%] mt-2">
           {/* <DashboardHeader /> */}
-          <HomeDashboard />
+         <PerformanceDashboard />
         </div>
         <div className="bg-[#FAFAFB] flex justify-between p-2 ml-2 gap-1 flex-wrap">
           {/* <div className="min-w-[310px] flex justify-start  rounded-xl B1TabsContain overflow-x-auto flex-wrap">

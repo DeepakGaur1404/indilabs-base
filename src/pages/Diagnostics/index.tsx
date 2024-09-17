@@ -1,42 +1,48 @@
-import React, { useState } from "react";
-import Sidebar from "../../components/common/Sidebar";
-import DashboardHeader from "../../components/DshboardHeader/DashboardHeader";
-import HotspotExpanded from "../../components/Diagnostics/HotspotExpanded";
-import DiagnosticsCard from "../../components/Diagnostics/DiagnosticsDetails";
-import TacticalActionPlanCard from "../../components/Diagnostics/TacticalActionPlanCard";
+// import TacticalActionPlanCard from "../../components/Diagnostics/TacticalActionP"
 import Button from "../../components/Button";
 import MonitoringRecoverySubtabsDashboardHeader from "../../components/MonitoringRecoverySubtabsDashboardHeader/MonitoringRecoverySubtabsDashboardHeader";
 import MonitoringCollectionDashboardHeader from "../../components/MonitoringCollectionDashboardHeader/MonitoringCollectionDashboardHeader";
 import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import PerformanceDashboard from "../../components/PerformanceDashboardHeader/PerformanceDashboard";
-
+import NewDiagnostics from "../../components/Diagnostics/NewDiagnostics";
+import Top5Drivers from "../../components/Diagnostics/Top5Drivers";
+import ExpectedRecovery from "../../components/Diagnostics/ExpectedRecovery";
+import TwoCards from "../../components/Diagnostics/TwoCards";
+import ActualBalance from "../../components/Diagnostics/ActualBalance";
+import AI from "../../components/Diagnostics/AI";
+import Segmentation from "../../components/Diagnostics/Segmentation";
 const reviewHotspots = () => {};
 
 const Diagnostics: React.FC = () => {
   const [isDiagnostic, setIsDiagnostic] = useState(false);
   const navigate = useNavigate();
-  const [selectedSegment, setSelectedSegment] = useState<string | null>(
-    "Recovery % @ 12MOB%"
-  );
+  // const [selectedSegment, setSelectedSegment] = useState<string | null>(
+  //   "Recovery % @ 12MOB%"
+  // );
+  const [selectedSegment, setSelectedSegment] = useState("Very High Risk");
+
+  const deepdive = () => {
+    navigate("/diagnostics/recovery/deep-dive");
+  };
 
   return (
     <>
-       <div className="px-[6px] h-full  lg:px-[49px]  lg:pt-[59px] -mt-10 lg:pb-20  bg-[#fafafb]">
-        {/* {/ <MonitoringCollectionDashboardHeader /> /} */}
+      <div className="px-[6px] h-full  lg:px-[49px]  lg:pt-[59px] -mt-10 lg:pb-20  bg-[#fafafb]">
         <PerformanceDashboard />
-        <div className=" w-[100%] flex-col flex items-start justify-center ml-3 mt-6 cursor-pointer">
-          <div className="w-[100%] flex-col xl:flex-row  items-start flex justify-start gap-[42px] flex-wrap lg:flex-nowrap">
-            <div className="md:w-[100%]  sm:mb-5 md:mb-0">
-              <HotspotExpanded
-                setDiagnostic={() => setIsDiagnostic(true)}
-                onSegmentSelect={setSelectedSegment}
-              />
-            </div>
-            <div className="md:w-[100%] flex flex-col">
-              <DiagnosticsCard />
-            </div>
-          </div>
-        </div> 
+
+        <NewDiagnostics />
+        <div className="flex flex-wrap gap-5 mt-3 ml-2 w-[100%]">
+          <Top5Drivers />
+          <ExpectedRecovery />
+          <Segmentation selectedSegment={selectedSegment} />
+        </div>
+        <div className="flex flex-wrap gap-5 mt-4 ml-2 w-[100%]">
+          <TwoCards />
+          <ActualBalance />
+          <AI />
+        </div>
+
         <div className="w-[100%] flex items-center justify-end gap-5 mt-8">
           <button
             className="self-end w-20 h-10 px-4 py-2.5  rounded-3xl border border-zinc-500 text-center text-[#6750a4] text-sm font-medium"
@@ -45,28 +51,17 @@ const Diagnostics: React.FC = () => {
             Back
           </button>
           <Button
-          onClick={reviewHotspots}
-          width="170px"
-          height="40px"
-          fontSize="14px"
-          padding="5px"
-          borderRadius="30px"
-        >
-          Review Trends
-        </Button>
-          {/* <Button
             onClick={reviewHotspots}
-            width="190px"
+            width="180px"
             height="40px"
             fontSize="14px"
             padding="5px"
             borderRadius="30px"
           >
-            Optimize Strategy
-          </Button> */}
+            Review Hotspots
+          </Button>
         </div>
-       </div>   
-      
+      </div>
     </>
   );
 };

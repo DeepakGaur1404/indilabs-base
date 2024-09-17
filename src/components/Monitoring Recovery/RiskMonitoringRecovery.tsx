@@ -150,8 +150,8 @@ function RiskMonitoringRecovery({
   return (
     <>
       <div className="min-w-[300px] w-[100%] sm:w-[72%] md:w-[77.3%] lg:w-[73%] xl:w-[100%] 2xl:w-[40%] ml-4 2xl:-ml-1 h-[555px] p-3 bg-white rounded-xl shadow flex-col justify-start items-start flex gap-2 overflow-y-auto">
-        <div className="w-full flex items-center h-7 flex-col gap-2.5 mb-8">
-          <h1 className="text-black text-lg flex justify-center font-semibold font-['DM Sans'] customClassRisk mb-">
+        <div className="w-full  h-7 flex-col gap-2.5 mb-8">
+          <h1 className="text-black text-lg text-left font-semibold font-['DM Sans'] customClassRisk mb-">
             Risk Monitoring
           </h1>
         </div>

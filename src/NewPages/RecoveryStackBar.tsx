@@ -35,7 +35,7 @@ const RecoveryTreatment: React.FC<Props> = (props) => {
           color: "#ED7D31",
         },
         {
-          name: "Bucket Slope",
+          name: "Buckets Slope",
           data: [3, 3, 3],
           color: "#FF0000",
         },
@@ -62,7 +62,7 @@ const RecoveryTreatment: React.FC<Props> = (props) => {
           color: "#ED7D31",
         },
         {
-          name: "Bucket Slope",
+          name: "Buckets Slope",
           data: [4, 9, 3, 0, 0],
           color: "#FF0000",
         },
@@ -89,7 +89,7 @@ const RecoveryTreatment: React.FC<Props> = (props) => {
           color: "#ED7D31",
         },
         {
-          name: "Bucket Slope",
+          name: "Buckets Slope",
           data: [3, 3, 3, 0, 0],
           color: "#FF0000",
         },
@@ -116,7 +116,7 @@ const RecoveryTreatment: React.FC<Props> = (props) => {
           color: "#ED7D31",
         },
         {
-          name: "Bucket Slope",
+          name: "Buckets Slope",
           data: [9, 7, 5, 0, 0],
           color: "#FF0000",
         },
@@ -143,7 +143,7 @@ const RecoveryTreatment: React.FC<Props> = (props) => {
           color: "#ED7D31",
         },
         {
-          name: "Bucket Slope",
+          name: "Buckets Slope",
           data: [3, 3, 3, 0, 0],
           color: "#FF0000",
         },

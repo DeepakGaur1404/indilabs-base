@@ -22,6 +22,7 @@ import {
 } from "../redux/model/dashboard.model";
 import DashboardHeader from "../components/DshboardHeader/DashboardHeader";
 import "../NewPages/AllocationEngine/Custom.scss";
+import PerformanceDashboard from "../components/PerformanceDashboardHeader/PerformanceDashboard";
 // import "./Allocation.scss";
 // import { ResponsiveContainer } from "recharts";
 
@@ -222,7 +223,8 @@ const ReviewExecution = () => {
 
   return (
     <div className="p-0 lg:p-[28px] responsivePageWrapper bg-[#FAFAFB] relative">
-      <DashboardHeader />
+      {/* <DashboardHeader /> */}
+      <PerformanceDashboard />
       {/* {loader ? <Loader /> : ""} */}
       <div className="bg-[#FAFAFB] rounded-xl p-2 lg:p-[28px] mt-5 flex flex-col">
         <div className=" w-full flex flex-col gap-5 ml-1">
