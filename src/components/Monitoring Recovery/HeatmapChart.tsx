@@ -35,14 +35,36 @@ const HeatmapChart = () => {
     xaxis: {
       type: 'category',
       categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      style: {
+        colors: "#3B414B", 
+        fontSize: "12px", 
+        fontWeight: "400", 
+        fontFamily: ['DM Sans']
+      },  
+    },
+    yaxis: {
+      labels: {
+        style: {
+          colors: "#3B414B", 
+          fontSize: "12px", 
+          fontWeight: "400", 
+          fontFamily: ['DM Sans'],
+        },
+      },
     },
     title: {
       text: 'Monthly Assessment',
+      style: {
+        fontSize: "16px", 
+        fontWeight: "500", 
+        colors: "#000000",
+        fontFamily: ['DM Sans'],
+      },
     },
     legend: {
         position: 'top', // Move legend to the top
         horizontalAlign: 'right', // Align legend in the center
-        offsetY: -20, // Adjust vertical spacing (decrease space between legend and chart)
+        offsetY: -40, // Adjust vertical spacing (decrease space between legend and chart)
       },
   });
 

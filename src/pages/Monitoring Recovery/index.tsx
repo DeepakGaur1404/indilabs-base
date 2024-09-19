@@ -851,8 +851,8 @@ const MonitoringRecovery = (props: Props) => {
           </div>
         )}
         {activeButton === "Heatmap" && (
-          <div className="flex flex-wrap  items-start  justify-center  px-[6px] lg:px-[6px] ml-0 lg:ml-2 bg-[#fafafb]">
-            <div className=" w-full flex items-start gap-4 justify-start flex-wrap">
+          <div className="w-[100%] flex flex-wrap  items-start  justify-center  px-[6px] lg:px-[6px] ml-0 lg:ml-2 bg-[#fafafb]">
+            <div className=" w-[100%] flex items-start gap-4 justify-start flex-wrap">
               {/* <RiskMonitoringRecoveryMonthlyView
                 setCategory={setCategories}
                 setCategoriesMatricHeatMap={setCategoriesMatricHeatMap}
@@ -868,13 +868,14 @@ const MonitoringRecovery = (props: Props) => {
                 categoriesMatricHeatMap={categoriesMatricHeatMap}
                 staticDataRecoveryPerformance={staticDataRecoveryPerformance}
               /> */}
-             <RiskMonitoringHotspot
+              <RiskMonitoringHotspot
                 setCategory={setCategories}
-                setCategoriesMatric={setCategoriesMatric}
+                setCategoriesMatricHeatMap={setCategoriesMatricHeatMap}
                 isCategoryVisible={isCategoryVisible}
                 setIsCategoryVisible={setIsCategoryVisible}
               />
-               <HeatmapChart/>
+              {/* <HeatmapChart categoriesMatricHeatMap={categoriesMatricHeatMap} /> */}
+              <HeatmapChart/>
             </div>
           </div>
         )}

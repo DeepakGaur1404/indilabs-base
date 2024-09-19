@@ -25,14 +25,14 @@ interface MetricDataType {
 const MetricData: MetricDataType[] = [
   {
     metric: "Location",
-    "Segments Scanned": 10,
-    Hotspots: 8,
-    "Risk Score": 3,
+    "Segments Scanned": 27,
+    Hotspots: 22,
+    "Risk Score": 2.44,
   },
   {
     metric: "POS",
     "Segments Scanned": 4,
-    Hotspots: 3,
+    Hotspots: 4,
     "Risk Score": 3,
   },
   {

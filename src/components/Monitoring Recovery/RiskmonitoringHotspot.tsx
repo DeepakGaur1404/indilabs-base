@@ -10,7 +10,7 @@ import "../../NewPages/AllocationEngine/Allocation.scss";
 
 type Props = {
   setCategory: any;
-  setCategoriesMatric: any;
+  setCategoriesMatricHeatMap: any;
   setIsCategoryVisible: any;
   isCategoryVisible: any;
 };
@@ -41,14 +41,11 @@ const MetricData: MetricDataType[] = [
     Hotspots: 7,
     "Risk Score": 3,
   },
-
 ];
-
-
 
 function RiskMonitoringHotspot({
   setCategory,
-  setCategoriesMatric,
+  setCategoriesMatricHeatMap,
   setIsCategoryVisible,
   isCategoryVisible,
 }: Props) {
@@ -67,16 +64,16 @@ function RiskMonitoringHotspot({
   const onClickButtons = (id: number, categories: string) => {
     setActiveData(id);
     // setCategory(categories);
-    setCategoriesMatric(categories);
+    setCategoriesMatricHeatMap(categories);
   };
 
   useEffect(() => {
-    if (isCategoryVisible) {
-      onClickButtons(0, "All");
-    } else {
-      onClickButtons(0, "MRR%");
-    }
-  }, [isCategoryVisible]);
+    // if (isCategoryVisible) {
+    //   onClickButtons(0, "All");
+    // } else {
+    onClickButtons(0, "Location");
+    // }
+  }, []);
 
   useEffect(() => {
     // fetchMonitoringdata();
@@ -137,13 +134,12 @@ function RiskMonitoringHotspot({
     <>
       <div className="min-w-[300px] w-[100%] sm:w-[72%] md:w-[77.3%] lg:w-[73%] xl:w-[100%] 2xl:w-[30%] ml-4 2xl:-ml-1 h-[500px] p-3 bg-white rounded-xl shadow flex-col justify-start items-start flex gap-2 overflow-y-auto">
         <div className="w-full flex items-start h-7 flex-col gap-2.5 mb-8">
-          <h1 className="text-black text-lg flex justify-start font-semibold font-['DM Sans'] customClassRisk mt-3">
-          Hotspots
+          <h1 className="text-black text-lg flex justify-start font-semibold font-['DM Sans'] customClassRisk">
+            Hotspots
           </h1>
         </div>
         <>
           <table className="w-full" cellPadding={16}>
-           
             <tbody className="w-full">
               {MetricData?.map((each, idx) => (
                 <tr
@@ -187,12 +183,11 @@ function RiskMonitoringHotspot({
               ))}
             </tbody>
           </table>
-          
         </>
-      
       </div>
     </>
   );
 }
 
 export default RiskMonitoringHotspot;
+
