@@ -190,4 +190,3 @@ function RiskMonitoringHotspot({
 }
 
 export default RiskMonitoringHotspot;
-
