@@ -13,8 +13,8 @@ const arrowPosition = `${
 const NewDiagnostics = () => {
   return (
     <>
-      <div className="flex justify-between mt-5  ml-2">
-        <div className="w-[30%] shadow bg-[white] flex items-center rounded-lg py-3 px-5 justify-between">
+      <div className="flex justify-between ">
+        <div className="w-[100%] shadow bg-[white] flex items-center rounded-lg py-3 px-5 justify-between">
           <p className="text-[black] font-['DM Sans'] font-[400] text-[14px] leading-[18.23px]">
             Rec%
           </p>
@@ -66,11 +66,11 @@ const NewDiagnostics = () => {
             </div>
           </div>
         </div>
-        <div className="bg-[white] shadow w-max rounded-lg py-3 px-8 flex items-center">
+        {/* <div className="bg-[white] shadow w-max rounded-lg py-3 px-8 flex items-center">
           <p className="text-[black] font-['DM Sans'] font-[400] text-[16px] leading-[20.83px]">
             Accuracy Checker
           </p>
-        </div>
+        </div> */}
       </div>
     </>
   );

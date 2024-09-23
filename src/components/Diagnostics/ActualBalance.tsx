@@ -168,7 +168,7 @@ const data: any = {
   },
 };
 
-const getColorBySubSegment = ["#FFB200", "#4169E1"];
+const getColorBySubSegment = [ "#FFB200","#4169E1"];
 
 const formatYAxisTick = (tick: any) => {
   if (tick === 0) {
@@ -187,7 +187,7 @@ const ActualBalance: React.FC<ActualBalanceProps> = ({ selectedSegment }) => {
         "Medium/High": segmentData["medium/high"][index],
       }))
     : [];
-
+    
   const arrTicks: any = (chartData: any[]): number[] => {
     let arr: number[] = [];
     let maxNum = 0;
@@ -235,14 +235,14 @@ const ActualBalance: React.FC<ActualBalanceProps> = ({ selectedSegment }) => {
   };
 
   return (
-    <div className="w-[30%] h-[325px] bg-white shadow rounded-xl py-4 px-3 gap-3">
+    <div className="w-[30%] h-[325px] bg-white shadow rounded-xl py-4 px-3 gap-3 -mt-[73px]">
       <div className="flex justify-between">
         <p className="text-[black] font-['DM Sans'] font-[500] text-[14px] leading-[21px]">
           Actual Balances
         </p>
         <div className="flex items-center flex-wrap gap-3 lg:gap-3">
           <div className=" flex items-center gap-3">
-            <div className="flex items-center">
+          <div className="flex items-center">
               <div
                 className="legend-color"
                 style={{

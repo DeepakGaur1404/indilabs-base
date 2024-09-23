@@ -13,7 +13,7 @@ const OptimizeStackedBarChart: React.FC<Props> = (props) => {
 
   const state: any = {
     series: {
-      MOB: [
+      MOB:[
         {
           name: "Mob 1",
           data: [0.0, 8.96169688238419],
@@ -122,7 +122,7 @@ const OptimizeStackedBarChart: React.FC<Props> = (props) => {
           color: "#79747E",
         },
       ],
-      "Loan Term": [
+     "Loan Term": [
         {
           name: "Loan Term 1",
           data: [0.0, 15.710120734879233],
@@ -140,11 +140,12 @@ const OptimizeStackedBarChart: React.FC<Props> = (props) => {
         },
         {
           name: "Loan Term 4",
-          data: [5.937026464327063, 17.859764820576025],
+          data: [5.937026464327063,  17.859764820576025],
           color: "#496CD5",
         },
+       
       ],
-      POS: [
+      "POS": [
         {
           name: "Pos 1",
           data: [0.13267036433814988, 7.082881946823048],
@@ -152,7 +153,7 @@ const OptimizeStackedBarChart: React.FC<Props> = (props) => {
         },
         {
           name: "Pos 2",
-          data: [0.2618194704266599, 3.277088165474608],
+          data: [ 0.2618194704266599, 3.277088165474608],
           color: "#FA7B33",
         },
         {
@@ -162,7 +163,7 @@ const OptimizeStackedBarChart: React.FC<Props> = (props) => {
         },
         {
           name: "Pos 4",
-          data: [4.1252338951367875, 11.790685852352217],
+          data: [4.1252338951367875,  11.790685852352217],
           color: "#496CD5",
         },
         {
@@ -204,17 +205,17 @@ const OptimizeStackedBarChart: React.FC<Props> = (props) => {
         },
         {
           name: "Loan amt 4",
-          data: [1.030530558813696, 19.788930473591826],
+          data: [ 1.030530558813696,    19.788930473591826],
           color: "#496CD5",
         },
         {
           name: "Loan amt 5",
-          data: [11.693375804678722, 0.02597170365722906],
+          data: [ 11.693375804678722,  0.02597170365722906],
           color: "#8EB5F4",
         },
         {
           name: "Loan amt 6",
-          data: [47.200050744329545, 42.95334406231615],
+          data: [ 47.200050744329545,  42.95334406231615],
           color: "#6F91EA",
         },
         {
@@ -284,35 +285,20 @@ const OptimizeStackedBarChart: React.FC<Props> = (props) => {
       //   enabled: false,
       // },
       tooltip: {
-        custom: function ({
-          series,
-          seriesIndex,
-          dataPointIndex,
-          w,
-        }: {
-          series: any[];
-          seriesIndex: number;
-          dataPointIndex: number;
-          w: any;
-        }) {
-          const seriesData = w.config.series[seriesIndex];
+        custom: function({ series, seriesIndex, dataPointIndex, w }: { series: any[], seriesIndex: number, dataPointIndex: number, w: any }) {
+          const seriesData = w.config.series[seriesIndex]; 
           const { name, color } = seriesData;
-          if (
-            series &&
-            series[seriesIndex] &&
-            typeof series[seriesIndex][dataPointIndex] !== "undefined"
-          ) {
-            const formattedValue =
-              series[seriesIndex][dataPointIndex].toFixed(1);
+          if (series && series[seriesIndex] && typeof series[seriesIndex][dataPointIndex] !== 'undefined') {
+            const formattedValue = series[seriesIndex][dataPointIndex].toFixed(1);
             return `
               <div class="arrow_box" style="color:${color}; padding: 10px; ">
                 <span><strong>${name}</strong></span><br/>
                <span>Value: ${formattedValue}%</span>
               </div>`;
           }
-          return "";
-        },
-      },
+          return '';
+        }
+      },  
       yaxis: {
         show: false,
         formatter: (val: number) => {
@@ -385,12 +371,10 @@ const OptimizeStackedBarChart: React.FC<Props> = (props) => {
           Segmentation{" "}
         </h1>
         <div className="flex items-center gap-3 flex-wrap ml-3">
+        
           {currentSeries.map((item: any, index: number) => (
             <div key={index} className="flex items-center gap-1">
-              <div
-                className="w-[13px] h-[13px]"
-                style={{ backgroundColor: item.color, borderRadius: "3px" }}
-              ></div>
+              <div className="w-[13px] h-[13px]" style={{ backgroundColor: item.color, borderRadius: "3px" }}></div>
               <div className="text-[#333333] font-[400] text-[10px] font-['DM Sans']">
                 {item.name}
               </div>
