@@ -594,7 +594,7 @@ const ImpactAssessmentRecovery = ({
             Value at Risk:
           </p>
           <span className="text-[#EF0000] font-[700] text-[16px] font-['DM Sans']">
-            $142.45
+            ₹142.45 M
           </span>
         </div>
       </div>
