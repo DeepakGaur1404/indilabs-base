@@ -75,11 +75,15 @@ const StrategyOptimisation = () => {
 
   return (
     <div className="lg:w-[32%] sm:w-[90%] h-full rounded-xl shadow p-4 gap-3  bg-[#FFF8F2]">
-      <div className="border border-[#F3A359] bg-white w-max customClassStrategyOptimisationSixth rounded-[4px] cursor-pointer">
-        {/* <p className="font-[400] text-black text-center text-[13px] font-['DM Sans'] w-[130px] h-[20px] mt-1 leading-4 customClassSixth">
-          Strategy Optimisation
-        </p> */}
-              <img className="h-[30px] py-[6px] px-2" src={DynamoImage} alt="DynamoImage" />
+      <div className="cursor-pointer flex flex-col items-center">
+        <img
+          className=" border border-[#F3A359] bg-white gap-[8px] py-[6px] px-[8px] customClassFifth rounded-[4px] h-[34px] w-[110px]"
+          src={DynamoImage}
+          alt="DynamoImage"
+        />
+        <p className="font-[500] text-[#EC7421] text-center text-[11px] font-['DM Sans'] mt-1 customClassFifth">
+          Diagnostic, Segmentation & Strategy Decision Engine
+        </p>
       </div>
       <div className="bg-white h-[116px] p-1 rounded-xl mt-4 flex flex-col items-center ">
         <span className="font-['DM Sans'] text-[32px] text-[#10B981] font-[500] customClassThird">
@@ -110,102 +114,99 @@ const StrategyOptimisation = () => {
         </div>
 
         <div className="flex flex-col items-center mt-1 w-[100%]  rounded-xl">
-        <ResponsiveContainer
-           width="100%"
-          height={280}  
-          >
-          <ComposedChart
-            // width={400}
-            // height={280}
-            data={data}
-            margin={{ top: 10, right: -35, left: -25, bottom: 5 }}
-            barGap={0}
-            barCategoryGap={0}
-          >
-            <CartesianGrid strokeDasharray="3 3" vertical={false} />
-            <XAxis
-              dataKey="name"
-              axisLine={false}
-              tickLine={false}
-              fontWeight={400}
-              fontSize={10}
-              fontFamily="DM Sans"
-              fill={"#3B414B"}
-            />
-            <YAxis
-              yAxisId="left"
-              interval={0}
-              // padding={{ top: 0, bottom: 0 }}
-              axisLine={false}
-              tickLine={false}
-              // label={{
-              //   value: `$ Writeoff, Recovery`,
-              //   angle: -90,
-              //   position: "insideLeft",
-              //   fontFamily: "roboto",
-              //   fontSize: "15px",
-              //   dy: 60,
-              //   fontWeight: "bold",
-              // }}
-              fontWeight={400}
-              fontSize={9}
-              fontFamily="DM Sans"
-              fill={"#3B414B"}
-              ticks={[0, 50, 100, 150, 200, 250, 300]}
-              domain={[0, 300]}
+          <ResponsiveContainer width="100%" height={280}>
+            <ComposedChart
+              // width={400}
+              // height={280}
+              data={data}
+              margin={{ top: 10, right: -35, left: -25, bottom: 5 }}
+              barGap={0}
+              barCategoryGap={0}
+            >
+              <CartesianGrid strokeDasharray="3 3" vertical={false} />
+              <XAxis
+                dataKey="name"
+                axisLine={false}
+                tickLine={false}
+                fontWeight={400}
+                fontSize={10}
+                fontFamily="DM Sans"
+                fill={"#3B414B"}
+              />
+              <YAxis
+                yAxisId="left"
+                interval={0}
+                // padding={{ top: 0, bottom: 0 }}
+                axisLine={false}
+                tickLine={false}
+                // label={{
+                //   value: `$ Writeoff, Recovery`,
+                //   angle: -90,
+                //   position: "insideLeft",
+                //   fontFamily: "roboto",
+                //   fontSize: "15px",
+                //   dy: 60,
+                //   fontWeight: "bold",
+                // }}
+                fontWeight={400}
+                fontSize={9}
+                fontFamily="DM Sans"
+                fill={"#3B414B"}
+                ticks={[0, 50, 100, 150, 200, 250, 300]}
+                domain={[0, 300]}
 
-              // className="text-[#3B414B] text-[9px] font['DM Sans'] font-[400]"
-            />
-            <YAxis
-              yAxisId="right"
-              orientation="right"
-              interval={0}
-              tickLine={false}
-              // padding={{ top: 0, bottom: 0,}}
-              axisLine={false}
-              // label={{
-              //   value: `%Monthly Recovery Rate`,
-              //   angle: -90,
-              //   position: "outside",
-              //   fontFamily: "roboto",
-              //   fontSize: "15px",
-              //   dy: -20,
-              //   dx: 20,
-              //   fontWeight: "bold",
-              // }}
-              ticks={[0, 1, 2, 3, 4, 5, 6]}
-              domain={[0, 6]}
-              fontWeight={400}
-              fontSize={9}
-              fontFamily="DM Sans"
-              fill={"#3B414B"}
-              // className="text-[#3B414B] text-[9px] font['DM Sans'] font-[400]"
-            />
-            <Tooltip />
-            <Bar
-              dataKey="pv"
-              fill="#FFB200"
-              yAxisId="left"
-              barSize={10}
-              radius={[10, 10, 10, 10]}
-            />
-            <Bar
-              dataKey="uv"
-              fill="#4339F2"
-              yAxisId="right"
-              barSize={10}
-              radius={[10, 10, 10, 10]}
-            />
-            <Line
-              type="linear"
-              dataKey="amt"
-              yAxisId="right"
-              stroke="#FF7A00"
-              strokeWidth={2}
-              dot={false}
-            />
-          </ComposedChart>
-</ResponsiveContainer>
+                // className="text-[#3B414B] text-[9px] font['DM Sans'] font-[400]"
+              />
+              <YAxis
+                yAxisId="right"
+                orientation="right"
+                interval={0}
+                tickLine={false}
+                // padding={{ top: 0, bottom: 0,}}
+                axisLine={false}
+                // label={{
+                //   value: `%Monthly Recovery Rate`,
+                //   angle: -90,
+                //   position: "outside",
+                //   fontFamily: "roboto",
+                //   fontSize: "15px",
+                //   dy: -20,
+                //   dx: 20,
+                //   fontWeight: "bold",
+                // }}
+                ticks={[0, 1, 2, 3, 4, 5, 6]}
+                domain={[0, 6]}
+                fontWeight={400}
+                fontSize={9}
+                fontFamily="DM Sans"
+                fill={"#3B414B"}
+                // className="text-[#3B414B] text-[9px] font['DM Sans'] font-[400]"
+              />
+              <Tooltip />
+              <Bar
+                dataKey="pv"
+                fill="#FFB200"
+                yAxisId="left"
+                barSize={10}
+                radius={[10, 10, 10, 10]}
+              />
+              <Bar
+                dataKey="uv"
+                fill="#4339F2"
+                yAxisId="right"
+                barSize={10}
+                radius={[10, 10, 10, 10]}
+              />
+              <Line
+                type="linear"
+                dataKey="amt"
+                yAxisId="right"
+                stroke="#FF7A00"
+                strokeWidth={2}
+                dot={false}
+              />
+            </ComposedChart>
+          </ResponsiveContainer>
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-1">
               <div className="w-[8px] h-[8px] bg-[#4339F2] rounded-xl"></div>

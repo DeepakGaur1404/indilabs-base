@@ -157,10 +157,9 @@ const BarAndLineCombaineGraph = ({
           recovery: item[1].recovery,
           "%Recovery": item[1]["%Recovery"],
           benchmark_recovery: item[1].benchmark_recovery,
-          benchmark_rate:item[1].benchmark_rate
+          benchmark_rate: item[1].benchmark_rate,
         }))
-      : 
-      selectedSubCategories === "V1" &&
+      : selectedSubCategories === "V1" &&
         selectedCategories === "mob" &&
         selectedActiveButton === "$Recovery"
       ? portfolioRecoveryGraphData?.mob
@@ -170,7 +169,7 @@ const BarAndLineCombaineGraph = ({
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
             benchmark_recovery: item[1].benchmark_recovery,
-            benchmark_rate:item[1].benchmark_rate
+            benchmark_rate: item[1].benchmark_rate,
           }))
       : //   const newItem: {
       //     month: any;
@@ -200,7 +199,7 @@ const BarAndLineCombaineGraph = ({
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
             benchmark_recovery: item[1].benchmark_recovery,
-            benchmark_rate:item[1].benchmark_rate
+            benchmark_rate: item[1].benchmark_rate,
           }))
       : selectedSubCategories === "V3" &&
         selectedCategories === "mob" &&
@@ -212,7 +211,7 @@ const BarAndLineCombaineGraph = ({
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
             benchmark_recovery: item[1].benchmark_recovery,
-            benchmark_rate:item[1].benchmark_rate
+            benchmark_rate: item[1].benchmark_rate,
           }))
       : selectedSubCategories === "V4" &&
         selectedCategories === "mob" &&
@@ -224,7 +223,7 @@ const BarAndLineCombaineGraph = ({
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
             benchmark_recovery: item[1].benchmark_recovery,
-            benchmark_rate:item[1].benchmark_rate
+            benchmark_rate: item[1].benchmark_rate,
           }))
       : selectedSubCategories === "V5" &&
         selectedCategories === "mob" &&
@@ -236,7 +235,7 @@ const BarAndLineCombaineGraph = ({
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
             benchmark_recovery: item[1].benchmark_recovery,
-            benchmark_rate:item[1].benchmark_rate
+            benchmark_rate: item[1].benchmark_rate,
           }))
       : selectedSubCategories === "V6" &&
         selectedCategories === "mob" &&
@@ -248,7 +247,7 @@ const BarAndLineCombaineGraph = ({
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
             benchmark_recovery: item[1].benchmark_recovery,
-            benchmark_rate:item[1].benchmark_rate
+            benchmark_rate: item[1].benchmark_rate,
           }))
       : selectedSubCategories === "V7" &&
         selectedCategories === "mob" &&
@@ -260,7 +259,7 @@ const BarAndLineCombaineGraph = ({
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
             benchmark_recovery: item[1].benchmark_recovery,
-            benchmark_rate:item[1].benchmark_rate
+            benchmark_rate: item[1].benchmark_rate,
           }))
       : selectedSubCategoriesLocation === "UP" &&
         selectedCategories === "location" &&
@@ -272,7 +271,7 @@ const BarAndLineCombaineGraph = ({
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
             benchmark_recovery: item[1].benchmark_recovery,
-            benchmark_rate:item[1].benchmark_rate
+            benchmark_rate: item[1].benchmark_rate,
           }))
       : selectedSubCategoriesLocation === "MH" &&
         selectedCategories === "location" &&
@@ -284,7 +283,7 @@ const BarAndLineCombaineGraph = ({
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
             benchmark_recovery: item[1].benchmark_recovery,
-            benchmark_rate:item[1].benchmark_rate
+            benchmark_rate: item[1].benchmark_rate,
           }))
       : selectedSubCategoriesLocation === "TN" &&
         selectedCategories === "location" &&
@@ -296,7 +295,7 @@ const BarAndLineCombaineGraph = ({
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
             benchmark_recovery: item[1].benchmark_recovery,
-            benchmark_rate:item[1].benchmark_rate
+            benchmark_rate: item[1].benchmark_rate,
           }))
       : selectedSubCategoriesLocation === "MP" &&
         selectedCategories === "location" &&
@@ -308,7 +307,7 @@ const BarAndLineCombaineGraph = ({
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
             benchmark_recovery: item[1].benchmark_recovery,
-            benchmark_rate:item[1].benchmark_rate
+            benchmark_rate: item[1].benchmark_rate,
           }))
       : selectedSubCategoriesLocation === "KA" &&
         selectedCategories === "location" &&
@@ -320,7 +319,7 @@ const BarAndLineCombaineGraph = ({
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
             benchmark_recovery: item[1].benchmark_recovery,
-            benchmark_rate:item[1].benchmark_rate
+            benchmark_rate: item[1].benchmark_rate,
           }))
       : selectedSubCategoriesLocation === "HR" &&
         selectedCategories === "location" &&
@@ -332,7 +331,7 @@ const BarAndLineCombaineGraph = ({
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
             benchmark_recovery: item[1].benchmark_recovery,
-            benchmark_rate:item[1].benchmark_rate
+            benchmark_rate: item[1].benchmark_rate,
           }))
       : selectedSubCategoriesLocation === "AP" &&
         selectedCategories === "location" &&
@@ -344,7 +343,7 @@ const BarAndLineCombaineGraph = ({
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
             benchmark_recovery: item[1].benchmark_recovery,
-            benchmark_rate:item[1].benchmark_rate
+            benchmark_rate: item[1].benchmark_rate,
           }))
       : selectedSubCategoriesLocation === "GJ" &&
         selectedCategories === "location" &&
@@ -356,7 +355,7 @@ const BarAndLineCombaineGraph = ({
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
             benchmark_recovery: item[1].benchmark_recovery,
-            benchmark_rate:item[1].benchmark_rate
+            benchmark_rate: item[1].benchmark_rate,
           }))
       : selectedSubCategoriesLocation === "DL" &&
         selectedCategories === "location" &&
@@ -368,7 +367,7 @@ const BarAndLineCombaineGraph = ({
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
             benchmark_recovery: item[1].benchmark_recovery,
-            benchmark_rate:item[1].benchmark_rate
+            benchmark_rate: item[1].benchmark_rate,
           }))
       : selectedSubCategoriesLocation === "TG" &&
         selectedCategories === "location" &&
@@ -380,7 +379,7 @@ const BarAndLineCombaineGraph = ({
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
             benchmark_recovery: item[1].benchmark_recovery,
-            benchmark_rate:item[1].benchmark_rate
+            benchmark_rate: item[1].benchmark_rate,
           }))
       : selectedSubCategoriesLocation === "OTHERS" &&
         selectedCategories === "location" &&
@@ -392,7 +391,7 @@ const BarAndLineCombaineGraph = ({
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
             benchmark_recovery: item[1].benchmark_recovery,
-            benchmark_rate:item[1].benchmark_rate
+            benchmark_rate: item[1].benchmark_rate,
           }))
       : selectedSubCategoriesTOS === "<1L" &&
         selectedCategories === "pos" &&
@@ -404,7 +403,7 @@ const BarAndLineCombaineGraph = ({
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
             benchmark_recovery: item[1].benchmark_recovery,
-            benchmark_rate:item[1].benchmark_rate
+            benchmark_rate: item[1].benchmark_rate,
           }))
       : selectedSubCategoriesTOS === "1-5L" &&
         selectedCategories === "pos" &&
@@ -416,7 +415,7 @@ const BarAndLineCombaineGraph = ({
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
             benchmark_recovery: item[1].benchmark_recovery,
-            benchmark_rate:item[1].benchmark_rate
+            benchmark_rate: item[1].benchmark_rate,
           }))
       : selectedSubCategoriesTOS === "5-10L" &&
         selectedCategories === "pos" &&
@@ -428,7 +427,7 @@ const BarAndLineCombaineGraph = ({
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
             benchmark_recovery: item[1].benchmark_recovery,
-            benchmark_rate:item[1].benchmark_rate
+            benchmark_rate: item[1].benchmark_rate,
           }))
       : selectedSubCategoriesTOS === "10L+" &&
         selectedCategories === "pos" &&
@@ -440,7 +439,7 @@ const BarAndLineCombaineGraph = ({
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
             benchmark_recovery: item[1].benchmark_recovery,
-            benchmark_rate:item[1].benchmark_rate
+            benchmark_rate: item[1].benchmark_rate,
           }))
       : selectedSubCategoriesAgency === "Very Small" &&
         selectedCategories === "agency" &&
@@ -452,7 +451,7 @@ const BarAndLineCombaineGraph = ({
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
             benchmark_recovery: item[1].benchmark_recovery,
-            benchmark_rate:item[1].benchmark_rate
+            benchmark_rate: item[1].benchmark_rate,
           }))
       : selectedSubCategoriesAgency === "Small" &&
         selectedCategories === "agency" &&
@@ -464,7 +463,7 @@ const BarAndLineCombaineGraph = ({
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
             benchmark_recovery: item[1].benchmark_recovery,
-            benchmark_rate:item[1].benchmark_rate
+            benchmark_rate: item[1].benchmark_rate,
           }))
       : selectedSubCategoriesAgency === "Medium" &&
         selectedCategories === "agency" &&
@@ -476,7 +475,7 @@ const BarAndLineCombaineGraph = ({
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
             benchmark_recovery: item[1].benchmark_recovery,
-            benchmark_rate:item[1].benchmark_rate
+            benchmark_rate: item[1].benchmark_rate,
           }))
       : selectedSubCategoriesAgency === "Large" &&
         selectedCategories === "agency" &&
@@ -488,7 +487,7 @@ const BarAndLineCombaineGraph = ({
             recovery: item[1].recovery,
             "%Recovery": item[1]["%Recovery"],
             benchmark_recovery: item[1].benchmark_recovery,
-            benchmark_rate:item[1].benchmark_rate
+            benchmark_rate: item[1].benchmark_rate,
           }));
 
   const formatNumberCroreBar = (num: any) => {
@@ -566,8 +565,8 @@ const BarAndLineCombaineGraph = ({
           month: item[0].month,
           unique_payers: item[1].unique_payers,
           "%Unique_payers": item[0]["%Unique_payers"],
-          benchmark_recov_accounts:item[1].benchmark_recov_accounts,
-          benchmark_rate:item[0].benchmark_rate
+          benchmark_recov_accounts: item[1].benchmark_recov_accounts,
+          benchmark_rate: item[0].benchmark_rate,
         }))
       : selectedSubCategories === "V0" &&
         selectedCategories === "mob" &&
@@ -578,20 +577,20 @@ const BarAndLineCombaineGraph = ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
-            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
-            benchmark_rate:item[0].benchmark_rate
+            benchmark_recov_accounts: item[1].benchmark_recov_accounts,
+            benchmark_rate: item[0].benchmark_rate,
           }))
       : selectedSubCategories === "V1" &&
         selectedCategories === "mob" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.mob
           .filter((item: SubCategories) => item[0].sub_segment === "V1")
-          .map((item: any) =>  ({
+          .map((item: any) => ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
-            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
-            benchmark_rate:item[0].benchmark_rate
+            benchmark_recov_accounts: item[1].benchmark_recov_accounts,
+            benchmark_rate: item[0].benchmark_rate,
           }))
       : selectedSubCategories === "V2" &&
         selectedCategories === "mob" &&
@@ -602,32 +601,32 @@ const BarAndLineCombaineGraph = ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
-            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
-            benchmark_rate:item[0].benchmark_rate
+            benchmark_recov_accounts: item[1].benchmark_recov_accounts,
+            benchmark_rate: item[0].benchmark_rate,
           }))
       : selectedSubCategories === "V3" &&
         selectedCategories === "mob" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.mob
           .filter((item: SubCategories) => item[0].sub_segment === "V3")
-          .map((item: any) =>  ({
+          .map((item: any) => ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
-            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
-            benchmark_rate:item[0].benchmark_rate
+            benchmark_recov_accounts: item[1].benchmark_recov_accounts,
+            benchmark_rate: item[0].benchmark_rate,
           }))
       : selectedSubCategories === "V4" &&
         selectedCategories === "mob" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.mob
           .filter((item: SubCategories) => item[0].sub_segment === "V4")
-          .map((item: any) =>  ({
+          .map((item: any) => ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
-            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
-            benchmark_rate:item[0].benchmark_rate
+            benchmark_recov_accounts: item[1].benchmark_recov_accounts,
+            benchmark_rate: item[0].benchmark_rate,
           }))
       : selectedSubCategories === "V5" &&
         selectedCategories === "mob" &&
@@ -638,69 +637,68 @@ const BarAndLineCombaineGraph = ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
-            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
-            benchmark_rate:item[0].benchmark_rate
+            benchmark_recov_accounts: item[1].benchmark_recov_accounts,
+            benchmark_rate: item[0].benchmark_rate,
           }))
       : selectedSubCategories === "V6" &&
         selectedCategories === "mob" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.mob
           .filter((item: SubCategories) => item[0].sub_segment === "V6")
-          .map((item: any) =>  ({
+          .map((item: any) => ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
-            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
-            benchmark_rate:item[0].benchmark_rate
+            benchmark_recov_accounts: item[1].benchmark_recov_accounts,
+            benchmark_rate: item[0].benchmark_rate,
           }))
       : selectedSubCategories === "V7" &&
         selectedCategories === "mob" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.mob
           .filter((item: SubCategories) => item[0].sub_segment === "V7")
-          .map((item: any) =>  ({
+          .map((item: any) => ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
-            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
-            benchmark_rate:item[0].benchmark_rate
+            benchmark_recov_accounts: item[1].benchmark_recov_accounts,
+            benchmark_rate: item[0].benchmark_rate,
           }))
-      : 
-      selectedSubCategoriesLocation === "UP" &&
+      : selectedSubCategoriesLocation === "UP" &&
         selectedCategories === "location" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.location
           .filter((item: SubCategories) => item[0].sub_segment === "UP")
-          .map((item: any) =>  ({
+          .map((item: any) => ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
-            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
-            benchmark_rate:item[0].benchmark_rate
+            benchmark_recov_accounts: item[1].benchmark_recov_accounts,
+            benchmark_rate: item[0].benchmark_rate,
           }))
       : selectedSubCategoriesLocation === "MH" &&
         selectedCategories === "location" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.location
           .filter((item: SubCategories) => item[0].sub_segment === "MH")
-          .map((item: any) =>  ({
+          .map((item: any) => ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
-            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
-            benchmark_rate:item[0].benchmark_rate
+            benchmark_recov_accounts: item[1].benchmark_recov_accounts,
+            benchmark_rate: item[0].benchmark_rate,
           }))
       : selectedSubCategoriesLocation === "TN" &&
         selectedCategories === "location" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.location
           .filter((item: SubCategories) => item[0].sub_segment === "TN")
-          .map((item: any) =>  ({
+          .map((item: any) => ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
-            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
-            benchmark_rate:item[0].benchmark_rate
+            benchmark_recov_accounts: item[1].benchmark_recov_accounts,
+            benchmark_rate: item[0].benchmark_rate,
           }))
       : selectedSubCategoriesLocation === "MP" &&
         selectedCategories === "location" &&
@@ -711,143 +709,142 @@ const BarAndLineCombaineGraph = ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
-            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
-            benchmark_rate:item[0].benchmark_rate
+            benchmark_recov_accounts: item[1].benchmark_recov_accounts,
+            benchmark_rate: item[0].benchmark_rate,
           }))
       : selectedSubCategoriesLocation === "KA" &&
         selectedCategories === "location" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.location
           .filter((item: SubCategories) => item[0].sub_segment === "KA")
-          .map((item: any) =>  ({
+          .map((item: any) => ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
-            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
-            benchmark_rate:item[0].benchmark_rate
+            benchmark_recov_accounts: item[1].benchmark_recov_accounts,
+            benchmark_rate: item[0].benchmark_rate,
           }))
       : selectedSubCategoriesLocation === "HR" &&
         selectedCategories === "location" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.location
           .filter((item: SubCategories) => item[0].sub_segment === "HR")
-          .map((item: any) =>  ({
+          .map((item: any) => ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
-            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
-            benchmark_rate:item[0].benchmark_rate
+            benchmark_recov_accounts: item[1].benchmark_recov_accounts,
+            benchmark_rate: item[0].benchmark_rate,
           }))
       : selectedSubCategoriesLocation === "AP" &&
         selectedCategories === "location" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.location
           .filter((item: SubCategories) => item[0].sub_segment === "AP")
-          .map((item: any) =>  ({
+          .map((item: any) => ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
-            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
-            benchmark_rate:item[0].benchmark_rate
+            benchmark_recov_accounts: item[1].benchmark_recov_accounts,
+            benchmark_rate: item[0].benchmark_rate,
           }))
       : selectedSubCategoriesLocation === "TG" &&
         selectedCategories === "location" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.location
           .filter((item: SubCategories) => item[0].sub_segment === "TG")
-          .map((item: any) =>  ({
+          .map((item: any) => ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
-            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
-            benchmark_rate:item[0].benchmark_rate
+            benchmark_recov_accounts: item[1].benchmark_recov_accounts,
+            benchmark_rate: item[0].benchmark_rate,
           }))
       : selectedSubCategoriesLocation === "GJ" &&
         selectedCategories === "location" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.location
           .filter((item: SubCategories) => item[0].sub_segment === "GJ")
-          .map((item: any) =>  ({
+          .map((item: any) => ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
-            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
-            benchmark_rate:item[0].benchmark_rate
+            benchmark_recov_accounts: item[1].benchmark_recov_accounts,
+            benchmark_rate: item[0].benchmark_rate,
           }))
       : selectedSubCategoriesLocation === "DL" &&
         selectedCategories === "location" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.location
           .filter((item: SubCategories) => item[0].sub_segment === "DL")
-          .map((item: any) =>  ({
+          .map((item: any) => ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
-            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
-            benchmark_rate:item[0].benchmark_rate
+            benchmark_recov_accounts: item[1].benchmark_recov_accounts,
+            benchmark_rate: item[0].benchmark_rate,
           }))
       : selectedSubCategoriesLocation === "OTHERS" &&
         selectedCategories === "location" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.location
           .filter((item: SubCategories) => item[0].sub_segment === "OTHERS")
-          .map((item: any) =>  ({
+          .map((item: any) => ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
-            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
-            benchmark_rate:item[0].benchmark_rate
+            benchmark_recov_accounts: item[1].benchmark_recov_accounts,
+            benchmark_rate: item[0].benchmark_rate,
           }))
       : selectedSubCategoriesTOS === "<1L" &&
         selectedCategories === "pos" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.pos
           .filter((item: SubCategories) => item[0].sub_segment === "<1L")
-          .map((item: any) =>  ({
+          .map((item: any) => ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
-            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
-            benchmark_rate:item[0].benchmark_rate
+            benchmark_recov_accounts: item[1].benchmark_recov_accounts,
+            benchmark_rate: item[0].benchmark_rate,
           }))
       : selectedSubCategoriesTOS === "1-5L" &&
         selectedCategories === "pos" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.pos
           .filter((item: SubCategories) => item[0].sub_segment === "1-5L")
-          .map((item: any) =>  ({
+          .map((item: any) => ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
-            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
-            benchmark_rate:item[0].benchmark_rate
+            benchmark_recov_accounts: item[1].benchmark_recov_accounts,
+            benchmark_rate: item[0].benchmark_rate,
           }))
       : selectedSubCategoriesTOS === "5-10L" &&
         selectedCategories === "pos" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.pos
           .filter((item: SubCategories) => item[0].sub_segment === "5-10L")
-          .map((item: any) =>  ({
+          .map((item: any) => ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
-            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
-            benchmark_rate:item[0].benchmark_rate
+            benchmark_recov_accounts: item[1].benchmark_recov_accounts,
+            benchmark_rate: item[0].benchmark_rate,
           }))
       : selectedSubCategoriesTOS === "10L+" &&
         selectedCategories === "pos" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.pos
           .filter((item: SubCategories) => item[0].sub_segment === "10L+")
-          .map((item: any) =>  ({
+          .map((item: any) => ({
             month: item[0].month,
             unique_payers: item[1].unique_payers,
             "%Unique_payers": item[0]["%Unique_payers"],
-            benchmark_recov_accounts:item[1].benchmark_recov_accounts,
-            benchmark_rate:item[0].benchmark_rate
+            benchmark_recov_accounts: item[1].benchmark_recov_accounts,
+            benchmark_rate: item[0].benchmark_rate,
           }))
-      : 
-      selectedSubCategoriesAgency === "Very Small" &&
+      : selectedSubCategoriesAgency === "Very Small" &&
         selectedCategories === "agency" &&
         selectedActiveButton === "uniquePayer"
       ? portfolioRecoveryUniquePayerGraphData?.agency
@@ -1065,13 +1062,12 @@ const BarAndLineCombaineGraph = ({
           </div>
           <div className="flex items-center">
             <div
-              className="legend-color"
+              className="legend-line"
               style={{
-                backgroundColor: "#DC3C49",
-                width: "13px",
-                height: "13px",
+                width: "25px", // Length of the line
+                height: "4px", // No height for a horizontal line
                 marginRight: "5px",
-                borderRadius: "3px",
+                borderBottom: "4px dashed #DC3C49", // Dotted horizontal line
               }}
             />
             <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
@@ -1135,14 +1131,14 @@ const BarAndLineCombaineGraph = ({
               <Tooltip
                 formatter={(value: any, name) => {
                   const formattedValue =
-                    typeof value === "number" && name === "% Recovery"?
-                     `${value.toFixed(1)}%`
-                     :typeof value === "number" && name === "Benchmark Rate"
+                    typeof value === "number" && name === "% Recovery"
+                      ? `${value.toFixed(1)}%`
+                      : typeof value === "number" && name === "Benchmark Rate"
                       ? `${value.toFixed(2)}%`
                       : typeof value === "number"
                       ? `₹ ${Math.floor(value).toLocaleString()}`
-                      : `₹ ${parseFloat(value.toFixed(2)).toLocaleString()}`
-                      
+                      : `₹ ${parseFloat(value.toFixed(2)).toLocaleString()}`;
+
                   return [formattedValue, `${name}`];
                 }}
               />
@@ -1256,7 +1252,7 @@ const BarAndLineCombaineGraph = ({
                     typeof value === "number" && name === "% Payers"
                       ? // ? `${value.toFixed(2)}%`
                         `${value.toFixed(1)}%`
-                        :typeof value === "number" && name === "Benchmark Rate"
+                      : typeof value === "number" && name === "Benchmark Rate"
                       ? `${value.toFixed(1)}%`
                       : typeof value === "number"
                       ? `₹ ${Math.floor(value).toLocaleString()}`
@@ -1264,7 +1260,7 @@ const BarAndLineCombaineGraph = ({
                   return [formattedValue, `${name}`];
                 }}
               />
-             
+
               <Bar
                 yAxisId="left"
                 dataKey="unique_payers"
@@ -1285,7 +1281,7 @@ const BarAndLineCombaineGraph = ({
                   />
                 ))}
               </Bar>
-            
+
               <Line
                 yAxisId="right"
                 type="linear"

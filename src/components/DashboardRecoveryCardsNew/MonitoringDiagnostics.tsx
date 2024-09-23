@@ -93,11 +93,15 @@ const MonitoringDiagnostics = () => {
       {/* <p className="font-[400] text-[13px] font-['DM Sans'] cursor-pointer leading-4 border border-[#9F90D4] bg-white w-max px-[8px] py-[4px] rounded-[4px]">
           Monitoring & Diagnostics
         </p> */}
-      <div className="border border-[#9080CC] bg-white w-max  customClassFifth rounded-[4px] cursor-pointer">
-        {/* <p className="font-[400] text-black text-center text-[13px] font-['DM Sans'] w-[150px] h-[20px] mt-1 customClassFifth leading-4">
-          Monitoring & Diagnostics
-        </p> */}
-         <img className="h-[30px] py-[6px] px-2" src={SentinelImage} alt="SentinelImage" />
+      <div className="cursor-pointer flex flex-col items-center">
+        <img
+          className=" border border-[#9080CC] bg-white gap-[8px] py-[6px] px-[8px] customClassFifth rounded-[4px] h-[34px] w-[110px]"
+          src={SentinelImage}
+          alt="SentinelImage"
+        />
+        <p className="font-[500] text-[#6750A4] text-center text-[11px] font-['DM Sans'] mt-1 customClassFifth">
+          Risk Monitoring
+        </p>
       </div>
 
       <div className="bg-white h-[116px] p-1  rounded-xl mt-4 flex flex-col items-center ">

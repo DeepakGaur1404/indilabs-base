@@ -72,11 +72,15 @@ const CUSTOM_LEGEND_COLORS = ["black", "black", "black"];
 const Execution = () => {
   return (
     <div className="lg:w-[32%] sm:w-[90%] h-full rounded-xl shadow p-4 gap-3 bg-[#E8F3ED]">
-      <div className="border border-[#4EAD5B] bg-white w-max rounded-[4px] customClassExecutionSeventh cursor-pointer">
-        {/* <p className="font-[400] text-black text-center text-[13px] font-['DM Sans'] w-[60px] h-[16px] -mt-[2px] leading-4 customClassSeventh">
+      <div className="cursor-pointer flex flex-col items-center">
+        <img
+          className=" border border-[#4EAD5B] bg-white gap-[8px] py-[6px] px-[8px] customClassFifth rounded-[4px] h-[34px] w-[110px]"
+          src={OptimusImage}
+          alt="OptimusImage"
+        />
+        <p className="font-[500] text-[#237E2F] text-center text-[11px] font-['DM Sans'] mt-1 customClassFifth">
           Execution
-        </p> */}
-         <img className="h-[30px] py-[6px] px-2" src={OptimusImage} alt="OptimusImage" />
+        </p>
       </div>
       <div className="bg-white p-1 h-[116px] rounded-xl mt-4 flex flex-col items-center">
         <span className="font-['DM Sans'] text-[32px] text-[#EF4444] font-[500] customClassThird">
@@ -168,7 +172,7 @@ const Execution = () => {
         </div>
         <div className="flex flex-col items-center w-[100%]">
           <ResponsiveContainer
-           width="100%"
+            width="100%"
             height={280}
             className="mr-12 mt-2 w-[100%]"
           >
@@ -197,7 +201,7 @@ const Execution = () => {
                 axisLine={false}
                 tickLine={false}
                 domain={[0, 10]}
-                ticks={[0, 1, 2, 3, 4, 5, 6, 7, 8,9, 10]}
+                ticks={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
                 fontWeight={400}
                 fontSize={10}
                 fontFamily="DM Sans"
