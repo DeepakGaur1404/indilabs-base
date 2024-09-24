@@ -76,6 +76,9 @@ import SettlementPoolRecovery from "./pages/Monitoring Recovery/Settlement Recov
 import NewSettlementRecovery from "./pages/Monitoring Recovery/Settlement Recovery/NewSettlement/Index";
 import Cohort from "./pages/Monitoring Recovery/Settlement Recovery/Cohort";
 import Treatments from "./NewPages/Recoveryindex";
+import AgencyStrategyRecovery from "./pages/StrategyRecovery/Agency";
+
+import StrategyOffer from "./NewPages/StrategyOffer";
 
 function App() {
   // console.log(process.env.REACT_APP_EMAIL, "REACT_APP_API_KEY");
@@ -194,7 +197,9 @@ function App() {
           {/* <Route path="/strategy/recovery" element={<PrivateRoute />}> */}
           <Route path="/strategy/recovery" element={<StrategyRecovery />} />
           {/* </Route> */}
-
+          <Route path="agency/strategy/recovery" element={<AgencyStrategyRecovery />} />
+          
+          <Route path="offer/strategy/recovery" element={<StrategyOffer/>} />
           {/* <Route path="/strategy/reviewExecution" element={<PrivateRoute />}> */}
           <Route
             path="/strategy/reviewExecution"

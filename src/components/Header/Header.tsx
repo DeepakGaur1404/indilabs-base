@@ -83,6 +83,12 @@ const Header = ({
     } else if (pathName === "/strategy/recovery") {
       setPageName("Strategy");
       setlogo(DyanamoImage)
+    }else if (pathName ==="/agency/strategy/recovery") {
+      setPageName("Agency");
+      setlogo(DyanamoImage)
+    }else if (pathName ==="/offer/strategy/recovery") {
+      setPageName("Offer");
+      setlogo(DyanamoImage)
     } else if (pathName === "/execution") {
       setPageName("Execution");
     } else if (pathName === "/execution/recovery") {

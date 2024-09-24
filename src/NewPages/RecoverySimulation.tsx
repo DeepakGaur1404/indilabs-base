@@ -426,16 +426,16 @@ const RecoverySimulation = () => {
   };
 
   return (
-    <div className="p-0 lg:p-[28px] responsivePageWrapper bg-[#FAFAFB] relative">
+    <div className="  bg-[#FAFAFB] relative">
       {/* <DashboardHeader /> */}
-      <PerformanceDashboard />
+      {/* <PerformanceDashboard /> */}
       {/* {loader ? <Loader /> : ""} */}
-      <div className="bg-[#FAFAFB] rounded-xl p-2 lg:p-[28px] mt-5 flex flex-col">
+      <div className="bg-[#FAFAFB] rounded-xl mt-5 flex flex-col">
         <div className=" w-full flex flex-col gap-5 ml-1">
-          <div className="flex gap-11 ">
+          {/* <div className="flex gap-11 ">
             <div className="flex items-center text-[#000000] font-[500] text-[16px] font-['DM Sans']">
               Strategies:
-            </div>
+            </div> 
             <div className=" flex justify-between rounded-xl bg-[#FAFAFB] B1TabsContain">
               {Strategies.map((buttons, index) => (
                 <div
@@ -453,12 +453,12 @@ const RecoverySimulation = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
 
           <div className="flex gap-10 ">
-            <div className="flex items-center text-[#000000] font-[500] text-[16px] font-['DM Sans']">
+            {/* <div className="flex items-center text-[#000000] font-[500] text-[16px] font-['DM Sans']">
               Locations:
-            </div>
+            </div> */}
             <div className="flex flex-col gap-1">
               <div className=" flex justify-between ml-2 rounded-xl B1TabsContain">
                 {cities.map((city, index) => (
@@ -958,7 +958,7 @@ const RecoverySimulation = () => {
           </div>
         )}
 
-        <div className="self-end mt-8 flex justify-center gap-2 flex-wrap">
+        {/* <div className="self-end mt-8 flex justify-center gap-2 flex-wrap">
           <button
             onClick={() => navigate(-1)}
             className=" self-end w-20 h-10 px-4 py-2.5 rounded-3xl border border-zinc-500  text-center text-[#6750a4] text-sm font-medium "
@@ -972,7 +972,7 @@ const RecoverySimulation = () => {
           >
             Review Execution
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

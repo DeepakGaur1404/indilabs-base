@@ -201,13 +201,13 @@ const ReviewPerformance: React.FC = () => {
           </table>
         </div> */}
       </div>
-       {/* {!showTestIdComp && (
+       {!showTestIdComp && (
       <div className=" mr-3 flex ml-2 gap-2 xl:ml-8 md:mr-0 flex-wrap">
         <TestPipeLine />
         <PLImpactChart />
         <Performance />
       </div> 
-     )}  */}
+     )} 
       {/* {showTestIdComp && (
         <div className="flex gap-6 ml-5 flex-wrap">
           <div className="flex flex-col gap-2">

@@ -190,6 +190,7 @@ const Sidebar: FC<SidebarProps> = ({ layout, moduleName, setmoduleName }) => {
     {
       title: "strategy",
       imageSrc: Strategy,
+    
       hookValue: strategy,
       imageSrc3: Expand,
     },
@@ -565,7 +566,7 @@ const Sidebar: FC<SidebarProps> = ({ layout, moduleName, setmoduleName }) => {
                               )}
                             </Link>
 
-                            <Link
+                            {/* <Link
                               to={
                                 location.pathname ===
                                   "/monitoring/recovery/portfolio" ||
@@ -620,7 +621,7 @@ const Sidebar: FC<SidebarProps> = ({ layout, moduleName, setmoduleName }) => {
                                   }}
                                 ></div>
                               )}
-                            </Link>
+                            </Link> */}
                             <Link
                               to={
                                 location.pathname ===
@@ -874,226 +875,222 @@ const Sidebar: FC<SidebarProps> = ({ layout, moduleName, setmoduleName }) => {
                         </>
                       )}
 
-                      {/* {StrategyDropdown &&
-                        data.title === "strategy" &&
-                        ""
-                        //   <div>
-                        //     <Link
-                        //   to ={"/strategy"}
-                        //   to='#'
-                        //   className={`flex items-center w-[167px]  mx-3 my-3 h-11 pl-3 pr-4 py-3  justify-start gap-3  ${
-                        //     data?.title !== selectedTab &&
-                        //     "h-11 bg-white bg-opacity-30 rounded-lg"
-                        //   }`}
-                        //   onClick={() => setInhouseDropdown(!inhouseDropdown)}
-                        // >
-                        //   <img
-                        //     src={data?.imageSrc}
-                        //     alt="chart-icon"
-                        //     style={{ color: "white" }}
-                        //   />
-                        //   <span className="text-white text-base font-medium leading-normal capitalize">
-                        //     Inhouse
-                        //   </span>
-                        //   <img
-                        //     src={data?.imageSrc3}
-                        //     alt=""
-                        //     className={`${
-                        //       inhouseDropdown ? "-rotate-270" : "-rotate-90"
-                        //     }`}
-                        //   />
-                        //   {data?.title !== selectedTab && (
-                        //     <div
-                        //       className="h-11 w-[7px] bg-white rounded-tl-xl rounded-bl-xl "
-                        //       style={{
-                        //         position: "absolute",
-                        //         right: "0px",
-                        //       }}
-                        //     ></div>
-                        //   )}
-                        // </Link>
-                        // {inhouseDropdown && (
-                        //     <div className="ml-7">
-                        //     <div className="text-white flex flex-col items-center gap-y-5 my-5 w-[80%]">
-                        //       <Link
-                        //         to={"/InhouseXX"}
-                        //         className={`flex gap-2 items-center px-2 w-[98%] ${
-                        //           location.pathname === "/InhouseXX"
-                        //             ? "bg-white bg-opacity-30 rounded-lg h-9 "
-                        //             : ""
-                        //         }`}
-                        //       >
-                        //         <img src={ArrowCircle} alt="" className="h-4" />
-                        //         <p className="mb-0">XX</p>
-                        //         {location.pathname ===
-                        //           "/InhouseXX" && (
-                        //           <div
-                        //             className="h-9 w-[7px] bg-white rounded-tl-xl rounded-bl-xl "
-                        //             style={{
-                        //               position: "absolute",
-                        //               right: "0px",
-                        //             }}
-                        //           ></div>
-                        //         )}
-                        //       </Link>
-                        //       <Link
-                        //         to={"#"}
-                        //         className={`flex gap-2 items-center px-2 w-[98%] ${
-                        //           location.pathname === "#"
-                        //             ? "bg-white bg-opacity-30 rounded-lg h-9"
-                        //             : ""
-                        //         }`}
-                        //       >
-                        //         <img src={ArrowCircle} alt="" className="h-4" />
-                        //         <p className="mb-0">XY</p>
-                        //         {location.pathname === "/monitoring/location" && (
-                        //           <div
-                        //             className="h-9 w-[7px] bg-white rounded-tl-xl rounded-bl-xl "
-                        //             style={{
-                        //               position: "absolute",
-                        //               right: "0px",
-                        //             }}
-                        //           ></div>
-                        //         )}
-                        //       </Link>
-                        //     </div>
-                        //   </div>
-                        // )}
+                      {StrategyDropdown && data.title === "strategy" && (
+                        <div>
+                          <Link
+                            //to ={"/strategy"}
+                            to="/agency/strategy/recovery"
+                            className={`flex items-center w-[167px]  mx-3 my-3 h-11 pl-3 pr-4 py-3  justify-start gap-3  ${
+                              location.pathname==="/agency/strategy/recovery"  &&
+                              "h-11 bg-white bg-opacity-30 rounded-lg"
+                            }`}
+                            onClick={() => setInhouseDropdown(!inhouseDropdown)}
+                          >
+                            <img
+                              src={ArrowCircle}
+                              alt="chart-icon"
+                              style={{ color: "white" }}
+                            />
+                            <span className="text-white text-base font-medium leading-normal capitalize">
+                              Agency
+                            </span>
+                            {/* <img
+                              src={data?.imageSrc3}
+                              alt=""
+                              className={`${
+                                inhouseDropdown ? "-rotate-270" : "-rotate-90"
+                              }`}
+                            /> */}
+                            {location.pathname==="/agency/strategy/recovery" && (
+                              <div
+                                className="h-11 w-[7px] bg-white rounded-tl-xl rounded-bl-xl "
+                                style={{
+                                  position: "absolute",
+                                  right: "0px",
+                                }}
+                              ></div>
+                            )}
+                          </Link>
+                          {/* {inhouseDropdown && (
+                            <div className="ml-7">
+                              <div className="text-white flex flex-col items-center gap-y-5 my-5 w-[80%]">
+                                 <Link
+                                  to={"/InhouseXX"}
+                                  className={`flex gap-2 items-center px-2 w-[95%] ${
+                                    location.pathname === "/InhouseXX"
+                                      ? "bg-white bg-opacity-30 rounded-lg h-9 "
+                                      : ""
+                                  }`}
+                                >
+                                  <img
+                                    src={ArrowCircle}
+                                    alt=""
+                                    className="h-4"
+                                  />
+                                  <p className="mb-0">XX</p>
+                                  {location.pathname === "/InhouseXX" && (
+                                    <div
+                                      className="h-9 w-[7px] bg-white rounded-tl-xl rounded-bl-xl "
+                                      style={{
+                                        position: "absolute",
+                                        right: "0px",
+                                      }}
+                                    ></div>
+                                  )}
+                                </Link>
+                                <Link
+                                  to={"#"}
+                                  className={`flex gap-2 items-center px-2 w-[95%] ${
+                                    location.pathname === "#"
+                                      ? "bg-white bg-opacity-30 rounded-lg h-9"
+                                      : ""
+                                  }`}
+                                >
+                                  <img
+                                    src={ArrowCircle}
+                                    alt=""
+                                    className="h-4"
+                                  />
+                                  <p className="mb-0">XY</p>
+                                  {location.pathname ===
+                                    "/monitoring/location" && (
+                                    <div
+                                      className="h-9 w-[7px] bg-white rounded-tl-xl rounded-bl-xl "
+                                      style={{
+                                        position: "absolute",
+                                        right: "0px",
+                                      }}
+                                    ></div>
+                                  )}
+                                </Link> 
+                              </div>
+                            </div>
+                          )} */}
 
-                        //     <Link
-                        //   //to ={"/strategy"}
-                        //   to={"/" + data?.title}
-                        //   className={`flex items-center w-[167px]  mx-3 my-3 h-11 pl-3 pr-4 py-3  justify-start gap-3  ${
-                        //     data?.title !== selectedTab &&
-                        //     "h-11 bg-white bg-opacity-30 rounded-lg"
-                        //   }`}
-                        //   onClick={() => setAgencyDropdown(!agencyDropdown)}
-                        // >
-                        //   <img
-                        //     src={data?.imageSrc}
-                        //     alt="chart-icon"
-                        //     style={{ color: "white" }}
-                        //   />
-                        //   <span className="text-white text-base font-medium leading-normal capitalize">
-                        //     Agency
-                        //   </span>
-                        //   <img
-                        //     src={data?.imageSrc3}
-                        //     alt=""
-                        //     className={`${
-                        //       agencyDropdown ? "-rotate-270" : "-rotate-90"
-                        //     }`}
-                        //   />
-                        //   {data?.title !== selectedTab && (
-                        //     <div
-                        //       className="h-11 w-[7px] bg-white rounded-tl-xl rounded-bl-xl "
-                        //       style={{
-                        //         position: "absolute",
-                        //         right: "0px",
-                        //       }}
-                        //     ></div>
-                        //   )}
-                        // </Link>
-                        // {agencyDropdown && (
-                        //     <div className="ml-3 -mt-5">
-                        //     <div className="text-white flex flex-col items-center gap-y-5 my-5 w-[80%]">
-
-                        //     <div className="text-white flex flex-col items-center gap-y-5 my-5 ml-3 w-[95%]">
-                        //       <Link
-                        //         // to={"/strategy/optimization"}
-                        //         to={"/strategy/allocationEngine"}
-                        //         className={`flex gap-2 items-center px-2 w-[95%] ${
-                        //           location.pathname ===
-                        //           "/strategy/allocationEngine"
-                        //             ? "bg-white bg-opacity-30 rounded-lg h-9 "
-                        //             : ""
-                        //         }`}
-                        //       >
-                        //         <img src={ArrowCircle} alt="" className="h-4" />
-                        //         <p className="mb-0">Allocation</p>
-                        //         {location.pathname ===
-                        //           "/strategy/allocationEngine" && (
-                        //           <div
-                        //             className="h-9 w-[7px] bg-white rounded-tl-xl rounded-bl-xl "
-                        //             style={{
-                        //               position: "absolute",
-                        //               right: "0px",
-                        //             }}
-                        //           ></div>
-                        //         )}
-                        //       </Link>
-                        //       <Link
-                        //         to={"/strategy/optimization"}
-                        //         className={`flex gap-2 items-center px-2 w-[95%] ${
-                        //           location.pathname === "/strategy/optimization"
-                        //             ? "bg-white bg-opacity-30 rounded-lg h-9"
-                        //             : ""
-                        //         }`}
-                        //       >
-                        //         <img src={ArrowCircle} alt="" className="h-4" />
-                        //         <p className="mb-0">Optimization</p>
-                        //         {location.pathname ===
-                        //           "/strategy/optimization" && (
-                        //           <div
-                        //             className="h-9 w-[7px] bg-white rounded-tl-xl rounded-bl-xl "
-                        //             style={{
-                        //               position: "absolute",
-                        //               right: "0px",
-                        //             }}
-                        //           ></div>
-                        //         )}
-                        //       </Link>
-                        //       <Link
-                        //         to={"/strategy/changeControl"}
-                        //         className={`flex gap-2 items-center px-2 w-[95%] ${
-                        //           location.pathname === "/strategy/changeControl"
-                        //             ? "bg-white bg-opacity-30 rounded-lg h-9"
-                        //             : ""
-                        //         }`}
-                        //       >
-                        //         <img src={ArrowCircle} alt="" className="h-4" />
-                        //         <p className="mb-0">Change</p>
-                        //         {location.pathname ===
-                        //           "/strategy/changeControl" && (
-                        //           <div
-                        //             className="h-9 w-[7px] bg-white rounded-tl-xl rounded-bl-xl "
-                        //             style={{
-                        //               position: "absolute",
-                        //               right: "0px",
-                        //             }}
-                        //           ></div>
-                        //         )}
-                        //       </Link>
-                        //     </div>
-
-                        //     </div>
-                        //   </div>
-                        // )}
-
-                        //     <Link
-                        //       to={"/strategy/allocationEngine"}
-                        //       className={`flex gap-2 items-center px-2  mt-2 ml-[18px] w-[180px] ${
-                        //         location.pathname === "/strategy/allocationEngine"
-                        //           ? "bg-white bg-opacity-30 rounded-lg h-9"
-                        //           : ""
-                        //       }`}
-                        //     >
-                        //       <img src={ArrowCircle} alt="" className="h-4" />
-                        //       <p className="mb-[2px] text-white">Agency</p>
-                        //       {location.pathname ===
-                        //         "/strategy/allocationEngine" && (
-                        //         <div
-                        //           className="h-9 w-[7px] bg-white rounded-tl-xl rounded-bl-xl "
-                        //           style={{
-                        //             position: "absolute",
-                        //             right: "1px",
-                        //           }}
-                        //         ></div>
-                        //       )}
-                        //     </Link>
-                        //   </div>
-                      } */}
-                      {/* {data?.hookValue && (
+                          <Link
+                            //to ={"/strategy"}
+                            to={"/offer/strategy/recovery"}
+                            className={`flex items-center w-[167px]  mx-3 my-3 h-11 pl-3 pr-4 py-3  justify-start gap-3  ${
+                              location.pathname==="/offer/strategy/recovery" &&
+                              "h-11 bg-white bg-opacity-30 rounded-lg"
+                            }`}
+                            onClick={() => setAgencyDropdown(!agencyDropdown)}
+                          >
+                            <img
+                              src={ArrowCircle}
+                              alt="chart-icon"
+                              style={{ color: "white" }}
+                            />
+                            <span className="text-white text-base font-medium leading-normal capitalize">
+                            Offer
+                            </span>
+                            {/* <img
+                              src={data?.imageSrc3}
+                              alt=""
+                              className={`${
+                                agencyDropdown ? "-rotate-270" : "-rotate-90"
+                              }`}
+                            /> */}
+                            {location.pathname==="/offer/strategy/recovery" && (
+                              <div
+                                className="h-11 w-[7px] bg-white rounded-tl-xl rounded-bl-xl "
+                                style={{
+                                  position: "absolute",
+                                  right: "0px",
+                                }}
+                              ></div>
+                            )}
+                          </Link>
+                          {/* {agencyDropdown && (
+                            <div className="ml-3 -mt-5">
+                              <div className="text-white flex flex-col items-center gap-y-5 my-5 w-[80%]">
+                                <div className="text-white flex flex-col items-center gap-y-5 my-5 ml-3 w-[95%]">
+                                  <Link
+                                    // to={"/strategy/optimization"}
+                                    to={"/strategy/allocationEngine"}
+                                    className={`flex gap-2 items-center px-2 w-[95%] ${
+                                      location.pathname ===
+                                      "/strategy/allocationEngine"
+                                        ? "bg-white bg-opacity-30 rounded-lg h-9 "
+                                        : ""
+                                    }`}
+                                  >
+                                    <img
+                                      src={ArrowCircle}
+                                      alt=""
+                                      className="h-4"
+                                    />
+                                    <p className="mb-0">Allocation</p>
+                                    {location.pathname ===
+                                      "/strategy/allocationEngine" && (
+                                      <div
+                                        className="h-9 w-[7px] bg-white rounded-tl-xl rounded-bl-xl "
+                                        style={{
+                                          position: "absolute",
+                                          right: "0px",
+                                        }}
+                                      ></div>
+                                    )}
+                                  </Link>
+                                  <Link
+                                    to={"/strategy/optimization"}
+                                    className={`flex gap-2 items-center px-2 w-[95%] ${
+                                      location.pathname ===
+                                      "/strategy/optimization"
+                                        ? "bg-white bg-opacity-30 rounded-lg h-9"
+                                        : ""
+                                    }`}
+                                  >
+                                    <img
+                                      src={ArrowCircle}
+                                      alt=""
+                                      className="h-4"
+                                    />
+                                    <p className="mb-0">Optimization</p>
+                                    {location.pathname ===
+                                      "/strategy/optimization" && (
+                                      <div
+                                        className="h-9 w-[7px] bg-white rounded-tl-xl rounded-bl-xl "
+                                        style={{
+                                          position: "absolute",
+                                          right: "0px",
+                                        }}
+                                      ></div>
+                                    )}
+                                  </Link>
+                                  <Link
+                                    to={"/strategy/changeControl"}
+                                    className={`flex gap-2 items-center px-2 w-[95%] ${
+                                      location.pathname ===
+                                      "/strategy/changeControl"
+                                        ? "bg-white bg-opacity-30 rounded-lg h-9"
+                                        : ""
+                                    }`}
+                                  >
+                                    <img
+                                      src={ArrowCircle}
+                                      alt=""
+                                      className="h-4"
+                                    />
+                                    <p className="mb-0">Change</p>
+                                    {location.pathname ===
+                                      "/strategy/changeControl" && (
+                                      <div
+                                        className="h-9 w-[7px] bg-white rounded-tl-xl rounded-bl-xl "
+                                        style={{
+                                          position: "absolute",
+                                          right: "0px",
+                                        }}
+                                      ></div>
+                                    )}
+                                  </Link>
+                                </div>
+                              </div>
+                            </div>
+                          )} */}
+                        </div>
+                      )}
+                      {data?.hookValue && (
                         <div
                           className="h-11 w-[7px] bg-white rounded-tl-xl rounded-bl-xl "
                           style={{
@@ -1102,7 +1099,7 @@ const Sidebar: FC<SidebarProps> = ({ layout, moduleName, setmoduleName }) => {
                             marginTop: "11px",
                           }}
                         ></div>
-                      )} */}
+                      )}
                       {/* {data.title === "monitoring" && monitoringDropdown && (
               <>
                 <div className="text-white flex flex-col items-center gap-y-5 my-5 w-[80%]">
