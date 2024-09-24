@@ -80,7 +80,7 @@ const ReviewExecution = () => {
             ))}
           </div>
         </div>
-        {/* <>
+        <>
           
            {selectedCategory === "segmentation"  && (  
           <div className="w-[100%] flex gap-5 mt-4 flex-wrap xl:flex-nowrap">
@@ -95,7 +95,7 @@ const ReviewExecution = () => {
            {selectedCategory === "startegy" && (
             <RecoverySimulation  />
            )}
-        </> */}
+        </>
         <div className="self-end mt-8 flex justify-center gap-2 flex-wrap">
           <button
             onClick={() => navigate(-1)}
