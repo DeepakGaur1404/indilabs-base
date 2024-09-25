@@ -43,20 +43,18 @@ const PortfolioAI: React.FC<PortfolioAIprops> = ({ onClose }) => {
       </div>
       <ul className="text-gray-600 list-disc pl-5 mt-2 gap-5">
         <li className="font-['DM Sans'] text-[12px] font-normal text-[#000000]">
-          The "Hotspots" section seems to track performance indicators with
-          defined target ranges, aiming to stay within the green zones.
+          Over the last six months, the recovery rate declined slightly by
+          0.01%, while the active recovery balance increased by 0.97%
         </li>
         <li className="font-['DM Sans'] text-[12px] font-normal text-[#000000]">
-          The "Diagnostics" section seems to evaluate financial impacts with
-          certain business aspects, like portfolio flow and credit quality,
-          against set targets, indicating areas of profit or loss.
+          Vintage V1 exhibited the highest performance (2.59%), while V6 had the
+          lowest (0.17%). Location-wise, KA performed best (1.18%), and GJ was
+          the weakest (0.42%).
         </li>
-        {/* <li className="font-['DM Sans'] text-[12px] font-normal text-[#000000]">
-          Overall, while certain indicators like "1-2%" and "RPC %" are within
-          target ranges, there are significant losses in areas such as portfolio
-          flow and production hours, suggesting a need for strategic adjustments
-          in these areas.
-        </li> */}
+        <li className="font-['DM Sans'] text-[12px] font-normal text-[#000000]">
+          In terms of POS, loans under 1 lakh performed the best (2.20%), and
+          those above 10 lakhs performed the worst (0.39%).
+        </li>
       </ul>
     </div>
   );

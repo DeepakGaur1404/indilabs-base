@@ -59,7 +59,7 @@ const StrategySimulation = () => {
   const [b2, setB2] = useState(false);
   const [selectedCity, setSelectedCity] = useState("all");
   const [activeBucket, setActiveBucket] = useState("b1");
-  const [activeButton, setActiveButton] = useState<string>("agency");
+  const [activeButton, setActiveButton] = useState<string>("offer");
   const [placmentNumbersButtons, setPlacmentNumbersButtons] = useState("2");
   const [allocationData, setAllocationData] = useState<Allocation[]>();
   const [exclusion_criteria, setExclusion_criteria] =
