@@ -38,7 +38,7 @@ const Diagnostics: React.FC = () => {
   return (
     <div className="px-[6px] h-full lg:px-[49px] lg:pt-[59px] -mt-10 lg:pb-20 bg-[#fafafb]">
       <HomeDashboard />
-      {/* <div className="flex mt-5 ml-2">
+      <div className="flex mt-5 ml-2">
         <div className=" flex justify-between rounded-xl B1TabsContain">
           {categories.map((city, index) => (
             <div
@@ -54,8 +54,8 @@ const Diagnostics: React.FC = () => {
             </div>
           ))}
         </div>
-      </div> */}
-      {/* {selectedCategory === "segmentation" && (
+      </div>
+      {selectedCategory === "segmentation" && (
         <>
           <DiagnosticSegementation />
           <div className="w-[100%] flex items-center justify-end gap-5 mt-8">
@@ -77,8 +77,8 @@ const Diagnostics: React.FC = () => {
             </Button>
           </div>
         </>
-      )} */}
-      {/* {selectedCategory === "insights" && ( */}
+      )}
+      {selectedCategory === "insights" && (
         <>
           <div className="flex flex-wrap lg:flex-row sm:flex-col gap-5 mt-6 ml-2 w-[100%]">
             <Top5Drivers
@@ -91,26 +91,34 @@ const Diagnostics: React.FC = () => {
           <div className="flex flex-wrap lg:flex-row sm:flex-col gap-5 mt-4 ml-2 w-[100%]">
             <TwoCards />
             <ActualBalance selectedSegment={selectedSegment} />
-            <AI />
+            <AI selectedSegment={selectedSegment} />
           </div>
         </>
-      {/* )} */}
+      )}
 
-      {/* {selectedCategory === "validation" && (
-        <div className=" w-[100%] flex items-start justify-center ml-3 mt-6 cursor-pointer">
-          <div className="w-[100%] md:flex items-start flex justify-start gap-[42px] flex-wrap lg:flex-nowrap">
-            <div className="md:w-[49%] sm:mb-5 md:mb-0">
-              <HotspotExpanded
-                setDiagnostic={() => setIsDiagnostic(true)}
-                onSegmentSelect={setSelectedSegment}
-              />
-            </div>
-            <div className="md:w-[49%] flex flex-col">
-              <DiagnosticsCard />
+      {selectedCategory === "validation" && (
+        // <div className=" w-[100%] flex items-start justify-center ml-3 mt-6 cursor-pointer">
+        //   <div className="w-[100%] md:flex items-start flex justify-start gap-[42px] flex-wrap lg:flex-nowrap">
+        //     <div className="md:w-[49%] sm:mb-5 md:mb-0">
+        //       <HotspotExpanded
+        //         setDiagnostic={() => setIsDiagnostic(true)}
+        //         onSegmentSelect={setSelectedSegment}
+        //       />
+        //     </div>
+        //     <div className="md:w-[49%] flex flex-col">
+        //       <DiagnosticsCard />
+        //     </div>
+        //   </div>
+        // </div>
+        <div className="CommonBodyWrap">
+          <div className="h-[80vh] flex items-center justify-center">
+            <div className="bg-yellow-200 p-6 rounded-lg shadow-lg text-center">
+              <h1 className="text-2xl font-bold mb-2">Work in Progress</h1>
+              <p className="text-gray-700">This page is under construction.</p>
             </div>
           </div>
         </div>
-      )} */}
+      )}
     </div>
   );
 };

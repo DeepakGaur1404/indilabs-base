@@ -1,9 +1,9 @@
 import { IoMdArrowDropup } from "react-icons/io";
 
 const hotspot = {
-  start: 6,
-  end: 3,
-  current: 4.2,
+  start: 0.5,
+  end: 0.9,
+  current: 0.6,
 };
 
 const arrowPosition = `${
@@ -35,7 +35,7 @@ const NewDiagnostics = () => {
                   className={`text-black text-[12px] font-[400px] font-['DM Sans']`}
                   style={{
                     position: "absolute",
-                    right: arrowPosition,
+                    left: arrowPosition,
                     marginLeft: "5px",
                   }}
                 >
@@ -59,7 +59,7 @@ const NewDiagnostics = () => {
                     height: "25px",
                     margin: "2px",
                     position: "absolute",
-                    right: arrowPosition,
+                    left: arrowPosition,
                   }}
                 />
               )}

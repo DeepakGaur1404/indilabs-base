@@ -20,6 +20,7 @@ import PerformanceDashboard from "../../../components/PerformanceDashboardHeader
 import HomeDashboard from "../../../components/PerformanceDashboardHeader/HomeDashboard";
 import AIButtons from "../../../assets/images/AIButton.svg";
 import PortfolioAI from "./PortfolioAI";
+import "../../../NewPages/AllocationEngine/Allocation.scss";
 const Buttons = [
   // { id: "writeOff", label: "Write Off" },
   { id: "$Recovery", label: "$ Value" },
@@ -12710,21 +12711,41 @@ const PortfolioRecovery: React.FC = () => {
     useState<any>();
   const [portfolioUniqueFlowGraphData, setPortfolioUniqueFlowGraphData] =
     useState<any>();
-    const [isImageVisible, setIsImageVisible] = useState(true);
-
-    const handleImageClick = () => {
-        setIsImageVisible(false);
-      };
-      const handlePortfolioClose = () => {
-        setIsImageVisible(true);
-      };
-
-  let navigate = useNavigate();
-  // const [loader, setLoader] = useState(true);
-
+  // const [loader, setLoader] = useState(false);
   // const Loader = () => {
   //   return <span className="loader"></span>;
   // };
+  // const [isImageVisible, setIsImageVisible] = useState(true);
+
+  // const handleImageClick = () => {
+  //     setIsImageVisible(false);
+  //   };
+  //   const handlePortfolioClose = () => {
+  //     setIsImageVisible(true);
+  //   };
+
+  const [isImageVisible, setIsImageVisible] = useState(true);
+  const [loader, setLoader] = useState(false);
+
+  const Loader = () => {
+    return <span className="loader"></span>;
+  };
+
+  const handleImageClick = () => {
+    // setIsImageVisible(false);
+    setLoader(true);
+
+    setTimeout(() => {
+      setLoader(false);
+      setIsImageVisible(false);
+    }, 2000);
+  };
+
+  const handlePortfolioClose = () => {
+    setIsImageVisible(true);
+  };
+
+  let navigate = useNavigate();
 
   const handleProductClick = async (buttonId: string) => {
     setActiveButton(buttonId);
@@ -12886,195 +12907,40 @@ const PortfolioRecovery: React.FC = () => {
         <HomeDashboard />
       </div>
       <div className="w-full flex flex-col gap-5 mt-4 items-start ml-[73px] mb-4">
-        <div className="flex justify-between items-center  relative w-full">
-          <div className="flex ">
-            <div className=" flex w-full justify-between rounded-xl B1TabsContain">
-              {Buttons.map((buttons, index) => (
-                <div
-                  key={buttons.id}
-                  onClick={() => handleProductClick(buttons.id)}
-                  className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-10 
+        <div className="flex justify-between w-full">
+          <div className="flex flex-col gap-3">
+            <div className="">
+              <div className=" flex w-full rounded-xl B1TabsContain">
+                {Buttons.map((buttons, index) => (
+                  <div
+                    key={buttons.id}
+                    onClick={() => handleProductClick(buttons.id)}
+                    className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-10 
                  border p-4 border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
                    activeButton === buttons.id
                      ? " bg-[#E8DEF8] "
                      : "bg-[#fafafb]"
                  } ${index === 0 ? "rounded-l-[4px]" : ""} ${
-                    index === Buttons.length - 1 ? "rounded-r-[4px]" : ""
-                  }`}
-                >
-                  {buttons.label}
-                </div>
-              ))}
-            </div>
-          </div>
-          {/* {isImageVisible ? (
-        <img
-          className="mr-32 cursor-pointer"
-          src={AIButtons} 
-          alt="AIGenImage"
-          onClick={handleImageClick} 
-        />
-      ) : (
-        <div className="flex justify-end items-end  mr-32">
-              <PortfolioAI onClose={handlePortfolioClose} /> 
-        </div>
-      
-      )} */}
-        </div>
-        <div className="flex">
-          <div className=" flex justify-between rounded-xl B1TabsContain">
-            {categories.map((city, index) => (
-              <div
-                key={city.id}
-                onClick={() => handleCategoryClick(city.id)}
-                className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-10 w-full p-4 border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
-                  selectedCategory === city.id
-                    ? " bg-[#E8DEF8] "
-                    : "bg-[#fafafb]"
-                } ${index === 0 ? "rounded-l-[4px]" : ""} ${
-                  index === categories.length - 1 ? "rounded-r-[4px]" : ""
-                }`}
-              >
-                {city.name}
+                      index === Buttons.length - 1 ? "rounded-r-[4px]" : ""
+                    }`}
+                  >
+                    {buttons.label}
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
-
-        {selectedCategory === "mob" && (
-          <div className="flex">
-            <div className=" flex w-full justify-between  rounded-xl">
-              {subCategories.map((city, index) => (
-                <div
-                  key={city.id}
-                  onClick={() => handleSubCategoryClick(city.id)}
-                  className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-10 p-4 border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
-                    selectedSubCategory === city.id
-                      ? " bg-[#E8DEF8] "
-                      : "bg-[#fafafb]"
-                  } ${index === 0 ? "rounded-l-[4px]" : ""} ${
-                    index === subCategories.length - 1 ? "rounded-r-[4px]" : ""
-                  }`}
-                >
-                  {city.name}
-                </div>
-              ))}
             </div>
-          </div>
-        )}
-
-        {selectedCategory === "placement" && (
-          <div className="flex">
-            <div className=" flex w-full justify-between  rounded-xl">
-              {subCategoriesPlacements.map((city, index) => (
-                <div
-                  key={city.id}
-                  onClick={() => handleSubCategoryTwoClick(city.id)}
-                  className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-8 p-5 border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
-                    selectedSubCategoryTwo === city.id
-                      ? " bg-[#E8DEF8] "
-                      : "bg-[#fafafb]"
-                  } ${index === 0 ? "rounded-l-[4px]" : ""} ${
-                    index === subCategoriesPlacements.length - 1
-                      ? "rounded-r-[4px]"
-                      : ""
-                  }`}
-                >
-                  {city.name}
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {selectedCategory === "pos" && (
-          <div className="flex">
-            <div className=" flex w-full justify-between  rounded-xl">
-              {subCategoriesTOS.map((city, index) => (
-                <div
-                  key={city.id}
-                  onClick={() => handleSubCategoryTOSClick(city.id)}
-                  className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-8 p-5 border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
-                    selectedSubCategoryTOS === city.id
-                      ? " bg-[#E8DEF8] "
-                      : "bg-[#fafafb]"
-                  } ${index === 0 ? "rounded-l-[4px]" : ""} ${
-                    index === subCategoriesTOS.length - 1
-                      ? "rounded-r-[4px]"
-                      : ""
-                  }`}
-                >
-                  {city.name}
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {selectedCategory === "agency" && (
-          <div className="flex">
-            <div className=" flex w-full justify-between  rounded-xl">
-              {subCategoriesAgents.map((city, index) => (
-                <div
-                  key={city.id}
-                  onClick={() => handleSubCategoryAgencyClick(city.id)}
-                  className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-8 p-5 border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
-                    selectedSubCategoryAgency === city.id
-                      ? " bg-[#E8DEF8] "
-                      : "bg-[#fafafb]"
-                  } ${index === 0 ? "rounded-l-[4px]" : ""} ${
-                    index === subCategoriesAgents.length - 1
-                      ? "rounded-r-[4px]"
-                      : ""
-                  }`}
-                >
-                  {city.name}
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {selectedCategory === "location" && (
-          <div className="flex">
-            <div className=" flex w-full justify-between  rounded-xl">
-              {subCategoriesLocation.map((city, index) => (
-                <div
-                  key={city.id}
-                  onClick={() => handleSubCategoryLocationClick(city.id)}
-                  className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-8 p-5 border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
-                    selectedSubCategoryLocation === city.id
-                      ? " bg-[#E8DEF8] "
-                      : "bg-[#fafafb]"
-                  } ${index === 0 ? "rounded-l-[4px]" : ""} ${
-                    index === subCategoriesLocation.length - 1
-                      ? "rounded-r-[4px]"
-                      : ""
-                  }`}
-                >
-                  {city.name}
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {selectedCategory === "segments" &&
-          (activeButton === "$Recovery" || activeButton === "writeOff") && (
             <div className="flex">
-              <div className=" flex w-full justify-between  rounded-xl">
-                {subCategoriesSegment.map((city, index) => (
+              <div className=" flex  rounded-xl B1TabsContain">
+                {categories.map((city, index) => (
                   <div
                     key={city.id}
-                    onClick={() => handleSubCategorySegmentClick(city.id)}
-                    className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-8 p-5 border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
-                      selectedSubCategorySegments === city.id
+                    onClick={() => handleCategoryClick(city.id)}
+                    className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-10 w-full p-4 border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
+                      selectedCategory === city.id
                         ? " bg-[#E8DEF8] "
                         : "bg-[#fafafb]"
                     } ${index === 0 ? "rounded-l-[4px]" : ""} ${
-                      index === subCategoriesSegment.length - 1
-                        ? "rounded-r-[4px]"
-                        : ""
+                      index === categories.length - 1 ? "rounded-r-[4px]" : ""
                     }`}
                   >
                     {city.name}
@@ -13082,33 +12948,201 @@ const PortfolioRecovery: React.FC = () => {
                 ))}
               </div>
             </div>
-          )}
 
-        {selectedCategory === "segments" && activeButton === "uniquePayer" && (
-          <div className="flex">
-            <div className=" flex w-full justify-between  rounded-xl">
-              {subCategoriesSegmentUniquePayer.map((city, index) => (
-                <div
-                  key={city.id}
-                  onClick={() =>
-                    handleSubCategoryUniquePayerSegmentClick(city.id)
-                  }
-                  className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-8 p-5 border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
-                    selectedSubCategoryUniquePayerSegments === city.id
-                      ? " bg-[#E8DEF8] "
-                      : "bg-[#fafafb]"
-                  } ${index === 0 ? "rounded-l-[4px]" : ""} ${
-                    index === subCategoriesSegmentUniquePayer.length - 1
-                      ? "rounded-r-[4px]"
-                      : ""
-                  }`}
-                >
-                  {city.name}
+            {selectedCategory === "mob" && (
+              <div className="">
+                <div className=" flex w-full  rounded-xl">
+                  {subCategories.map((city, index) => (
+                    <div
+                      key={city.id}
+                      onClick={() => handleSubCategoryClick(city.id)}
+                      className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-10 p-4 border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
+                        selectedSubCategory === city.id
+                          ? " bg-[#E8DEF8] "
+                          : "bg-[#fafafb]"
+                      } ${index === 0 ? "rounded-l-[4px]" : ""} ${
+                        index === subCategories.length - 1
+                          ? "rounded-r-[4px]"
+                          : ""
+                      }`}
+                    >
+                      {city.name}
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            )}
+
+            {selectedCategory === "placement" && (
+              <div className="">
+                <div className=" flex w-full  rounded-xl">
+                  {subCategoriesPlacements.map((city, index) => (
+                    <div
+                      key={city.id}
+                      onClick={() => handleSubCategoryTwoClick(city.id)}
+                      className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-8 p-5 border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
+                        selectedSubCategoryTwo === city.id
+                          ? " bg-[#E8DEF8] "
+                          : "bg-[#fafafb]"
+                      } ${index === 0 ? "rounded-l-[4px]" : ""} ${
+                        index === subCategoriesPlacements.length - 1
+                          ? "rounded-r-[4px]"
+                          : ""
+                      }`}
+                    >
+                      {city.name}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {selectedCategory === "pos" && (
+              <div className="">
+                <div className=" flex w-full   rounded-xl">
+                  {subCategoriesTOS.map((city, index) => (
+                    <div
+                      key={city.id}
+                      onClick={() => handleSubCategoryTOSClick(city.id)}
+                      className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-8 p-5 border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
+                        selectedSubCategoryTOS === city.id
+                          ? " bg-[#E8DEF8] "
+                          : "bg-[#fafafb]"
+                      } ${index === 0 ? "rounded-l-[4px]" : ""} ${
+                        index === subCategoriesTOS.length - 1
+                          ? "rounded-r-[4px]"
+                          : ""
+                      }`}
+                    >
+                      {city.name}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {selectedCategory === "agency" && (
+              <div className="">
+                <div className=" flex w-full  rounded-xl">
+                  {subCategoriesAgents.map((city, index) => (
+                    <div
+                      key={city.id}
+                      onClick={() => handleSubCategoryAgencyClick(city.id)}
+                      className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-8 p-5 border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
+                        selectedSubCategoryAgency === city.id
+                          ? " bg-[#E8DEF8] "
+                          : "bg-[#fafafb]"
+                      } ${index === 0 ? "rounded-l-[4px]" : ""} ${
+                        index === subCategoriesAgents.length - 1
+                          ? "rounded-r-[4px]"
+                          : ""
+                      }`}
+                    >
+                      {city.name}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {selectedCategory === "location" && (
+              <div className="">
+                <div className=" flex w-full  rounded-xl">
+                  {subCategoriesLocation.map((city, index) => (
+                    <div
+                      key={city.id}
+                      onClick={() => handleSubCategoryLocationClick(city.id)}
+                      className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-8 p-5 border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
+                        selectedSubCategoryLocation === city.id
+                          ? " bg-[#E8DEF8] "
+                          : "bg-[#fafafb]"
+                      } ${index === 0 ? "rounded-l-[4px]" : ""} ${
+                        index === subCategoriesLocation.length - 1
+                          ? "rounded-r-[4px]"
+                          : ""
+                      }`}
+                    >
+                      {city.name}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {selectedCategory === "segments" &&
+              (activeButton === "$Recovery" || activeButton === "writeOff") && (
+                <div className="">
+                  <div className=" flex w-full  rounded-xl">
+                    {subCategoriesSegment.map((city, index) => (
+                      <div
+                        key={city.id}
+                        onClick={() => handleSubCategorySegmentClick(city.id)}
+                        className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-8 p-5 border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
+                          selectedSubCategorySegments === city.id
+                            ? " bg-[#E8DEF8] "
+                            : "bg-[#fafafb]"
+                        } ${index === 0 ? "rounded-l-[4px]" : ""} ${
+                          index === subCategoriesSegment.length - 1
+                            ? "rounded-r-[4px]"
+                            : ""
+                        }`}
+                      >
+                        {city.name}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+            {selectedCategory === "segments" &&
+              activeButton === "uniquePayer" && (
+                <div className="">
+                  <div className=" flex w-full  rounded-xl">
+                    {subCategoriesSegmentUniquePayer.map((city, index) => (
+                      <div
+                        key={city.id}
+                        onClick={() =>
+                          handleSubCategoryUniquePayerSegmentClick(city.id)
+                        }
+                        className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-8 p-5 border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
+                          selectedSubCategoryUniquePayerSegments === city.id
+                            ? " bg-[#E8DEF8] "
+                            : "bg-[#fafafb]"
+                        } ${index === 0 ? "rounded-l-[4px]" : ""} ${
+                          index === subCategoriesSegmentUniquePayer.length - 1
+                            ? "rounded-r-[4px]"
+                            : ""
+                        }`}
+                      >
+                        {city.name}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
           </div>
-        )}
+          {isImageVisible || loader ? (
+            <div className="">
+              {isImageVisible && (
+                <img
+                  className="mr-32 cursor-pointer"
+                  src={AIButtons}
+                  alt="AIGenImage"
+                  onClick={handleImageClick}
+                />
+              )}
+              {loader && (
+                <div className="absolute left-40 inset-0 ">
+                  <Loader />
+                </div>
+              )}
+            </div>
+          ) : (
+            <div className="sticky bg-white flex justify-end items-end right-16 z-500">
+              <PortfolioAI onClose={handlePortfolioClose} />
+            </div>
+          )}
+        </div>
       </div>
       <div className="flex flex-col  items-start  justify-center gap-6 p-[6px] lg:px-[59px] bg-[#fafafb] w-full">
         <div
