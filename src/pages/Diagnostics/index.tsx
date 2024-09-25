@@ -55,7 +55,7 @@ const Diagnostics: React.FC = () => {
           ))}
         </div>
       </div>
-      {selectedCategory === "segmentation" && (
+      {/* {selectedCategory === "segmentation" && (
         <>
           <DiagnosticSegementation />
           <div className="w-[100%] flex items-center justify-end gap-5 mt-8">
@@ -77,7 +77,7 @@ const Diagnostics: React.FC = () => {
             </Button>
           </div>
         </>
-      )}
+      )} */}
       {selectedCategory === "insights" && (
         <>
           <div className="flex flex-wrap lg:flex-row sm:flex-col gap-5 mt-6 ml-2 w-[100%]">
