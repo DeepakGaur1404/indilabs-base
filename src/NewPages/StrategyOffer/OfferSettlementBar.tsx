@@ -17,12 +17,12 @@ const OfferSettlementBar: React.FC<Props> = (props) => {
       "High Payer": [
         {
           name: "Settlement",
-          data: [38, 45, 59],
+          data: [52.4, 37.3, 20.2],
           color: "#FFB200",
         },
         {
           name: "No-Settlement",
-          data: [62, 55, 41],
+          data: [47.6, 62.7, 79.8],
      
           color: "#4169E1",
         },
@@ -81,8 +81,10 @@ const OfferSettlementBar: React.FC<Props> = (props) => {
         },
       },
       dataLabels: {
-        enabled: false,
-      },
+        enabled: true,
+        formatter: (val: number) => {
+          return `${val}%`; // Add percentage symbol to bar labels
+        },},
 
       stroke: {
         width: 0,
