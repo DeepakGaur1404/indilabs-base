@@ -125,10 +125,11 @@ const StrategySimulation = () => {
   // ]);
 
   const [rowOfferRowData, setOfferRowData] = useState([
-    { id: 1, values: ["Strategy", "Action", "Volume%", "Max Discount%"] }, // Initial row
-    { id: 2, values: ["A", "Pause", "60%", "30%"] },
-    { id: 3, values: ["B", "Start", "20%", "40%"] },
-    { id: 4, values: ["C", "Pause", "20%", "50%"] },
+    { id: 1, values: ["Strategy", "Volume%", "Max Discount% Champion","Max Discount% Challenger"] }, // Initial row
+    // { id: 2, values: ["",  "", "champion","challenger"] },
+    { id: 2, values: ["A",  "60%", "30%","30%"] },
+    { id: 3, values: ["B", "20%", "40%","40%"] },
+    { id: 4, values: ["C", "20%", "50%","50%"] },
   ]);
 
   const handleAddRow = () => {
@@ -507,7 +508,7 @@ const StrategySimulation = () => {
               <div className="commonInput form-item">
                 <input
                   type="text"
-                  id="Queue"
+                  id="Score"
                   autoComplete="off"
                   required
                   placeholder="Eg-22"
@@ -779,13 +780,13 @@ const StrategySimulation = () => {
               <div className="commonInput form-item">
                 <input
                   type="text"
-                  id="Queue"
+                  id="Score"
                   autoComplete="off"
                   required
                   placeholder="Eg-22"
                   disabled
                 />
-                <label htmlFor="DPD">Queue</label>
+                <label htmlFor="DPD">Score</label>
                 <div className="flex self-start font-[400] text-[#161D29] text-[14px] mt-1 font-['DM Sans']">
                   Accounts:
                   <span className="font-[700] text-[#1967D2] text-[14px] font-['DM Sans']">
@@ -842,7 +843,7 @@ const StrategySimulation = () => {
                   Settlement
                 </div>
               </div>
-              <div className="flex gap-6 flex-wrap mt-6">
+              {/* <div className="flex gap-6 flex-wrap mt-6">
                 <p className="self-center w-[80px] text-[#000000] text-[14px] font-[400] font-['DM Sans' !important]">
                   Placements:
                 </p>
@@ -863,70 +864,72 @@ const StrategySimulation = () => {
                     </div>
                   ))}
                 </div>
-              </div>
+              </div> */}
 
               <div className="flex gap-6 mt-6">
                 <p className="self-start w-[80px] text-[#000000] text-[14px] font-[400] font-['DM Sans' !important]">
                   Campaigns:
                 </p>
-                <table
-                  className="w-[30%] sm:w-[35%] mr-4  performance_table"
-                  cellPadding={0}
-                >
-                  <tbody className="cursor-pointer">
-                    {rowOfferRowData.map((row, rowIndex) => (
-                      <tr
-                        key={row.id}
-                        className="border-t-[1px] border-b-[1px]  cursor-pointer"
-                      >
-                        {row.values.map((cellValue, columnIndex) => (
-                          <td
-                            key={`${row.id}-${columnIndex}`}
-                            className="text-center text-[#000000] text-[12px] font-[500] font-['DM Sans' !important] border-l-[1px] border-r-[1px] border-b-[1px] cursor-pointer"
-                          >
-                            <input
-                              type="text"
-                              value={cellValue}
-                              onChange={(e) =>
-                                handleCellOfferValueChange(
-                                  rowIndex,
-                                  columnIndex,
-                                  e.target.value
-                                )
-                              }
-                              className={`w-full h-[40px] text-center border-none cursor-pointer focus:ring-0 focus:border-none focus:outline-0 ${
-                                rowIndex === 0 && "font-[700]"
-                              }
-                              ${columnIndex === 3 && "w-[145px]"}
-                              ${
-                                columnIndex === 1 && rowIndex > 0
-                                  ? "text-[#6750A4]"
-                                  : "text-[#000000]"
-                              }
-                              `}
-                            />
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
+                <table className="w-[45%] sm:w-[35%] border-[2px]performance_table" cellPadding={0}>
+    <tbody className="cursor-pointer">
+      {rowOfferRowData.map((row, rowIndex) => (
+        <tr key={row.id} className=" border-[2px] cursor-pointer">
+          {row.values.map((cellValue, columnIndex) => (
+            <td
+              key={`${row.id}-${columnIndex}`}
+              className="text-center text-[#000000] text-[12px] font-[500] font-['DM Sans' !important] border-l-21px] border-r-[2px] border-b-[2px] cursor-pointer"
+            >
+              {/* Conditionally render the Max Discount%/Champion/Challenger rows */}
+              {rowIndex === 0 && (columnIndex === 2 || columnIndex === 3) ? (
+                // Display Max Discount% and Champion/Challenger in a single cell
+                <div className="flex flex-col justify-center items-center">
+                  <div className="text-[#000000] font-[700] text-[16px]">Max Discount%</div>
+                  <div className="text-[#6750A4]">{
+                    columnIndex === 2 ? "Champion" : "Challenger"
+                  }</div>
+                </div>
+              ) : (
+                // Default case for all other rows and columns
+                <input
+                  type="text"
+                  value={cellValue}
+                  onChange={(e) =>
+                    handleCellOfferValueChange(
+                      rowIndex,
+                      columnIndex,
+                      e.target.value
+                    )
+                  }
+                  className={`w-full h-[40px] text-center border-none cursor-pointer focus:ring-0 focus:border-none focus:outline-0 ${
+                    rowIndex === 0 && "font-[700]"
+                  } 
+                  ${columnIndex === 2 || columnIndex === 3 ? "w-[145px]" : "w-[100px]"}
+                
+                  ${
+                    rowIndex === 0 ? "h-[80px]" : "h-[40px]"
+                  }`}
+                />
+              )}
+            </td>
+          ))}
+        </tr>
+      ))}
 
-                    {addButtonOffer && (
-                      <>
-                        <div
-                          className="flex gap-2 items-center mt-2 cursor-pointer"
-                          onClick={handleAddOfferRow}
-                        >
-                          <div>
-                            <img src={leadingplusicon} alt="plus" />
-                          </div>
-                          <div className="text-[#6750A4] text-[14px] font-[500] font-['DM Sans' !important]">
-                            Add
-                          </div>
-                        </div>
-                      </>
-                    )}
-                  </tbody>
-                </table>
+      {addButtonOffer && (
+        <div
+          className="flex gap-2 items-center mt-2 cursor-pointer"
+          onClick={handleAddOfferRow}
+        >
+          <div>
+            <img src={leadingplusicon} alt="plus" />
+          </div>
+          <div className="text-[#6750A4] text-[14px] font-[500] font-['DM Sans' !important]">
+            Add
+          </div>
+        </div>
+      )}
+    </tbody>
+  </table>
               </div>
 
               <div className="self-start mt-8 flex justify-center gap-2 flex-wrap">

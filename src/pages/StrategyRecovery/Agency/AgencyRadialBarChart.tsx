@@ -92,13 +92,17 @@ export default function AgencyRadialBarChart({ allocationData }: Data) {
   }, [allocationData]);
 
   return (
+    <div className="lg:col-span-5  xl:w-[48%] h-[460px] bg-white rounded-xl p-3 shadow  mt-3">
+    <p className=" text-[18px] font-[500] text-[#000000] font-['DM Sans'] ">
+      Allocation Share
+    </p>
     <div className="flex flex-col lg:flex-row items-center justify-center">
-      <ResponsiveContainer width="100%" height={400} aspect={1}>
+      <ResponsiveContainer width="100%" height={400}>
         <PieChart>
           <Pie
             data={inner}
-            cx={180}
-            cy={180}
+            cx="50%"
+            cy="50%"
             labelLine={false}
             label={renderCustomizedLabel}
             outerRadius="68%"
@@ -115,8 +119,8 @@ export default function AgencyRadialBarChart({ allocationData }: Data) {
           </Pie>
           <Pie
             data={outter}
-            cx={180}
-            cy={180}
+            cx="50%"
+            cy="50%"
             labelLine={false}
             label={renderCustomizedLabel}
             outerRadius="95%"
@@ -133,7 +137,7 @@ export default function AgencyRadialBarChart({ allocationData }: Data) {
           </Pie>
         </PieChart>
       </ResponsiveContainer>
-      <div className="flex lg:flex-col gap-4 ml-7">
+      <div className="flex lg:flex-col gap-4 mr-5">
         {outter?.map(
           (item: { name: string; id: Key | null | undefined }, i: number) => (
             <div key={item.id} className="flex items-center gap-2">
@@ -147,6 +151,7 @@ export default function AgencyRadialBarChart({ allocationData }: Data) {
           )
         )}
       </div>
+    </div>
     </div>
   );
 }

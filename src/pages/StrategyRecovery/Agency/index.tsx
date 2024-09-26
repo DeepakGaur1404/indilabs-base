@@ -23,6 +23,7 @@ import { ResponsiveContainer } from "recharts";
 import { useNavigate } from "react-router-dom";
 import AgencyRadialBarChart from "./AgencyRadialBarChart";
 import AgencyScatterChart from "./AgencyScatterChart";
+import HomeDashboard from "../../../components/PerformanceDashboardHeader/HomeDashboard";
 
 declare module "recharts" {
   interface RadialBarPropsAgency {
@@ -297,8 +298,8 @@ const  AgencyStrategyRecovery = () => {
   };
 
   return (
-    <div className="p-0 lg:p-[28px] responsivePageWrapper  relative">
-      <DashboardHeader />
+    <div className="p-0 lg:p-[28px] responsivePageWrapper bg-[#fafafb]  relative">
+      <HomeDashboard />
       {loader ? <Loader /> : ""}
       <div className="bg-gray-100 rounded-xl p-2 lg:p-[28px] mt-5 flex flex-col">
         <div className=" w-full flex flex-col gap-5 ml-1">
@@ -421,73 +422,99 @@ const  AgencyStrategyRecovery = () => {
               </button>
             </div>
           </div> */}
-          <div className="my-3 p-3 rounded-xl shadow bg-white">
-            <p className="text-[black] text-[16px]  font-[700] font-['Calibri' !important] md:w-f mb-4">
-              Volumes (MTD)
-            </p>
-            <div className=" flex flex-wrap justify-between items-center">
-              <div className="commonBox">
-                <p className="username text-[#7F7F7F] text-[15px]  font-medium font-['Calibri' !important]">
-                  Total B1
+         <div className="w-full p-4 mt-6 mb-2 rounded-xl shadow bg-white">
+            <div className=" flex flex-col gap-4">
+              <div className="flex justify-start items-center ">
+                <p className="text-[#000000] text-[16px]  font-[500] font-['DM Sans' !important] md:w-f">
+                  Volumes (MTD)
                 </p>
-                <div className="flex items-center">
-                  <p className="amount text-gray-600 text-[17px]  font-medium font-['Calibri' !important]">
-                    {overall?.total_balance?.toLocaleString() ||
-                      "5,334,843,865"}
-                  </p>
+              </div>
+              <div className="flex flex-wrap justify-between items-center gap-1">
+                <div className="flex  flex-col">
+                  <div className="flex items-center">
+                    <p className="text-[#161D29] text-[14px]  font-[500] font-['DM Sans' !important] ">
+                      Total B1
+                    </p>
+                  </div>
+                  <div className="flex justify-between items-center gap-2">
+                    <p className=" text-[#161D29] text-[14px]  font-[400] font-['DM Sans' !important]">
+                      {/* {overall?.total_balance?.toLocaleString() ||
+                        "5,334,843,865"} */}
+                        5,334,843,865
+                    </p>
 
-                  <img src={shiftOrange} alt="" />
-                  <p className="smText">+2% MOM</p>
+                    <img src={shiftOrange} alt="" />
+                    <p className="text-[#161D29] text-[10px]  font-[400] font-['DM Sans' !important]">
+                      +2% MOM
+                    </p>
+                  </div>
+                </div>
+                <div className="vertical-bar"></div>
+                <div className="flex flex-col">
+                  <div className="flex items-center">
+                    <p className=" text-[#161D29] text-[14px]  font-[500] font-['DM Sans' !important]">
+                      Inhouse/ Exclusion
+                    </p>
+                  </div>
+
+                  <div className="flex justify-between items-center gap-2">
+                    <p className="amount text-[#161D29] text-[14px]  font-[400] font-['DM Sans' !important]">
+                      {/* {overall?.in_house_exclusion?.toLocaleString() ||
+                        "5,334,843,865"} */}
+                        5,334,843,865
+                    </p>
+                    <img src={shiftOrange} alt="" />
+                    <p className="text-[#161D29] text-[10px]  font-[400] font-['DM Sans' !important]">
+                      +2% MOM
+                    </p>
+                  </div>
+                </div>
+                <div className="vertical-bar"></div>
+                <div className="flex flex-col">
+                  <div className="flex items-center">
+                    <p className="text-[#161D29] text-[14px]  font-[500] font-['DM Sans' !important]">
+                      {" "}
+                      Allocated Balance
+                    </p>
+                  </div>
+
+                  <div className="flex justify-between items-center gap-2">
+                    <p className=" text-[#161D29] text-[14px]  font-[400] font-['DM Sans' !important]">
+                      {/* {overall?.total_balance_allocated?.toLocaleString() ||
+                        "5,334,843,865"} */}
+                        5,334,843,865
+                    </p>
+                    <img className="" src={shiftOrange} alt="" />
+                    <p className="text-[#161D29] text-[10px]  font-[400] font-['DM Sans' !important]">
+                      +2% MOM
+                    </p>
+                  </div>
+                </div>
+                <div className="vertical-bar"></div>
+                <div className="flex flex-col">
+                  <div className="flex items-center">
+                    <p className="text-[#161D29] text-[14px]  font-[500] font-['DM Sans' !important]">
+                      Account Allocation{" "}
+                    </p>
+                  </div>
+
+                  <div className="flex justify-between items-center gap-2">
+                    <p className="text-[#161D29] text-[14px]  font-[400] font-['DM Sans' !important]">
+                      {/* {overall?.total_accounts_allocated?.toLocaleString() ||
+                        "5,334,843,865"} */}
+                        5,334,843,865
+                    </p>
+                    <img className="" src={shiftOrange} alt="" />
+                    <p className="text-[#161D29] text-[10px]  font-[400] font-['DM Sans' !important]">
+                      +2% MOM
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div className="commonBox">
-                <p className="username text-gray-600 text-[15px] font-medium font-['calibri' !important]">
-                  Inhouse/ Exclusion
-                </p>
-                <div className="flex items-center justify-between">
-                  <p className="amount text-gray-600 text-[17px]  font-medium font-['calibri' !important]">
-                    {overall?.in_house_exclusion?.toLocaleString() ||
-                      "5,334,843,865"}
-                  </p>
-                  <img src={shiftOrange} alt="" />
-                  <p className="smText">+2% MOM</p>
-                </div>
-              </div>
-              <div className="commonBox">
-                <p className="username text-[#7F7F7F] text-[15px] font-medium font-['calibri' !important]">
-                  {" "}
-                  Allocated Balance
-                </p>
-                <div className="flex items-center">
-                  <p className="amount text-gray-600 text-[17px]  font-medium font-['calibri' !important]">
-                    {overall?.total_balance_allocated?.toLocaleString() ||
-                      "5,334,843,865"}
-                  </p>
-                  <img src={shiftOrange} alt="up-arrow" />
-                  {/* <img className="" src={RedDownArrow} alt="" /> */}
-                  <p className="smText">+2% MOM</p>
-                </div>
-              </div>
-              <div className="commonBox">
-                <p className="username text-[#7F7F7F] text-[15px] font-medium font-['calibri' !important]">
-                  Account Allocation{" "}
-                </p>
-                <div className="flex items-center">
-                  <p className="amount text-gray-600 text-[17px]  font-medium font-['calibri' !important]">
-                    {overall?.total_accounts_allocated?.toLocaleString() ||
-                      "5,334,843,865"}
-                  </p>
-                  <img src={shiftOrange} alt="up-arrow" />
-                  <p className="smText">+2% MOM</p>
-                </div>
-              </div>
-              {/* <button className="bg-[#56478A] py-1 px-6 border border-primary rounded-3xl text-white">
-                Test Pipeline
-              </button> */}
             </div>
           </div>
 
-          <div className="flex w-full lg:grid-cols-12 gap-6 mb-3">
+          <div className="flex w-[100%] lg:flex-row md:flex-col sm:flex-col flex-row gap-6 mb-3">
             {/* <div className="col-span-1 lg:col-span-2">
               <AllocationButtons
                 activeButton={activeButton}
@@ -495,10 +522,10 @@ const  AgencyStrategyRecovery = () => {
               />
             </div> */}
 
-            <div className="flex lg:col-span-5 w-[49%] h-[460px] bg-white rounded-xl p-3 shadow  mt-3">
+            {/* <div className="flex lg:col-span-5 w-[49%] h-[460px] bg-white rounded-xl p-3 shadow  mt-3">
               <p className=" text-[18px] font-[500] text-[#000000] font-['DM Sans'] ">
                 Allocation Share
-              </p>
+              </p> */}
               {/* <ResponsiveContainer width="100%" height="90%">
                   <RadialBarChart cx="50%" cy="50%" innerRadius="60%" outerRadius="100%" barSize={20} data={data}>
                     <RadialBar
@@ -516,12 +543,14 @@ const  AgencyStrategyRecovery = () => {
                     />
                   </RadialBarChart>
                 </ResponsiveContainer> */}
-              <div className="flex items-center chartDonatGraph justify-center">
+                
+              {/* <div className="flex items-center justify-center"> */}
                 <AgencyRadialBarChart
                   allocationData={allocationData}
                   // selectedCity={selectedCity}
                   // activeBucket={activeBucket}
                 />
+                 <AgencyScatterChart/>
                 {/* <div className="flex flex-col ">
                   {allocationData?.map((item) => (
                     <div className="flex items-center">
@@ -538,13 +567,13 @@ const  AgencyStrategyRecovery = () => {
                     </div>
                   ))}
                 </div> */}
-              </div>
-            </div>
+              {/* </div> */}
+            {/* </div> */}
             {/* <div className="flex flex-col  items-start  justify-center gap-7 p-[6px] lg:px-[59px] bg-[#fafafb] w-full"> */}
               {/* <p className=" text-[18px] font-[500] text-[#000000] font-['DM Sans'] ">
                 Optimization
               </p> */}
-              <AgencyScatterChart/>
+             
             </div>
           {/* </div> */}
 

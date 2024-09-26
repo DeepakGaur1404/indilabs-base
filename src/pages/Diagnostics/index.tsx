@@ -8,7 +8,7 @@ import ExpectedRecovery from "../../components/Diagnostics/ExpectedRecovery";
 import Segmentation from "../../components/Diagnostics/Segmentation";
 import TwoCards from "../../components/Diagnostics/TwoCards";
 import ActualBalance from "../../components/Diagnostics/ActualBalance";
-import AI from "../../components/Diagnostics/AI";
+import ShareOfBalance from "../../components/Diagnostics/ShareOfBalance";
 import HomeDashboard from "../../components/PerformanceDashboardHeader/HomeDashboard";
 import DiagnosticSegementation from "../../components/Diagnostics/DiagnosticSegementation";
 import HotspotExpanded from "../../components/Diagnostics/HotspotExpanded";
@@ -91,7 +91,7 @@ const Diagnostics: React.FC = () => {
           <div className="flex flex-wrap lg:flex-row sm:flex-col gap-5 mt-4 ml-2 w-[100%]">
             <TwoCards />
             <ActualBalance selectedSegment={selectedSegment} />
-            <AI selectedSegment={selectedSegment} />
+            <ShareOfBalance selectedSegment={selectedSegment} />
           </div>
         </>
       )}

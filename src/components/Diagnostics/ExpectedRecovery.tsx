@@ -176,7 +176,7 @@ const ExpandRecovery: React.FC<ExpandRecoveryProps> = ({ selectedSegment }) => {
     <div className="w-[30%] h-[325px] bg-white shadow rounded-xl py-4 px-3 gap-3">
       <div className="flex justify-between">
         <p className="text-[black] font-['DM Sans'] font-[500] text-[14px] leading-[21px]">
-          Expected Recovery @ 6mnths
+          Expected Recovery 
         </p>
         <div className="flex items-center flex-wrap gap-3 lg:gap-3">
           <div className=" flex items-center gap-3">

@@ -12737,12 +12737,12 @@ const PortfolioRecovery: React.FC = () => {
 
     setTimeout(() => {
       setLoader(false);
-      setIsImageVisible(false);
+      setIsImageVisible(false)
     }, 2000);
   };
 
   const handlePortfolioClose = () => {
-    setIsImageVisible(true);
+      setIsImageVisible(true);  
   };
 
   let navigate = useNavigate();
@@ -12907,7 +12907,7 @@ const PortfolioRecovery: React.FC = () => {
         <HomeDashboard />
       </div>
       <div className="w-full flex flex-col gap-5 mt-4 items-start ml-[73px] mb-4">
-        <div className="flex justify-between w-full">
+        <div className="relative flex justify-between w-full">
           <div className="flex flex-col gap-3">
             <div className="">
               <div className=" flex w-full rounded-xl B1TabsContain">
@@ -13122,26 +13122,30 @@ const PortfolioRecovery: React.FC = () => {
               )}
           </div>
           {isImageVisible || loader ? (
-            <div className="">
-              {isImageVisible && (
+        <div className="">
+          {isImageVisible && (
+            <div className="flex place-items-end">
                 <img
-                  className="mr-32 cursor-pointer"
-                  src={AIButtons}
-                  alt="AIGenImage"
-                  onClick={handleImageClick}
-                />
-              )}
-              {loader && (
-                <div className="absolute left-40 inset-0 ">
-                  <Loader />
-                </div>
-              )}
-            </div>
-          ) : (
-            <div className="sticky bg-white flex justify-end items-end right-16 z-500">
-              <PortfolioAI onClose={handlePortfolioClose} />
+              className="mr-32 cursor-pointer "
+              src={AIButtons} 
+              alt="AIGenImage"
+              onClick={handleImageClick}
+            />
+             </div>
+          
+          )}
+          {loader && (
+            <div className="absolute flex items-center right-48 inset-0 ">
+              <Loader />
             </div>
           )}
+        </div>
+      ) : (
+
+        <div className="sticky bg-white flex justify-end items-end right-16 z-500">
+          <PortfolioAI onClose={handlePortfolioClose} />
+        </div>
+      )}
         </div>
       </div>
       <div className="flex flex-col  items-start  justify-center gap-6 p-[6px] lg:px-[59px] bg-[#fafafb] w-full">
