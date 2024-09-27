@@ -481,13 +481,13 @@ const StrategySimulation = () => {
               <div className="flex justify-start ml-2 gap-4">
                 <div className="flex self-start font-[400] text-[#161D29] text-[14px] font-['DM Sans']">
                   Accounts:
-                  <span className="font-[700] text-[#1967D2] text-[14px] font-['DM Sans']">
+                  <span className="font-[700] text-[#1967D2] text-[14px] font-['DM Sans'] ml-1">
                     1200
                   </span>
                 </div>
                 <div className="flex self-start font-[400] text-[#161D29] text-[14px] font-['DM Sans']">
                   Amounts:
-                  <span className="font-[700] text-[#1967D2] text-[14px] font-['DM Sans']">
+                  <span className="font-[700] text-[#1967D2] text-[14px] font-['DM Sans'] ml-1">
                     $130,000
                   </span>
                 </div>
@@ -517,7 +517,7 @@ const StrategySimulation = () => {
                 <label htmlFor="DPD">Score</label>
                 <div className="flex self-start font-[400] text-[#161D29] text-[14px] mt-1 font-['DM Sans']">
                   Accounts:
-                  <span className="font-[700] text-[#1967D2] text-[14px] font-['DM Sans']">
+                  <span className="font-[700] text-[#1967D2] text-[14px] font-['DM Sans'] ml-1">
                     800
                   </span>
                 </div>
@@ -534,7 +534,7 @@ const StrategySimulation = () => {
                 <label htmlFor="minbal">Ageing</label>
                 <div className="flex self-start font-[400] text-[#161D29] text-[14px] mt-1 font-['DM Sans']">
                   Amounts:
-                  <span className="font-[700] text-[#1967D2] text-[14px] font-['DM Sans']">
+                  <span className="font-[700] text-[#1967D2] text-[14px] font-['DM Sans'] ml-1">
                     $90,000
                   </span>
                 </div>
@@ -789,7 +789,7 @@ const StrategySimulation = () => {
                 <label htmlFor="DPD">Score</label>
                 <div className="flex self-start font-[400] text-[#161D29] text-[14px] mt-1 font-['DM Sans']">
                   Accounts:
-                  <span className="font-[700] text-[#1967D2] text-[14px] font-['DM Sans']">
+                  <span className="font-[700] text-[#1967D2] text-[14px] font-['DM Sans'] ml-1">
                     800
                   </span>
                 </div>
@@ -806,7 +806,7 @@ const StrategySimulation = () => {
                 <label htmlFor="minbal">Ageing</label>
                 <div className="flex self-start font-[400] text-[#161D29] text-[14px] mt-1 font-['DM Sans']">
                   Amounts:
-                  <span className="font-[700] text-[#1967D2] text-[14px] font-['DM Sans']">
+                  <span className="font-[700] text-[#1967D2] text-[14px] font-['DM Sans'] ml-1">
                     $90,000
                   </span>
                 </div>
