@@ -92,12 +92,9 @@ export default function AgencyRadialBarChart({ allocationData }: Data) {
   }, [allocationData]);
 
   return (
-    <div className="lg:col-span-5  xl:w-[48%] h-[460px] bg-white rounded-xl p-3 shadow  mt-3">
-    <p className=" text-[18px] font-[500] text-[#000000] font-['DM Sans'] ">
-      Allocation Share
-    </p>
-    <div className="flex flex-col lg:flex-row items-center justify-center">
-      <ResponsiveContainer width="100%" height={400}>
+    <div className="flex flex-col lg:flex-row items-center justify-center xl:w-[48%] h-[460px]  ">
+
+      <ResponsiveContainer width="100%" height={400} >
         <PieChart>
           <Pie
             data={inner}
@@ -152,6 +149,6 @@ export default function AgencyRadialBarChart({ allocationData }: Data) {
         )}
       </div>
     </div>
-    </div>
+    // </div>
   );
 }

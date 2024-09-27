@@ -26,7 +26,7 @@ import PerformanceDashboard from "../../components/PerformanceDashboardHeader/Pe
 import HomeDashboard from "../../components/PerformanceDashboardHeader/HomeDashboard";
 import OfferSegementation from "./OfferSegementations";
 import OfferSettlementBar from "./OfferSettlementBar";
-import RecoverySimulation from "../RecoverySimulation";
+
 import StrategySimulation from "../StrategySimulation";
 
 
@@ -95,7 +95,7 @@ const ReviewExecution = () => {
            )}
 
            {selectedCategory === "startegy" && (
-            <StrategySimulation />
+             <StrategySimulation/>
            )}
         </>
         <div className="self-end mt-8 flex justify-center gap-2 flex-wrap">

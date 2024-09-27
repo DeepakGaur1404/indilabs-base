@@ -266,27 +266,12 @@ const ForwardFlowRatesPerformanceRecovery = ({
   }, [] as DataItem[]);
   console.log("vintage data", data);
 
-  // const filterDataBySelectedState = (
-  //   data: DataItem[],
-  //   selectedState: string
-  // ): DataItem[] => {
-  //   if (!selectedState && hoveredState) return data;
-
-  //   return data
-  //     .map((item) => {
-  //       const filteredItem: DataItem = { month: item.month };
-  //       if (item[selectedState] !== undefined) {
-  //         filteredItem[selectedState] = item[selectedState];
-  //       }
-  //       return filteredItem;
-  //     })
-  //     .filter((item) => Object.keys(item).length > 1); // Filter out items that only have the 'month' key
-  // };
-  // const filteredData = filterDataBySelectedState(data, selectedState);
+ 
   const filterDataBySelectedState = (
     data: DataItem[],
     selectedState: string
   ): DataItem[] => {
+    
     return data.map((item) => {
       const filteredItem: DataItem = { month: item.month };
   
@@ -370,7 +355,8 @@ const ForwardFlowRatesPerformanceRecovery = ({
   
   const filteredDataUnique = filterDataBySelectedStateUnique(
     dataUnique,
-    selectedState
+    selectedState,
+  
   );
   
   const arrTicks: any = (data: DataItem[]): number[] => {

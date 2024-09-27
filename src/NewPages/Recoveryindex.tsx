@@ -15,7 +15,7 @@ import HomeDashboard from "../components/PerformanceDashboardHeader/HomeDashboar
 // import OptimizeStackedBarChart from "./optimizeStackedBarChart";
 import Treatments from "./RecoveryStackBar";
 import PerformanceDashboard from "../components/PerformanceDashboardHeader/PerformanceDashboard";
-
+import { useNavigate } from "react-router-dom";
 const getSegmentFromLocalStorage = () => {
   const segValue = localStorage.getItem("segment");
   if (segValue === undefined || segValue === null) {
@@ -37,7 +37,7 @@ const ReviewPerformance: React.FC = () => {
     useState<string>("Very High Risk");
   const [treatment, setTreatment] = useState<any>(null);
   const [performance, setPerformance] = useState<any>(null);
-
+  const navigate = useNavigate();
   const BGroups = [
     { id: "b1", label: "B1" },
     { id: "b2", label: "B2" },
@@ -71,8 +71,11 @@ const ReviewPerformance: React.FC = () => {
     setShowTestIdComp(true);
   };
 
-  const handleBreadcrumbClick = async (buttonId: number) => {
+  const handleBreadcrumbClick = (buttonId: number) => {
     setActiveBreadcrumb(buttonId);
+    if (buttonId === 0 || buttonId === 1 || buttonId === 2) {
+      navigate("/strategy/reviewExecution"); // Navigate using React Router
+    }
   };
 
   return (

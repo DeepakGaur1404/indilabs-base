@@ -2796,7 +2796,7 @@ Props) => {
       
  <div className="w-full flex flex-wrap md:flex justify-between lg:px-0 my-1">
           <h1 className="text-start text-[16px] font-[500] text-[#000000] font-['DM Sans']">
-              Header
+          Agency Allocation
             </h1>
             <div className="flex items-center gap-2 lg:gap-7 mr-3">
             

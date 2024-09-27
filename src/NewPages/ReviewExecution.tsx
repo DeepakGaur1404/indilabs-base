@@ -449,7 +449,7 @@ const ReviewExecution = () => {
           </div>
         </>
 
-        <div className="self-end mt-12 flex justify-center gap-2 flex-wrap">
+        {/* <div className="self-end mt-12 flex justify-center gap-2 flex-wrap">
           <button
             onClick={navigateToOptimizeStrategy}
             className="bg-primary py-2.5 px-9 border border-primary rounded-3xl text-white"
@@ -457,7 +457,7 @@ const ReviewExecution = () => {
           >
             Optimize Strategy
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
