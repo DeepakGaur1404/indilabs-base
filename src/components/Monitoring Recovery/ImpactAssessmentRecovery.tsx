@@ -75,7 +75,7 @@ const ImpactAssessmentRecovery = ({
 
   const CustomDot = (props: any) => {
     const { cx, cy, payload } = props;
-    const circle_diameter = payload.circle_diameter * 100;
+    const circle_diameter = payload.circle_diameter * 10;
     const circle_color = payload.circle_color;
     const nameofState = payload.metric;
 
@@ -174,7 +174,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 2.81448187456613,
             "Y Updated": 20.24038262220468,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            "circle_diameter": 6.740642698089378,
           },
           {
             Category: "Location",
@@ -183,7 +183,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.5529443094291235,
             "Y Updated": 18.884513237352568,
             circle_color: "Red",
-            "circle_diameter":0.35,
+            "circle_diameter": 6.08621106425101,
           },
           {
             Category: "Location",
@@ -192,7 +192,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.3324822984162636,
             "Y Updated": 5.949828115924044,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            "circle_diameter":  5.485661008319658,
           },
           {
             Category: "Location",
@@ -201,7 +201,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.882693012895705,
             "Y Updated": 15.302863187522924,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            "circle_diameter": 9.608712545489063,
           },
           {
             Category: "Location",
@@ -210,7 +210,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.402910970469687,
             "Y Updated": 1.9582463888464459,
             circle_color: "Red",
-            "circle_diameter":  0.35,
+            "circle_diameter":  2.3820686589479174,
           },
           {
             Category: "Location",
@@ -219,7 +219,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.8450568955163977,
             "Y Updated": 0.8662625541077846,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            "circle_diameter": 1.1338181289394809,
           },
           {
             Category: "Location",
@@ -228,7 +228,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.9984854858686925,
             "Y Updated": 6.155637039285626,
             circle_color: "Red",
-            "circle_diameter":  0.35,
+            "circle_diameter":  5.072998546222831,
           },
           {
             Category: "Location",
@@ -237,7 +237,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.8559211921766883,
             "Y Updated": 6.221873323313603,
             circle_color: "Red",
-            "circle_diameter":  0.35,
+            "circle_diameter":  5.29686638238432,
           },
           {
             Category: "Location",
@@ -246,7 +246,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 3.7549382884753895,
             "Y Updated": 10.578623892545535,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            "circle_diameter":  6.081471962788253,
           },
           {
             Category: "Location",
@@ -255,7 +255,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: -1.0580417642776785,
             "Y Updated": 0.4271854693311965,
             circle_color: "#FFBF00",
-            "circle_diameter": 0.35,
+            "circle_diameter":  1.8364782344563666,
           },
           {
             Category: "Location",
@@ -264,7 +264,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: -4.800256369889793,
             "Y Updated": -0.35325004009602345,
             circle_color: "Green",
-            "circle_diameter":  0.35,
+            "circle_diameter":  0.8569384997196292,
           },
           {
             Category: "Location",
@@ -273,7 +273,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.6407626080106334,
             "Y Updated": 3.2245097031635184,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            "circle_diameter": 2.531625852476237,
           },
           {
             Category: "Location",
@@ -282,7 +282,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 4.44606484171821,
             "Y Updated": 10.50077380528091,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            "circle_diameter":  5.857773060229866,
           },
           {
             Category: "Location",
@@ -291,7 +291,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 4.151425606262142,
             "Y Updated": 11.73803653925116,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            "circle_diameter":  7.43587082524756,
           },
           {
             Category: "Location",
@@ -300,7 +300,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.8390744670684946,
             "Y Updated": 3.16210326150182,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            "circle_diameter": 3.2998274495979967,
           },
           {
             Category: "Location",
@@ -309,7 +309,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.6302308168784307,
             "Y Updated": 8.620913621607626,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            "circle_diameter": 4.834459811132118,
           },
           {
             Category: "Location",
@@ -318,7 +318,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 2.0051190590173986,
             "Y Updated": 5.061021086603231,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            "circle_diameter": 5.952828547190773,
           },
           {
             Category: "Location",
@@ -327,7 +327,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.0704073055904242,
             "Y Updated": 2.7357506727196568,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            "circle_diameter": 6.38982177968397,
           },
           {
             Category: "Location",
@@ -336,7 +336,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 0.2881871496928144,
             "Y Updated": 2.336107483110233,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            "circle_diameter": 5.6300813148065965,
           },
           {
             Category: "Location",
@@ -345,7 +345,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.2315527195183755,
             "Y Updated": 2.4921010057728226,
             circle_color: "Red",
-            "circle_diameter":  0.35,
+            "circle_diameter":   2.793965888998654,
           },
           {
             Category: "Location",
@@ -354,7 +354,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.2292970789678372,
             "Y Updated": 2.8475567970705824,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            "circle_diameter":  2.299828901536394,
           },
           {
             Category: "Location",
@@ -363,7 +363,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 3.1583416389362906,
             "Y Updated": 0.3528264331910831,
             circle_color: "Red",
-            "circle_diameter":  0.35,
+            "circle_diameter":   1.0233459515190861,
           },
           {
             Category: "Location",
@@ -372,7 +372,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 0.39527198619258613,
             "Y Updated": -0.0032529041728100857,
             circle_color: "#FFBF00",
-            "circle_diameter": 0.35,
+            "circle_diameter": 2.7536956003621924,
           },
           {
             Category: "Location",
@@ -381,7 +381,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: -0.15366897719046002,
             "Y Updated": 0.04514068873263216,
             circle_color: "#FFBF00",
-            "circle_diameter": 0.35,
+            "circle_diameter": 0.6651395850213757,
           },
           {
             Category: "Location",
@@ -389,7 +389,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 0.9064295919726548,
             "Y Updated": 0.83248150875941,
             circle_color: "Red",
-            "circle_diameter":  0.35,
+            "circle_diameter":  0.8559499102774666,
           },
           {
             Category: "Location",
@@ -398,7 +398,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.8300564126817456,
             "Y Updated": 1.9252024328377813,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            "circle_diameter": 2.187380580113638,
           },
           {
             Category: "POS",
@@ -407,7 +407,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 2.0292485013770762,
             "Y Updated": 17.96660946646867,
             circle_color: "Red",
-            "circle_diameter": 0.35
+            "circle_diameter": 0.10049732806535408
           },
           {
             Category: "POS",
@@ -416,7 +416,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 2.360779079307544,
             "Y Updated": 86.05078928878294,
             circle_color: "Red",
-            "circle_diameter":  0.35
+            "circle_diameter":   0.3774950552020979
           },
           {
             Category: "POS",
@@ -425,7 +425,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 2.1256140764122806,
             "Y Updated": 33.67486044742911,
             circle_color: "Red",
-            "circle_diameter":  0.35
+            "circle_diameter":   0.2711136259096676
           },
           {
             Category: "POS",
@@ -434,7 +434,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.319104763264991,
             "Y Updated": 2.8651120795420204,
             circle_color: "Red",
-            "circle_diameter": 0.35
+            "circle_diameter": 0.1
           },
           {
             Category: "Vintage",
@@ -443,7 +443,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.035441991667794,
             "Y Updated": 28.371426855512038,
             circle_color: "Red",
-            "circle_diameter":  0.35
+            "circle_diameter":   0.16605744102912973
           },
           {
             Category: "Vintage",
@@ -452,7 +452,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 3.8725847529144053,
             "Y Updated": 34.495447102693966,
             circle_color: "Red",
-            "circle_diameter": 0.35
+            "circle_diameter": 0.15377193228087072
           },
           {
             Category: "Vintage",
@@ -461,7 +461,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 2.1783467461941433,
             "Y Updated": 19.379631314720218,
             circle_color: "Red",
-            "circle_diameter": 0.35
+            "circle_diameter": 0.14927339936725936
           },
           {
             Category: "Vintage",
@@ -470,7 +470,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.6697040662093394,
             "Y Updated": 13.393926420383703,
             circle_color: "Red",
-            "circle_diameter": 0.35
+            "circle_diameter":  0.20374618256736082
           },
           {
             Category: "Vintage",
@@ -479,7 +479,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.0541704725115155,
             "Y Updated": 11.837783209982979,
             circle_color: "Red",
-          "circle_diameter": 0.35
+          "circle_diameter": 0.3635054463535594
           },
           {
             Category: "Vintage",
@@ -488,7 +488,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 3.807256462594945,
             "Y Updated": 10.779630553346198,
             circle_color: "Red",
-            "circle_diameter":  0.35
+            "circle_diameter":  0.21549921491422228
           },
           {
             Category: "Vintage",
@@ -498,7 +498,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 5.045813303547109,
             "Y Updated": 2.695213672118587,
             circle_color: "Red",
-            "circle_diameter": 0.35
+            "circle_diameter": 0.1
           },
         ],
       },

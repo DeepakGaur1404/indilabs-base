@@ -314,7 +314,7 @@ const Sidebar: FC<SidebarProps> = ({ layout, moduleName, setmoduleName }) => {
                           }`}
                         />
                         {/*  monitoringDropdown ? "-rotate-270" : */}
-                        {/* <img
+                        <img
                           src={data?.imageSrc3}
                           alt=""
                           className={`${
@@ -322,7 +322,7 @@ const Sidebar: FC<SidebarProps> = ({ layout, moduleName, setmoduleName }) => {
                           }`}
                           // className={`${"-rotate-90"} `}
                           // StrategyDropdown ? "-rotate-270" :
-                        /> */}
+                        /> 
                         {data?.title === selectedTab &&
                           (location.pathname === "/monitoring" ||
                             location.pathname === "/home/recovery" ||
@@ -874,15 +874,64 @@ const Sidebar: FC<SidebarProps> = ({ layout, moduleName, setmoduleName }) => {
                           </div>
                         </>
                       )}
+                         {StrategyDropdown && data.title === "strategy" && (
+                        <>
+                          <div className="text-white flex flex-col items-center gap-y-5 my-5 w-[80%]">
+                            <Link
+                              to={"/agency/strategy/recovery"}
+                              className={`flex gap-2 items-center px-2 ml-[19px] w-[101%] ${
+                                location.pathname ==="/agency/strategy/recovery" 
+                                  ? "bg-white bg-opacity-30 rounded-lg h-9 "
+                                  : ""
+                              }`}
+                            >
+                              <img src={ArrowCircle} alt="" className="h-4" />
+                              <p className="mb-0">Agency</p>
+                              {(location.pathname ==="/agency/strategy/recovery" ) && (
+                                <div
+                                  className="h-9 w-[7px] bg-white rounded-tl-xl rounded-bl-xl "
+                                  style={{
+                                    position: "absolute",
+                                    right: "1px",
+                                  }}
+                                ></div>
+                              )}
+                            </Link>
+                            <Link
+                              to={"/offer/strategy/recovery"}
+                              className={`flex gap-2 items-center px-2 ml-[19px] w-[101%] ${
+                                location.pathname ==="/offer/strategy/recovery" 
+                                  ? "bg-white bg-opacity-30 rounded-lg h-9 "
+                                  : "bg-green"
+                              }`}
+                            >
+                              <img src={ArrowCircle} alt="" className="h-4" />
+                              <p className="mb-0">Offer</p>
+                              {(location.pathname === "/offer/strategy/recovery" ) && (
+                                <div
+                                  className="h-9 w-[7px] bg-white rounded-tl-xl rounded-bl-xl "
+                                  style={{
+                                    position: "absolute",
+                                    right: "1px",
+                                  }}
+                                ></div>
+                              )}
+                            </Link>
+                           
+                          
+                          
+                          </div>
+                        </>
+                      )}
 
-                      {StrategyDropdown && data.title === "strategy" && (
+                      {/* {StrategyDropdown && data.title === "strategy" && (
                         <div>
                           <Link
                             //to ={"/strategy"}
                             to="/agency/strategy/recovery"
-                            className={`flex items-center w-[167px]  mx-3 my-3 h-11 pl-3 pr-4 py-3  justify-start gap-3  ${
+                            className={`flex items-center w-[195px]  mx-3 my-3 h-9 pl-3 pr-4 py-3 ml-2 justify-start gap-3  ${
                               location.pathname==="/agency/strategy/recovery"  &&
-                              "h-11 bg-white bg-opacity-30 rounded-lg"
+                              "h-9 bg-white bg-opacity-30 rounded-lg"
                             }`}
                             onClick={() => setInhouseDropdown(!inhouseDropdown)}
                           >
@@ -900,10 +949,10 @@ const Sidebar: FC<SidebarProps> = ({ layout, moduleName, setmoduleName }) => {
                               className={`${
                                 inhouseDropdown ? "-rotate-270" : "-rotate-90"
                               }`}
-                            /> */}
+                            /> 
                             {location.pathname==="/agency/strategy/recovery" && (
                               <div
-                                className="h-11 w-[7px] bg-white rounded-tl-xl rounded-bl-xl "
+                                className="h-9 w-[7px] bg-white rounded-tl-xl rounded-bl-xl "
                                 style={{
                                   position: "absolute",
                                   right: "0px",
@@ -965,7 +1014,7 @@ const Sidebar: FC<SidebarProps> = ({ layout, moduleName, setmoduleName }) => {
                                 </Link> 
                               </div>
                             </div>
-                          )} */}
+                          )} 
 
                           <Link
                             //to ={"/strategy"}
@@ -990,7 +1039,7 @@ const Sidebar: FC<SidebarProps> = ({ layout, moduleName, setmoduleName }) => {
                               className={`${
                                 agencyDropdown ? "-rotate-270" : "-rotate-90"
                               }`}
-                            /> */}
+                            /> 
                             {location.pathname==="/offer/strategy/recovery" && (
                               <div
                                 className="h-11 w-[7px] bg-white rounded-tl-xl rounded-bl-xl "
@@ -1087,7 +1136,7 @@ const Sidebar: FC<SidebarProps> = ({ layout, moduleName, setmoduleName }) => {
                                 </div>
                               </div>
                             </div>
-                          )} */}
+                          )} 
                         </div>
                       )}
                       {data?.hookValue && (
@@ -1099,7 +1148,7 @@ const Sidebar: FC<SidebarProps> = ({ layout, moduleName, setmoduleName }) => {
                             marginTop: "11px",
                           }}
                         ></div>
-                      )}
+                      )} */}
                       {/* {data.title === "monitoring" && monitoringDropdown && (
               <>
                 <div className="text-white flex flex-col items-center gap-y-5 my-5 w-[80%]">

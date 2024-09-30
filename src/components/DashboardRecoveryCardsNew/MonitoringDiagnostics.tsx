@@ -9,76 +9,158 @@ import { useNavigate } from "react-router-dom";
 import UporangeArrow from "../../assets/icons/shift-orange.svg";
 import arrow from "../../assets/images/HotspotArrow.svg";
 import SentinelImage from "../../assets/images/Sentinel.svg";
+import {
+  PieChart,
+  Pie,
+  BarChart,
+  Bar,
+  Cell,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 
 const Riskmonitoringscore = [
   {
     Categories: "All",
-    JulRiskScore: graphBallCollections,
-    JunRiskScore: graphBallAll,
+    Latest_Month_Percentage: 86.8421052631579,
+    Previous_Month_Percentage: 92.10526315789474,
     id: 0,
   },
   {
-    Categories: "Portfolio",
-    JulRiskScore: graphBallRecovery,
-    JunRiskScore: graphBallPortfolio,
+    Categories: "Location",
+    Latest_Month_Percentage: 81.48148148148148,
+    Previous_Month_Percentage: 92.5925925925926,
     id: 1,
   },
   {
-    Categories: "Performance",
-    JulRiskScore: graphBallAll,
-    JunRiskScore: graphBallOrigination,
+    Categories: "POS",
+    Latest_Month_Percentage: 100.0,
+    Previous_Month_Percentage: 75.0,
     id: 2,
   },
   {
-    Categories: "Placement",
-    JulRiskScore: graphBallPortfolio,
-    JunRiskScore: graphBallRecovery,
+    Categories: "Vintage",
+    Latest_Month_Percentage: 100.0,
+    Previous_Month_Percentage: 100.0,
     id: 3,
   },
+];
+
+const hotspot: any = [
   {
-    Categories: "Agency",
-    JulRiskScore: graphBallOrigination,
-    JunRiskScore: graphBallRecovery,
-    id: 4,
+    segment_name: "1-5 Lakh",
+    bar: {
+      Min_Performance: 0.005736234674012124,
+      Max_Performance: 0.009549122170028183,
+      Current_Performance: 0.00613848009991673,
+      higher_the_better: true,
+    },
+  },
+  {
+    segment_name: "V2",
+    bar: {
+      Min_Performance: 0.008683658382895369,
+      Max_Performance: 0.018470706220511765,
+      Current_Performance: 0.008683658382895369,
+      higher_the_better: true,
+    },
+  },
+  {
+    segment_name: "5-10 Lakh",
+    bar: {
+      Min_Performance: 0.003532597278260322,
+      Max_Performance: 0.005680579807644524,
+      Current_Performance: 0.003586460983511953,
+      higher_the_better: true,
+    },
+  },
+  {
+    segment_name: "v1",
+    bar: {
+      Min_Performance: 0.017158389064762834,
+      Max_Performance: 0.027585775409296433,
+      Current_Performance: 0.018929057296379396,
+      higher_the_better: true,
+    },
+  },
+  {
+    segment_name: "Tamil Nadu",
+    bar: {
+      Min_Performance: 0.005315795128299967,
+      Max_Performance: 0.010795655486321522,
+      Current_Performance: 0.005350658359352976,
+      higher_the_better: true,
+    },
   },
 ];
 
-const hotspot = [
-  {
-    title: "MRR%",
-    values: ["1", "3", "8"],
-  },
-  {
-    title: "Recovery% @12MOB%",
-    values: ["10", "14", "20"],
-  },
-  {
-    title: "Unique Payer%",
-    values: ["15", "20", "30"],
-  },
-  {
-    title: "Contact%",
-    values: ["5", "7", "10"],
-  },
-  {
-    title: "Settlement Accept%",
-    values: ["15", "18", "40"],
-  },
-];
+const  Hotspot_Counts = {
 
-const valuesArray = hotspot[0].values;
-const [firstValue, secondValue, thirdValue] = valuesArray.map(parseFloat);
-const arrowPosition = `${
-  ((secondValue - firstValue) / (thirdValue - firstValue)) * 100
-}%`;
+  "Latest_Month_Hotspots": 33,
+  "Previous_Month_Hotspots": 35,
+  "Change_in_Hotspots": -2
+}
+
+interface MiniPiecharterror {
+  percentage: any;
+}
+
+const COLORS = [ "#5C4E8E", "#ffffff"];
+
+const MiniPieChart: React.FC<MiniPiecharterror> = ({ percentage }) => {
+  const chartData = [
+    { name: "LastMonth", value: percentage },
+    { name: "Pervious Month", value: 100 - percentage },
+  ];
+
+  return (
+    <ResponsiveContainer width={40} height={40}>
+    <PieChart >
+      <Pie
+        data={chartData}
+        cx="50%"
+        cy="50%"
+        labelLine={false}
+        outerRadius={13}
+        fill="#E5E3ED"
+        dataKey="value"
+      >
+        {chartData.map((entry, index) => (
+          <Cell
+          key={`cell-${index}`}
+          fill={COLORS[index % COLORS.length]}
+          stroke="#5C4E8E" // Border color
+          strokeWidth={1} 
+          />
+        ))}
+      </Pie>
+      {/* <Tooltip
+        formatter={(value, name) => {
+          const formattedValue =
+            typeof value === "number" ? `${value.toFixed(2)}%` : value;
+          return [formattedValue, `${name}`];
+        }}
+      /> */}
+    </PieChart>
+    </ResponsiveContainer>
+  );
+};
+
+const adjustedHotspot = hotspot.map((each: any) => ({
+  segment_name: each.segment_name,
+  bar: {
+    Min_Performance: each.bar.Min_Performance * 100,
+    Max_Performance: each.bar.Max_Performance * 100,
+    Current_Performance: each.bar.Current_Performance * 100,
+    higher_the_better: each.bar.higher_the_better,
+  },
+}));
 
 const MonitoringDiagnostics = () => {
-  // const [firstValue, secondValue, thirdValue] = hotspot.values.map(
-  //   parseFloat
-  // );
-  // const arrowPosition = `${
-  //   ((secondValue - firstValue) / (thirdValue - firstValue)) * 100
-  // }%`;
   const navigate = useNavigate();
 
   const handleHotspotReviewClick = () => {
@@ -106,7 +188,7 @@ const MonitoringDiagnostics = () => {
 
       <div className="bg-white h-[116px] p-1  rounded-xl mt-4 flex flex-col items-center ">
         <span className="font-['DM Sans'] text-[32px] text-[#FAC907] font-[500] customClassThird">
-          05
+          {Hotspot_Counts.Latest_Month_Hotspots}
         </span>
         <p className="font-['DM Sans'] text-[14px] font-[500]">Hotspots</p>
         <div className="flex gap-1">
@@ -116,7 +198,7 @@ const MonitoringDiagnostics = () => {
             className="w-[14px] h-[14px] customClass"
           />
           <p className="font-['DM Sans'] text-[10px] font-[400] gap-[4px]">
-            +2 vs last month
+           {Hotspot_Counts.Change_in_Hotspots} vs last month
           </p>
         </div>
         <p className="font-['DM Sans'] text-[12px] text-[#9CA4B6] font-[400]">
@@ -141,31 +223,31 @@ const MonitoringDiagnostics = () => {
         <table className="w-[100%]">
           <thead className="w-[100%]">
             <tr className="w-[100%] flex items-center justify-between border-t border-gray-100 p-3">
-              <th className="text-[#9CA4B6] text-[14px] font-[400] font-['DM Sans'] leading-[18px]  text-left">
+              <th className="text-[#9CA4B6] text-[14px] font-[400] font-['DM Sans'] leading-[18px] w-[30%] text-left">
                 Categories
               </th>
-              <th className="text-[#9CA4B6] text-[14px] font-[400] font-['DM Sans'] leading-[18px] ">
+              <th className="text-[#9CA4B6] text-[14px] font-[400] font-['DM Sans'] leading-[18px]  w-[15%]">
                 Jul
               </th>
-              <th className="text-[#9CA4B6] text-[14px] font-[400] font-['DM Sans'] leading-[18px] mr-5">
+              <th className="text-[#9CA4B6] text-[14px] font-[400] font-['DM Sans'] leading-[18px]  w-[15%]">
                 Jun
               </th>
             </tr>
           </thead>
           <tbody className="w-[100%] border-b  border-gray-100 flex flex-col justify-between ">
-            {Riskmonitoringscore.map((each) => (
+            {Riskmonitoringscore.map((item: any, each: any) => (
               <tr
-                key={each.id}
+                key={item.id}
                 className="border-t border-gray-100 flex  justify-between items-center px-3 py-1 w-[100%]"
               >
-                <td className="text-[#161D29] text-[14px] font-[400] font-['DM Sans'] leading-[21px]  text-left w-[100px]">
-                  {each.Categories}
+                <td className="text-[#161D29] text-[14px] font-[400] font-['DM Sans'] leading-[21px]  text-left w-[30%]">
+                  {item.Categories}
                 </td>
-                <td className="">
-                  <img src={each.JulRiskScore} alt="" className="" />
+                <td className="w-[15%]">
+                  <MiniPieChart percentage={item.Latest_Month_Percentage} />
                 </td>
-                <td className="">
-                  <img src={each.JunRiskScore} alt="" className="" />
+                <td className="w-[15%] ">
+                  <MiniPieChart percentage={item.Previous_Month_Percentage} />
                 </td>
               </tr>
             ))}
@@ -187,68 +269,72 @@ const MonitoringDiagnostics = () => {
             </span>
           </button>
         </div>
-        {hotspot.map((each) => (
-          <div
-            className="w-[100%] self-stretch px-3 py-3 justify-between items-center gap-10 flex border-b  border-gray-100"
-            key={each.title}
-          >
-            <div className="w-[40%]  text-[#000000] text-[12px] font-[400] font-['DM Sans']">
-              {each.title}
-            </div>
-            <div className="w-[60%] flex-col justify-center items-start inline-flex">
-              <div className="self-stretch justify-between items-start gap-[15px] inline-flex">
-                <div className="flex w-full h-[18px] relative">
-                  {each.values.map(
-                    (value, index) =>
-                      index !== 2 && (
-                        <div
-                          key={index}
-                          className={`text-[#000000] text-[12px] font-[400] font-['DM Sans'] ${
-                            index === 1 ? "special-style" : ""
-                          }`}
-                          style={
-                            index === 1
-                              ? {
-                                  position: "absolute",
-                                  left: arrowPosition,
-                                  marginLeft: "5px",
-                                }
-                              : {}
-                          }
-                        >
-                          {value}%
-                        </div>
-                      )
+        {adjustedHotspot.map((each: any) => {
+          //Modify the current value arrow alogrithm here
+          const arrowPosition = `${
+            ((each.bar.Current_Performance - each.bar.Min_Performance) /
+              (each.bar.Max_Performance - each.bar.Min_Performance)) *
+            100
+          }%`;
+
+          return (
+            <div
+              className="w-[100%] self-stretch px-3 py-3 justify-between items-center gap-10 flex border-b border-gray-100"
+              key={each.segment_name}
+            >
+              <div className="w-[30%] text-[#000000] text-[12px] font-[400] font-['DM Sans']">
+                {each.segment_name}
+              </div>
+              <div className="w-[70%] flex-col justify-center items-start inline-flex">
+                <div className="self-stretch justify-between items-start gap-[15px] inline-flex">
+                  <div className="flex w-full h-[18px] relative">
+                    <div
+                      className="text-black text-[12px] font-[400] font-['DM Sans']"
+                      style={{
+                        position: "absolute",
+                        left: "0",
+                        marginLeft: "5px",
+                      }}
+                    >
+                      {each.bar.Min_Performance.toFixed(1)}%
+                    </div>
+                    <div
+                      className={`text-black text-[12px] font-[400] font-['DM Sans']`}
+                      style={{
+                        position: "absolute",
+                        left: arrowPosition,
+                        marginLeft: "5px",
+                      }}
+                    >
+                      {each.bar.Current_Performance.toFixed(1)}%
+                    </div>
+                  </div>
+                </div>
+                <div className="w-full h-[18px] relative">
+                  <div
+                    className="text-black text-[12px] font-[400] font-['DM Sans'] absolute right-1"
+                    style={{ top: "-20px", textAlign: "right" }}
+                  >
+                    {each.bar.Max_Performance.toFixed(1)}%
+                  </div>
+                  <div className="w-full h-2 top-[2px] absolute bg-gradient-to-r from-[#ED0E00] via-[#FFF509] to-[#09FF4E] rounded-xl" />
+                  {each.bar.Current_Performance && (
+                    <IoMdArrowDropup
+                      className="text-xs ml-1"
+                      style={{
+                        width: "20px",
+                        height: "25px",
+                        margin: "2px",
+                        position: "absolute",
+                        left: arrowPosition,
+                      }}
+                    />
                   )}
                 </div>
               </div>
-              <div className="w-full h-[18px] relative">
-                <div
-                  className="text-black text-[12px] font-400 font-['DM Sans'] absolute right-1"
-                  style={{ top: "-20px", textAlign: "right" }}
-                >
-                  {each.values[2]}%
-                </div>
-                <div className="w-full h-2  top-[2px] absolute bg-gradient-to-r from-[#ED0E00] via-[#FFF509] to-[#09FF4E] rounded-xl" />
-                {each.values[1] && (
-                  <img
-                    src={arrow}
-                    className="customClassFourth"
-                    style={{
-                      width: "10px",
-                      height: "15px",
-                      margin: "4px",
-                      position: "absolute",
-                      left: arrowPosition,
-                      top: "5px",
-                    }}
-                    alt="Arrow"
-                  />
-                )}
-              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

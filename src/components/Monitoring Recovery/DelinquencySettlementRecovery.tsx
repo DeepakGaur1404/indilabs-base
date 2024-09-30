@@ -5387,7 +5387,15 @@ const colors = [
   "#808080",
   "#A020F0",
 ];
-
+const colorvintage:any=[
+   "#496CD5",
+  "#4993CF",
+ "#B7D6F0",
+ "#FFF6F6",
+ "#FDDBC7",
+  "#EF8A62",
+   "#DC3C49",
+]
 interface DataPoint {
   "<1L"?: number;
   "1-5L"?: number;
@@ -5963,7 +5971,7 @@ const DelinquencySettlementRecovery = ({
                     <div
                       className="legend-color"
                       style={{
-                        backgroundColor: colors[index % colors.length],
+                        backgroundColor: colorvintage[index % colorvintage.length],
                         width: "13px",
                         height: "13px",
                         marginRight: "5px",
@@ -6029,7 +6037,7 @@ const DelinquencySettlementRecovery = ({
                     <div
                       className="legend-color"
                       style={{
-                        backgroundColor: colors[index % colors.length],
+                        backgroundColor: colorvintage[index % colorvintage.length],
                         width: "13px",
                         height: "13px",
                         marginRight: "5px",
@@ -6095,7 +6103,7 @@ const DelinquencySettlementRecovery = ({
                     <div
                       className="legend-color"
                       style={{
-                        backgroundColor: colors[index % colors.length],
+                        backgroundColor: colorvintage[index % colorvintage.length],
                         width: "13px",
                         height: "13px",
                         marginRight: "5px",
@@ -6161,7 +6169,7 @@ const DelinquencySettlementRecovery = ({
                     <div
                       className="legend-color"
                       style={{
-                        backgroundColor: colors[index % colors.length],
+                        backgroundColor: colorvintage[index % colorvintage.length],
                         width: "13px",
                         height: "13px",
                         marginRight: "5px",
@@ -6228,7 +6236,7 @@ const DelinquencySettlementRecovery = ({
                   <div
                     className="legend-color"
                     style={{
-                      backgroundColor: colors[index % colors.length],
+                      backgroundColor: colorvintage[index % colorvintage.length],
                       width: "13px",
                       height: "13px",
                       marginRight: "5px",
@@ -6293,7 +6301,7 @@ const DelinquencySettlementRecovery = ({
                     <div
                       className="legend-color"
                       style={{
-                        backgroundColor: colors[index % colors.length],
+                        backgroundColor: colorvintage[index % colorvintage.length],
                         width: "13px",
                         height: "13px",
                         marginRight: "5px",
@@ -6360,7 +6368,7 @@ const DelinquencySettlementRecovery = ({
                   <div
                     className="legend-color"
                     style={{
-                      backgroundColor: colors[index % colors.length],
+                      backgroundColor: colorvintage[index % colorvintage.length],
                       width: "13px",
                       height: "13px",
                       marginRight: "5px",
@@ -6426,7 +6434,7 @@ const DelinquencySettlementRecovery = ({
                   <div
                     className="legend-color"
                     style={{
-                      backgroundColor: colors[index % colors.length],
+                      backgroundColor:colorvintage[index % colorvintage.length],
                       width: "13px",
                       height: "13px",
                       marginRight: "5px",
@@ -6492,7 +6500,7 @@ const DelinquencySettlementRecovery = ({
                   <div
                     className="legend-color"
                     style={{
-                      backgroundColor: colors[index % colors.length],
+                      backgroundColor: colorvintage[index % colorvintage.length],
                       width: "13px",
                       height: "13px",
                       marginRight: "5px",
@@ -6557,7 +6565,7 @@ const DelinquencySettlementRecovery = ({
                     <div
                       className="legend-color"
                       style={{
-                        backgroundColor: colors[index % colors.length],
+                        backgroundColor:colorvintage[index % colorvintage.length],
                         width: "13px",
                         height: "13px",
                         marginRight: "5px",
@@ -6623,7 +6631,7 @@ const DelinquencySettlementRecovery = ({
                     <div
                       className="legend-color"
                       style={{
-                        backgroundColor: colors[index % colors.length],
+                        backgroundColor: colorvintage[index % colorvintage.length],
                         width: "13px",
                         height: "13px",
                         marginRight: "5px",
@@ -6689,7 +6697,7 @@ const DelinquencySettlementRecovery = ({
                     <div
                       className="legend-color"
                       style={{
-                        backgroundColor: colors[index % colors.length],
+                        backgroundColor: colorvintage[index % colorvintage.length],
                         width: "13px",
                         height: "13px",
                         marginRight: "5px",
@@ -6801,19 +6809,19 @@ const DelinquencySettlementRecovery = ({
                 <Bar
                   dataKey="V1"
                   stackId="a"
-                  fill="#8EB5F4"
+                  fill="#496CD5"
                   barSize={25}
                   radius={[0, 0, 4, 4]}
                 />
-                <Bar dataKey="V2" stackId="a" fill="#496CD5" barSize={25} />
-                <Bar dataKey="V3" stackId="a" fill="#FFB200" barSize={25} />
-                <Bar dataKey="V4" stackId="a" fill="#DC3C49" barSize={25} />
-                <Bar dataKey="V5" stackId="a" fill="#34B53A" barSize={25} />
-                <Bar dataKey="V6" stackId="a" fill="#808080" barSize={25} />
+                <Bar dataKey="V2" stackId="a" fill="#4993CF" barSize={25} />
+                <Bar dataKey="V3" stackId="a" fill="#B7D6F0" barSize={25} />
+                <Bar dataKey="V4" stackId="a" fill="#FFF6F6" barSize={25} />
+                <Bar dataKey="V5" stackId="a" fill="#FDDBC7" barSize={25} />
+                <Bar dataKey="V6" stackId="a" fill="#EF8A62" barSize={25} />
                 <Bar
                   dataKey="V7"
                   stackId="a"
-                  fill="#A020F0"
+                  fill="#DC3C49"
                   barSize={25}
                   radius={[4, 4, 0, 0]}
                 />
@@ -6867,19 +6875,19 @@ const DelinquencySettlementRecovery = ({
                 <Bar
                   dataKey="V1"
                   stackId="a"
-                  fill="#8EB5F4"
+                  fill="#496CD5"
                   barSize={25}
                   radius={[0, 0, 4, 4]}
                 />
-                <Bar dataKey="V2" stackId="a" fill="#496CD5" barSize={25} />
-                <Bar dataKey="V3" stackId="a" fill="#FFB200" barSize={25} />
-                <Bar dataKey="V4" stackId="a" fill="#DC3C49" barSize={25} />
-                <Bar dataKey="V5" stackId="a" fill="#34B53A" barSize={25} />
-                <Bar dataKey="V6" stackId="a" fill="#808080" barSize={25} />
+                <Bar dataKey="V2" stackId="a" fill="#4993CF" barSize={25} />
+                <Bar dataKey="V3" stackId="a" fill="#B7D6F0" barSize={25} />
+                <Bar dataKey="V4" stackId="a" fill="#FFF6F6" barSize={25} />
+                <Bar dataKey="V5" stackId="a" fill="#FDDBC7" barSize={25} />
+                <Bar dataKey="V6" stackId="a" fill="#EF8A62" barSize={25} />
                 <Bar
                   dataKey="V7"
                   stackId="a"
-                  fill="#A020F0"
+                  fill="#DC3C49"
                   barSize={25}
                   radius={[4, 4, 0, 0]}
                 />
@@ -6932,19 +6940,19 @@ const DelinquencySettlementRecovery = ({
                 <Bar
                   dataKey="V1"
                   stackId="a"
-                  fill="#8EB5F4"
+                  fill="#496CD5"
                   barSize={25}
                   radius={[0, 0, 4, 4]}
                 />
-                <Bar dataKey="V2" stackId="a" fill="#496CD5" barSize={25} />
-                <Bar dataKey="V3" stackId="a" fill="#FFB200" barSize={25} />
-                <Bar dataKey="V4" stackId="a" fill="#DC3C49" barSize={25} />
-                <Bar dataKey="V5" stackId="a" fill="#34B53A" barSize={25} />
-                <Bar dataKey="V6" stackId="a" fill="#808080" barSize={25} />
+                <Bar dataKey="V2" stackId="a" fill="#4993CF" barSize={25} />
+                <Bar dataKey="V3" stackId="a" fill="#B7D6F0" barSize={25} />
+                <Bar dataKey="V4" stackId="a" fill="#FFF6F6" barSize={25} />
+                <Bar dataKey="V5" stackId="a" fill="#FDDBC7" barSize={25} />
+                <Bar dataKey="V6" stackId="a" fill="#EF8A62" barSize={25} />
                 <Bar
                   dataKey="V7"
                   stackId="a"
-                  fill="#A020F0"
+                  fill="#DC3C49"
                   barSize={25}
                   radius={[4, 4, 0, 0]}
                 />
@@ -6998,19 +7006,19 @@ const DelinquencySettlementRecovery = ({
                 <Bar
                   dataKey="V1"
                   stackId="a"
-                  fill="#8EB5F4"
+                  fill="#496CD5"
                   barSize={25}
                   radius={[0, 0, 4, 4]}
                 />
-                <Bar dataKey="V2" stackId="a" fill="#496CD5" barSize={25} />
-                <Bar dataKey="V3" stackId="a" fill="#FFB200" barSize={25} />
-                <Bar dataKey="V4" stackId="a" fill="#DC3C49" barSize={25} />
-                <Bar dataKey="V5" stackId="a" fill="#34B53A" barSize={25} />
-                <Bar dataKey="V6" stackId="a" fill="#808080" barSize={25} />
+                <Bar dataKey="V2" stackId="a" fill="#4993CF" barSize={25} />
+                <Bar dataKey="V3" stackId="a" fill="#B7D6F0" barSize={25} />
+                <Bar dataKey="V4" stackId="a" fill="#FFF6F6" barSize={25} />
+                <Bar dataKey="V5" stackId="a" fill="#FDDBC7" barSize={25} />
+                <Bar dataKey="V6" stackId="a" fill="#EF8A62" barSize={25} />
                 <Bar
                   dataKey="V7"
                   stackId="a"
-                  fill="#A020F0"
+                  fill="#DC3C49"
                   barSize={25}
                   radius={[4, 4, 0, 0]}
                 />
@@ -7064,19 +7072,19 @@ const DelinquencySettlementRecovery = ({
                 <Bar
                   dataKey="V1"
                   stackId="a"
-                  fill="#8EB5F4"
+                  fill="#496CD5"
                   barSize={25}
                   radius={[0, 0, 4, 4]}
                 />
-                <Bar dataKey="V2" stackId="a" fill="#496CD5" barSize={25} />
-                <Bar dataKey="V3" stackId="a" fill="#FFB200" barSize={25} />
-                <Bar dataKey="V4" stackId="a" fill="#DC3C49" barSize={25} />
-                <Bar dataKey="V5" stackId="a" fill="#34B53A" barSize={25} />
-                <Bar dataKey="V6" stackId="a" fill="#808080" barSize={25} />
+                <Bar dataKey="V2" stackId="a" fill="#4993CF" barSize={25} />
+                <Bar dataKey="V3" stackId="a" fill="#B7D6F0" barSize={25} />
+                <Bar dataKey="V4" stackId="a" fill="#FFF6F6" barSize={25} />
+                <Bar dataKey="V5" stackId="a" fill="#FDDBC7" barSize={25} />
+                <Bar dataKey="V6" stackId="a" fill="#EF8A62" barSize={25} />
                 <Bar
                   dataKey="V7"
                   stackId="a"
-                  fill="#A020F0"
+                  fill="#DC3C49"
                   barSize={25}
                   radius={[4, 4, 0, 0]}
                 />
@@ -7130,19 +7138,19 @@ const DelinquencySettlementRecovery = ({
                 <Bar
                   dataKey="V1"
                   stackId="a"
-                  fill="#8EB5F4"
+                  fill="#496CD5"
                   barSize={25}
                   radius={[0, 0, 4, 4]}
                 />
-                <Bar dataKey="V2" stackId="a" fill="#496CD5" barSize={25} />
-                <Bar dataKey="V3" stackId="a" fill="#FFB200" barSize={25} />
-                <Bar dataKey="V4" stackId="a" fill="#DC3C49" barSize={25} />
-                <Bar dataKey="V5" stackId="a" fill="#34B53A" barSize={25} />
-                <Bar dataKey="V6" stackId="a" fill="#808080" barSize={25} />
+                <Bar dataKey="V2" stackId="a" fill="#4993CF" barSize={25} />
+                <Bar dataKey="V3" stackId="a" fill="#B7D6F0" barSize={25} />
+                <Bar dataKey="V4" stackId="a" fill="#FFF6F6" barSize={25} />
+                <Bar dataKey="V5" stackId="a" fill="#FDDBC7" barSize={25} />
+                <Bar dataKey="V6" stackId="a" fill="#EF8A62" barSize={25} />
                 <Bar
                   dataKey="V7"
                   stackId="a"
-                  fill="#A020F0"
+                  fill="#DC3C49"
                   barSize={25}
                   radius={[4, 4, 0, 0]}
                 />
@@ -7196,19 +7204,19 @@ const DelinquencySettlementRecovery = ({
                 <Bar
                   dataKey="V1"
                   stackId="a"
-                  fill="#8EB5F4"
+                  fill="#496CD5"
                   barSize={25}
                   radius={[0, 0, 4, 4]}
                 />
-                <Bar dataKey="V2" stackId="a" fill="#496CD5" barSize={25} />
-                <Bar dataKey="V3" stackId="a" fill="#FFB200" barSize={25} />
-                <Bar dataKey="V4" stackId="a" fill="#DC3C49" barSize={25} />
-                <Bar dataKey="V5" stackId="a" fill="#34B53A" barSize={25} />
-                <Bar dataKey="V6" stackId="a" fill="#808080" barSize={25} />
+                <Bar dataKey="V2" stackId="a" fill="#4993CF" barSize={25} />
+                <Bar dataKey="V3" stackId="a" fill="#B7D6F0" barSize={25} />
+                <Bar dataKey="V4" stackId="a" fill="#FFF6F6" barSize={25} />
+                <Bar dataKey="V5" stackId="a" fill="#FDDBC7" barSize={25} />
+                <Bar dataKey="V6" stackId="a" fill="#EF8A62" barSize={25} />
                 <Bar
                   dataKey="V7"
                   stackId="a"
-                  fill="#A020F0"
+                  fill="#DC3C49"
                   barSize={25}
                   radius={[4, 4, 0, 0]}
                 />
@@ -7262,19 +7270,19 @@ const DelinquencySettlementRecovery = ({
                 <Bar
                   dataKey="V1"
                   stackId="a"
-                  fill="#8EB5F4"
+                  fill="#496CD5"
                   barSize={25}
                   radius={[0, 0, 4, 4]}
                 />
-                <Bar dataKey="V2" stackId="a" fill="#496CD5" barSize={25} />
-                <Bar dataKey="V3" stackId="a" fill="#FFB200" barSize={25} />
-                <Bar dataKey="V4" stackId="a" fill="#DC3C49" barSize={25} />
-                <Bar dataKey="V5" stackId="a" fill="#34B53A" barSize={25} />
-                <Bar dataKey="V6" stackId="a" fill="#808080" barSize={25} />
+                <Bar dataKey="V2" stackId="a" fill="#4993CF" barSize={25} />
+                <Bar dataKey="V3" stackId="a" fill="#B7D6F0" barSize={25} />
+                <Bar dataKey="V4" stackId="a" fill="#FFF6F6" barSize={25} />
+                <Bar dataKey="V5" stackId="a" fill="#FDDBC7" barSize={25} />
+                <Bar dataKey="V6" stackId="a" fill="#EF8A62" barSize={25} />
                 <Bar
                   dataKey="V7"
                   stackId="a"
-                  fill="#A020F0"
+                  fill="#DC3C49"
                   barSize={25}
                   radius={[4, 4, 0, 0]}
                 />
@@ -7329,19 +7337,19 @@ const DelinquencySettlementRecovery = ({
                 <Bar
                   dataKey="V1"
                   stackId="a"
-                  fill="#8EB5F4"
+                  fill="#496CD5"
                   barSize={25}
                   radius={[0, 0, 4, 4]}
                 />
-                <Bar dataKey="V2" stackId="a" fill="#496CD5" barSize={25} />
-                <Bar dataKey="V3" stackId="a" fill="#FFB200" barSize={25} />
-                <Bar dataKey="V4" stackId="a" fill="#DC3C49" barSize={25} />
-                <Bar dataKey="V5" stackId="a" fill="#34B53A" barSize={25} />
-                <Bar dataKey="V6" stackId="a" fill="#808080" barSize={25} />
+                <Bar dataKey="V2" stackId="a" fill="#4993CF" barSize={25} />
+                <Bar dataKey="V3" stackId="a" fill="#B7D6F0" barSize={25} />
+                <Bar dataKey="V4" stackId="a" fill="#FFF6F6" barSize={25} />
+                <Bar dataKey="V5" stackId="a" fill="#FDDBC7" barSize={25} />
+                <Bar dataKey="V6" stackId="a" fill="#EF8A62" barSize={25} />
                 <Bar
                   dataKey="V7"
                   stackId="a"
-                  fill="#A020F0"
+                  fill="#DC3C49"
                   barSize={25}
                   radius={[4, 4, 0, 0]}
                 />
@@ -7396,19 +7404,19 @@ const DelinquencySettlementRecovery = ({
                 <Bar
                   dataKey="V1"
                   stackId="a"
-                  fill="#8EB5F4"
+                  fill="#496CD5"
                   barSize={25}
                   radius={[0, 0, 4, 4]}
                 />
-                <Bar dataKey="V2" stackId="a" fill="#496CD5" barSize={25} />
-                <Bar dataKey="V3" stackId="a" fill="#FFB200" barSize={25} />
-                <Bar dataKey="V4" stackId="a" fill="#DC3C49" barSize={25} />
-                <Bar dataKey="V5" stackId="a" fill="#34B53A" barSize={25} />
-                <Bar dataKey="V6" stackId="a" fill="#808080" barSize={25} />
+                <Bar dataKey="V2" stackId="a" fill="#4993CF" barSize={25} />
+                <Bar dataKey="V3" stackId="a" fill="#B7D6F0" barSize={25} />
+                <Bar dataKey="V4" stackId="a" fill="#FFF6F6" barSize={25} />
+                <Bar dataKey="V5" stackId="a" fill="#FDDBC7" barSize={25} />
+                <Bar dataKey="V6" stackId="a" fill="#EF8A62" barSize={25} />
                 <Bar
                   dataKey="V7"
                   stackId="a"
-                  fill="#A020F0"
+                  fill="#DC3C49"
                   barSize={25}
                   radius={[4, 4, 0, 0]}
                 />
@@ -7463,19 +7471,19 @@ const DelinquencySettlementRecovery = ({
                 <Bar
                   dataKey="V1"
                   stackId="a"
-                  fill="#8EB5F4"
+                  fill="#496CD5"
                   barSize={25}
                   radius={[0, 0, 4, 4]}
                 />
-                <Bar dataKey="V2" stackId="a" fill="#496CD5" barSize={25} />
-                <Bar dataKey="V3" stackId="a" fill="#FFB200" barSize={25} />
-                <Bar dataKey="V4" stackId="a" fill="#DC3C49" barSize={25} />
-                <Bar dataKey="V5" stackId="a" fill="#34B53A" barSize={25} />
-                <Bar dataKey="V6" stackId="a" fill="#808080" barSize={25} />
+                <Bar dataKey="V2" stackId="a" fill="#4993CF" barSize={25} />
+                <Bar dataKey="V3" stackId="a" fill="#B7D6F0" barSize={25} />
+                <Bar dataKey="V4" stackId="a" fill="#FFF6F6" barSize={25} />
+                <Bar dataKey="V5" stackId="a" fill="#FDDBC7" barSize={25} />
+                <Bar dataKey="V6" stackId="a" fill="#EF8A62" barSize={25} />
                 <Bar
                   dataKey="V7"
                   stackId="a"
-                  fill="#A020F0"
+                  fill="#DC3C49"
                   barSize={25}
                   radius={[4, 4, 0, 0]}
                 />
@@ -7508,19 +7516,19 @@ const DelinquencySettlementRecovery = ({
                 <Bar
                   dataKey="V1"
                   stackId="a"
-                  fill="#8EB5F4"
+                  fill="#496CD5"
                   barSize={25}
                   radius={[0, 0, 4, 4]}
                 />
-                <Bar dataKey="V2" stackId="a" fill="#496CD5" barSize={25} />
-                <Bar dataKey="V3" stackId="a" fill="#FFB200" barSize={25} />
-                <Bar dataKey="V4" stackId="a" fill="#DC3C49" barSize={25} />
-                <Bar dataKey="V5" stackId="a" fill="#34B53A" barSize={25} />
-                <Bar dataKey="V6" stackId="a" fill="#808080" barSize={25} />
+                <Bar dataKey="V2" stackId="a" fill="#4993CF" barSize={25} />
+                <Bar dataKey="V3" stackId="a" fill="#B7D6F0" barSize={25} />
+                <Bar dataKey="V4" stackId="a" fill="#FFF6F6" barSize={25} />
+                <Bar dataKey="V5" stackId="a" fill="#FDDBC7" barSize={25} />
+                <Bar dataKey="V6" stackId="a" fill="#EF8A62" barSize={25} />
                 <Bar
                   dataKey="V7"
                   stackId="a"
-                  fill="#A020F0"
+                  fill="#DC3C49"
                   barSize={25}
                   radius={[4, 4, 0, 0]}
                 />

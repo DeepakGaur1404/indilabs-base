@@ -77,17 +77,17 @@ function SegVolumeBadTable(props: Props) {
       </h1>
       <table className="w-full" cellPadding={16}>
         <thead>
-          <tr className="border-b-[1px] border-[#F3F4F6] flex justify-evenly">
-            <th className="text-[#81858C] text-[12px]  font-[400] font-['DM Sans' !important] w-[18%] text-start">
+          <tr className="border-b-[1px] border-[#F3F4F6] flex justify-between">
+            <th className="text-[#81858C] text-[12px]  font-[400] font-['DM Sans' !important] w-[30%] text-start">
               Segment
             </th>
-            <th className="text-[#81858C] text-[12px]  font-[400] font-['DM Sans' !important] w-[16%] ml-2">
+            <th className="text-[#81858C] text-[12px]  font-[400] font-['DM Sans' !important] w-[24%] ">
               Value
             </th>
-            <th className="text-[#81858C] text-[12px]  font-[400] font-['DM Sans' !important] w-[16%]">
+            <th className="text-[#81858C] text-[12px]  font-[400] font-['DM Sans' !important] w-[24%]">
               Bad%
             </th>
-            <th className="text-[#81858C] text-[12px]  font-[400] font-['DM Sans' !important] w-[16%]">
+            <th className="text-[#81858C] text-[12px]  font-[400] font-['DM Sans' !important] w-[24%]">
               Performance
             </th>
           </tr>
@@ -98,7 +98,7 @@ function SegVolumeBadTable(props: Props) {
               onClick={() => {
                 onClickButtons(each.id, each.segment);
               }}
-              className={` h-[60px] rounded-xl mt-[10px] text-center flex justify-evenly items-center text-[#161D29] text-[14px]  font-[400] font-['DM Sans' !important] ${
+              className={` h-[60px] rounded-xl mt-[10px] text-center flex justify-between items-center text-[#161D29] text-[14px]  font-[400] font-['DM Sans' !important] ${
                 each.id !== activeData
                   ? "border-b-[1px] border-[#F3F4F6]"
                   : null
@@ -110,15 +110,15 @@ function SegVolumeBadTable(props: Props) {
               
               cursor-pointer `}
             >
-              <td className="-ml-6 min-w-[106px]">{each.segment}</td>
-              <td className={`${idx === 0 && "relative right-[5px]"}`}>
+              <td className="text-left  w-[30%] ">{each.segment}</td>
+              <td className="text-center w-[24%]">
                 {each.Value}
               </td>
-              <td className={`${idx === 1 && "relative left-[4px]"}`}>
+              <td className= "text-center  w-[24%]">
                 {each.Bad}
               </td>
               <td
-                className="text-[#6750A4] text-[12px]  font-[500] font-['DM Sans' !important]"
+                className="text-[#6750A4] text-[12px]  font-[500] font-['DM Sans' !important] w-[24%]"
                 onClick={() => {
                   navigateToReviewPerformance();
                 }}
