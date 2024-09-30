@@ -1,6 +1,6 @@
 import { IoIosArrowForward } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
-
+import DynamoImage from "../../assets/images/Dynamo.svg";
 import {
   BarChart,
   Bar,
@@ -75,9 +75,14 @@ const StrategyOptimisation = () => {
 
   return (
     <div className="w-[32%] h-full rounded-xl shadow p-4 gap-3  bg-[#FFF8F2]">
-      <div className="border border-[#9F90D4] bg-white w-max px-[8px] customClassStrategyOptimisationSixth rounded-[4px] cursor-pointer">
-        <p className="font-[400] text-black text-center text-[13px] font-['DM Sans'] w-[130px] h-[20px] mt-1 leading-4 customClassSixth">
-          Strategy Optimisation
+         <div className="cursor-pointer flex flex-col items-center">
+        <img
+          className=" border border-[#F3A359] bg-white gap-[8px] py-[6px] px-[8px] customClassFifth rounded-[4px] h-[34px] w-[110px]"
+          src={DynamoImage}
+          alt="DynamoImage"
+        />
+        <p className="font-[500] text-[#EC7421] text-center text-[11px] font-['DM Sans'] mt-1 customClassFifth">
+          Diagnostic, Segmentation & Strategy Decision Engine
         </p>
       </div>
       <div className="bg-white h-[116px] p-1 rounded-xl mt-4 flex flex-col items-center ">
