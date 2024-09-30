@@ -18,48 +18,155 @@ import {
 
 const data = [
   {
-    name: "Jan",
-    uv: 2.8,
-    pv: 200,
-    amt: 5.1,
+    name: "Jan2024",
+    recovery: 106408875.30999999,
+    cost: 22821460.718999997,
+    roi: 4.662667154403895,
   },
   {
-    name: "Feb",
-    uv: 3.1,
-    pv: 225,
-    amt: 5.5,
+    name: "Feb2024",
+    recovery: 106096191.75000003,
+    cost: 23182819.435000006,
+    roi: 4.57650080256513,
   },
   {
-    name: "Mar",
-    uv: 3.8,
-    pv: 260,
-    amt: 4.9,
+    name: "Mar2024",
+    recovery: 118404084.03,
+    cost: 26632359.834499996,
+    roi: 4.445872794066766,
   },
   {
-    name: "Apr",
-    uv: 2.8,
-    pv: 200,
-    amt: 5,
+    name: "Apr2024",
+    recovery: 81356821.92999999,
+    cost: 17701628.674999997,
+    roi: 4.596007713397593,
   },
   {
-    name: "May",
-    uv: 2.8,
-    pv: 198,
-    amt: 5.3,
+    name: "May2024",
+    recovery: 100396115.69,
+    cost: 22087852.378499996,
+    roi: 4.545309067156034,
   },
   {
-    name: "Jun",
-    uv: 2.8,
-    pv: 198,
-    amt: 4.9,
+    name: "Jun2024",
+    recovery: 87351346.91,
+    cost: 19000130.264000002,
+    roi: 4.597407791224814,
+  },
+];
+
+const payersData = [
+  // {
+  //   label: "Very High Payer",
+  //   amount: "12000",
+  //   currentRate: "65%",
+  //   previousRate: "68%",
+  //   isSpecialRate: false,
+  //   specialRateColor: "",
+  // },
+  {
+    label: "High Payer",
+    amount: "3345",
+    currentRate: "35%",
+    previousRate: " 27.66846036462935",
+    isSpecialRate: false,
+    specialRateColor: "",
+  },
+  {
+    label: "Medium Payer",
+    amount: " 6120",
+    currentRate: "25%",
+    previousRate: " 49.1526784997189",
+    isSpecialRate: true,
+    specialRateColor: "#10B981",
+  },
+  {
+    label: "Low Payer",
+    amount: " 2886",
+    currentRate: "20%",
+    previousRate: "27.66846036462935",
+    isSpecialRate: true,
+    specialRateColor: "#F9C700",
   },
   // {
-  //   name: "Jul",
-  //   uv: 3.1,
-  //   pv: 225,
-  //   amt: 5.5,
+  //   label: "H Balance",
+  //   amount: "1560",
+  //   currentRate: "20%",
+  //   previousRate: "18%",
+  //   isSpecialRate: true,
+  //   specialRateColor: "#F9C700",
   // },
 ];
+
+const arrTicks: any = (data: any[]): number[] => {
+  let arr: number[] = [];
+  let maxNum = 0;
+
+  if (data && data.length > 0) {
+    maxNum = Math.max(
+      ...data.flatMap((item) => {
+        return Object.values(item).filter(
+          (value): value is number => typeof value === "number"
+        );
+      })
+    );
+  } else {
+    return [0];
+  }
+
+  const numberOfTicks = 10;
+  let stepSize = maxNum / numberOfTicks;
+  maxNum = Math.ceil(maxNum / stepSize) * stepSize;
+  let num1 = 0;
+  for (let i = 0; i <= numberOfTicks; i++) {
+    arr.push(parseFloat(num1.toFixed(1)));
+    num1 += stepSize;
+  }
+
+  return arr;
+};
+
+const formatNumberMillion = (num: any) => {
+  if (num === 0) {
+    return "0";
+  } else if (num >= 1e7) {
+    // 10 million and above
+    return (num / 1e6).toFixed(2);
+  } else if (num >= 1e6) {
+    // 1 million to 10 million
+    return (num / 1e6).toFixed(2);
+  } else if (num >= 1e5) {
+    // 100,000 to 1 million
+    return (num / 1e6).toFixed(2);
+  } else {
+    // Less than 100,000
+    return (num / 1e6).toFixed(2); // You can adjust this if needed
+  }
+};
+
+const formatYAxisTick = (tick: any) => {
+  if (tick == 0) {
+    return `${tick}`;
+  } else {
+    return `${tick.toFixed(1)}`;
+  }
+};
+
+const arrGraphTicks = () => {
+  let arr = [];
+  let maxNum = 0;
+  if (data) {
+    maxNum = Math.max(...data?.map((item: any) => item["roi"]));
+  } else {
+    return [0];
+  }
+  let num1 = 0;
+  for (let i = 0; i <= 10; i++) {
+    arr.push(parseFloat(num1.toFixed(1)));
+    num1 += Math.ceil(maxNum) / 10;
+  }
+  return arr;
+};
 
 const StrategyOptimisation = () => {
   // const formatYAxisTick = (tick: any) => `${tick}%`;
@@ -74,8 +181,8 @@ const StrategyOptimisation = () => {
   };
 
   return (
-    <div className="w-[32%] h-full rounded-xl shadow p-4 gap-3  bg-[#FFF8F2]">
-         <div className="cursor-pointer flex flex-col items-center">
+    <div className="lg:w-[32%] sm:w-[90%] h-full rounded-xl shadow p-4 gap-3  bg-[#FFF8F2]">
+      <div className="cursor-pointer flex flex-col items-center">
         <img
           className=" border border-[#F3A359] bg-white gap-[8px] py-[6px] px-[8px] customClassFifth rounded-[4px] h-[34px] w-[110px]"
           src={DynamoImage}
@@ -97,7 +204,7 @@ const StrategyOptimisation = () => {
           Improvement Opportunity: $15Ok
         </p>
       </div>
-      <div className="h-[364px] p-2  bg-white  rounded-xl mt-3">
+      <div className="h-[364px] p-2 w-[100%]  bg-white  rounded-xl mt-3">
         <div className="flex justify-between p-2">
           <p className="font-[DM Sans] font-[500] text-[14px] leading-[18px] text-[#000000] customClassThird">
             Return on Investment
@@ -114,102 +221,104 @@ const StrategyOptimisation = () => {
         </div>
 
         <div className="flex flex-col items-center mt-1 w-[100%]  rounded-xl">
-          <ComposedChart
-            width={400}
-            height={280}
-            data={data}
-            // margin={{ top: 10, right: 30, left: 20, bottom: 5 }}
-            barGap={0}
-            barCategoryGap={0}
-          >
-            <CartesianGrid strokeDasharray="3 3" vertical={false} />
-            <XAxis
-              dataKey="name"
-              axisLine={false}
-              tickLine={false}
-              fontWeight={400}
-              fontSize={10}
-              fontFamily="DM Sans"
-              fill={"#3B414B"}
-            />
-            <YAxis
-              yAxisId="left"
-              interval={0}
-              // padding={{ top: 0, bottom: 0 }}
-              axisLine={false}
-              tickLine={false}
-              // label={{
-              //   value: `$ Writeoff, Recovery`,
-              //   angle: -90,
-              //   position: "insideLeft",
-              //   fontFamily: "roboto",
-              //   fontSize: "15px",
-              //   dy: 60,
-              //   fontWeight: "bold",
-              // }}
-              fontWeight={400}
-              fontSize={9}
-              fontFamily="DM Sans"
-              fill={"#3B414B"}
-              ticks={[0, 50, 100, 150, 200, 250, 300]}
-              domain={[0, 300]}
-
-              // className="text-[#3B414B] text-[9px] font['DM Sans'] font-[400]"
-            />
-            <YAxis
-              yAxisId="right"
-              orientation="right"
-              interval={0}
-              tickLine={false}
-              // padding={{ top: 0, bottom: 0,}}
-              axisLine={false}
-              // label={{
-              //   value: `%Monthly Recovery Rate`,
-              //   angle: -90,
-              //   position: "outside",
-              //   fontFamily: "roboto",
-              //   fontSize: "15px",
-              //   dy: -20,
-              //   dx: 20,
-              //   fontWeight: "bold",
-              // }}
-              ticks={[0, 1, 2, 3, 4, 5, 6]}
-              domain={[0, 6]}
-              fontWeight={400}
-              fontSize={9}
-              fontFamily="DM Sans"
-              fill={"#3B414B"}
-              // className="text-[#3B414B] text-[9px] font['DM Sans'] font-[400]"
-            />
-            <Tooltip />
-            <Bar
-              dataKey="pv"
-              fill="#FFB200"
-              yAxisId="left"
-              barSize={10}
-              radius={[10, 10, 10, 10]}
-            />
-            <Bar
-              dataKey="uv"
-              fill="#4339F2"
-              yAxisId="right"
-              barSize={10}
-              radius={[10, 10, 10, 10]}
-            />
-           
-          </ComposedChart>
-
-          <div className="flex items-center gap-4">
+          <ResponsiveContainer width="100%" height={280}>
+            <ComposedChart
+              // width={400}
+              // height={280}
+              data={data}
+              margin={{ top: 10, right: -25, left: -25, bottom: 20 }}
+              barGap={0}
+              barCategoryGap={0}
+            >
+              <CartesianGrid strokeDasharray="3 3" vertical={false} />
+              <XAxis
+                dataKey="name"
+                axisLine={false}
+                tickLine={false}
+                fontWeight={400}
+                fontSize={10}
+                fontFamily="DM Sans"
+                fill={"#3B414B"}
+                angle={-70}
+                dy={0}
+                dx={-4}
+                textAnchor="end"
+              />
+              <YAxis
+                yAxisId="left"
+                interval={0}
+                axisLine={false}
+                tickLine={false}
+                fontWeight={400}
+                fontSize={9}
+                fontFamily="DM Sans"
+                fill={"#3B414B"}
+                domain={[0, "datamax"]}
+                tickFormatter={formatNumberMillion}
+                ticks={arrTicks(data)}
+              />
+              <YAxis
+                yAxisId="right"
+                orientation="right"
+                tickLine={false}
+                axisLine={false}
+                fontWeight={400}
+                fontSize={9}
+                fontFamily="DM Sans"
+                fill={"#3B414B"}
+                domain={[0, "dataMax"]}
+                tickFormatter={formatYAxisTick}
+                ticks={arrGraphTicks()}
+              />
+              <Tooltip
+                formatter={(value: any, name) => {
+                  const formattedValue =
+                    typeof value === "number" && name === "ROI"
+                      ? `${parseFloat(value.toFixed(2)).toLocaleString()}`
+                      : typeof value === "number"
+                      ? `₹ ${Math.floor(value).toLocaleString()}`
+                      : `${parseFloat(value.toFixed(2)).toLocaleString()}`;
+                  return [formattedValue, `${name}`];
+                }}
+              />
+              <Bar
+                dataKey="recovery"
+                fill="#FFB200"
+                name="Recovery"
+                yAxisId="left"
+                barSize={10}
+                radius={[10, 10, 10, 10]}
+              />
+              <Bar
+                dataKey="cost"
+                name="Cost"
+                fill="#4339F2"
+                yAxisId="left"
+                barSize={10}
+                radius={[10, 10, 10, 10]}
+              />
+              <Line
+                type="linear"
+                dataKey="roi"
+                name="ROI"
+                yAxisId="right"
+                stroke="#FF7A00"
+                strokeWidth={2}
+                dot={false}
+              />
+            </ComposedChart>
+          </ResponsiveContainer>
+          <div className="flex items-center gap-4 mt-2">
             <div className="flex items-center gap-1">
               <div className="w-[8px] h-[8px] bg-[#4339F2] rounded-xl"></div>
               <div className="text-[12px] font-[400] font-['DM Sans'] text-[#000000] customClassThird">
-                $Cost
+              ₹Cost
               </div>
             </div>
             <div className="flex items-center gap-1">
               <div className="w-[8px] h-[8px] bg-[#FFB200] rounded-xl"></div>
               <div className="text-[12px] font-[400] font-['DM Sans'] text-[#493b3b] customClassThird">
-                $Liquidated
+              ₹Recovery
               </div>
             </div>
             <div className="flex items-center gap-1">
@@ -253,83 +362,38 @@ const StrategyOptimisation = () => {
               </th>
             </tr>
           </thead>
-          <tbody className="w-full flex flex-col  ">
-            <tr className="border-b-[1px] border-[#F3F4F6] flex justify-between  p-3">
-              <td className="text-start text-[#161D29] font-[400] text-[12px]  font-['DM Sans'] w-[87px]">
-                Very High Payer
-              </td>
-              <td className="text-center text-[#161D29] font-[400] text-[12px] font-['DM Sans'] w-[38px]">
-                12000
-              </td>
-              <td className="text-center text-[#161D29] font-[400]  text-[12px] font-['DM Sans'] w-[52px]">
-                65%
-              </td>
-              <td className="text-center text-[#161D29] font-[400] text-[12px] font-['DM Sans'] w-[52px]">
-                68%
-              </td>
-            </tr>
-            <tr className="border-b-[1px] border-[#F3F4F6]  flex justify-between p-3">
-              <td className="text-start text-[#161D29] font-[400] text-[12px] font-['DM Sans'] w-[87px] ">
-                High Payer
-              </td>
-              <td className="text-center text-[#161D29] font-[400] text-[12px] font-['DM Sans']  w-[38px]">
-                6200
-              </td>
-              <td className="text-center text-[#161D29] font-[400]  text-[12px] font-['DM Sans']   w-[52px] ">
-                35%
-              </td>
-              <td className="text-center text-[#161D29] font-[400] text-[12px] font-['DM Sans']  w-[52px]">
-                30%
-              </td>
-            </tr>
-            <tr className="  border-b-[1px] border-[#F3F4F6] flex justify-between p-3">
-              <td className="text-start text-[#161D29] font-[400] text-[12px] font-['DM Sans'] w-[87px]">
-                Medium Payer
-              </td>
-              <td className="text-center text-[#161D29] font-[400] text-[12px] font-['DM Sans']  w-[38px]">
-                2455
-              </td>
-              <td className="text-center text-[#ffffff] font-[700]  text-[12px] font-['DM Sans'] ">
-                <div className="relative bottom-1 bg-[#10B981] rounded-sm  py-1  w-[52px] customClassSecond ">
-                  25%
-                </div>
-              </td>
-              <td className="text-center text-[#161D29] font-[400] text-[12px] font-['DM Sans']  w-[52px]">
-                20%
-              </td>
-            </tr>
-            <tr className="  border-b-[1px] border-[#F3F4F6] flex justify-between p-3">
-              <td className="text-start text-[#161D29] font-[400] text-[12px]  font-['DM Sans'] w-[87px]">
-                Low Payer
-              </td>
-              <td className="text-center text-[#161D29] font-[400] text-[12px] font-['DM Sans']  w-[38px]">
-                8000
-              </td>
-              <td className="text-center text-[#ffffff] font-[700]  text-[12px] font-['DM Sans']  ">
-                <div className="relative bottom-1 w-[52px] bg-[#F9C700] rounded-sm py-1 customClassSecond">
-                  20%
-                </div>
-              </td>
-              <td className="text-center text-[#161D29] font-[400] text-[12px] font-['DM Sans']  w-[52px]">
-                18%
-              </td>
-            </tr>
-            <tr className=" flex justify-between p-3">
-              <td className="text-start text-[#161D29] font-[400] text-[12px] font-['DM Sans'] w-[87px]">
-                H Balance
-              </td>
-              <td className="text-center text-[#161D29] font-[400] text-[12px] font-['DM Sans']  w-[38px]">
-                1560
-              </td>
-              <td className="text-center text-[#ffffff] font-[700]  text-[12px] font-['DM Sans'] ">
-                <div className="relative bottom-1 w-[52px] bg-[#F9C700] rounded-sm  py-1 customClassSecond">
-                  20%
-                </div>
-              </td>
-              <td className="text-center text-[#161D29] font-[400] text-[12px] font-['DM Sans']  w-[52px]">
-                18%
-              </td>
-            </tr>
+          <tbody className="w-full flex flex-col">
+            {payersData.map((payer, index) => (
+              <tr
+                key={index}
+                className="border-b-[1px] border-[#F3F4F6] flex justify-between items-center p-3"
+              >
+                <td className="text-start text-[#161D29] font-[400] text-[12px] font-['DM Sans'] w-[87px]">
+                  {payer.label}
+                </td>
+
+                <td className="text-center text-[#161D29] font-[400] text-[12px] font-['DM Sans'] w-[38px]">
+                  {payer.amount}
+                </td>
+
+                <td className="text-center text-[#ffffff] w-[52px] font-[400] text-[12px] font-['DM Sans']">
+                  {payer.isSpecialRate ? (
+                    <div
+                      className="relative bottom-1 rounded-sm py-1 w-[52px] customClassSecond"
+                      style={{ backgroundColor: payer.specialRateColor }}
+                    >
+                      {payer.currentRate}
+                    </div>
+                  ) : (
+                    <span className="text-[#161D29]">{payer.currentRate}</span>
+                  )}
+                </td>
+
+                <td className="text-center text-[#161D29] font-[400] text-[12px] font-['DM Sans'] w-[52px]">
+                  {parseFloat(payer.previousRate).toFixed(2)}%
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
