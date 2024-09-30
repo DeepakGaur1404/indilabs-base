@@ -705,7 +705,7 @@ const ImpactAssessmentRecovery = ({
             </ScatterChart>
           </ResponsiveContainer>
 
-          <p className="-mt-[22px]  text-center text-[14px] italic text-[#6A7691] font-[400] font-['DM Sans'] benchmark_text customClasssix ">
+          <p className="-mt-[5px]  text-center text-[14px] italic text-[#6A7691] font-[400] font-['DM Sans'] benchmark_text customClasssix ">
             Performance / Benchmark
           </p>
         </>
