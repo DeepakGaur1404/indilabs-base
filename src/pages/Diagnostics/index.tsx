@@ -8,11 +8,13 @@ import ExpectedRecovery from "../../components/Diagnostics/ExpectedRecovery";
 import Segmentation from "../../components/Diagnostics/Segmentation";
 import TwoCards from "../../components/Diagnostics/TwoCards";
 import ActualBalance from "../../components/Diagnostics/ActualBalance";
-import ShareOfBalance from "../../components/Diagnostics/ShareOfBalance";
+
 import HomeDashboard from "../../components/PerformanceDashboardHeader/HomeDashboard";
 import DiagnosticSegementation from "../../components/Diagnostics/DiagnosticSegementation";
 import HotspotExpanded from "../../components/Diagnostics/HotspotExpanded";
 import DiagnosticsCard from "../../components/Diagnostics/DiagnosticsDetails";
+import ShareOfBalance from "../../components/Diagnostics/ShareOfBalance";
+import DiagnosticSegementationDashboard from "../../components/Diagnostics/DiagnosticSegementationDashboard";
 
 const categories = [
   { id: "segmentation", name: "Segmentation" },
@@ -37,7 +39,12 @@ const Diagnostics: React.FC = () => {
 
   return (
     <div className="px-[6px] h-full lg:px-[49px] lg:pt-[59px] -mt-10 lg:pb-20 bg-[#fafafb]">
-      <HomeDashboard />
+      {selectedCategory === "segmentation" ? (
+        <DiagnosticSegementationDashboard />
+      ) : (
+        <HomeDashboard />
+      )}
+
       <div className="flex mt-5 ml-2">
         <div className=" flex justify-between rounded-xl B1TabsContain">
           {categories.map((city, index) => (
