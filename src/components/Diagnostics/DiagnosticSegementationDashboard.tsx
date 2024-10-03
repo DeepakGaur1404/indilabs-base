@@ -319,15 +319,15 @@ const DiagnosticSegementationDashboard = (props: Props) => {
             <div className="flex-col justify-start items-start gap-1 inline-flex">
               <div className="text-[#9CA4B6] text-[12px] font-[400] font-['DM Sans']">
                 {data.name === "total_accounts"
-                  ? "New Write Offs (units)"
+                  ? "Total Accounts"
                   : data.name === "avg_monthly_payers"
-                  ? "New Write Offs (amount)"
+                  ? "Total Payers"
                   : data.name === "avg_monthly_payer_rate"
-                  ? "Performance Period"
+                  ? "Payer Ratio"
                   : data.name === "fy_forecast"
-                  ? "Recovery"
+                  ? "FY Forecast"
                   : data.name === "variance_to_plan"
-                  ? "Recovery%"
+                  ? "Variance to Plan"
                   : ""}
               </div>
               <div className="text-[#000000] text-[16px] font-[500] font-['DM Sans'] tracking-wide">
