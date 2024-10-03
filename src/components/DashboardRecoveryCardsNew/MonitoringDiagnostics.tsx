@@ -296,31 +296,11 @@ const MonitoringDiagnostics = () => {
                         marginLeft: "5px",
                       }}
                     >
-                      {each.bar.Min_Performance.toFixed(1)}%
+                      {each.bar.Min_Performance.toFixed(3)}%
                     </div>
-                    <div
-                      className={`text-black text-[12px] font-[400] font-['DM Sans']`}
-                      style={{
-                        position: "absolute",
-                        left: arrowPosition,
-                        marginLeft: "5px",
-                      }}
-                    >
-                      {each.bar.Current_Performance.toFixed(1)}%
-                    </div>
-                  </div>
-                </div>
-                <div className="w-full h-[18px] relative">
-                  <div
-                    className="text-black text-[12px] font-[400] font-['DM Sans'] absolute right-1"
-                    style={{ top: "-20px", textAlign: "right" }}
-                  >
-                    {each.bar.Max_Performance.toFixed(1)}%
-                  </div>
-                  <div className="w-full h-2 top-[2px] absolute bg-gradient-to-r from-[#ED0E00] via-[#FFF509] to-[#09FF4E] rounded-xl" />
-                  {each.bar.Current_Performance && (
+                      {each.bar.Current_Performance && (
                     <IoMdArrowDropup
-                      className="text-xs ml-1"
+                      className="text-xs ml-1 rotate-180"
                       style={{
                         width: "20px",
                         height: "25px",
@@ -330,6 +310,28 @@ const MonitoringDiagnostics = () => {
                       }}
                     />
                   )}
+                  </div>
+                </div>
+                <div className="w-full h-[18px] relative">
+                  <div
+                    className="text-black text-[12px] font-[400] font-['DM Sans'] absolute right-1"
+                    style={{ top: "-20px", textAlign: "right" }}
+                  >
+                    {each.bar.Max_Performance.toFixed(3)}%
+                  </div>
+                  <div className="w-full h-2 top-[2px] absolute bg-gradient-to-r from-[#ED0E00] via-[#FFF509] to-[#09FF4E] rounded-xl" />
+                 
+                  <div
+                      className={`text-black text-[12px] font-[400] mt-2 font-['DM Sans']`}
+                      style={{
+                        position: "absolute",
+                        left: arrowPosition,
+                        marginLeft: "5px",
+                      }}
+                    >
+                      {each.bar.Current_Performance.toFixed(3)}%
+                    </div>
+                  
                 </div>
               </div>
             </div>
