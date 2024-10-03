@@ -93,7 +93,7 @@ export default function AgencyRadialBarChart({ allocationData }: Data) {
 
   return (
     <div className="lg:col-span-5  xl:w-[48%] h-[460px] bg-white rounded-xl p-3 shadow  mt-3">
-    <p className=" text-[18px] font-[500] text-[#000000] font-['DM Sans'] ">
+    <p className=" text-[16px] font-[500] text-[#000000] font-['DM Sans'] my-1">
       Allocation Share
     </p>
     <div className="flex flex-col lg:flex-row items-center justify-center">

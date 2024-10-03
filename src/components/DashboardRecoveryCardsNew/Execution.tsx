@@ -157,7 +157,7 @@ const Execution = () => {
         </p>
       </div>
       <div className="h-[364px] p-2  w-[100%] bg-white  rounded-xl mt-3">
-        <div className="flex justify-between p-3  w-[100%]">
+        <div className="flex justify-between p-2 w-[100%]">
           <p className="font-[DM Sans] font-[500] text-[14px] leading-[18px] customClassThird">
             Key Results
           </p>
@@ -175,7 +175,7 @@ const Execution = () => {
               cx="50%"
               cy="50%"
               labelLine={false}
-              outerRadius={100}
+              outerRadius={110}
               fill="#8884d8"
               dataKey="percentage"
             >
@@ -196,7 +196,7 @@ const Execution = () => {
             />
           </PieChart>
         </ResponsiveContainer>
-        <div className="flex items-center justify-center gap-3 -mt-6">
+        <div className="flex items-center justify-center gap-3 -mt-3">
           {/* <div className="flex items-center gap-1">
             <div className="w-[8px] h-[8px] bg-[#E5E3ED] rounded-xl"></div>
             <div className="text-[12px] font-[400] font-['DM Sans'] text-[#000000] customClassThird">
@@ -224,9 +224,9 @@ const Execution = () => {
         </div>
       </div>
       <div className="h-[364px] p-2 w-[100%]  bg-white  rounded-xl mt-3">
-        <div className="flex justify-between p-3">
+        <div className="flex justify-between py-2 px-1">
           <p className="font-[DM Sans] text-[#000000] font-[500] text-[14px] leading-[18px] customClassThird">
-            Operational Controls
+            Operational Controls (millions)
           </p>
           <button className="flex text-[#6750a4] items-center text-[12px] font-[500] justify-center gap-2 w-[22%] customClassThird">
             Review
@@ -235,7 +235,7 @@ const Execution = () => {
             </span>
           </button>
         </div>
-        <div className="flex flex-col items-center w-[100%]">
+        <div className="flex flex-col items-center w-[100%] mt-2">
           <ResponsiveContainer
             width="100%"
             height={270}

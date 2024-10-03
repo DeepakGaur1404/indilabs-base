@@ -25,7 +25,7 @@ type Props = {
   staticDataUniquePerformance: any;
   staticDataRecoveryPerformance: any;
   setHoveredState: any;
-  setHoveredSubSegment:any
+  setHoveredSubSegment: any;
 };
 
 const colors = ["#4169E1", "#FFB200"];
@@ -40,7 +40,7 @@ const CustomizeBarScatterPeroformanceRecovery = ({
   staticDataUniquePerformance,
   staticDataRecoveryPerformance,
   setHoveredState,
-  setHoveredSubSegment
+  setHoveredSubSegment,
 }: Props) => {
   const [data, setData] = useState<
     { Placements: string; B1: number; Target: number; value: any }[]
@@ -107,16 +107,16 @@ const CustomizeBarScatterPeroformanceRecovery = ({
 
   // useEffect(()=>{
 
-  const handleMouseOver = (state: any, idx: any) => {
+  const handleMouseOver = (state: any, value: any) => {
     // setHoveredState(state);
     handleStateHover(state); // Pass state to parent or other component if necessary
-    setHoveredState(false); 
+    setHoveredState(false);
     // Reset active index on bar leave
-    setHoveredSubSegment(state)
+    setHoveredSubSegment(state);
   };
   const handleBarLeave = () => {
     setHoveredState(true); // Reset active index on bar leave
-    setHoveredSubSegment(null)
+    setHoveredSubSegment(null);
   };
 
   const tooltipFormatter = (value: any, name: any) => {
@@ -430,17 +430,40 @@ const CustomizeBarScatterPeroformanceRecovery = ({
                 ticks={arrTicks()}
                 tickFormatter={formatNumberMillion}
               />
-              <Tooltip formatter={tooltipFormatter} />
+              <Tooltip
+                content={({ payload, label }: any) => {
+                  if (payload && payload.length) {
+                    const data = payload[0].payload;
+                    const value = payload[0].value;
+                    const target = data.Target;
+
+                    handleMouseOver(data.Placements, value);
+
+                    return (
+                      <div className="bg-white border-2  w-max h-max py-2.5 px-2.5">
+                        <p className="text-[#000000]">{`${label}`}</p>
+                        <p className="text-[#4169E1]">{`₹: ${Math.floor(
+                          value
+                        ).toLocaleString()}`}</p>
+                        <p className="text-[#FFB200]">{`Target: ${target}`}</p>
+                      </div>
+                    );
+                  } else {
+                    handleBarLeave();
+                  }
+                  return null;
+                }}
+              />
               <Bar
                 dataKey="B1"
                 stackId="a"
                 fill={colors[0]}
                 radius={[5, 5, 5, 5]}
-                onMouseOver={(data, idx) =>
-                  //  selectedCategory === "location" &&
-                  handleMouseOver(data.Placements, idx)
-                }
-                onMouseLeave={handleBarLeave}
+                // onMouseOver={(data, idx) =>
+                //   //  selectedCategory === "location" &&
+                //   handleMouseOver(data.Placements, idx)
+                // }
+                // onMouseLeave={handleBarLeave}
               />
               <Scatter dataKey="Target" fill="#FFB200" />
             </ComposedChart>
@@ -488,7 +511,43 @@ const CustomizeBarScatterPeroformanceRecovery = ({
                 tickFormatter={formatNumber}
                 // interval={50}
               />
-              <Tooltip formatter={tooltipFormattertwo} />
+              {/* <Tooltip
+                content={({ payload, label }: any) => {
+                  if (payload && payload.length) {
+                    const data = payload[0].payload;
+                    const value = payload[0].value;
+
+                    handleMouseOver(data.Placements, value);
+
+                    return (
+                      <div className="bg-white border-2  w-max h-max py-2.5 px-2.5">
+                        <p className="text-[#000000]">{`${label}`}</p>
+                        <p className="text-[#4169E1]">{`#: ${Math.floor(
+                          value
+                        ).toLocaleString()}`}</p>
+                      </div>
+                    );
+                  } else {
+                    handleBarLeave();
+                  }
+                  return null;
+                }}
+              /> */}
+
+              {/* <Bar
+                dataKey="B1"
+                stackId="a"
+                fill={colors[0]}
+                // barSize={62}
+                radius={[5, 5, 5, 5]}
+                // onMouseOver={(dataUnique, idx) =>
+                //   // selectedCategory === "location"
+                //   // &&
+                //   handleMouseOver(dataUnique.Placements, idx)
+                // }
+                // onMouseLeave={handleBarLeave}
+              /> */}
+               <Tooltip formatter={tooltipFormattertwo} />
               <Bar
                 dataKey="B1"
                 stackId="a"
@@ -502,7 +561,7 @@ const CustomizeBarScatterPeroformanceRecovery = ({
                 }
                 onMouseLeave={handleBarLeave}
               />
-              {/* {/ {/ <Scatter dataKey="Target" fill="#FFB200" /> /} /} */}
+              {/* {/ {/ {/ <Scatter dataKey="Target" fill="#FFB200" /> /} /} /} */}
             </ComposedChart>
           </ResponsiveContainer>
         )}

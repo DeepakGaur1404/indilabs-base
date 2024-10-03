@@ -238,7 +238,7 @@ const ActualBalance: React.FC<ActualBalanceProps> = ({ selectedSegment }) => {
     <div className="w-[30%] h-[325px] bg-white shadow rounded-xl py-4 px-3 gap-3 -mt-[73px]">
       <div className="flex justify-between">
         <p className="text-[black] font-['DM Sans'] font-[500] text-[14px] leading-[21px]">
-          Actual Balances
+          Actual Balances (millions)
         </p>
         <div className="flex items-center flex-wrap gap-3 lg:gap-3">
           <div className=" flex items-center gap-3">
@@ -326,9 +326,9 @@ const ActualBalance: React.FC<ActualBalanceProps> = ({ selectedSegment }) => {
             formatter={(value: any, name) => {
               const formattedValue =
                 typeof value === "number" && name === "L"
-                  ? `${Math.floor(value).toLocaleString()}`
+                  ? `₹ ${Math.floor(value).toLocaleString()}`
                   : typeof value === "number"
-                  ? `${Math.floor(value).toLocaleString()}`
+                  ? `₹ ${Math.floor(value).toLocaleString()}`
                   : `${parseFloat(value.toFixed(2)).toLocaleString()}`;
               return [formattedValue, `${name}`];
             }}

@@ -175,7 +175,7 @@ const  AgencyStrategyRecovery = () => {
         },
         allocations: [
           {
-            agency_name: "DCA015",
+            agency_name: "DCA001",
             previous_month_allocated_percentage: 34,
             current_month_allocated_percentage: 37,
             resolve_rate: 51,
@@ -184,7 +184,7 @@ const  AgencyStrategyRecovery = () => {
             balance: 514330380,
           },
           {
-            agency_name: "DCA019",
+            agency_name: "DCA026",
             previous_month_allocated_percentage: 33,
             current_month_allocated_percentage: 33,
             resolve_rate: 59,
@@ -193,7 +193,7 @@ const  AgencyStrategyRecovery = () => {
             balance: 585648041,
           },
           {
-            agency_name: "DCA041",
+            agency_name: "DCA088",
             previous_month_allocated_percentage: 31,
             current_month_allocated_percentage: 33,
             resolve_rate: 52,
@@ -579,11 +579,11 @@ const  AgencyStrategyRecovery = () => {
 
           {/* new change */}
 
-          <div className="w-full flex flex-col gap-4 bg-[white] py-5 px-3 mt-5">
+          <div className="w-full flex flex-col gap-4 bg-[white] py-5 px-3 mt-5 ">
             {/* New Allocation */}
             <span className="text-black font-bold">Review</span>
             <div className="w-full flex gap-4">
-              <div className="col-span-1 w-[48%] lg:col-span-1 bg-white rounded-xl p-3 shadow">
+              <div className="col-span-1 w-[48%] lg:col-span-1 bg-white rounded-xl p-3 border-[1px] shadow">
                 <div className="w-full flex gap-x-5">
                   <p className="text-[#2A972F] text-[16px] font-[500] font-['Calibri' !important] bg-[#EBFFF1] px-2 py-1">
                     Recommended
@@ -684,7 +684,7 @@ const  AgencyStrategyRecovery = () => {
                   customiseEdit ? `opacity-100` : `opacity-70`
                 }`}
               >
-                <div className="w-full flex gap-x-5">
+                <div className="w-full flex gap-x-5 ">
                   {/* <p className="text-[#2A972F] text-[16px] font-[500] font-['Calibri' !important] bg-[#EBFFF1] px-2 py-1">
                   Recommended
                 </p> */}

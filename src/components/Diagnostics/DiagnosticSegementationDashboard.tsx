@@ -330,7 +330,7 @@ const DiagnosticSegementationDashboard = (props: Props) => {
                   ? "Recovery%"
                   : ""}
               </div>
-              <div className="text-[#000000] text-[16px] font-[400] font-['DM Sans'] tracking-wide">
+              <div className="text-[#000000] text-[16px] font-[500] font-['DM Sans'] tracking-wide">
                 {data.name === "total_accounts"
                   ? `${(unitData?.total_accounts).toLocaleString()}`
                   : data.name === "avg_monthly_payers"

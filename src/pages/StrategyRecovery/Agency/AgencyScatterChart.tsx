@@ -2793,7 +2793,7 @@ Props) => {
   };
 
   return (
-    <div className="w-full relative xl:w-[48%] h-[460px] mt-3 rounded-lg py-4 p-3 -mr-2 shadow-md bg-white">
+    <div className="w-full relative xl:w-[48%] h-[460px] mt-3 rounded-xl py-4 p-3 -mr-2 shadow-md bg-white">
       
  <div className="w-full flex flex-wrap md:flex justify-between lg:px-0 my-1">
           <h1 className="text-start text-[16px] font-[500] text-[#000000] font-['DM Sans']">
