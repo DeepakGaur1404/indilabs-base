@@ -619,8 +619,8 @@ const ImpactAssessmentRecovery = ({
      frequency_text customClassfour 
   "
         style={{ zIndex: 100 }}
-      >
-        Value(₹ Billions)
+      > 
+        Value(₹ Millions)
       </p>
       {loader ? (
         <Loader />

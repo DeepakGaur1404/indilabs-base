@@ -110,9 +110,9 @@ function App() {
             <Sidebar moduleName={moduleName} setmoduleName={setmoduleName} />
           }
         >
-          {/* <Route path="/AllocationEngine" element={<PrivateRoute />}> */}
+           <Route path="/AllocationEngine" element={<PrivateRoute />}> 
           <Route path="/AllocationEngine" element={<AllocationEngine />} />
-          {/* </Route> */}
+           </Route> 
           <Route path="/InhouseXX" element={<PrivateRoute />}>
             <Route path="/InhouseXX" element={<InhouseXX />} />
           </Route>
@@ -145,31 +145,24 @@ function App() {
           <Route path="/data" element={<PrivateRoute />}>
             <Route path="/data" element={<DataPage />} />
           </Route>
-          {/* <Route
-        path="/dashboard"
-        element={
-          <PrivateRoute>
-           <DashboardRecoveryNew />
-          </PrivateRoute>
-        }
-      /> */}
+        
           <Route path="/dashboard/recovery" element={<PrivateRoute />}>
             <Route
               path="/dashboard/recovery"
               element={<DashboardRecoveryNew />}
             />
           </Route>
-          {/* <Route path="/dashboard" element={<PrivateRoute />}> */}
+           <Route path="/dashboard" element={<PrivateRoute />}> 
           <Route path="/dashboard" element={<DashboardCollectionNew />} />
-          {/* </Route> */}
+          </Route> 
 
-          {/* <Route path="/home/collection" element={<PrivateRoute />}> */}
+           <Route path="/home/collection" element={<PrivateRoute />}> 
           <Route path="/home/collection" element={<CollectionDashboar />} />
-          {/* </Route> */}
+         </Route> 
 
-          {/* <Route path="/monitoring" element={<PrivateRoute />}> */}
+           <Route path="/monitoring" element={<PrivateRoute />}>
           <Route path="/monitoring" element={<Monitoring />} />
-          {/* </Route> */}
+           </Route> 
 
           <Route path="/monitoring/recovery" element={<PrivateRoute />}>
             <Route
@@ -182,20 +175,20 @@ function App() {
             <Route path="/diagnostics/recovery" element={<Diagnostics />} />
           </Route>
 
-          {/* <Route path="/diagnostics" element={<PrivateRoute />}> */}
+         <Route path="/diagnostics" element={<PrivateRoute />}>
           <Route path="/diagnostics" element={<DiagnosticCollection />} />
-          {/* </Route> */}
+           </Route> 
 
-          {/* <Route path="/reviewConstraints" element={<PrivateRoute />}> */}
+          <Route path="/reviewConstraints" element={<PrivateRoute />}> 
           <Route path="/reviewConstraints" element={<Strategy />} />
-          {/* </Route> */}
+           </Route> 
 
           {/* {/ <Route path="/strategy" element={<Strategy />} /> /}
           {/ <Route path="/strategy/inhouse" element={<InhouseXX />} /> /} */}
 
-          {/* <Route path="/strategy" element={<PrivateRoute />}> */}
+           <Route path="/strategy" element={<PrivateRoute />}> 
           <Route path="/strategy" element={<StrategyNew />} />
-          {/* </Route> */}
+           </Route> 
 
           <Route path="/strategy/recovery" element={<PrivateRoute />}>
             <Route path="/strategy/recovery" element={<StrategyRecovery />} />
@@ -218,39 +211,39 @@ function App() {
               element={<ReviewExecution />}
             />
           </Route>
-          {/* <Route
+          <Route
             path="/strategy/reviewExecution/recovery"
             element={<PrivateRoute />}
-          > */}
+          > 
           <Route
             path="/strategy/reviewExecution/recovery"
             element={<ReviewExecutionRecovery />}
           />
-          {/* </Route> */}
+          </Route> 
 
-          {/* <Route
+           <Route
             path="/strategy/simulationengine/recovery"
             element={<PrivateRoute />}
-          > */}
+          > 
           <Route
             path="/strategy/simulationengine/recovery"
             element={<RecoverySimulation />}
           />
-          {/* </Route> */}
+         </Route> 
 
-          {/* <Route path="/strategy/optimization" element={<PrivateRoute />}> */}
+       <Route path="/strategy/optimization" element={<PrivateRoute />}> 
           <Route path="/strategy/optimization" element={<Strategy />} />
-          {/* </Route> */}
+       </Route> 
 
-          {/* <Route
+           <Route
             path="/strategy/allocationEngine/reviewPerformance"
             element={<PrivateRoute />}
-          > */}
+          > 
           <Route
             path="/strategy/allocationEngine/reviewPerformance"
             element={<ReviewPerformance />}
           />
-          {/* </Route> */}
+           </Route> 
 
           <Route
             path="/strategy/allocationEngine/reviewPerformance/recovery"
@@ -262,35 +255,35 @@ function App() {
             />
           </Route>
 
-          {/* <Route
+           <Route
             path="/strategy/allocationEngine/optimizeStrategy"
             element={<PrivateRoute />}
-          > */}
+          > 
           <Route
             path="/strategy/allocationEngine/optimizeStrategy"
             element={<ReviewPerformance />}
           />
-          {/* </Route> */}
+          </Route> 
 
-          {/* <Route path="/strategy/allocationEngine" element={<PrivateRoute />}> */}
+           <Route path="/strategy/allocationEngine" element={<PrivateRoute />}>
           <Route
             path="/strategy/allocationEngine"
             element={<AllocationEngine />}
           />
-          {/* </Route> */}
-          {/* <Route path="/strategy/changeControl" element={<PrivateRoute />}> */}
+           </Route>
+           <Route path="/strategy/changeControl" element={<PrivateRoute />}>
           <Route path="/strategy/changeControl" element={<Execution />} />
-          {/* </Route> */}
-          {/* <Route path="/execution" element={<PrivateRoute />}> */}
+           </Route> 
+         <Route path="/execution" element={<PrivateRoute />}> 
           <Route path="/execution" element={<Execution />} />
-          {/* </Route> */}
+           </Route> 
           <Route path="/execution/recovery" element={<PrivateRoute />}>
             <Route path="/execution/recovery" element={<ExecutionRecovery />} />
           </Route>
           <Route path="/Sign out" element={<Signout />} />
-          {/* <Route path="/monitoring/portfolio" element={<PrivateRoute />}> */}
+        <Route path="/monitoring/portfolio" element={<PrivateRoute />}> 
           <Route path="/monitoring/portfolio" element={<Portfolio />} />
-          {/* </Route> */}
+           </Route> 
           <Route
             path="/monitoring/recovery/portfolio"
             element={<PrivateRoute />}
@@ -300,9 +293,9 @@ function App() {
               element={<PortfolioRecovery />}
             />
           </Route>
-          {/* <Route path="/monitoring/agency" element={<PrivateRoute />}> */}
+          <Route path="/monitoring/agency" element={<PrivateRoute />}> 
           <Route path="/monitoring/agency" element={<Agency />} />
-          {/* </Route> */}
+           </Route> 
           <Route path="/monitoring/recovery/vintage" element={<PrivateRoute />}>
             <Route
               path="/monitoring/recovery/vintage"
@@ -318,25 +311,25 @@ function App() {
               element={<DistributionRecovery />}
             />
           </Route>
-          {/* <Route
+          <Route
             path="/monitoring/recovery/placement"
             element={<PrivateRoute />}
-          > */}
+          > 
           <Route
             path="/monitoring/recovery/placement"
             element={<PlacementRecovery />}
           />
-          {/* </Route> */}
+           </Route> 
           <Route path="/monitoring/recovery/agency" element={<PrivateRoute />}>
             <Route
               path="/monitoring/recovery/agency"
               element={<AgencyRecovery />}
             />
           </Route>
-          {/* <Route
+          <Route
             path="/monitoring/recovery/settlement"
             element={<PrivateRoute />}
-          > */}
+          > 
           <Route
             path="/monitoring/recovery/settlement"
             element={<NewSettlement />}
@@ -368,11 +361,11 @@ function App() {
               element={<Cohort />}
             />
           </Route>
-          {/* </Route> */}
+           </Route> 
 
-          {/* <Route path="/monitoring/placements" element={<PrivateRoute />}> */}
+           <Route path="/monitoring/placements" element={<PrivateRoute />}> 
           <Route path="/monitoring/placements" element={<Placements />} />
-          {/* </Route> */}
+        </Route> 
           <Route path="/monitoring/watchlist" element={<PrivateRoute />}>
             <Route path="/monitoring/watchlist" element={<WatchList />} />
           </Route>
@@ -385,7 +378,7 @@ function App() {
               element={<PerformanceRecovery />}
             />
           </Route>
-          {/* <Route path="/monitoring/location" element={<PrivateRoute />}> */}
+           <Route path="/monitoring/location" element={<PrivateRoute />}> 
           <Route path="/monitoring/location" element={<Location />}>
             <Route
               index
@@ -418,11 +411,11 @@ function App() {
 
             <Route path="mob" element={<MaturationCurve />} />
           </Route>
-          {/* </Route> */}
-          {/* <Route path="/monitoring/agency" element={<PrivateRoute />}> */}
+          </Route> 
+          <Route path="/monitoring/agency" element={<PrivateRoute />}> 
           <Route path="/monitoring/agency" element={<Distribution />} />
-          {/* </Route> */}
-          {/* <Route path="/monitoring/writeoffs" element={<PrivateRoute />}> */}
+          </Route> 
+          <Route path="/monitoring/writeoffs" element={<PrivateRoute />}>
           <Route path="/monitoring/writeoffs" element={<Writeoffs />}>
             <Route
               path="Volume"
@@ -437,7 +430,7 @@ function App() {
 
             <Route path="Outcome" element={<h1>Outcome tab</h1>} />
           </Route>
-          {/* </Route> */}
+        </Route> 
         </Route>
 
         <Route

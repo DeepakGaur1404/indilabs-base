@@ -226,7 +226,7 @@ const Execution = () => {
       <div className="h-[364px] p-2 w-[100%]  bg-white  rounded-xl mt-3">
         <div className="flex justify-between py-2 px-1">
           <p className="font-[DM Sans] text-[#000000] font-[500] text-[14px] leading-[18px] customClassThird">
-            Operational Controls (millions)
+            Settlement (millions)
           </p>
           <button className="flex text-[#6750a4] items-center text-[12px] font-[500] justify-center gap-2 w-[22%] customClassThird">
             Review
