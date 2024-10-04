@@ -57,11 +57,14 @@ const LoginForm: React.FC = () => {
       //navigate("/strategy")
       toast.success("Login Sucessful !", {
         position: "top-right",
+        
       });
+      setButtonDisable(true)
     } else {
       toast.error("Invalid credentials !", {
         position: "top-right",
       });
+      setButtonDisable(true)
     }
   };
 
