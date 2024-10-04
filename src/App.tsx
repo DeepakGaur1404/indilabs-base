@@ -135,12 +135,12 @@ function App() {
 
           {/* { {/ <Route path="/SingleStackedBarChart" element={<SingleStackedBarChart/>} /> /} } */}
 
-          {/* <Route path="/home/recovery" element={<PrivateRoute />}> */}
-          <Route
-            path="/home/recovery"
-            element={<HomePage setmoduleName={setmoduleName} />}
-          />
-          {/* </Route> */}
+          <Route path="/home/recovery" element={<PrivateRoute />}>
+            <Route
+              path="/home/recovery"
+              element={<HomePage setmoduleName={setmoduleName} />}
+            />
+          </Route>
 
           <Route path="/data" element={<PrivateRoute />}>
             <Route path="/data" element={<DataPage />} />
@@ -153,12 +153,12 @@ function App() {
           </PrivateRoute>
         }
       /> */}
-          {/* <Route path="/dashboard/recovery" element={<PrivateRoute />} /> */}
-          <Route
-            path="/dashboard/recovery"
-            element={<DashboardRecoveryNew />}
-          />
-          {/* </Route> */}
+          <Route path="/dashboard/recovery" element={<PrivateRoute />}>
+            <Route
+              path="/dashboard/recovery"
+              element={<DashboardRecoveryNew />}
+            />
+          </Route>
           {/* <Route path="/dashboard" element={<PrivateRoute />}> */}
           <Route path="/dashboard" element={<DashboardCollectionNew />} />
           {/* </Route> */}
@@ -171,13 +171,16 @@ function App() {
           <Route path="/monitoring" element={<Monitoring />} />
           {/* </Route> */}
 
-          {/* <Route path="/monitoring/recovery" element={<PrivateRoute />}> */}
-          <Route path="/monitoring/recovery" element={<MonitoringRecovery />} />
-          {/* </Route> */}
+          <Route path="/monitoring/recovery" element={<PrivateRoute />}>
+            <Route
+              path="/monitoring/recovery"
+              element={<MonitoringRecovery />}
+            />
+          </Route>
 
-          {/* <Route path="/diagnostics/recovery" element={<PrivateRoute />}> */}
-          <Route path="/diagnostics/recovery" element={<Diagnostics />} />
-          {/* </Route> */}
+          <Route path="/diagnostics/recovery" element={<PrivateRoute />}>
+            <Route path="/diagnostics/recovery" element={<Diagnostics />} />
+          </Route>
 
           {/* <Route path="/diagnostics" element={<PrivateRoute />}> */}
           <Route path="/diagnostics" element={<DiagnosticCollection />} />
@@ -194,18 +197,27 @@ function App() {
           <Route path="/strategy" element={<StrategyNew />} />
           {/* </Route> */}
 
-          {/* <Route path="/strategy/recovery" element={<PrivateRoute />}> */}
-          <Route path="/strategy/recovery" element={<StrategyRecovery />} />
-          {/* </Route> */}
-          <Route path="agency/strategy/recovery" element={<AgencyStrategyRecovery />} />
-          
-          <Route path="offer/strategy/recovery" element={<StrategyOffer/>} />
-          {/* <Route path="/strategy/reviewExecution" element={<PrivateRoute />}> */}
-          <Route
-            path="/strategy/reviewExecution"
-            element={<ReviewExecution />}
-          />
-          {/* </Route> */}
+          <Route path="/strategy/recovery" element={<PrivateRoute />}>
+            <Route path="/strategy/recovery" element={<StrategyRecovery />} />
+          </Route>
+          <Route path="/agency/strategy/recovery" element={<PrivateRoute />}>
+            <Route
+              path="/agency/strategy/recovery"
+              element={<AgencyStrategyRecovery />}
+            />
+          </Route>
+          <Route path="/offer/strategy/recovery" element={<PrivateRoute />}>
+            <Route
+              path="/offer/strategy/recovery"
+              element={<StrategyOffer />}
+            />
+          </Route>
+          <Route path="/strategy/reviewExecution" element={<PrivateRoute />}>
+            <Route
+              path="/strategy/reviewExecution"
+              element={<ReviewExecution />}
+            />
+          </Route>
           {/* <Route
             path="/strategy/reviewExecution/recovery"
             element={<PrivateRoute />}
@@ -239,10 +251,16 @@ function App() {
             element={<ReviewPerformance />}
           />
           {/* </Route> */}
+
           <Route
-  path="/strategy/allocationEngine/reviewPerformance/recovery"
-  element={<Treatments    />}
-/>
+            path="/strategy/allocationEngine/reviewPerformance/recovery"
+            element={<PrivateRoute />}
+          >
+            <Route
+              path="/strategy/allocationEngine/reviewPerformance/recovery"
+              element={<Treatments />}
+            />
+          </Route>
 
           {/* <Route
             path="/strategy/allocationEngine/optimizeStrategy"
@@ -266,37 +284,40 @@ function App() {
           {/* <Route path="/execution" element={<PrivateRoute />}> */}
           <Route path="/execution" element={<Execution />} />
           {/* </Route> */}
-          {/* <Route path="/execution/recovery" element={<PrivateRoute />}> */}
-          <Route path="/execution/recovery" element={<ExecutionRecovery />} />
-          {/* </Route> */}
+          <Route path="/execution/recovery" element={<PrivateRoute />}>
+            <Route path="/execution/recovery" element={<ExecutionRecovery />} />
+          </Route>
           <Route path="/Sign out" element={<Signout />} />
           {/* <Route path="/monitoring/portfolio" element={<PrivateRoute />}> */}
           <Route path="/monitoring/portfolio" element={<Portfolio />} />
           {/* </Route> */}
-          {/* <Route
-            path="/monitoring/recovery/portfolio"
-            element={<PrivateRoute />}
-          > */}
           <Route
             path="/monitoring/recovery/portfolio"
-            element={<PortfolioRecovery />}
-          />
-          {/* </Route> */}
+            element={<PrivateRoute />}
+          >
+            <Route
+              path="/monitoring/recovery/portfolio"
+              element={<PortfolioRecovery />}
+            />
+          </Route>
           {/* <Route path="/monitoring/agency" element={<PrivateRoute />}> */}
           <Route path="/monitoring/agency" element={<Agency />} />
           {/* </Route> */}
-          {/* <Route path="/monitoring/recovery/vintage" element={<PrivateRoute />}> */}
-          <Route
-            path="/monitoring/recovery/vintage"
-            element={<VintageRecovery />}
-          />
-          {/* </Route> */}
-          {/* <Route path="/monitoring/recovery/distribution" element={<PrivateRoute />}> */}
+          <Route path="/monitoring/recovery/vintage" element={<PrivateRoute />}>
+            <Route
+              path="/monitoring/recovery/vintage"
+              element={<VintageRecovery />}
+            />
+          </Route>
           <Route
             path="/monitoring/recovery/distribution"
-            element={<DistributionRecovery />}
-          />
-          {/* </Route> */}
+            element={<PrivateRoute />}
+          >
+            <Route
+              path="/monitoring/recovery/distribution"
+              element={<DistributionRecovery />}
+            />
+          </Route>
           {/* <Route
             path="/monitoring/recovery/placement"
             element={<PrivateRoute />}
@@ -306,12 +327,12 @@ function App() {
             element={<PlacementRecovery />}
           />
           {/* </Route> */}
-          {/* <Route path="/monitoring/recovery/agency" element={<PrivateRoute />}> */}
-          <Route
-            path="/monitoring/recovery/agency"
-            element={<AgencyRecovery />}
-          />
-          {/* </Route> */}
+          <Route path="/monitoring/recovery/agency" element={<PrivateRoute />}>
+            <Route
+              path="/monitoring/recovery/agency"
+              element={<AgencyRecovery />}
+            />
+          </Route>
           {/* <Route
             path="/monitoring/recovery/settlement"
             element={<PrivateRoute />}
@@ -322,16 +343,31 @@ function App() {
           />
           <Route
             path="/monitoring/recovery/settlement/new-settlement"
-            element={<NewSettlementRecovery />}
-          />
+            element={<PrivateRoute />}
+          >
+            <Route
+              path="/monitoring/recovery/settlement/new-settlement"
+              element={<NewSettlementRecovery />}
+            />
+          </Route>
           <Route
             path="/monitoring/recovery/settlement/settlement-pool"
-            element={<SettlementPoolRecovery />}
-          />
+            element={<PrivateRoute />}
+          >
+            <Route
+              path="/monitoring/recovery/settlement/settlement-pool"
+              element={<SettlementPoolRecovery />}
+            />
+          </Route>
           <Route
             path="/monitoring/recovery/settlement/cohort"
-            element={<Cohort />}
-          />
+            element={<PrivateRoute />}
+          >
+            <Route
+              path="/monitoring/recovery/settlement/cohort"
+              element={<Cohort />}
+            />
+          </Route>
           {/* </Route> */}
 
           {/* <Route path="/monitoring/placements" element={<PrivateRoute />}> */}
@@ -340,15 +376,15 @@ function App() {
           <Route path="/monitoring/watchlist" element={<PrivateRoute />}>
             <Route path="/monitoring/watchlist" element={<WatchList />} />
           </Route>
-          {/* <Route
-            path="/monitoring/recovery/location"
-            element={<PrivateRoute />}
-          > */}
           <Route
             path="/monitoring/recovery/location"
-            element={<PerformanceRecovery />}
-          />
-          {/* </Route> */}
+            element={<PrivateRoute />}
+          >
+            <Route
+              path="/monitoring/recovery/location"
+              element={<PerformanceRecovery />}
+            />
+          </Route>
           {/* <Route path="/monitoring/location" element={<PrivateRoute />}> */}
           <Route path="/monitoring/location" element={<Location />}>
             <Route

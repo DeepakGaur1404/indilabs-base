@@ -47,10 +47,17 @@ const LoginForm: React.FC = () => {
 
     const admin_email = "admin@indilabs.com";
     const admin_password = "admin@123";
+    const staticToken = "your-static-token";
     console.log("value", admin_email, admin_password);
     if (admin_email === value.email && admin_password === value.password) {
-      navigate("/home/recovery");
+      localStorage.setItem("token", staticToken);
+      setTimeout(() => {
+        navigate("/home/recovery");
+      }, 3000);
       //navigate("/strategy")
+      toast.success("Login Sucessful !", {
+        position: "top-right",
+      });
     } else {
       toast.error("Invalid credentials !", {
         position: "top-right",
