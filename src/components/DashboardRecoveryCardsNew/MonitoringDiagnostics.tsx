@@ -300,12 +300,13 @@ const MonitoringDiagnostics = () => {
                     </div>
                       {each.bar.Current_Performance && (
                     <IoMdArrowDropup
-                      className="text-xs ml-1 rotate-180"
+                      className="text-xs ml-1 z-10 rotate-180"
                       style={{
                         width: "20px",
                         height: "25px",
                         margin: "2px",
                         position: "absolute",
+                        top: "10px",
                         left: arrowPosition,
                       }}
                     />
@@ -322,7 +323,7 @@ const MonitoringDiagnostics = () => {
                   <div className="w-full h-2 top-[2px] absolute bg-gradient-to-r from-[#ED0E00] via-[#FFF509] to-[#09FF4E] rounded-xl" />
                  
                   <div
-                      className={`text-black text-[12px] font-[400] mt-2 font-['DM Sans']`}
+                      className={`text-black text-[12px] font-[600] mt-2 font-['DM Sans']`}
                       style={{
                         position: "absolute",
                         left: arrowPosition,
