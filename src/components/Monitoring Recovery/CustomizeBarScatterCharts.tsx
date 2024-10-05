@@ -511,7 +511,7 @@ const CustomizeBarScatterPeroformanceRecovery = ({
                 tickFormatter={formatNumber}
                 // interval={50}
               />
-              {/* <Tooltip
+               <Tooltip
                 content={({ payload, label }: any) => {
                   if (payload && payload.length) {
                     const data = payload[0].payload;
@@ -532,9 +532,9 @@ const CustomizeBarScatterPeroformanceRecovery = ({
                   }
                   return null;
                 }}
-              /> */}
+              /> 
 
-              {/* <Bar
+             <Bar
                 dataKey="B1"
                 stackId="a"
                 fill={colors[0]}
@@ -546,8 +546,8 @@ const CustomizeBarScatterPeroformanceRecovery = ({
                 //   handleMouseOver(dataUnique.Placements, idx)
                 // }
                 // onMouseLeave={handleBarLeave}
-              /> */}
-               <Tooltip formatter={tooltipFormattertwo} />
+              /> 
+               {/* <Tooltip formatter={tooltipFormattertwo} />
               <Bar
                 dataKey="B1"
                 stackId="a"
@@ -560,7 +560,7 @@ const CustomizeBarScatterPeroformanceRecovery = ({
                   handleMouseOver(dataUnique.Placements, idx)
                 }
                 onMouseLeave={handleBarLeave}
-              />
+              /> */}
               {/* {/ {/ {/ <Scatter dataKey="Target" fill="#FFB200" /> /} /} /} */}
             </ComposedChart>
           </ResponsiveContainer>
