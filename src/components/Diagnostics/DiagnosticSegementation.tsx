@@ -76,40 +76,43 @@ const formatYAxisTick = (tick: any) => {
   }
 };
 
-const arrTicks: any = (chartData: any[]): number[] => {
-  let arr: number[] = [];
-  let maxNum = 0;
 
-  if (chartData && chartData.length > 0) {
-    maxNum = Math.max(
-      ...chartData.flatMap((item) => {
-        return Object.values(item).filter(
-          (value): value is number => typeof value === "number"
-        );
-      })
-    );
-  } else {
-    return [0];
-  }
-
-  const numberOfTicks = 6;
-  let stepSize = maxNum / numberOfTicks;
-  maxNum = Math.ceil(maxNum / stepSize) * stepSize;
-  let num1 = 0;
-  for (let i = 0; i <= numberOfTicks; i++) {
-    arr.push(parseFloat(num1.toFixed(1)));
-    num1 += stepSize;
-  }
-
-  return arr;
-};
 const DiagnosticSegementation = () => {
+
+  const arrTicks: any = ( bardata: any[]): number[] => {
+    let arr: number[] = [];
+    let maxNum = 0;
+
+    if ( bardata &&  bardata.length > 0) {
+      maxNum = Math.max(
+        ... bardata.flatMap((item) => {
+          return Object.values(item).filter(
+            (value): value is number => typeof value === "number"
+          );
+        })
+      );
+    } else {
+      return [0];
+    }
+
+    const numberOfTicks = 6;
+    let stepSize = maxNum / numberOfTicks;
+    maxNum = Math.ceil(maxNum / stepSize) * stepSize;
+    let num1 = 0;
+    for (let i = 0; i <= numberOfTicks; i++) {
+      arr.push(parseFloat(num1.toFixed(1)));
+      num1 += stepSize;
+    }
+
+    return arr;
+  };
+
   return (
     <div className="bg-[white] w-[100%] mt-6 ml-2 shadow rounded-xl p-4 gap-4">
       <p className="text-[#000000] font-['DM Sans'] font-[700] text-[16px] leading-[21px]">
         Segmentation Results
       </p>
-      <div className="flex flex-row  lg:flex-row sm:flex-col max-sm:flex-col justify-between items-center gap-4 mt-5">
+      <div className="flex flex-row lg:flex-row sm:flex-col max-sm:flex-col justify-between items-center gap-4 mt-5">
         <div className="w-[36%] lg:w-[36%] sm:w-[100%] max-sm:w-[100%] h-[346px] border-[#E3E3E3] border-[1px] rounded-xl flex flex-col items-center gap-[12px] sm:py-1 lg:py-4 py-4 px-3 ">
           <p className="text-center text-[#000000] font-['DM Sans'] font-[500] text-[14px] leading-[21px]">
             Accounts
@@ -267,8 +270,9 @@ const DiagnosticSegementation = () => {
               <CartesianGrid horizontal={false} strokeDasharray="3 3" />
               <XAxis
                 type="number"
-                domain={[0, 20]}
-                ticks={[0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]}
+                domain={[0, "datamax"]}
+                // ticks={[0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]}
+                ticks={arrTicks(bardata)}
                 fontWeight={400}
                 fontFamily="DM Sans"
                 fontSize={10}

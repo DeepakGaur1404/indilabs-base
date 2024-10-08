@@ -36,32 +36,32 @@ const data = [
   {
     name: "Jan2024",
     settlement: 106408875.31,
-    "recovery-settlment": 5842593.0,
+    "recovery settlement": 13169689.4,
   },
   {
     name: "Feb2024",
     settlement: 106096191.75,
-    "recovery-settlment": 7924916.53,
+    "recovery settlement": 12827355.0,
   },
   {
     name: "Mar2024",
     settlement: 118404084.02999997,
-    "recovery-settlment": 6022190.0,
+    "recovery settlement": 17335991.0,
   },
   {
     name: "Apr2024",
     settlement: 81356821.93000002,
-    "recovery-settlment": 3968882.0,
+    "recovery settlement": 14388164.18,
   },
   {
     name: "May2024",
     settlement: 100396115.69000001,
-    "recovery-settlment": 6488336.37,
+    "recovery settlement": 19757297.0,
   },
   {
     name: "Jun2024",
     settlement: 87351346.91,
-    "recovery-settlment": 494285.0,
+    "recovery settlement": 18891896.0,
   },
 ];
 
@@ -70,24 +70,19 @@ const arrTicks = (data: any[]): number[] => {
   let maxNum = 0;
 
   if (data && data.length > 0) {
-    // Compute the sums of settlement and recovery-settlement
     const sums = data.map((item) => {
       const settlement = item.settlement || 0;
-      const recoverySettlement = item["recovery-settlment"] || 0;
+      const recoverySettlement = item["recovery settlement"] || 0;
       return settlement + recoverySettlement;
     });
 
-    // Find the maximum sum
     maxNum = Math.max(...sums);
 
-    // Define the number of ticks
     const numberOfTicks = 5;
-    const stepSize = maxNum / (numberOfTicks - 1);
+    const stepSize = maxNum / numberOfTicks;
 
-    // Round up maxNum to the nearest stepSize
     maxNum = Math.ceil(maxNum / stepSize) * stepSize;
 
-    // Generate tick values
     for (let i = 0; i <= numberOfTicks; i++) {
       arr.push(parseFloat((i * stepSize).toFixed(1)));
     }
@@ -97,7 +92,6 @@ const arrTicks = (data: any[]): number[] => {
 
   return arr;
 };
-
 
 const formatNumberMillion = (num: any) => {
   if (num === 0) {
@@ -117,8 +111,6 @@ const formatNumberMillion = (num: any) => {
   }
 };
 
-
-
 const COLORS = ["#C9C4D9", "#776BA1"];
 const CUSTOM_LEGEND_COLORS = ["black", "black", "black"];
 
@@ -137,7 +129,7 @@ const Execution = () => {
       </div>
       <div className="bg-white p-1 h-[116px] rounded-xl mt-4 flex flex-col items-center">
         <span className="font-['DM Sans'] text-[32px] text-[#EF4444] font-[500] customClassThird">
-          10%
+          -0.2%
         </span>
         <p className="font-['DM Sans'] text-[14px] font-[500] ">
           Recovery Rate
@@ -149,7 +141,7 @@ const Execution = () => {
             className="w-[14px] h-[14px] customClass"
           />
           <p className="font-['DM Sans'] text-[10px] font-[400] gap-[4px]">
-            -5 vs last month
+            3.1 vs last month
           </p>
         </div>
         <p className="font-['DM Sans'] text-[12px] text-[#9CA4B6] font-[400]">
@@ -236,11 +228,7 @@ const Execution = () => {
           </button>
         </div>
         <div className="flex flex-col items-center w-[100%] mt-2">
-          <ResponsiveContainer
-            width="100%"
-            height={270}
-          
-          >
+          <ResponsiveContainer width="100%" height={270}>
             <BarChart
               data={data}
               margin={{
@@ -267,7 +255,7 @@ const Execution = () => {
               <YAxis
                 axisLine={false}
                 tickLine={false}
-                domain={[0, (dataMax:any) => Math.ceil(dataMax)]}
+                domain={[0, (dataMax: any) => Math.ceil(dataMax)]}
                 tickFormatter={formatNumberMillion}
                 ticks={arrTicks(data)}
                 fontWeight={400}
@@ -278,11 +266,11 @@ const Execution = () => {
               <Tooltip
                 formatter={(value: any, name) => {
                   const formattedValue =
-                    typeof value === "number" && name === "settlement"
-                      ? `${value.toFixed(1)}%`
+                    typeof value === "number" && name === "Settlement"
+                      ? `${Math.floor(value).toLocaleString()}`
                       : typeof value === "number" &&
                         name === "Recovery Settlement"
-                      ? `${value.toFixed(1)}%`
+                      ? `${Math.floor(value).toLocaleString()}`
                       : typeof value === "number"
                       ? `${Math.floor(value).toLocaleString()}`
                       : ` ${parseFloat(value.toFixed(2)).toLocaleString()}`;
@@ -298,8 +286,8 @@ const Execution = () => {
                 radius={[0, 0, 10, 10]}
               />
               <Bar
-                dataKey="recovery-settlment"
-                name="Recovery settlement"
+                dataKey="recovery settlement"
+                name="Recovery Settlement"
                 stackId="a"
                 fill="#FFB200"
                 barSize={10}

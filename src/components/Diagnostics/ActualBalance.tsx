@@ -235,7 +235,7 @@ const ActualBalance: React.FC<ActualBalanceProps> = ({ selectedSegment }) => {
   };
 
   return (
-    <div className="w-[30%] h-[325px] bg-white shadow rounded-xl py-4 px-3 gap-3 -mt-[73px]">
+    <div className="  w-[100%] xl:w-[30%]  h-[325px] bg-white shadow rounded-xl py-4 px-3 gap-3 xl:-mt-[73px]">
       <div className="flex justify-between">
         <p className="text-[black] font-['DM Sans'] font-[500] text-[14px] leading-[21px]">
           Actual Balances (millions)

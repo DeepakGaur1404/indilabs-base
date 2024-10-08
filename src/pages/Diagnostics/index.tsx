@@ -95,7 +95,7 @@ const Diagnostics: React.FC = () => {
             <ExpectedRecovery selectedSegment={selectedSegment} />
             <Segmentation selectedSegment={selectedSegment} />
           </div>
-          <div className="flex flex-wrap lg:flex-row sm:flex-col gap-5 mt-4 ml-2 w-[100%]">
+          <div className="flex flex-wrap xl:flex-row lg:flex-col sm:flex-col gap-5 mt-4 ml-2 w-[100%]">
             <TwoCards />
             <ActualBalance selectedSegment={selectedSegment} />
             <ShareOfBalance selectedSegment={selectedSegment} />

@@ -295,7 +295,7 @@ const Cards: React.FC<Props> = ({ setmoduleName }) => {
   };
 
   const navigateToRecoveryModule = () => {
-    navigate("/monitoring/recovery");
+    navigate("/dashboard/recovery");
     setmoduleName("Recovery");
   };
 

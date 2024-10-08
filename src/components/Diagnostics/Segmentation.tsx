@@ -365,7 +365,7 @@ const OptimizeStackedBarChart: React.FC<Props> = (props) => {
   }, [props.selectedSegment]);
   const currentSeries = state.series[props.selectedSegment] || [];
   return (
-    <div id="chart" className="w-[36%] h-[325px] bg-white rounded-xl shadow">
+    <div id="chart" className="  w-[100%] xl:w-[36%] h-[325px] bg-white rounded-xl shadow">
       <div className="flex justify-between items-center px-3 py-[15px]">
         <h1 className="text-[black] font-['DM Sans'] font-[500] text-[14px] leading-[21px] ">
           Segmentation{" "}
@@ -382,7 +382,7 @@ const OptimizeStackedBarChart: React.FC<Props> = (props) => {
           ))}
         </div>
       </div>
-      <div className="w-[100%] flex flex-col sm:flex-row items-start justify-start">
+      <div className="w-[100%] flex xl:flex-row  items-start justify-start">
         <table cellPadding={13} className=" mt-[26px] ml-1">
           <tbody>
             <tr className="h-[54px] text-center text-[#000000] font-[400] text-[11px] font-['DM Sans']">

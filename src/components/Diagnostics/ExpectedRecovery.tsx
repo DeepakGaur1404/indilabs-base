@@ -173,7 +173,7 @@ const ExpandRecovery: React.FC<ExpandRecoveryProps> = ({ selectedSegment }) => {
       return arr;
     };
   return (
-    <div className="w-[30%] h-[325px] bg-white shadow rounded-xl py-4 px-3 gap-3">
+    <div className="  w-[100%] xl:w-[30%]  h-[325px] bg-white shadow rounded-xl py-4 px-3 gap-3">
       <div className="flex justify-between">
         <p className="text-[black] font-['DM Sans'] font-[500] text-[14px] leading-[21px]">
           Expected Recovery 

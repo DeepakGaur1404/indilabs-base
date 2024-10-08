@@ -223,13 +223,13 @@ const MonitoringDiagnostics = () => {
         <table className="w-[100%]">
           <thead className="w-[100%]">
             <tr className="w-[100%] flex items-center justify-between border-t border-gray-100 p-3">
-              <th className="text-[#9CA4B6] text-[14px] font-[400] font-['DM Sans'] leading-[18px] w-[30%] text-left">
+              <th className="text-[#9CA4B6] text-[14px] font-[400] font-['DM Sans'] leading-[18px]  text-left w-[25%]">
                 Categories
               </th>
-              <th className="text-[#9CA4B6] text-[14px] font-[400] font-['DM Sans'] leading-[18px]  w-[15%]">
+              <th className="text-[#9CA4B6] text-[14px] font-[400] font-['DM Sans'] leading-[18px] mr-3">
                 Jul
               </th>
-              <th className="text-[#9CA4B6] text-[14px] font-[400] font-['DM Sans'] leading-[18px]  w-[15%]">
+              <th className="text-[#9CA4B6] text-[14px] font-[400] font-['DM Sans'] leading-[18px] mr-2 ">
                 Jun
               </th>
             </tr>
@@ -240,13 +240,13 @@ const MonitoringDiagnostics = () => {
                 key={item.id}
                 className="border-t border-gray-100 flex  justify-between items-center px-3 py-1 w-[100%]"
               >
-                <td className="text-[#161D29] text-[14px] font-[400] font-['DM Sans'] leading-[21px]  text-left w-[30%]">
+                <td className="text-[#161D29] text-[14px] font-[400] font-['DM Sans'] leading-[21px] text-left w-[25%]">
                   {item.Categories}
                 </td>
-                <td className="w-[15%]">
+                <td className="">
                   <MiniPieChart percentage={item.Latest_Month_Percentage} />
                 </td>
-                <td className="w-[15%] ">
+                <td className="">
                   <MiniPieChart percentage={item.Previous_Month_Percentage} />
                 </td>
               </tr>

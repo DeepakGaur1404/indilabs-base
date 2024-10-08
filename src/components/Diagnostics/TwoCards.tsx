@@ -10,7 +10,7 @@ const NotAvailable = [
 
 const TwoCards = () => {
   return (
-    <div className="w-[30%] h-[325px]  space-y-3">
+    <div className="w-[100%] xl:w-[30%]  h-[325px]  space-y-3">
       <div className="bg-white shadow  rounded-xl  py-3 px-3 gap-3">
         <p className="text-[black] font-['DM Sans'] font-[500] text-[14px] leading-[21px]">
           Exclusions

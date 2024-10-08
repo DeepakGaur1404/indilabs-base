@@ -46,7 +46,7 @@ interface AIProps {
 
 const ShareOfBalances: React.FC<AIProps> = ({ selectedSegment }) => {
   return (
-    <div className="bg-white rounded-xl w-[36%] h-[325px] py-3 px-3 shadow -mt-[73px]">
+    <div className="bg-white rounded-xl   w-[100%] xl:w-[36%]  h-[325px] py-3 px-3 shadow xl:-mt-[73px]">
       <p className="text-[black] text-center font-['DM Sans'] font-[500] text-[14px] leading-[21px] mt-2">
         Share of balances
       </p>
