@@ -10,6 +10,7 @@ import UporangeArrow from "../../assets/icons/shift-orange.svg";
 import downorangeArrow from "../../assets/icons/down-orange-shift.svg";
 import arrow from "../../assets/images/HotspotArrow.svg";
 import SentinelImage from "../../assets/images/Sentinel.svg";
+import HotspotBarArrow from "../../assets/images/HotspotBarArrow.svg"
 import {
   PieChart,
   Pie,
@@ -207,10 +208,14 @@ const MonitoringDiagnostics = () => {
         </p>
       </div>
       <div className=" h-[364px] w-[100%] p-2  bg-white  rounded-xl mt-3">
-        <div className="flex justify-between p-3 w-[100%]">
-          <p className="font-[DM Sans] font-[500] text-[14px] leading-[18px] customClassThird">
+        <div className="flex justify-between p-2 w-[100%]">
+          <div className="flex flex-col">
+          <p className="text-[#000000] font-[DM Sans] font-[500] text-[14px] leading-[18px] customClassThird">
             Risk Monitoring
           </p>
+          <p className="text-[#9CA4B6] font-[DM Sans] font-[500] text-[11px] leading-[16px] mt-[2px]">% of segments performing below benchmark</p>
+          </div>
+        
           <button
             className="text-[#6750a4]  text-[12px] font-[500] gap-2 w-[22%] flex items-center justify-center customClassThird"
             onClick={handleRiskMonitoringReviewClick}
@@ -221,8 +226,8 @@ const MonitoringDiagnostics = () => {
             </span>
           </button>
         </div>
-        <table className="w-[100%]">
-          <thead className="w-[100%]">
+        <table className="mt-2 w-[100%]">
+          <thead className="">
             <tr className="w-[100%] flex items-center justify-between border-t border-gray-100 p-3">
               <th className="text-[#9CA4B6] text-[14px] font-[400] font-['DM Sans'] leading-[18px]  text-left w-[25%]">
                 Categories
@@ -297,17 +302,17 @@ const MonitoringDiagnostics = () => {
                         marginLeft: "5px",
                       }}
                     >
-                      {each.bar.Min_Performance.toFixed(3)}%
+                      {each.bar.Min_Performance.toFixed(2)}%
                     </div>
                       {each.bar.Current_Performance && (
-                    <IoMdArrowDropup
-                      className="text-xs ml-1 z-10 rotate-180"
+                    <img src={HotspotBarArrow}
+                      className=" ml-1 z-10 mt-2 h-[10px] w-[10px] text-[#ffffff]"
                       style={{
-                        width: "20px",
-                        height: "25px",
+                        // width: "20px",
+                        // height: "25px",
                         margin: "2px",
                         position: "absolute",
-                        top: "10px",
+                        top: "17px",
                         left: arrowPosition,
                       }}
                     />
@@ -319,7 +324,7 @@ const MonitoringDiagnostics = () => {
                     className="text-black text-[12px] font-[400] font-['DM Sans'] absolute right-1"
                     style={{ top: "-20px", textAlign: "right" }}
                   >
-                    {each.bar.Max_Performance.toFixed(3)}%
+                    {each.bar.Max_Performance.toFixed(2)}%
                   </div>
                   <div className="w-full h-2 top-[2px] absolute bg-gradient-to-r from-[#ED0E00] via-[#FFF509] to-[#09FF4E] rounded-xl" />
                  
@@ -331,7 +336,7 @@ const MonitoringDiagnostics = () => {
                         marginLeft: "5px",
                       }}
                     >
-                      {each.bar.Current_Performance.toFixed(3)}%
+                      {each.bar.Current_Performance.toFixed(2)}%
                     </div>
                   
                 </div>

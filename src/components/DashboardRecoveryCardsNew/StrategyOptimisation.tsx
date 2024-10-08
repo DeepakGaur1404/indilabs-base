@@ -198,7 +198,7 @@ const StrategyOptimisation = () => {
         </span>
         <p className="font-['DM Sans'] text-[14px] font-[500] ">ROI Value</p>
         <p className="font-['DM Sans'] text-[10px] font-[400] gap-[4px]">
-          -4.5 vs last month
+          -4.6 vs last month
         </p>
         <p className="font-['DM Sans'] text-[12px] text-[#9CA4B6] font-[400]">
           Improvement Opportunity: $15Ok
@@ -377,16 +377,16 @@ const StrategyOptimisation = () => {
                 </td>
 
                 <td className="text-center text-[#ffffff] w-[52px] font-[400] text-[12px] font-['DM Sans']">
-                  {payer.isSpecialRate ? (
+                  {/* {payer.isSpecialRate ? (
                     <div
                       className="relative bottom-1 rounded-sm py-1 w-[52px] customClassSecond"
                       style={{ backgroundColor: payer.specialRateColor }}
                     >
                     {parseFloat(payer.currentRate).toFixed(2)}%
                     </div>
-                  ) : (
+                  ) : ( */}
                     <span className="text-[#161D29]">{parseFloat(payer.currentRate).toFixed(2)}%</span>
-                  )}
+                  {/* )} */}
                 </td>
 
                 <td className="text-center text-[#161D29] font-[400] text-[12px] font-['DM Sans'] w-[52px]">
