@@ -1,5 +1,6 @@
 import { IoIosArrowForward } from "react-icons/io";
 import downorangeArrow from "../../assets/icons/down-orange-shift.svg";
+import UporangeArrow from "../../assets/icons/shift-orange.svg";
 import OptimusImage from "../../assets/images/Optimus.svg";
 import React, { PureComponent } from "react";
 import {
@@ -136,7 +137,7 @@ const Execution = () => {
         </p>
         <div className="flex items-center gap-1">
           <img
-            src={downorangeArrow}
+            src={UporangeArrow}
             alt=""
             className="w-[14px] h-[14px] customClass"
           />
@@ -267,10 +268,10 @@ const Execution = () => {
                 formatter={(value: any, name) => {
                   const formattedValue =
                     typeof value === "number" && name === "Settlement"
-                      ? `${Math.floor(value).toLocaleString()}`
+                      ? ` ₹ ${Math.floor(value).toLocaleString()}`
                       : typeof value === "number" &&
                         name === "Recovery Settlement"
-                      ? `${Math.floor(value).toLocaleString()}`
+                      ? ` ₹ ${Math.floor(value).toLocaleString()}`
                       : typeof value === "number"
                       ? `${Math.floor(value).toLocaleString()}`
                       : ` ${parseFloat(value.toFixed(2)).toLocaleString()}`;

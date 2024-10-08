@@ -7,6 +7,7 @@ import graphBallCollections from "../../assets/images/graphBallCollections.png";
 import graphBallRecovery from "../../assets/images/graphBallRecovery.png";
 import { useNavigate } from "react-router-dom";
 import UporangeArrow from "../../assets/icons/shift-orange.svg";
+import downorangeArrow from "../../assets/icons/down-orange-shift.svg";
 import arrow from "../../assets/images/HotspotArrow.svg";
 import SentinelImage from "../../assets/images/Sentinel.svg";
 import {
@@ -193,7 +194,7 @@ const MonitoringDiagnostics = () => {
         <p className="font-['DM Sans'] text-[14px] font-[500]">Hotspots</p>
         <div className="flex gap-1">
           <img
-            src={UporangeArrow}
+            src={downorangeArrow}
             alt=""
             className="w-[14px] h-[14px] customClass"
           />
