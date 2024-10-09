@@ -16,6 +16,10 @@ type DataItem = {
   [key: string]: { name: string; percentage: number }[];
 };
 
+interface AIProps {
+  selectedSegment: any;
+}
+
 const datakey: DataItem = {
   MOB: [
     { name: "Payer", percentage: 47.59457071721147 },
@@ -40,17 +44,16 @@ const datakey: DataItem = {
 };
 
 const COLORS = ["#FFB200", "#4169E1"];
-interface AIProps {
-  selectedSegment: any;
-}
 
-const ShareOfBalances: React.FC<AIProps> = ({ selectedSegment }) => {
+
+const getColorBySubSegment = ["#FFB200", "#4169E1"];
+const ShareOfBalances: React.FC<AIProps> = ({ selectedSegment},percentage) => {
   return (
-    <div className="bg-white rounded-xl   w-[100%] xl:w-[36%]  h-[325px] py-3 px-3 shadow xl:-mt-[73px]">
+    <div className="bg-white rounded-xl flex flex-col items-center   w-[100%] xl:w-[36%]  h-[325px] py-3 px-3 shadow xl:-mt-[73px]">
       <p className="text-[black] text-center font-['DM Sans'] font-[500] text-[14px] leading-[21px] mt-2">
         Share of balances
       </p>
-      <ResponsiveContainer width="100%" height={270}>
+      <ResponsiveContainer width="100%" height={250}>
         <PieChart>
           <Pie
             data={datakey[selectedSegment]}
@@ -74,6 +77,43 @@ const ShareOfBalances: React.FC<AIProps> = ({ selectedSegment }) => {
           />
         </PieChart>
       </ResponsiveContainer>
+      <div className="flex items-center flex-wrap gap-3 lg:gap-3">
+            <div className=" flex items-center gap-3">
+              <div className="flex items-center">
+                <div
+                  className="legend-color"
+                  style={{
+                    backgroundColor: getColorBySubSegment[0],
+                    width: "13px",
+                    height: "13px",
+                    marginRight: "5px",
+                    borderRadius: "3px",
+                  }}
+                />
+                <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
+                  Payer 
+            
+                
+
+                </span>
+              </div>
+              <div className="flex items-center">
+                <div
+                  className="legend-color"
+                  style={{
+                    backgroundColor: getColorBySubSegment[1],
+                    width: "13px",
+                    height: "13px",
+                    marginRight: "5px",
+                    borderRadius: "3px",
+                  }}
+                />
+                <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
+                  Non Payer
+                </span>
+              </div>
+            </div>
+          </div>
     </div>
   );
 };

@@ -376,7 +376,7 @@ const DiagnosticSegementationDashboard = (props: Props) => {
         </div>
         <div>
           <ul
-            className="flex mb-[10px] flex-wrap mt-[-10px] text-sm font-medium text-center DashBoardHeaderTabs"
+            className="flex mb-[32px] flex-wrap mt-[10px] text-sm font-medium text-center DashBoardHeaderTabs"
             id="myTab"
             data-tabs-toggle="#myTabContent"
             role="tablist"
@@ -398,7 +398,7 @@ const DiagnosticSegementationDashboard = (props: Props) => {
               >
                 Balance
               </button> */}
-
+{/* 
               <button
                 className={`inline-block p-2 border-b-2 rounded-t-lg   text-xs lg:text-base font-semibold tracking-tight ${
                   activeTab === "balance"
@@ -414,7 +414,7 @@ const DiagnosticSegementationDashboard = (props: Props) => {
                 onClick={() => setActiveTab("balance")}
               >
                 Balance
-              </button>
+              </button> */}
             </li>
             {/* <li className="m-auto p-1" role="presentation">
               <button
@@ -435,7 +435,7 @@ const DiagnosticSegementationDashboard = (props: Props) => {
               </button>
             </li> */}
             <li className="m-auto p-1" role="presentation">
-              <button
+              {/* <button
                 className={`inline-block p-2 border-b-2 border-transparent rounded-t-lg  text-xs lg:text-base font-semibold tracking-tight ${
                   activeTab === "units"
                     ? "border-violet-500 text-[#5C4E8E]"
@@ -450,7 +450,7 @@ const DiagnosticSegementationDashboard = (props: Props) => {
                 onClick={() => setActiveTab("units")}
               >
                 Units
-              </button>
+              </button> */}
             </li>
           </ul>
         </div>

@@ -306,13 +306,13 @@ const MonitoringDiagnostics = () => {
                     </div>
                       {each.bar.Current_Performance && (
                     <img src={HotspotBarArrow}
-                      className=" ml-1 z-10 mt-2 h-[10px] w-[10px] text-[#ffffff]"
+                      className=" ml-1 z-10 mt-2 h-[8px] w-[8px] text-[#ffffff]"
                       style={{
                         // width: "20px",
                         // height: "25px",
                         margin: "2px",
                         position: "absolute",
-                        top: "17px",
+                        top: "18px",
                         left: arrowPosition,
                       }}
                     />

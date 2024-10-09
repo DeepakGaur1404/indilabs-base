@@ -17,131 +17,131 @@ const OptimizeStackedBarChart: React.FC<Props> = (props) => {
         {
           name: "Mob 1",
           data: [0.0, 8.96169688238419],
-          color: "#DC3C49",
+          color: "#9F0030",
         },
         {
           name: "Mob 2",
           data: [0.0, 14.649725085144732],
-          color: "#FA7B33",
+          color: "#DC3C49",
         },
         {
           name: "Mob 3",
           data: [0.0, 6.764091453430391],
-          color: "#FFB200",
+          color: "#EF8A62",
         },
         {
           name: "Mob 4",
           data: [0.0, 1.8841434677899658],
-          color: "#496CD5",
+          color: "#FFB200",
         },
         {
           name: "Mob 5",
           data: [0.0, 10.155594006771846],
-          color: "#8EB5F4",
+          color: "#FFDD00",
         },
         {
           name: "Mob 6",
           data: [0.0, 15.510087191542743],
-          color: "#6F91EA",
+          color: "#365CD2",
         },
         {
           name: "Mob 7",
           data: [0.0, 0.02597170365722904],
-          color: "#4339F2",
+          color: "#498ADA",
         },
         {
           name: "Mob 8",
           data: [0.0, 20.79277300922161],
-          color: "#34B53A",
+          color: "#A6C5F7",
         },
         {
           name: "Mob 9",
           data: [33.676129921699136, 8.865295626052022],
-          color: "#79747E",
+          color: "#D7E1F2",
         },
         {
           name: "Mob 10",
           data: [29.109936763449568, 5.8691477743693286],
-          color: "#FF7A00",
+          color: "#C6A8FB",
         },
         {
           name: "Mob 11",
           data: [17.650579446238833, 3.2131712236294083],
-          color: "#4169E1",
+          color: "#8D7CC8",
         },
         {
           name: "Mob 12",
           data: [19.563353868612467, 3.3083025760065317],
-          color: "#00A76F",
+          color: "#4C3F7C",
         },
       ],
       "Interest Rate": [
         {
           name: "Int rate 1",
           data: [0.0, 19.31856411213582],
-          color: "#DC3C49",
+          color: "#9F0030",
         },
         {
           name: "Int rate 2",
           data: [10.138026457444342, 18.87354812789674],
-          color: "#FA7B33",
+          color: "#DC3C49",
         },
         {
           name: "Int rate 3",
           data: [9.079358541563787, 17.885273436884365],
-          color: "#FFB200",
+          color: "#EF8A62",
         },
         {
           name: "Int rate 4",
           data: [7.513657804115867, 17.73327660544831],
-          color: "#496CD5",
+          color: "#FFB200",
         },
         {
           name: "Int rate 5",
           data: [7.307580783040672, 17.896090060695197],
-          color: "#8EB5F4",
+          color: "#FFDD00",
         },
         {
           name: "Int rate 6",
           data: [5.857907935134298, 0.0],
-          color: "#6F91EA",
+          color: "#365CD2",
         },
         {
           name: "Int rate 7",
           data: [4.860041286038653, 13.490021119025778],
-          color: "#4339F2",
+          color: "#498ADA",
         },
         {
           name: "Int rate 8",
           data: [6.5617137142657285, 14.184554834491724],
-          color: "#34B53A",
+          color: "#A6C5F7",
         },
         {
           name: "Int rate 9",
           data: [5.702755170077327, 14.958245524074046],
-          color: "#79747E",
+          color: "#D7E1F2",
         },
       ],
      "Loan Term": [
         {
           name: "Loan Term 1",
           data: [0.0, 15.710120734879233],
-          color: "#DC3C49",
+          color: "#9F0030",
         },
         {
           name: "Loan Term 2",
           data: [6.369525533907174, 0.0],
-          color: "#FA7B33",
+          color: "#DC3C49",
         },
         {
           name: "Loan Term 3",
           data: [7.292152438319034, 22.175085934985006],
-          color: "#FFB200",
+          color: "#EF8A62",
         },
         {
           name: "Loan Term 4",
           data: [5.937026464327063,  17.859764820576025],
-          color: "#496CD5",
+          color: "#FFB200",
         },
        
       ],
@@ -149,79 +149,79 @@ const OptimizeStackedBarChart: React.FC<Props> = (props) => {
         {
           name: "Pos 1",
           data: [0.13267036433814988, 7.082881946823048],
-          color: "#DC3C49",
+          color: "#9F0030",
         },
         {
           name: "Pos 2",
           data: [ 0.2618194704266599, 3.277088165474608],
-          color: "#FA7B33",
+          color: "#DC3C49",
         },
         {
           name: "Pos 3",
           data: [2.0147140655870888, 12.081209789672727],
-          color: "#FFB200",
+          color: "#EF8A62",
         },
         {
           name: "Pos 4",
           data: [4.1252338951367875,  11.790685852352217],
-          color: "#496CD5",
+          color: "#FFB200",
         },
         {
           name: "Pos 5",
           data: [9.957599492259597, 15.561138288324234],
-          color: "#8EB5F4",
+          color: "#FFDD00",
         },
         {
           name: "Pos 6",
           data: [12.796529536271331, 14.360012617394869],
-          color: "#6F91EA",
+          color: "#365CD2",
         },
         {
           name: "Pos 7",
           data: [36.03529763032955, 22.549661475419423],
-          color: "#4339F2",
+          color: "#498ADA",
         },
         {
           name: "Pos 8",
           data: [34.67613554565084, 13.297321864538869],
-          color: "#34B53A",
+          color: "#A6C5F7",
         },
       ],
       "Loan Amt": [
         {
           name: "Loan amt 1",
           data: [0.0, 2.7356989065582966],
-          color: "#DC3C49",
+          color: "#9F0030",
         },
         {
           name: "Loan amt 2",
           data: [0.6453820427598553, 4.264546702494749],
-          color: "#FA7B33",
+          color: "#DC3C49",
         },
         {
           name: "Loan amt 3",
           data: [0.6228739564336535, 4.087208633457824],
-          color: "#FFB200",
+          color: "#EF8A62",
         },
         {
           name: "Loan amt 4",
           data: [ 1.030530558813696,    19.788930473591826],
-          color: "#496CD5",
+          color: "#FFB200",
         },
         {
           name: "Loan amt 5",
           data: [ 11.693375804678722,  0.02597170365722906],
-          color: "#8EB5F4",
+          color: "#FFDD00",
         },
         {
           name: "Loan amt 6",
           data: [ 47.200050744329545,  42.95334406231615],
-          color: "#6F91EA",
+          color: "#365CD2",
         },
         {
           name: "Loan amt 7",
           data: [38.80778689298452, 26.14429951792393],
-          color: "#4339F2",
+          color: "#498ADA",
         },
       ],
     },
@@ -386,7 +386,7 @@ const OptimizeStackedBarChart: React.FC<Props> = (props) => {
         <table cellPadding={13} className=" mt-[26px] ml-1">
           <tbody>
             <tr className="h-[54px] text-center text-[#000000] font-[400] text-[11px] font-['DM Sans']">
-              <td>Total</td>
+              <td>H/M</td>
             </tr>
             <tr className="h-[140px] text-center text-[#000000] font-[400] text-[11px] font-['DM Sans']">
               <td>L</td>
