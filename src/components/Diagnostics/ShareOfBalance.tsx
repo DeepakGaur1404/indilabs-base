@@ -46,6 +46,36 @@ const datakey: DataItem = {
 const COLORS = ["#FFB200", "#4169E1"];
 
 
+const renderCustomizedLabel = (props: any) => {
+  const {
+    cx,
+    cy,
+    midAngle,
+    outerRadius,
+    innerRadius,
+    percent,
+    value,
+    payload,
+  } = props;
+  
+  const RADIAN = Math.PI / 180; // Declare RADIAN here
+  const radius = innerRadius + (outerRadius - innerRadius) * 0.3;
+  const x = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+  return (
+    <text
+      x={x}
+      y={y}
+      fill="white"
+      textAnchor={x > cx ? "start" : "end"}
+      dominantBaseline="central"
+    >
+      {`${(percent * 100).toFixed(2)}%`}
+    </text>
+  );
+};
+
 const getColorBySubSegment = ["#FFB200", "#4169E1"];
 const ShareOfBalances: React.FC<AIProps> = ({ selectedSegment},percentage) => {
   return (
@@ -60,7 +90,8 @@ const ShareOfBalances: React.FC<AIProps> = ({ selectedSegment},percentage) => {
             cx="50%"
             cy="50%"
             labelLine={false}
-            outerRadius={100}
+            outerRadius={110}
+            label={renderCustomizedLabel}
             fill="#8884d8"
             dataKey="percentage"
           >
@@ -92,9 +123,6 @@ const ShareOfBalances: React.FC<AIProps> = ({ selectedSegment},percentage) => {
                 />
                 <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
                   Payer 
-            
-                
-
                 </span>
               </div>
               <div className="flex items-center">
