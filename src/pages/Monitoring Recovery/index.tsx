@@ -28,6 +28,11 @@ const Buttons = [
   { id: "Risk Monitoring", label: "Risk Monitoring" },
   { id: "Heatmap", label: "Heatmap" },
 ];
+const categoriesHeatmap = [
+  { id: "Location", name: "Location" },
+  { id: "POS", name: "POS" },
+  // { id: "Vintage", name: "Vintage" },
+];
 type Props = {};
 const staticDataRecoveryPerformance = {
   balance: {
@@ -549,7 +554,7 @@ const MonitoringRecovery = (props: Props) => {
   const [profileUsername, setProfileUsername] = useState<any>();
   const [categories, setCategories] = useState("All");
   const [categoriesMatric, setCategoriesMatric] = useState("Location");
-
+  const [selectedCategory, setselectedCategory] = useState("location");
   const [categoriesMatricHeatMap, setCategoriesMatricHeatMap] =
     useState("Location");
   const [isCategoryVisible, setIsCategoryVisible] = useState(true);
@@ -568,6 +573,10 @@ const MonitoringRecovery = (props: Props) => {
   }, []);
   const handleProductClick = async (buttonId: string) => {
     setActiveButton(buttonId);
+  };
+  // const [selectedCategory, setselectedCategory] = useState("location");
+  const handleCategoryClick = async (cityId: string) => {
+    setCategoriesMatricHeatMap(cityId);
   };
   // const dispatch = useDispatch();
 
@@ -791,15 +800,18 @@ const MonitoringRecovery = (props: Props) => {
         ) : (
           <MonitoringRecoveryMetricDashboardHeader />
         )}
-        <div className="w-full flex justify-between mt-6 mb-6 ml-1 ">
-          <div className="pl-3 flex w-full rounded-xl B1TabsContainer">
-            <div className="flex ">
-              <div className=" flex w-full justify-between rounded-xl B1TabsContain">
+      
+        {/* <div className="w-full flex justify-between mt-6 mb-6 ml-1 "> */}
+        <div className=" w-full flex flex-col gap-5 mt-5 items-start ml-[10px] ">
+          {/* <div className="pl-3 flex w-full rounded-xl B1TabsContainer"> */}
+          <div className="w-[100%] flex justify-between items-center">
+      
+              <div className=" flex w-max justify-between  itemrounded-xl B1TabsContain">
                 {Buttons.map((buttons, index) => (
                   <div
                     key={buttons.id}
                     onClick={() => handleProductClick(buttons.id)}
-                    className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans p' !important] h-10 
+                    className={`w-max text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans p' !important] h-10 
                  border p-4 border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
                    activeButton === buttons.id
                      ? " bg-[#E8DEF8] "
@@ -812,11 +824,11 @@ const MonitoringRecovery = (props: Props) => {
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
-          <div className="w-full flex justify-end items-center ">
+              
+         
+            <div className="w-full flex justify-end items-center ">
             <div
-              className="w-[160px] min-w-[160px] h-[40px] flex justify-around items-center cursor-pointer"
+              className="w-[160px] min-w-[160px] h-[40px] flex justify-around items-center cursor-pointer "
               onClick={downloadReport}
             >
               <div className="w-[18px] h-[18px]" id="hiddenbutton">
@@ -830,9 +842,36 @@ const MonitoringRecovery = (props: Props) => {
               </div>
             </div>
           </div>
-        </div>
+          </div>
+           
+            {activeButton ==="Heatmap" && 
+           <div className="flex">
+          <div className=" flex w-full justify-between  rounded-xl">
+            { categoriesHeatmap.map((city:any, index:any) => (
+              <div
+                key={city.id}
+                onClick={() => handleCategoryClick(city.id)}
+                className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-10 w-full p-4 border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
+                  categoriesMatricHeatMap === city.id
+                    ? " bg-[#E8DEF8] "
+                    : "bg-[#fafafb]"
+                } ${index === 0 ? "rounded-l-[4px]" : ""} ${
+                  index === categoriesHeatmap.length - 1 ? "rounded-r-[4px]" : ""
+                }`}
+              >
+                {city.name}
+              </div>
+            ))}
+          </div>
+        </div>}
+          {/* </div> */}
+         
+         
+          </div>
+          
+    
         {activeButton === "Risk Monitoring" && (
-          <div className="flex flex-wrap  items-start  justify-center  px-[6px] lg:px-[2px] ml-0 lg:ml-2 bg-[#fafafb]">
+          <div className="flex flex-wrap  items-start  justify-center  px-[6px] lg:px-[2px] ml-0 lg:ml-2 mt-7 bg-[#fafafb]">
             <div className=" w-full flex items-start gap-1 justify-start flex-wrap">
               <RiskMonitoringRecovery
                 setCategory={setCategories}
@@ -851,7 +890,7 @@ const MonitoringRecovery = (props: Props) => {
           </div>
         )}
         {activeButton === "Heatmap" && (
-          <div className="flex flex-wrap  items-start  justify-center  px-[6px] lg:px-[6px] ml-0 lg:ml-2 bg-[#fafafb]">
+          <div className="flex flex-wrap  mt-7 items-start  justify-center  px-[6px] lg:px-[6px] ml-0 lg:ml-2 bg-[#fafafb]">
             <div className=" w-full flex items-start gap-4 justify-start flex-wrap">
               {/* <RiskMonitoringRecoveryMonthlyView
                 setCategory={setCategories}
@@ -868,12 +907,12 @@ const MonitoringRecovery = (props: Props) => {
                 categoriesMatricHeatMap={categoriesMatricHeatMap}
                 staticDataRecoveryPerformance={staticDataRecoveryPerformance}
               /> */}
-              <RiskMonitoringHotspot
+              {/* <RiskMonitoringHotspot
                 setCategory={setCategories}
                 setCategoriesMatricHeatMap={setCategoriesMatricHeatMap}
                 isCategoryVisible={isCategoryVisible}
                 setIsCategoryVisible={setIsCategoryVisible}
-              />
+              /> */}
               <HeatmapChart categoriesMatricHeatMap={categoriesMatricHeatMap} />
             </div>
           </div>

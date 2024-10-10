@@ -1,3 +1,5 @@
+import { fontWeight } from "html2canvas/dist/types/css/property-descriptors/font-weight";
+import { color } from "html2canvas/dist/types/css/types/color";
 import React, { useEffect, useState } from "react";
 import ReactApexChart from "react-apexcharts";
 
@@ -12,13 +14,33 @@ const HeatmapChart = ({ categoriesMatricHeatMap }: Props) => {
   const state: any = {
     series: {
       Location: [
-        { name: "DL", data: [70, 30, 50, 90, 30, 20, 50, 70, 60, 40, 90, 20,10,40,60,80,90] },
+        { name: "TN", data: [70, 30, 50, 90, 30, 20, 50, 70, 60, 40, 90, 20,10,40,60,80,90] },
+        { name: "KA", data: [20,10,40,60,80,30, 50, 20, 70, 60, 90, 80, 40, 100, 20, 50, 30] },
+        { name: "DL", data: [60, 20, 30, 50, 70, 80, 90,20,10,40,60,80, 30, 20, 40, 60, 60] },
+        { name: "MH", data: [10, 20, 70,20,10,40,60,80, 50, 60, 90, 40, 30, 50, 50, 80, 100] },
+        { name: "OD", data: [90, 100, 30, 50, 60, 40, 30, 50, 70,20,10,40,60,80, 80, 20, 50] },
+        { name: "PC", data: [20,10,40,60,80,20, 30, 90, 50, 70, 80, 60, 40, 100, 70, 20, 30] },
+        { name: "PB", data: [30, 20, 70, 50, 40, 90, 60, 80, 70, 100, 30, 20,20,10,40,60,80,] },
+        { name: "RJ", data: [70, 30, 50, 90, 30, 20, 50, 70, 60, 40, 90, 20,10,40,60,80,90] },
         { name: "HR", data: [20,10,40,60,80,30, 50, 20, 70, 60, 90, 80, 40, 100, 20, 50, 30] },
-        { name: "KA", data: [60, 20, 30, 50, 70, 80, 90,20,10,40,60,80, 30, 20, 40, 60, 60] },
-        { name: "MP", data: [10, 20, 70,20,10,40,60,80, 50, 60, 90, 40, 30, 50, 50, 80, 100] },
-        { name: "TN", data: [90, 100, 30, 50, 60, 40, 30, 50, 70,20,10,40,60,80, 80, 20, 50] },
-        { name: "MH", data: [20,10,40,60,80,20, 30, 90, 50, 70, 80, 60, 40, 100, 70, 20, 30] },
+        { name: "HP", data: [60, 20, 30, 50, 70, 80, 90,20,10,40,60,80, 30, 20, 40, 60, 60] },
+        { name: "JK", data: [10, 20, 70,20,10,40,60,80, 50, 60, 90, 40, 30, 50, 50, 80, 100] },
+        { name: "JH", data: [90, 100, 30, 50, 60, 40, 30, 50, 70,20,10,40,60,80, 80, 20, 50] },
+        { name: "TL", data: [20,10,40,60,80,20, 30, 90, 50, 70, 80, 60, 40, 100, 70, 20, 30] },
         { name: "UP", data: [30, 20, 70, 50, 40, 90, 60, 80, 70, 100, 30, 20,20,10,40,60,80,] },
+        { name: "UK", data: [30, 20, 70, 50, 40, 90, 60, 80, 70, 100, 30, 20,20,10,40,60,80,] },
+        { name: "WB", data: [70, 30, 50, 90, 30, 20, 50, 70, 60, 40, 90, 20,10,40,60,80,90] },
+        { name: "AP", data: [20,10,40,60,80,30, 50, 20, 70, 60, 90, 80, 40, 100, 20, 50, 30] },
+        { name: "MP", data: [60, 20, 30, 50, 70, 80, 90,20,10,40,60,80, 30, 20, 40, 60, 60] },
+        { name: "GJ", data: [10, 20, 70,20,10,40,60,80, 50, 60, 90, 40, 30, 50, 50, 80, 100] },
+        { name: "AS", data: [90, 100, 30, 50, 60, 40, 30, 50, 70,20,10,40,60,80, 80, 20, 50] },
+        { name: "BR", data: [20,10,40,60,80,20, 30, 90, 50, 70, 80, 60, 40, 100, 70, 20, 30] },
+        { name: "CD", data: [30, 20, 70, 50, 40, 90, 60, 80, 70, 100, 30, 20,20,10,40,60,80,] },
+        { name: "CG", data: [60, 20, 30, 50, 70, 80, 90,20,10,40,60,80, 30, 20, 40, 60, 60] },
+        { name: "DH", data: [10, 20, 70,20,10,40,60,80, 50, 60, 90, 40, 30, 50, 50, 80, 100] },
+        { name: "GO", data: [90, 100, 30, 50, 60, 40, 30, 50, 70,20,10,40,60,80, 80, 20, 50] },
+        { name: "KR", data: [20,10,40,60,80,20, 30, 90, 50, 70, 80, 60, 40, 100, 70, 20, 30] },
+      
       ],
       POS: [
         {
@@ -120,7 +142,9 @@ const HeatmapChart = ({ categoriesMatricHeatMap }: Props) => {
       title: {
         text: "Monthly Assessment",
         style: {
-          fontSize: "18px",
+          colors: "#000000",
+          fontWeight: "500",
+          fontSize: "16px",
           fontFamily: ["DM Sans"],
         },
       },
@@ -132,13 +156,43 @@ const HeatmapChart = ({ categoriesMatricHeatMap }: Props) => {
       },
     },
   };
-
+const [selectLocation, SetSelectLocation]= useState()
   useEffect(() => {
-    setSelectedReactApexCharts(true);
+    SetSelectLocation(categoriesMatricHeatMap)
+    if (categoriesMatricHeatMap && state.series[categoriesMatricHeatMap]) {
+      setSelectedReactApexCharts(true);
+    } else {
+      setSelectedReactApexCharts(false);
+    }
+    
   }, [categoriesMatricHeatMap]);
 
   return (
-    <div className="min-w-[300px]  sm:w-[600px] md:w-[768px] lg:w-[992px] xl:w-[68%] h-[500px] p-3 bg-white rounded-xl shadow flex-col justify-start items-start flex gap-2">
+    <>
+   
+   {selectLocation==="Location"&& <div className="min-w-[300px]  sm:w-[600px] md:w-[768px] lg:w-[992px] xl:w-[100%] h-[1000px] p-3 bg-white rounded-xl shadow flex-col justify-start items-start flex gap-2">
+      {selectedReactApexCharts ? (
+        <div 
+        style={{
+          // minWidth: "900px", // Minimum width fixed at 890px
+          // maxWidth: "900px", // Maximum width also fixed at 890px
+          width: "100%",    // Ensures it stays exactly 890px
+          overflow: "hidden", // Ensures no content goes beyond this width
+        
+        }}
+      >
+        <ReactApexChart
+          options={state.options as any}
+          series={state.series[categoriesMatricHeatMap]}
+          type="heatmap"
+          height={980}    // Fixed height
+          width={"100%"}// Fixed width, will not change
+        />
+      </div>
+      
+      ) : null}
+    </div>}
+    {selectLocation==="POS" && <div className="min-w-[300px]  sm:w-[600px] md:w-[768px] lg:w-[992px] xl:w-[100%] h-[500px] p-3 bg-white rounded-xl shadow flex-col justify-start items-start flex gap-2">
       {selectedReactApexCharts ? (
         <div 
         style={{
@@ -159,7 +213,30 @@ const HeatmapChart = ({ categoriesMatricHeatMap }: Props) => {
       </div>
       
       ) : null}
-    </div>
+    </div>}
+    { selectLocation==="Vintage" && <div className="min-w-[300px]  sm:w-[600px] md:w-[768px] lg:w-[992px] xl:w-[100%] h-[500px] p-3 bg-white rounded-xl shadow flex-col justify-start items-start flex gap-2">
+      {selectedReactApexCharts ? (
+        <div 
+        style={{
+          // minWidth: "900px", // Minimum width fixed at 890px
+          // maxWidth: "900px", // Maximum width also fixed at 890px
+          width: "100%",    // Ensures it stays exactly 890px
+          overflow: "hidden", // Ensures no content goes beyond this width
+        
+        }}
+      >
+        <ReactApexChart
+          options={state.options as any}
+          series={state.series[categoriesMatricHeatMap]}
+          type="heatmap"
+          height={480}    // Fixed height
+          width={"100%"}// Fixed width, will not change
+        />
+      </div>
+      
+      ) : null}
+    </div>}
+    </>
   );
 };
 
