@@ -36,35 +36,40 @@ const datakey: DataItem[] = [
 const data = [
   {
     name: "Jan2024",
-    settlement: 106408875.31,
-    "recovery settlement": 13169689.4,
+    "Recovery from payment arrangements": 93239185.91,
+    "Recovery from settlements": 13169689.4,
   },
   {
     name: "Feb2024",
-    settlement: 106096191.75,
-    "recovery settlement": 12827355.0,
+    "Recovery from payment arrangements": 93268836.75,
+    "Recovery from settlements": 12827355.0,
   },
   {
     name: "Mar2024",
-    settlement: 118404084.02999997,
-    "recovery settlement": 17335991.0,
+    "Recovery from payment arrangements": 101068093.02999997,
+    "Recovery from settlements": 17335991.0,
   },
   {
     name: "Apr2024",
-    settlement: 81356821.93000002,
-    "recovery settlement": 14388164.18,
+    "Recovery from payment arrangements": 66968657.75000002,
+    "Recovery from settlements": 14388164.18,
   },
   {
     name: "May2024",
-    settlement: 100396115.69000001,
-    "recovery settlement": 19757297.0,
+    "Recovery from payment arrangements": 80638818.69000001,
+    "Recovery from settlements": 19757297.0,
   },
   {
     name: "Jun2024",
-    settlement: 87351346.91,
-    "recovery settlement": 18891896.0,
+    "Recovery from payment arrangements": 68459450.91,
+    "Recovery from settlements": 18891896.0,
   },
 ];
+
+const optimusCard = {
+  "last month recovery rate": 0.5502933361307787,
+  "recovery rate change": -1.1900809306596056,
+};
 
 const arrTicks = (data: any[]): number[] => {
   let arr: number[] = [];
@@ -72,8 +77,8 @@ const arrTicks = (data: any[]): number[] => {
 
   if (data && data.length > 0) {
     const sums = data.map((item) => {
-      const settlement = item.settlement || 0;
-      const recoverySettlement = item["recovery settlement"] || 0;
+      const settlement = item["Recovery from payment arrangements"] || 0;
+      const recoverySettlement = item["Recovery from settlements"] || 0;
       return settlement + recoverySettlement;
     });
 
@@ -114,7 +119,7 @@ const formatNumberMillion = (num: any) => {
 
 const COLORS = ["#C9C4D9", "#776BA1"];
 const CUSTOM_LEGEND_COLORS = ["black", "black", "black"];
-
+const recoveryRateChange:any = optimusCard["recovery rate change"].toFixed(2);
 const Execution = () => {
   return (
     <div className="lg:w-[32%] sm:w-[90%] h-full rounded-xl shadow p-4 gap-3 bg-[#E8F3ED]">
@@ -130,19 +135,19 @@ const Execution = () => {
       </div>
       <div className="bg-white p-1 h-[116px] rounded-xl mt-4 flex flex-col items-center">
         <span className="font-['DM Sans'] text-[32px] text-[#EF4444] font-[500] customClassThird">
-          -0.2%
+          {optimusCard["last month recovery rate"].toFixed(2)}%
         </span>
         <p className="font-['DM Sans'] text-[14px] font-[500] ">
           Recovery Rate
         </p>
         <div className="flex items-center gap-1">
           <img
-            src={UporangeArrow}
-            alt=""
+            src={recoveryRateChange < 0 ? downorangeArrow : UporangeArrow}
+            alt="arrow"
             className="w-[14px] h-[14px] customClass"
           />
           <p className="font-['DM Sans'] text-[10px] font-[400] gap-[4px]">
-            3.1 vs last month
+          {recoveryRateChange} vs last month
           </p>
         </div>
         <p className="font-['DM Sans'] text-[12px] text-[#9CA4B6] font-[400]">
@@ -279,7 +284,7 @@ const Execution = () => {
                 }}
               />
               <Bar
-                dataKey="settlement"
+                dataKey="Recovery from payment arrangements"
                 name="Settlement"
                 stackId="a"
                 fill="#4339F2"
@@ -287,7 +292,7 @@ const Execution = () => {
                 radius={[0, 0, 10, 10]}
               />
               <Bar
-                dataKey="recovery settlement"
+                dataKey="Recovery from settlements"
                 name="Recovery Settlement"
                 stackId="a"
                 fill="#FFB200"

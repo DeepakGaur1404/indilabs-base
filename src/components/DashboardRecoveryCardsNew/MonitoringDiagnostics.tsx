@@ -50,6 +50,7 @@ const Riskmonitoringscore = [
     Previous_Month_Percentage: 100.0,
     id: 3,
   },
+  
 ];
 
 const hotspot: any = [
@@ -98,6 +99,7 @@ const hotspot: any = [
       higher_the_better: true,
     },
   },
+  
 ];
 
 const  Hotspot_Counts = {
@@ -172,6 +174,9 @@ const MonitoringDiagnostics = () => {
   const handleRiskMonitoringReviewClick = () => {
     navigate("/monitoring/recovery");
   };
+
+  const hotspotRateChange:any = Hotspot_Counts["Change_in_Hotspots"];
+
   return (
     <div className="lg:w-[32%] sm:w-[90%]  h-full rounded-xl shadow p-4 gap-3   bg-[#F2EFFE]">
       {/* <p className="font-[400] text-[13px] font-['DM Sans'] cursor-pointer leading-4 border border-[#9F90D4] bg-white w-max px-[8px] py-[4px] rounded-[4px]">
@@ -195,12 +200,12 @@ const MonitoringDiagnostics = () => {
         <p className="font-['DM Sans'] text-[14px] font-[500]">Hotspots</p>
         <div className="flex gap-1">
           <img
-            src={downorangeArrow}
-            alt=""
+           src={hotspotRateChange < 0 ? downorangeArrow : UporangeArrow}
+            alt="arrow"
             className="w-[14px] h-[14px] customClass"
           />
           <p className="font-['DM Sans'] text-[10px] font-[400] gap-[4px]">
-           {Hotspot_Counts.Change_in_Hotspots} vs last month
+           {hotspotRateChange} vs last month
           </p>
         </div>
         <p className="font-['DM Sans'] text-[12px] text-[#9CA4B6] font-[400]">

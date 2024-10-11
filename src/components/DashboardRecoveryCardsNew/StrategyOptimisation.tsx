@@ -19,33 +19,33 @@ import {
 const data = [
   {
     name: "Jan2024",
-   "recovery": 106408875.30999999,
-            "cost": 22821460.718999997,
-            "roi": 4.662667154403895
+    "recovery": 106408875.30999999,
+    "cost": 22821460.718999997,
+    "roi": 4.662667154403895
   },
   {
     name: "Feb2024",
     "recovery": 106096191.75000003,
-            "cost": 23182819.435000006,
-            "roi": 4.57650080256513
+    "cost": 23182819.435000006,
+    "roi": 4.57650080256513
   },
   {
     name: "Mar2024",
     "recovery": 118404084.03,
-            "cost": 26632359.834499996,
-            "roi": 4.445872794066766
+    "cost": 26632359.834499996,
+    "roi": 4.445872794066766
   },
   {
     name: "Apr2024",
     "recovery": 81356821.92999999,
-    "cost": 17701628.674999997,
-    "roi": 4.596007713397593
+            "cost": 17701628.674999997,
+            "roi": 4.596007713397593
   },
   {
     name: "May2024",
     "recovery": 100396115.69,
-            "cost": 22087852.378499996,
-            "roi": 4.545309067156034
+    "cost": 22087852.378499996,
+    "roi": 4.545309067156034
   },
   {
     name: "Jun2024",
@@ -67,7 +67,7 @@ const payersData = [
   {
     label: "High Payer",
     amount: "3345",
-    currentRate: "27.66846036462935",
+    currentRate: "24.182574279046456",
     previousRate: "0",
     isSpecialRate: false,
     specialRateColor: "",
@@ -75,7 +75,7 @@ const payersData = [
   {
     label: "Medium Payer",
     amount: " 6120",
-    currentRate: "49.1526784997189",
+    currentRate: "14.001059013855127",
     previousRate: "0",
     isSpecialRate: true,
     specialRateColor: "#10B981",
@@ -83,7 +83,7 @@ const payersData = [
   {
     label: "Low Payer",
     amount: " 2886",
-    currentRate: "23.178861135651754",
+    currentRate: " 6.487951568189118",
     previousRate: "0",
     isSpecialRate: true,
     specialRateColor: "#F9C700",
@@ -97,6 +97,11 @@ const payersData = [
   //   specialRateColor: "#F9C700",
   // },
 ];
+
+const dynamoCard =   
+{"last roi": 4.597407791224814,
+    "roi change": 0.05209872406878002
+}
 
 const arrTicks: any = (data: any[]): number[] => {
   let arr: number[] = [];
@@ -194,11 +199,11 @@ const StrategyOptimisation = () => {
       </div>
       <div className="bg-white h-[116px] p-1 rounded-xl mt-4 flex flex-col items-center ">
         <span className="font-['DM Sans'] text-[32px] text-[#10B981] font-[500] customClassThird">
-          0.05
+       {dynamoCard["last roi"].toFixed(2)}
         </span>
         <p className="font-['DM Sans'] text-[14px] font-[500] ">ROI Value</p>
         <p className="font-['DM Sans'] text-[10px] font-[400] gap-[4px]">
-          -4.6 vs last month
+          {dynamoCard["roi change"].toFixed(2)} vs last month
         </p>
         <p className="font-['DM Sans'] text-[12px] text-[#9CA4B6] font-[400]">
           Improvement Opportunity: $15Ok
