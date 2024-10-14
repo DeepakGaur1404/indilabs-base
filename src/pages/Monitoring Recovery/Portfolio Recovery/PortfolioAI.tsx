@@ -9,7 +9,7 @@ interface PortfolioAIprops {
 
 const PortfolioAI: React.FC<PortfolioAIprops> = ({ onClose }) => {
   return (
-    <div className="w-[780px] p-4"  
+    <div className="w-[780px] bg-white p-4 h-[160px] "  
     style={{
       background: `
       linear-gradient(90deg, rgba(138, 199, 255, 0.12) 0%, rgba(122, 22, 252, 0.12) 35%, rgba(237, 14, 0, 0.12) 70.5%, rgba(255, 158, 69, 0.12) 99.5%)
@@ -30,7 +30,7 @@ const PortfolioAI: React.FC<PortfolioAIprops> = ({ onClose }) => {
         <p className="text-[#5C4E8E] font-['DM Sans'] font-bold text-[14px]">Close</p>
       </div>
     </div>
-    <ul className="text-gray-600 list-disc pl-5 mt-2 gap-5">
+    <ul className="text-gray-600 list-disc pl-5 mt-3 gap-5">
       <li className="font-['DM Sans'] text-[12px] font-normal text-[#000000]">
       Over the last six months, the recovery rate declined slightly by 0.01%, while the active recovery balance increased by 0.97%.
       </li>

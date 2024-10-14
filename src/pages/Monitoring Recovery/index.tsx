@@ -31,7 +31,7 @@ const Buttons = [
 const categoriesHeatmap = [
   { id: "Location", name: "Location" },
   { id: "POS", name: "POS" },
-  // { id: "Vintage", name: "Vintage" },
+ { id: "Vintage", name: "Vintage" },
 ];
 type Props = {};
 const staticDataRecoveryPerformance = {

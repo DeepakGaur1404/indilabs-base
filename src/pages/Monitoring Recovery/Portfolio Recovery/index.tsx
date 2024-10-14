@@ -12732,12 +12732,12 @@ const PortfolioRecovery: React.FC = () => {
   };
 
   const handleImageClick = () => {
-    // setIsImageVisible(false);
+     setIsImageVisible(false);
     setLoader(true);
 
     setTimeout(() => {
       setLoader(false);
-      setIsImageVisible(false)
+    //  setIsImageVisible(false)
     }, 2000);
   };
 
@@ -12901,7 +12901,7 @@ const PortfolioRecovery: React.FC = () => {
   // };
 
   return (
-    <div className="CommonBodyWrap bg-[#fafafb]">
+    <div className="CommonBodyWrap bg-[#fafafb] ">
       <div className="px-[6px] lg:px-[59px] lg:pt-[59px] flex flex-col gap-5 w-full">
         {/* <PerformanceDashboard /> */}
         <HomeDashboard />
@@ -13135,7 +13135,7 @@ const PortfolioRecovery: React.FC = () => {
           
           )}
           {loader && (
-            <div className="absolute flex items-center right-48 inset-0 ">
+            <div className="relative flex justify-end  mr-52 inset-0 ">
               <Loader />
             </div>
           )}
