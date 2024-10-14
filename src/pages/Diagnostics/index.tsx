@@ -15,6 +15,7 @@ import HotspotExpanded from "../../components/Diagnostics/HotspotExpanded";
 import DiagnosticsCard from "../../components/Diagnostics/DiagnosticsDetails";
 import ShareOfBalance from "../../components/Diagnostics/ShareOfBalance";
 import DiagnosticSegementationDashboard from "../../components/Diagnostics/DiagnosticSegementationDashboard";
+import DiagnosticInsightandvalidationHeader from "../../components/Diagnostics/DiagnosticInsightandvalidationHeader";
 
 const categories = [
   { id: "segmentation", name: "Segmentation" },
@@ -42,7 +43,8 @@ const Diagnostics: React.FC = () => {
       {selectedCategory === "segmentation" ? (
         <DiagnosticSegementationDashboard />
       ) : (
-        <HomeDashboard />
+        // <HomeDashboard />
+        <DiagnosticInsightandvalidationHeader />
       )}
 
       <div className="flex mt-5 ml-2">
