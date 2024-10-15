@@ -195,9 +195,9 @@ const MonitoringDiagnostics = () => {
 
       <div className="bg-white h-[116px] p-1  rounded-xl mt-4 flex flex-col items-center ">
         <span className="font-['DM Sans'] text-[32px] text-[#FAC907] font-[500] customClassThird">
-          {Hotspot_Counts.Latest_Month_Hotspots}
+          {Hotspot_Counts.Latest_Month_Hotspots}M
         </span>
-        <p className="font-['DM Sans'] text-[14px] font-[500]">Hotspots</p>
+        <p className="font-['DM Sans'] text-[14px] font-[500]">Value at Risk</p>
         <div className="flex gap-1">
           <img
            src={hotspotRateChange < 0 ? downorangeArrow : UporangeArrow}
@@ -209,7 +209,7 @@ const MonitoringDiagnostics = () => {
           </p>
         </div>
         <p className="font-['DM Sans'] text-[12px] text-[#9CA4B6] font-[400]">
-          Potential risk: $25Ok
+        Hotspots: {Hotspot_Counts.Previous_Month_Hotspots}
         </p>
       </div>
       <div className=" h-[364px] w-[100%] p-2  bg-white  rounded-xl mt-3">

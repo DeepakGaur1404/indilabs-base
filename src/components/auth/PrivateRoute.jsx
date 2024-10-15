@@ -18,7 +18,7 @@ const PrivateRoute = ({}) => {
       if (storedTimeStamp) {
         const storedTime = parseInt(storedTimeStamp);
 
-        const twoHoursInMs = 2 * 60 * 60 * 1000; // Two hours in milliseconds
+        const twoHoursInMs = 4 * 60 * 60 * 1000; // Two hours in milliseconds
 
         if (currentTimeStamp - storedTime >= twoHoursInMs) {
           // Clear localStorage and set isAuthenticated to null

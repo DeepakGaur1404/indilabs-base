@@ -52,7 +52,7 @@ const LoginForm: React.FC = () => {
     if (admin_email === value.email && admin_password === value.password) {
       localStorage.setItem("token", staticToken);
       setTimeout(() => {
-        navigate("/home/recovery");
+        navigate("/dashboard/recovery");
       }, 3000);
       //navigate("/strategy")
       toast.success("Login Sucessful !", {
