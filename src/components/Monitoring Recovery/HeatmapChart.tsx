@@ -159,18 +159,18 @@ const HeatmapChart = ({ categoriesMatricHeatMap }: Props) => {
 const [selectLocation, SetSelectLocation]= useState()
   useEffect(() => {
     SetSelectLocation(categoriesMatricHeatMap)
-    if (categoriesMatricHeatMap && state.series[categoriesMatricHeatMap]) {
+    // if (categoriesMatricHeatMap && state.series[categoriesMatricHeatMap]) {
+    //   setSelectedReactApexCharts(true);
+    // } else {
       setSelectedReactApexCharts(true);
-    } else {
-      setSelectedReactApexCharts(false);
-    }
+    // }
     
   }, [categoriesMatricHeatMap]);
 
   return (
     <>
    
-   {selectLocation==="Location"&& <div className="min-w-[300px]  sm:w-[600px] md:w-[768px] lg:w-[992px] xl:w-[100%] h-[1000px] p-3 bg-white rounded-xl shadow flex-col justify-start items-start flex gap-2">
+   {selectLocation==="Location"&& <div className="min-w-[300px]  w-[100%] h-[1000px] p-3 bg-white rounded-xl shadow flex-col justify-start items-start flex gap-2">
       {selectedReactApexCharts ? (
         <div 
         style={{
@@ -192,7 +192,7 @@ const [selectLocation, SetSelectLocation]= useState()
       
       ) : null}
     </div>}
-    {selectLocation==="POS" && <div className="min-w-[300px]  sm:w-[600px] md:w-[768px] lg:w-[992px] xl:w-[100%] h-[500px] p-3 bg-white rounded-xl shadow flex-col justify-start items-start flex gap-2">
+    {selectLocation==="POS" && <div className="min-w-[300px]  w-[100%] h-[500px] p-3 bg-white rounded-xl shadow flex-col justify-start items-start flex gap-2">
       {selectedReactApexCharts ? (
         <div 
         style={{
@@ -214,7 +214,7 @@ const [selectLocation, SetSelectLocation]= useState()
       
       ) : null}
     </div>}
-    { selectLocation==="Vintage" && <div className="min-w-[300px]  sm:w-[600px] md:w-[768px] lg:w-[992px] xl:w-[100%] h-[500px] p-3 bg-white rounded-xl shadow flex-col justify-start items-start flex gap-2">
+    { selectLocation==="Vintage" && <div className="min-w-[300px]  w-[100%] h-[500px] p-3 bg-white rounded-xl shadow flex-col justify-start items-start flex gap-2">
       {selectedReactApexCharts ? (
         <div 
         style={{

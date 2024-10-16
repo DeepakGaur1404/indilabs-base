@@ -29,7 +29,8 @@ type Props = {
   categoriesMatric: any;
   setIsCategoryVisible: any;
   isCategoryVisible: any;
-  categoriesMatricHeatMap: any;
+  // categoriesMatricHeatMap: any;
+  categoriesMatricmonitoring:any
 };
 
 const ImpactAssessmentRecovery = ({
@@ -37,9 +38,10 @@ const ImpactAssessmentRecovery = ({
   categoriesMatric,
   setIsCategoryVisible,
   isCategoryVisible,
-  categoriesMatricHeatMap,
+  // categoriesMatricHeatMap,
+  categoriesMatricmonitoring
 }: Props) => {
-  console.log("Category value", categoriesMatric);
+  console.log("Category value", categoriesMatric,);
   const [impactAssessmentData, setImpactAssessmentData] = useState<any>();
   const [impactAssessmentDataMetrics, setImpactAssessmentDataMeterics] =
     useState<any>();
@@ -155,7 +157,7 @@ const ImpactAssessmentRecovery = ({
 
   useEffect(() => {
     fetchImpactAssessmentData();
-  }, [categoriesMatricHeatMap]);
+  }, [categoriesMatricmonitoring]);
 
   const fetchImpactAssessmentData = async () => {
     setLoader(true);
@@ -513,21 +515,21 @@ const ImpactAssessmentRecovery = ({
       cached_output: false,
     };
 
-    if (categoriesMatricHeatMap === "Location") {
+    if (   categoriesMatricmonitoring === "Location") {
       const MRRCoordinates = (data?.impact_assessment?.categories || []).filter(
         (coord: { Category: string; metric: string }) =>
           coord.Category === "Location"
       );
 
       setImpactAssessmentDataMeterics(MRRCoordinates);
-    } else if (categoriesMatricHeatMap === "POS") {
+    } else if (   categoriesMatricmonitoring === "POS") {
       const POSCoordinates = (data?.impact_assessment?.categories || []).filter(
         (coord: { Category: string; metric: string }) =>
           coord.Category === "POS"
       );
 
       setImpactAssessmentDataMeterics(POSCoordinates);
-    } else if (categoriesMatricHeatMap === "Vintage") {
+    } else if (   categoriesMatricmonitoring === "Vintage") {
       const POSCoordinates = (data?.impact_assessment?.categories || []).filter(
         (coord: { Category: string; metric: string }) =>
           coord.Category === "Vintage"
@@ -661,12 +663,12 @@ const ImpactAssessmentRecovery = ({
      text-[11px]  text-[#ADADAD] font-[500] 
     font-['DM Sans' !important] 
     -rotate-90 
-     frequency_text customClassfour  -ml-1
+     frequency_text customClassfour  -ml-3
   "
           style={{ zIndex: 100 }}
         >
           {/* Value(₹ Millions) */}
-          Performance in the month
+          YTD Value at Risk (₹ milllions)
         </p>
         {loader ? (
           <Loader />
@@ -857,7 +859,7 @@ const ImpactAssessmentRecovery = ({
             )}
             <p className="-mt-[25px]  text-center text-[11px] text-[#ADADAD] font-[500] font-['DM Sans'] benchmark_text customClasssix ">
               {/* Performance / Benchmark */}
-              Value during the year
+              Current Performance vs Benchmark
             </p>
           </>
         )}

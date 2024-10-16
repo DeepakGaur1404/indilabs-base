@@ -31,6 +31,11 @@ const Buttons = [
 const categoriesHeatmap = [
   { id: "Location", name: "Location" },
   { id: "POS", name: "POS" },
+ { id: "Vintage", name: "Vintage" },
+];
+const categoriesmonitoring = [
+  { id: "Location", name: "Location" },
+  // { id: "POS", name: "POS" },
 //  { id: "Vintage", name: "Vintage" },
 ];
 type Props = {};
@@ -554,8 +559,10 @@ const MonitoringRecovery = (props: Props) => {
   const [profileUsername, setProfileUsername] = useState<any>();
   const [categories, setCategories] = useState("All");
   const [categoriesMatric, setCategoriesMatric] = useState("Location");
-  const [selectedCategory, setselectedCategory] = useState("location");
+  const [selectedCategory, setselectedCategory] = useState("Location");
   const [categoriesMatricHeatMap, setCategoriesMatricHeatMap] =
+    useState("Location");
+    const [categoriesMatricmonitoring, setCategoriesMatricmonitoring] =
     useState("Location");
   const [isCategoryVisible, setIsCategoryVisible] = useState(true);
   const location = useLocation();
@@ -578,6 +585,11 @@ const MonitoringRecovery = (props: Props) => {
   const handleCategoryClick = async (cityId: string) => {
     setCategoriesMatricHeatMap(cityId);
   };
+ 
+  const handleCategoryClickmonitoring = async (cityId: string) => {
+    setCategoriesMatricmonitoring(cityId);
+  };
+ 
   // const dispatch = useDispatch();
 
   // const fetchData = async () => {
@@ -844,7 +856,7 @@ const MonitoringRecovery = (props: Props) => {
           </div> */}
           </div>
            
-            {/* {activeButton ==="Heatmap" &&  */}
+            {activeButton ==="Heatmap" &&  
            <div className="flex">
           <div className=" flex w-full justify-between  rounded-xl">
             {categoriesHeatmap.map((city:any, index:any) => (
@@ -864,7 +876,28 @@ const MonitoringRecovery = (props: Props) => {
             ))}
           </div>
         </div>
-        {/* } */}
+         }
+          {activeButton ==="Risk Monitoring" &&  
+           <div className="flex">
+          <div className=" flex w-full justify-between  rounded-xl">
+            {categoriesmonitoring.map((city:any, index:any) => (
+              <div
+                key={city.id}
+                onClick={() => handleCategoryClickmonitoring(city.id)}
+                className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-10 w-full p-4 border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
+                  categoriesMatricmonitoring === city.id
+                    ? " bg-[#E8DEF8] "
+                    : "bg-[#fafafb]"
+                } ${index === 0 ? "rounded-l-[4px]" : ""} ${
+                  index === categoriesmonitoring.length - 1 ? "rounded-r-[4px]" : ""
+                }`}
+              >
+                {city.name}
+              </div>
+            ))}
+          </div>
+        </div>
+         }
           {/* </div> */}
          
          
@@ -886,7 +919,8 @@ const MonitoringRecovery = (props: Props) => {
                 isCategoryVisible={isCategoryVisible}
                 setIsCategoryVisible={setIsCategoryVisible}
                 // activeButton={activeButton}
-                categoriesMatricHeatMap={categoriesMatricHeatMap}
+                // categoriesMatricHeatMap={categoriesMatricHeatMap}
+                categoriesMatricmonitoring={categoriesMatricmonitoring}
               />
             </div>
           </div>
