@@ -7,6 +7,7 @@ import redimpactball from "../../assets/images/redimpactball.png";
 import peachimpactball from "../../assets/images/peachimpactball.png";
 import "../../NewPages/AllocationEngine/Allocation.scss";
 import Monitoring from "../../assets/images/monitoringrisk.svg";
+import { IoIosArrowForward } from "react-icons/io";
 import {
   ScatterChart,
   Scatter,
@@ -28,6 +29,7 @@ type Props = {
   categoriesMatric: any;
   setIsCategoryVisible: any;
   isCategoryVisible: any;
+  categoriesMatricHeatMap: any;
 };
 
 const ImpactAssessmentRecovery = ({
@@ -35,6 +37,7 @@ const ImpactAssessmentRecovery = ({
   categoriesMatric,
   setIsCategoryVisible,
   isCategoryVisible,
+  categoriesMatricHeatMap,
 }: Props) => {
   console.log("Category value", categoriesMatric);
   const [impactAssessmentData, setImpactAssessmentData] = useState<any>();
@@ -74,7 +77,7 @@ const ImpactAssessmentRecovery = ({
   };
 
   const CustomDot = (props: any) => {
-    const { cx, cy, payload } = props;
+    const { cx, cy, payload, x_coordinate } = props;
     const circle_diameter = payload.circle_diameter * 100;
     const circle_color = payload.circle_color;
     const nameofState = payload.metric;
@@ -134,7 +137,12 @@ const ImpactAssessmentRecovery = ({
             }}
           >
             <div className="flex justify-center text-center items-center">
-              <p className="text-white text-[12px] text-center text-[500] font-['DM Sans']">
+              <p
+                style={{
+                  color: x_coordinate < 0 ? "black" : "white",
+                }}
+                className="text-[12px] text-center font-['DM Sans']  font-[500]"
+              >
                 {nameofState}
               </p>
             </div>
@@ -147,7 +155,7 @@ const ImpactAssessmentRecovery = ({
 
   useEffect(() => {
     fetchImpactAssessmentData();
-  }, [categoriesMatric]);
+  }, [categoriesMatricHeatMap]);
 
   const fetchImpactAssessmentData = async () => {
     setLoader(true);
@@ -174,7 +182,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 2.81448187456613,
             "Y Updated": 20.24038262220468,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            circle_diameter: 0.35,
           },
           {
             Category: "Location",
@@ -183,7 +191,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.5529443094291235,
             "Y Updated": 18.884513237352568,
             circle_color: "Red",
-            "circle_diameter":0.35,
+            circle_diameter: 0.35,
           },
           {
             Category: "Location",
@@ -192,7 +200,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.3324822984162636,
             "Y Updated": 5.949828115924044,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            circle_diameter: 0.35,
           },
           {
             Category: "Location",
@@ -201,7 +209,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.882693012895705,
             "Y Updated": 15.302863187522924,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            circle_diameter: 0.35,
           },
           {
             Category: "Location",
@@ -210,7 +218,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.402910970469687,
             "Y Updated": 1.9582463888464459,
             circle_color: "Red",
-            "circle_diameter":  0.35,
+            circle_diameter: 0.35,
           },
           {
             Category: "Location",
@@ -219,7 +227,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.8450568955163977,
             "Y Updated": 0.8662625541077846,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            circle_diameter: 0.35,
           },
           {
             Category: "Location",
@@ -228,7 +236,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.9984854858686925,
             "Y Updated": 6.155637039285626,
             circle_color: "Red",
-            "circle_diameter":  0.35,
+            circle_diameter: 0.35,
           },
           {
             Category: "Location",
@@ -237,7 +245,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.8559211921766883,
             "Y Updated": 6.221873323313603,
             circle_color: "Red",
-            "circle_diameter":  0.35,
+            circle_diameter: 0.35,
           },
           {
             Category: "Location",
@@ -246,7 +254,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 3.7549382884753895,
             "Y Updated": 10.578623892545535,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            circle_diameter: 0.35,
           },
           {
             Category: "Location",
@@ -255,7 +263,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: -1.0580417642776785,
             "Y Updated": 0.4271854693311965,
             circle_color: "#FFBF00",
-            "circle_diameter": 0.35,
+            circle_diameter: 0.35,
           },
           {
             Category: "Location",
@@ -264,7 +272,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: -4.800256369889793,
             "Y Updated": -0.35325004009602345,
             circle_color: "Green",
-            "circle_diameter":  0.35,
+            circle_diameter: 0.35,
           },
           {
             Category: "Location",
@@ -273,7 +281,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.6407626080106334,
             "Y Updated": 3.2245097031635184,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            circle_diameter: 0.35,
           },
           {
             Category: "Location",
@@ -282,7 +290,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 4.44606484171821,
             "Y Updated": 10.50077380528091,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            circle_diameter: 0.35,
           },
           {
             Category: "Location",
@@ -291,7 +299,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 4.151425606262142,
             "Y Updated": 11.73803653925116,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            circle_diameter: 0.35,
           },
           {
             Category: "Location",
@@ -300,7 +308,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.8390744670684946,
             "Y Updated": 3.16210326150182,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            circle_diameter: 0.35,
           },
           {
             Category: "Location",
@@ -309,7 +317,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.6302308168784307,
             "Y Updated": 8.620913621607626,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            circle_diameter: 0.35,
           },
           {
             Category: "Location",
@@ -318,7 +326,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 2.0051190590173986,
             "Y Updated": 5.061021086603231,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            circle_diameter: 0.35,
           },
           {
             Category: "Location",
@@ -327,7 +335,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.0704073055904242,
             "Y Updated": 2.7357506727196568,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            circle_diameter: 0.35,
           },
           {
             Category: "Location",
@@ -336,7 +344,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 0.2881871496928144,
             "Y Updated": 2.336107483110233,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            circle_diameter: 0.35,
           },
           {
             Category: "Location",
@@ -345,7 +353,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.2315527195183755,
             "Y Updated": 2.4921010057728226,
             circle_color: "Red",
-            "circle_diameter":  0.35,
+            circle_diameter: 0.35,
           },
           {
             Category: "Location",
@@ -354,7 +362,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.2292970789678372,
             "Y Updated": 2.8475567970705824,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            circle_diameter: 0.35,
           },
           {
             Category: "Location",
@@ -363,7 +371,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 3.1583416389362906,
             "Y Updated": 0.3528264331910831,
             circle_color: "Red",
-            "circle_diameter":  0.35,
+            circle_diameter: 0.35,
           },
           {
             Category: "Location",
@@ -372,7 +380,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 0.39527198619258613,
             "Y Updated": -0.0032529041728100857,
             circle_color: "#FFBF00",
-            "circle_diameter": 0.35,
+            circle_diameter: 0.35,
           },
           {
             Category: "Location",
@@ -381,7 +389,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: -0.15366897719046002,
             "Y Updated": 0.04514068873263216,
             circle_color: "#FFBF00",
-            "circle_diameter": 0.35,
+            circle_diameter: 0.35,
           },
           {
             Category: "Location",
@@ -389,7 +397,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 0.9064295919726548,
             "Y Updated": 0.83248150875941,
             circle_color: "Red",
-            "circle_diameter":  0.35,
+            circle_diameter: 0.35,
           },
           {
             Category: "Location",
@@ -398,7 +406,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.8300564126817456,
             "Y Updated": 1.9252024328377813,
             circle_color: "Red",
-            "circle_diameter": 0.35,
+            circle_diameter: 0.35,
           },
           {
             Category: "POS",
@@ -407,7 +415,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 2.0292485013770762,
             "Y Updated": 17.96660946646867,
             circle_color: "Red",
-            "circle_diameter": 0.35
+            circle_diameter: 0.35,
           },
           {
             Category: "POS",
@@ -416,7 +424,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 2.360779079307544,
             "Y Updated": 86.05078928878294,
             circle_color: "Red",
-            "circle_diameter":  0.35
+            circle_diameter: 0.35,
           },
           {
             Category: "POS",
@@ -425,7 +433,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 2.1256140764122806,
             "Y Updated": 33.67486044742911,
             circle_color: "Red",
-            "circle_diameter":  0.35
+            circle_diameter: 0.35,
           },
           {
             Category: "POS",
@@ -434,7 +442,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.319104763264991,
             "Y Updated": 2.8651120795420204,
             circle_color: "Red",
-            "circle_diameter": 0.35
+            circle_diameter: 0.35,
           },
           {
             Category: "Vintage",
@@ -443,7 +451,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.035441991667794,
             "Y Updated": 28.371426855512038,
             circle_color: "Red",
-            "circle_diameter":  0.35
+            circle_diameter: 0.35,
           },
           {
             Category: "Vintage",
@@ -452,7 +460,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 3.8725847529144053,
             "Y Updated": 34.495447102693966,
             circle_color: "Red",
-            "circle_diameter": 0.35
+            circle_diameter: 0.35,
           },
           {
             Category: "Vintage",
@@ -461,7 +469,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 2.1783467461941433,
             "Y Updated": 19.379631314720218,
             circle_color: "Red",
-            "circle_diameter": 0.35
+            circle_diameter: 0.35,
           },
           {
             Category: "Vintage",
@@ -470,7 +478,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.6697040662093394,
             "Y Updated": 13.393926420383703,
             circle_color: "Red",
-            "circle_diameter": 0.35
+            circle_diameter: 0.35,
           },
           {
             Category: "Vintage",
@@ -479,7 +487,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 1.0541704725115155,
             "Y Updated": 11.837783209982979,
             circle_color: "Red",
-          "circle_diameter": 0.35
+            circle_diameter: 0.35,
           },
           {
             Category: "Vintage",
@@ -488,7 +496,7 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 3.807256462594945,
             "Y Updated": 10.779630553346198,
             circle_color: "Red",
-            "circle_diameter":  0.35
+            circle_diameter: 0.35,
           },
           {
             Category: "Vintage",
@@ -498,28 +506,28 @@ const ImpactAssessmentRecovery = ({
             x_coordinate: 5.045813303547109,
             "Y Updated": 2.695213672118587,
             circle_color: "Red",
-            "circle_diameter": 0.35
+            circle_diameter: 0.35,
           },
         ],
       },
       cached_output: false,
     };
 
-    if (categoriesMatric === "Location") {
+    if (categoriesMatricHeatMap === "Location") {
       const MRRCoordinates = (data?.impact_assessment?.categories || []).filter(
         (coord: { Category: string; metric: string }) =>
           coord.Category === "Location"
       );
 
       setImpactAssessmentDataMeterics(MRRCoordinates);
-    } else if (categoriesMatric === "POS") {
+    } else if (categoriesMatricHeatMap === "POS") {
       const POSCoordinates = (data?.impact_assessment?.categories || []).filter(
         (coord: { Category: string; metric: string }) =>
           coord.Category === "POS"
       );
 
       setImpactAssessmentDataMeterics(POSCoordinates);
-    } else if (categoriesMatric === "Vintage") {
+    } else if (categoriesMatricHeatMap === "Vintage") {
       const POSCoordinates = (data?.impact_assessment?.categories || []).filter(
         (coord: { Category: string; metric: string }) =>
           coord.Category === "Vintage"
@@ -532,8 +540,11 @@ const ImpactAssessmentRecovery = ({
   const getYDomainAndTicks = (data: any) => {
     if (!data || data.length === 0)
       return {
-        domain: [-10, 90],
-        ticks: [-10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90],
+        domain: [-90, 90],
+        ticks: [
+          -90, -80, -70, -60, -50, -40, -30, -20, -10, 0, 10, 20, 30, 40, 50,
+          60, 70, 80, 90,
+        ],
       };
 
     const yValues = data.map((item: any) => item["Y Updated"]);
@@ -542,63 +553,97 @@ const ImpactAssessmentRecovery = ({
 
     const minAdjusted = Math.floor(minY);
     const maxAdjusted = Math.ceil(maxY);
-    const domain = [minAdjusted - 1, maxAdjusted + 1];
 
-    const tickInterval = (maxAdjusted - minAdjusted) / 11; // Adjust the interval based on range
+    // Ensure the domain includes 0
+    const domain = [
+      minAdjusted > 0 ? 0 : minAdjusted - 1, // If minY is positive, set min to 0
+      maxAdjusted < 0 ? 0 : maxAdjusted + 1, // If maxY is negative, set max to 0
+    ];
+
+    const tickInterval = (maxAdjusted - minAdjusted) / 36; // Adjust the interval based on range
     const ticks = [];
 
     for (let i = minAdjusted - 1; i <= maxAdjusted + 1; i += tickInterval) {
-      ticks.push(i.toFixed(0)); // Keep 2 decimal places if necessary
+      ticks.push(i.toFixed(0)); // Use fixed precision as needed
     }
 
-    return { domain, ticks };
+    return { domain, ticks, minY, maxY };
   };
 
+  const {
+    domain,
+    ticks,
+    minY = 0,
+    maxY = 0,
+  } = getYDomainAndTicks(impactAssessmentDataMetrics);
+
   const getXDomainAndTicksxaxis = (data: any) => {
-    if (!data || data.length === 0)
+    if (!data || data.length === 0) {
       return {
-        domain: [-6, 6],
-        ticks: [-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6],
+        domain: [0, 5],
+        ticks: [0, 1, 2, 3, 4, 5],
       };
+    }
 
     const xValues = data.map((item: any) => item.x_coordinate);
     const minX = Math.min(...xValues);
     const maxX = Math.max(...xValues);
-    const minAdjusted = Math.floor(minX);
+
+    // Ensure the domain includes 0, starting from 0 explicitly if minX is positive
+    const minAdjusted = minX > 0 ? 0 : Math.floor(minX);
     const maxAdjusted = Math.ceil(maxX);
-    const domain = [minAdjusted - 1, maxAdjusted + 1];
-    const tickInterval = (maxAdjusted - minAdjusted) / 10;
+
+    const domain = [minAdjusted, maxAdjusted];
+
+    // Adjust the tick interval to be finer to handle decimal values like 0.24 and 1.23
+    const tickInterval = (maxAdjusted - minAdjusted) / 36; // Make ticks more granular
     const ticks = [];
 
-    for (let i = minAdjusted - 1; i <= maxAdjusted + 1; i += tickInterval) {
-      ticks.push(i.toFixed(2));
+    // Generate ticks from min to max with the finer interval
+    for (let i = minAdjusted; i <= maxAdjusted; i += tickInterval) {
+      ticks.push(i.toFixed(2)); // Keep precision with 2 decimal places
     }
 
-    return { domain, ticks };
+    return { domain, ticks, minX: minAdjusted, maxX: maxAdjusted };
   };
 
-  const { domain: xDomain, ticks: xTicks } = getXDomainAndTicksxaxis(
-    impactAssessmentDataMetrics
-  );
+  const {
+    domain: xDomain,
+    ticks: xTicks,
+    minX = 0,
+    maxX = 0,
+  } = getXDomainAndTicksxaxis(impactAssessmentDataMetrics);
 
-  const { domain, ticks } = getYDomainAndTicks(impactAssessmentDataMetrics);
   return (
-    <div className="relative w-[100%]  h-[555px] p-3 bg-white rounded-xl shadow flex-col justify-start ml-6 flex gap-5 2xl:w-[58%]">
-      <div className="px-2 flex justify-between items-center">
-        <h1 className="text-black text-base font-medium font-['DM Sans'] text-left -ml-1 customClassOpper ">
-          Impact Assessment
-        </h1>
-        <div className=" w-[max] flex items-center gap-2 py-1 px-3 m">
-          <img src={Monitoring} alt="" />
-          <p className="text-[black] font-[500] text-[14px] font-['DM Sans']">
-            Value at Risk:
-          </p>
-          <span className="text-[#EF0000] font-[700] text-[16px] font-['DM Sans']">
-            ₹398.88 M
-          </span>
+    <>
+      <h1 className="text-black text-[16px] font-[500] font-['DM Sans'] text-left  mb-1 customClassOpper -mt-3">
+        Impact Assessment
+      </h1>
+      <div className="relative w-[100%] mb-10 h-[575px] p-3 bg-white rounded-xl shadow flex-col justify-start  flex gap-5 2xl:w-[100%]">
+        <div className="px-2 flex justify-between items-center">
+          <div className=" w-[max] flex items-center gap-2 py-1 px-1 ">
+            <img src={Monitoring} alt="" />
+            <p className="text-[black] font-[500] text-[14px] font-['DM Sans']">
+              Value at Risk:
+            </p>
+            <span className="text-[#EF0000] font-[700] text-[16px] font-['DM Sans']">
+              ₹398.88 M
+            </span>
+          </div>
+
+          <div>
+            <button
+              className="flex text-[#6750a4] items-center text-[14px] font-[500] justify-center gap-2  customClassThird"
+              // onClick={handleHotspotReviewClick}
+            >
+              Review Diagnostics
+              <span>
+                <IoIosArrowForward className="text-[#6750a4] customClass" />
+              </span>
+            </button>
+          </div>
         </div>
-      </div>
-      {/* <div className="w-[100%] flex flex-col justify-center items-center -mt-6 -mr-4">
+        {/* <div className="w-[100%] flex flex-col justify-center items-center -mt-6 -mr-4">
         <div className="w-[85%] h-2  bg-gradient-to-r from-[#09FF4E] via-[#FFF509] to-[#ED0E00]">
           {" "}
         </div>
@@ -611,70 +656,98 @@ const ImpactAssessmentRecovery = ({
           </p>
         </div>
       </div> */}
-      <p
-        className="
-     text-[14px] italic text-[#6A7691] font-[400] 
+        <p
+          className="
+     text-[11px]  text-[#ADADAD] font-[500] 
     font-['DM Sans' !important] 
     -rotate-90 
-     frequency_text customClassfour 
+     frequency_text customClassfour  -ml-1
   "
-        style={{ zIndex: 100 }}
-      > 
-        Value(₹ Millions)
-      </p>
-      {loader ? (
-        <Loader />
-      ) : (
-        <>
-          <ResponsiveContainer
-            height={455}
-            width="95%"
-            style={{ marginLeft: 10, marginTop: -26 }}
-          >
-            <ScatterChart
-              width={700}
+          style={{ zIndex: 100 }}
+        >
+          {/* Value(₹ Millions) */}
+          Performance in the month
+        </p>
+        {loader ? (
+          <Loader />
+        ) : (
+          <>
+            <ResponsiveContainer
               height={500}
-              margin={{ top: 40, bottom: -1, right: 8, left: -48 }}
+              width="99%"
+              style={{ marginLeft: 10, marginTop: -26 }}
             >
-              <CartesianGrid stroke="#9ca3af" />
-              <XAxis
-                type="number"
-                dataKey={"x_coordinate"}
-                fontSize={14}
-                domain={xDomain}
-                ticks={xTicks.map(Number)}
-                // tickCount={12}
-                // domain={[-6, 6]}
-                // ticks={[-6,-5,-4,-3,-2,-1, 0, 1, 2, 3, 4,5,6]}
-                axisLine={false}
-                tickLine={false}
-                tick={true}
-                // width={60}
-              />
-              <YAxis
-                type="number"
-                dataKey="Y Updated"
-                domain={domain}
-                ticks={ticks.map(Number)}
-                // domain={[-10, 90]}
-                // padding={{top:1}}
-                fontSize={14}
-                // ticks={[0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500]}
-                // ticks={[-10, 0, 10, 20,30,40,50,60,70,80,90]}
-                // ticks={majorTicks}
-                interval={0}
-                axisLine={false}
-                tickLine={false}
-                tick={{ fill: "black" }}
-                width={95}
-              />
+              <ScatterChart
+                width={700}
+                height={600}
+                margin={{ top: 40, bottom: 10, right: 8, left: 35 }}
+              >
+                <CartesianGrid stroke="#DEDEDE" />
+                <XAxis
+                  type="number"
+                  dataKey={"x_coordinate"}
+                  fontSize={14}
+                  domain={xDomain}
+                  ticks={xTicks.map(Number)}
+                  // tickCount={12}
+                  // domain={[-5, 5]}
+                  // ticks={[-6,-5,-4,-3,-2,-1, 0, 0.3,0.6,0.9, 1.2,1.5,1.8,2.1,2.4,2.7,3.0,3.3,3.6,3.9,4.2,4.5]}
+                  //  ticks={[-5,-4,-3,-2,-1, 0,1,1.05,1.1,1.15, 1.2, 1.3,1.4,1.5,1.6,1.7,1.8,1.9,2]}
+                  //  ticks={[-5,-4,-3,-2,-1, 0,1,1.05,1.1,1.15, 1.2, 1.3,1.4,1.5,1.6,1.7,1.8,1.9,2,3,4,5]}
+                  axisLine={false}
+                  tickLine={false}
+                  // tick={true}
+                  tick={{ fill: "black" }}
+                  angle={-70}
+                  dy={0}
+                  dx={-4}
+                  textAnchor="end"
+                  // width={60}
+                  hide={true}
+                />
+                <YAxis
+                  type="number"
+                  dataKey="Y Updated"
+                  domain={domain}
+                  ticks={ticks.map(Number)}
+                  //  domain={[-40, 40]}
+                  // padding={{top:1}}
+                  fontSize={14}
+                  // ticks={[0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500]}
+                  // ticks={[-40,-30,-20,-10, 0, 10, 20,30,40]}
+                  // ticks={majorTicks}
+                  interval={0}
+                  axisLine={false}
+                  tickLine={false}
+                  tick={{ fill: "black" }}
+                  width={95}
+                  hide={true}
+                />
 
-              <Tooltip
-                cursor={{ strokeDasharray: "3 3" }}
-                content={<CustomTooltip />}
-                labelStyle={{ display: "none" }}
-              />
-              {/* <ReferenceLine y={5} stroke="#CDD1DB" />
+                <Tooltip
+                  cursor={{ strokeDasharray: "3 3" }}
+                  content={<CustomTooltip />}
+                  labelStyle={{ display: "none" }}
+                />
+                <ReferenceLine y={0} stroke="#141313" />
+                <ReferenceLine x={0} stroke="#141313" />
+                {/* <ReferenceLine
+                  segment={[
+                    {
+                      x: 0,
+                      y: 0,
+                    },
+                    {
+                      x: 0,
+                      y: 0,
+                    },
+                  ]}
+                  label={{
+                    // value: "(0,0)",
+                    position: "bottom",
+                  }}
+                /> */}
+                {/* <ReferenceLine y={5} stroke="#CDD1DB" />
               <ReferenceLine y={15} stroke="#CDD1DB" />
               <ReferenceLine y={25} stroke="#CDD1DB" />
               <ReferenceLine y={35} stroke="#CDD1DB" />
@@ -696,28 +769,107 @@ const ImpactAssessmentRecovery = ({
               <ReferenceLine x={-3.5} stroke="#CDD1DB" />
               <ReferenceLine x={-4.5} stroke="#CDD1DB" />
               <ReferenceLine x={-5.5} stroke="#CDD1DB" /> */}
-              <Scatter
-                name="Data"
-                data={impactAssessmentDataMetrics}
-                fill="#8884d8"
-                shape={<CustomDot />}
-              />
-            </ScatterChart>
-          </ResponsiveContainer>
-
-          <p className="-mt-[5px]  text-center text-[14px] italic text-[#6A7691] font-[400] font-['DM Sans'] benchmark_text customClasssix ">
-            Performance / Benchmark
-          </p>
-        </>
-      )}
-      <svg width="0" height="0">
-        <defs>
-          <clipPath id="clip">
-            <rect x="5" y="23" width="700" height="600" />
-          </clipPath>
-        </defs>
-      </svg>
-    </div>
+                <Scatter
+                  name="Data"
+                  data={impactAssessmentDataMetrics}
+                  fill="#8884d8"
+                  shape={<CustomDot />}
+                />
+              </ScatterChart>
+            </ResponsiveContainer>
+            {maxY > 0 && minX < 0 && (
+              <div
+                style={{
+                  position: "absolute",
+                  top: "18%",
+                  left: "11%",
+                  transform: "translate(-50%, -50%)",
+                  fontFamily: "DM Sans",
+                  color: "#000000",
+                  // fontStyle: "italic",
+                  fontWeight: "500",
+                  fontSize: "12px",
+                  zIndex: 1,
+                  cursor: "pointer",
+                }}
+              >
+                Bright Spot
+              </div>
+            )}
+            {maxX > 0 && maxY > 0 && (
+              <div
+                style={{
+                  position: "absolute",
+                  top: "18%",
+                  left: "93%",
+                  transform: "translate(-50%, -50%)",
+                  fontFamily: "DM Sans",
+                  color: "#000000",
+                  fontWeight: "500",
+                  fontSize: "12px",
+                  zIndex: 1,
+                  cursor: "pointer",
+                }}
+                className="hotspot_text"
+              >
+                High Risk
+              </div>
+            )}
+            {minX < 0 && minY < 0 && (
+              <div
+                className="customClassfive "
+                style={{
+                  position: "absolute",
+                  top: "88%",
+                  left: "11%",
+                  transform: "translate(-50%, -50%)",
+                  fontFamily: "DM Sans",
+                  color: "#000000",
+                  // fontStyle: "italic",
+                  fontWeight: "500",
+                  fontSize: "12px",
+                  zIndex: 1,
+                  cursor: "pointer",
+                }}
+              >
+                High Return
+              </div>
+            )}
+            {minY < 0 && maxX > 0 && (
+              <div
+                style={{
+                  position: "absolute",
+                  top: "88%",
+                  left: "92%",
+                  transform: "translate(-50%, -50%)",
+                  fontFamily: "DM Sans",
+                  color: "#000000",
+                  // fontStyle: "italic",
+                  fontWeight: "500",
+                  fontSize: "12px",
+                  zIndex: 1,
+                  cursor: "pointer",
+                }}
+                className="Blind_Text customClassfive"
+              >
+                Early Warning
+              </div>
+            )}
+            <p className="-mt-[25px]  text-center text-[11px] text-[#ADADAD] font-[500] font-['DM Sans'] benchmark_text customClasssix ">
+              {/* Performance / Benchmark */}
+              Value during the year
+            </p>
+          </>
+        )}
+        <svg width="0" height="0">
+          <defs>
+            <clipPath id="clip">
+              <rect x="5" y="23" width="700" height="600" />
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+    </>
   );
 };
 

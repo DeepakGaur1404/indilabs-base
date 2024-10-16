@@ -31,7 +31,7 @@ const Buttons = [
 const categoriesHeatmap = [
   { id: "Location", name: "Location" },
   { id: "POS", name: "POS" },
- { id: "Vintage", name: "Vintage" },
+//  { id: "Vintage", name: "Vintage" },
 ];
 type Props = {};
 const staticDataRecoveryPerformance = {
@@ -826,7 +826,7 @@ const MonitoringRecovery = (props: Props) => {
               </div>
               
          
-            <div className="w-full flex justify-end items-center ">
+            {/* <div className="w-full flex justify-end items-center ">
             <div
               className="w-[160px] min-w-[160px] h-[40px] flex justify-around items-center cursor-pointer "
               onClick={downloadReport}
@@ -841,13 +841,13 @@ const MonitoringRecovery = (props: Props) => {
                 {loader ? "Downloading...." : "Download Report"}
               </div>
             </div>
-          </div>
+          </div> */}
           </div>
            
-            {activeButton ==="Heatmap" && 
+            {/* {activeButton ==="Heatmap" &&  */}
            <div className="flex">
           <div className=" flex w-full justify-between  rounded-xl">
-            { categoriesHeatmap.map((city:any, index:any) => (
+            {categoriesHeatmap.map((city:any, index:any) => (
               <div
                 key={city.id}
                 onClick={() => handleCategoryClick(city.id)}
@@ -863,7 +863,8 @@ const MonitoringRecovery = (props: Props) => {
               </div>
             ))}
           </div>
-        </div>}
+        </div>
+        {/* } */}
           {/* </div> */}
          
          
@@ -873,18 +874,19 @@ const MonitoringRecovery = (props: Props) => {
         {activeButton === "Risk Monitoring" && (
           <div className="flex flex-wrap  items-start  justify-center  px-[6px] lg:px-[2px] ml-0 lg:ml-2 mt-7 bg-[#fafafb]">
             <div className=" w-full flex items-start gap-1 justify-start flex-wrap">
-              <RiskMonitoringRecovery
+              {/* <RiskMonitoringRecovery
                 setCategory={setCategories}
                 setCategoriesMatric={setCategoriesMatric}
                 isCategoryVisible={isCategoryVisible}
                 setIsCategoryVisible={setIsCategoryVisible}
-              />
+              /> */}
               <ImpactAssessmentRecovery
                 Category={categories}
                 categoriesMatric={categoriesMatric}
                 isCategoryVisible={isCategoryVisible}
                 setIsCategoryVisible={setIsCategoryVisible}
                 // activeButton={activeButton}
+                categoriesMatricHeatMap={categoriesMatricHeatMap}
               />
             </div>
           </div>
@@ -918,7 +920,7 @@ const MonitoringRecovery = (props: Props) => {
           </div>
         )}
 
-        <div
+        {/* <div
           className="w-full flex items-center justify-end gap-3 mt-8 mr-2 mb-8"
           id="backButtons"
         >
@@ -939,7 +941,7 @@ const MonitoringRecovery = (props: Props) => {
           >
             Review Hotspots
           </Button>
-        </div>
+        </div> */}
         <div
           id="indilabslogo"
           className="flex items-center justify-center gap-1  text-['italic'] font-[500] text-[#000000] h-[20px] mt-24 hidden"
