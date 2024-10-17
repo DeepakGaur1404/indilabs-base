@@ -79,18 +79,18 @@ const renderCustomizedLabel = (props: any) => {
 const getColorBySubSegment = ["#FFB200", "#4169E1"];
 const ShareOfBalances: React.FC<AIProps> = ({ selectedSegment},percentage) => {
   return (
-    <div className="bg-white rounded-xl flex flex-col items-center   w-[100%] xl:w-[36%]  h-[325px] py-3 px-3 shadow xl:-mt-[73px]">
+    <div className="bg-white rounded-xl flex flex-col items-center border-[#E3E3E3] border-[1px]   w-[100%] xl:w-[49%]  h-[321px] py-3 px-3 ">
       <p className="text-[black] text-center font-['DM Sans'] font-[500] text-[14px] leading-[21px] mt-2">
         Share of balances
       </p>
-      <ResponsiveContainer width="100%" height={250}>
+      <ResponsiveContainer width="100%" height={240}>
         <PieChart>
           <Pie
             data={datakey[selectedSegment]}
             cx="50%"
             cy="50%"
             labelLine={false}
-            outerRadius={110}
+            outerRadius={105}
             label={renderCustomizedLabel}
             fill="#8884d8"
             dataKey="percentage"

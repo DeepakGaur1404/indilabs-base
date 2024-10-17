@@ -108,23 +108,23 @@ const DiagnosticSegementation = () => {
   };
 
   return (
-    <div className="bg-[white] w-[100%] mt-6 ml-2 shadow rounded-xl p-4 gap-4">
+    <div className="bg-[white] w-[100%] mt-3 shadow rounded-xl p-4 gap-4">
       <p className="text-[#000000] font-['DM Sans'] font-[700] text-[16px] leading-[21px]">
         Segmentation Results
       </p>
-      <div className="flex flex-row lg:flex-row sm:flex-col max-sm:flex-col justify-between items-center gap-4 mt-5">
-        <div className="w-[36%] lg:w-[36%] sm:w-[100%] max-sm:w-[100%] h-[346px] border-[#E3E3E3] border-[1px] rounded-xl flex flex-col items-center gap-[12px] sm:py-1 lg:py-4 py-4 px-3 ">
-          <p className="text-center text-[#000000] font-['DM Sans'] font-[500] text-[14px] leading-[21px]">
+      <div className="flex flex-wrap justify-between items-center gap-3 mt-3 w-[100%]">
+        <div className="w-[100%] xl:w-[49%] h-[285px] border-[#E3E3E3] border-[1px] rounded-xl flex flex-col items-center gap-[8px] sm:py-1 lg:py-4 py-4 px-3 ">
+          <p className="text-center text-[#000000] font-['DM Sans'] font-[500] text-[14px] leading-[21px] -mt-2">
             Accounts
           </p>
-          <ResponsiveContainer width="100%" height={250}>
+          <ResponsiveContainer width="100%" height={200}>
             <PieChart>
               <Pie
                 data={datakeyAccounts}
                 cx="50%"
                 cy="50%"
                 labelLine={false}
-                outerRadius={120}
+                outerRadius={100}
                 label={renderCustomizedLabel}
                 fill="#8884d8"
                 dataKey="percentage"
@@ -182,18 +182,18 @@ const DiagnosticSegementation = () => {
             </div>
           </div>
         </div>
-        <div className="w-[36%] lg:w-[36%] sm:w-[100%]  max-sm:w-[100%]  h-[346px]  border-[#E3E3E3] border-[1px] rounded-xl flex flex-col items-center gap-[12px] sm:py-1 lg:py-4  py-4 px-3 ">
-          <p className="text-center text-[#000000] font-['DM Sans'] font-[500] text-[14px] leading-[21px]">
+        <div className="w-[100%] xl:w-[49%]   h-[285px]  border-[#E3E3E3] border-[1px] rounded-xl flex flex-col items-center gap-[8px] sm:py-1 lg:py-4  py-4 px-3 ">
+          <p className="text-center text-[#000000] font-['DM Sans'] font-[500] text-[14px] leading-[21px] -mt-2">
             Balances
           </p>
-          <ResponsiveContainer width="100%" height={250}>
+          <ResponsiveContainer width="100%" height={200}>
             <PieChart>
               <Pie
                 data={datakeyBalances}
                 cx="50%"
                 cy="50%"
                 labelLine={false}
-                outerRadius={120}
+                outerRadius={100}
                 label={renderCustomizedLabel}
                 fill="#8884d8"
                 dataKey="percentage"
@@ -251,12 +251,12 @@ const DiagnosticSegementation = () => {
             </div>
           </div>
         </div>
-        <div className="w-[36%] lg:w-[36%] sm:w-[100%]  max-sm:w-[100%]  h-[346px]  border-[#E3E3E3] border-[1px] rounded-xl flex flex-col items-center gap-[12px] sm:py-1 lg:py-4  py-4 px-3 ">
-          <p className="text-center text-[#000000] font-['DM Sans'] font-[500] text-[14px] leading-[21px]">
+        <div className="w-[100%]  h-[298px]  border-[#E3E3E3] border-[1px] rounded-xl flex flex-col items-center gap-[12px] sm:py-1 lg:py-4  py-4 px-3 ">
+          <p className="text-center text-[#000000] font-['DM Sans'] font-[500] text-[14px] leading-[21px] -mt-2">
             Performance
           </p>
 
-          <ResponsiveContainer width="99%" height={250}>
+          <ResponsiveContainer width="99%" height={200}>
             <BarChart
               layout="vertical"
               data={bardata}

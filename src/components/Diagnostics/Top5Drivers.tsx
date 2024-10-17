@@ -16,13 +16,12 @@ const driverData = [
 
 const Top5Drivers: React.FC<Top5DriversProps> = ({ onDriverClick, selectedSegment }) => {
   return (
-    <div className="flex flex-col w-[100%] xl:w-[30%]  gap-3">
-     <NewDiagnostics />
+    <div className="flex flex-col w-[100%]  gap-3">
         <div className="w-[100%] shadow h-[325px] bg-white rounded-xl  px-3 gap-3">
         <p className="text-[black] font-['DM Sans'] font-[500] text-[14px] px-[2px] mt-4 leading-[21px]">
         Top 5 Drivers (SHAP values)
       </p>
-      <div className="space-y-1 mt-2">
+      <div className="space-y-1 mt-3">
         {driverData.map((driver: any) => (
           <div
             key={driver.driver} 

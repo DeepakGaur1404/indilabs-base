@@ -682,48 +682,49 @@ const ImpactAssessmentRecovery = ({
               <ScatterChart
                 width={700}
                 height={600}
-                margin={{ top: 40, bottom: 10, right: 8, left: 35 }}
+                margin={{ top: 40, bottom: 10, right: 8, left: 10 }}
               >
                 <CartesianGrid stroke="#DEDEDE" />
                 <XAxis
                   type="number"
                   dataKey={"x_coordinate"}
                   fontSize={14}
-                  domain={xDomain}
-                  ticks={xTicks.map(Number)}
+                  // domain={xDomain}
+                  // ticks={xTicks.map(Number)}
                   // tickCount={12}
-                  // domain={[-5, 5]}
+                   domain={[-5, 5]}
                   // ticks={[-6,-5,-4,-3,-2,-1, 0, 0.3,0.6,0.9, 1.2,1.5,1.8,2.1,2.4,2.7,3.0,3.3,3.6,3.9,4.2,4.5]}
                   //  ticks={[-5,-4,-3,-2,-1, 0,1,1.05,1.1,1.15, 1.2, 1.3,1.4,1.5,1.6,1.7,1.8,1.9,2]}
-                  //  ticks={[-5,-4,-3,-2,-1, 0,1,1.05,1.1,1.15, 1.2, 1.3,1.4,1.5,1.6,1.7,1.8,1.9,2,3,4,5]}
+                   ticks={[-5,-4,-3,-2,-1, 0,1,2,3,4,5]}
                   axisLine={false}
                   tickLine={false}
                   // tick={true}
                   tick={{ fill: "black" }}
-                  angle={-70}
-                  dy={0}
-                  dx={-4}
+                  // angle={-70}
+                  // dy={0}
+                  // dx={-4}
                   textAnchor="end"
                   // width={60}
-                  hide={true}
+                  // hide={true}
                 />
                 <YAxis
                   type="number"
                   dataKey="Y Updated"
-                  domain={domain}
-                  ticks={ticks.map(Number)}
-                  //  domain={[-40, 40]}
+                  // domain={domain}
+                  // ticks={ticks.map(Number)}
+                  domain={[-25, 25]}
                   // padding={{top:1}}
                   fontSize={14}
                   // ticks={[0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500]}
-                  // ticks={[-40,-30,-20,-10, 0, 10, 20,30,40]}
+                   ticks={[-25,-20,-15,-10,-5, 0, 5, 10,15,20,25]}
+                  //  ticks={[-25,-20,-15,-10,-5, 0,1,2,3,4, 5,6,7,8,9, 10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]}
                   // ticks={majorTicks}
                   interval={0}
                   axisLine={false}
                   tickLine={false}
                   tick={{ fill: "black" }}
-                  width={95}
-                  hide={true}
+                  // width={95}
+                  // hide={true}
                 />
 
                 <Tooltip
@@ -784,7 +785,7 @@ const ImpactAssessmentRecovery = ({
                 style={{
                   position: "absolute",
                   top: "18%",
-                  left: "11%",
+                  left: "12%",
                   transform: "translate(-50%, -50%)",
                   fontFamily: "DM Sans",
                   color: "#000000",
@@ -822,8 +823,8 @@ const ImpactAssessmentRecovery = ({
                 className="customClassfive "
                 style={{
                   position: "absolute",
-                  top: "88%",
-                  left: "11%",
+                  top: "82%",
+                  left: "12%",
                   transform: "translate(-50%, -50%)",
                   fontFamily: "DM Sans",
                   color: "#000000",
@@ -841,8 +842,8 @@ const ImpactAssessmentRecovery = ({
               <div
                 style={{
                   position: "absolute",
-                  top: "88%",
-                  left: "92%",
+                  top: "82%",
+                  left: "93%",
                   transform: "translate(-50%, -50%)",
                   fontFamily: "DM Sans",
                   color: "#000000",
