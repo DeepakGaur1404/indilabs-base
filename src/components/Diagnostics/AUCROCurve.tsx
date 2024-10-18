@@ -145,15 +145,15 @@ const AUCROCCurve: React.FC<ExpandRecoveryProps> = ({ selectedSegment }) => {
       return arr;
     };
   return (
-    <div className="  w-[100%] xl:w-[100%]  h-[390px] bg-white shadow rounded-xl py-4 px-3 gap-3">
-        <div className="border border-[#E3E3E3] rounded-lg p-2"
+    <div className="  w-[100%] xl:w-[100%]  h-[340px] b rounded-xl p-4 gap-3 mb-2">
+        <div className="border border-[#E3E3E3] rounded-xl p-2"
     //   style={{
     //     border: "1px solid #E3E3E3",
     //     borderRadius: "8px",
     //     padding: "10px",
     //   }}
     >
-      <div className="flex justify-between">
+      <div className="flex justify-between p-1">
         <p className="text-[black] font-['DM Sans'] font-[500] text-[14px] leading-[21px]">
         AUC-ROC Curve
         </p>
@@ -194,7 +194,7 @@ const AUCROCCurve: React.FC<ExpandRecoveryProps> = ({ selectedSegment }) => {
         </div>
       </div>
       
-      <ResponsiveContainer width="99%" height={320}>
+      <ResponsiveContainer width="99%" height={280}>
         <LineChart
           data={chartData}
           margin={{ top: 20, right: 5, left: 15, bottom: 25 }}
@@ -204,7 +204,7 @@ const AUCROCCurve: React.FC<ExpandRecoveryProps> = ({ selectedSegment }) => {
            label={{
             value: "False Positive Rate",
             position: "insideBottom",
-            offset: -20,
+            offset: -10,
             fontSize: 12,
             fontFamily: "DM Sans",
           }}
@@ -216,10 +216,10 @@ const AUCROCCurve: React.FC<ExpandRecoveryProps> = ({ selectedSegment }) => {
             axisLine={false}
             tickLine={false}
             padding={{ left: 10, right: 10 }}
-            angle={-70}
-            dy={0}
-            dx={-4}
-            textAnchor="end"
+            // angle={-70}
+            // dy={0}
+            // dx={-4}
+            // textAnchor="end"
           />
           <YAxis
           label={{

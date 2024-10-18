@@ -252,6 +252,7 @@ const OptimizeStackedBarChart: React.FC<Props> = (props) => {
           //   }
           // },
         },
+        
       },
       dataLabels: {
         enabled: false,
@@ -313,6 +314,7 @@ const OptimizeStackedBarChart: React.FC<Props> = (props) => {
         axisTicks: {
           show: true,
         }, // Hide the vertical axis
+        
       },
       fill: {
         opacity: 1,

@@ -51,9 +51,10 @@ const renderCustomizedLabel = (props: any) => {
     payload,
   } = props;
   const RADIAN = Math.PI / 180; // Declare RADIAN here
-  const radius = innerRadius + (outerRadius - innerRadius) * 0.4;
+  const radius = innerRadius + (outerRadius - innerRadius) * 0.3;
   const x = cx + radius * Math.cos(-midAngle * RADIAN);
   const y = cy + radius * Math.sin(-midAngle * RADIAN);
+  
 
   return (
     <text

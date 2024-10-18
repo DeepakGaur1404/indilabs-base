@@ -14,7 +14,7 @@ const NewDiagnostics = () => {
   return (
     <>
       <div className="flex justify-between ">
-        <div className="w-[98%] shadow bg-[white] flex items-center rounded-lg py-1 px-5 justify-between">
+        <div className="w-[97%] shadow bg-[white] flex items-center rounded-lg py-1 px-5 justify-between">
           <p className="text-[black] font-['DM Sans'] font-[400] text-[14px] leading-[18.23px]">
             Rec%
           </p>

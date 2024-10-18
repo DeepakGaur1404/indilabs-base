@@ -4,6 +4,7 @@ import NewDiagnostics from "./NewDiagnostics";
 type Top5DriversProps = {
   onDriverClick: (driver: string) => void; 
   selectedSegment: string; 
+  selectedCategory :any;
 };
 
 const driverData = [
@@ -14,7 +15,7 @@ const driverData = [
   { driver: "Loan Amt", value: 40 },
 ];
 
-const Top5Drivers: React.FC<Top5DriversProps> = ({ onDriverClick, selectedSegment }) => {
+const Top5Drivers: React.FC<Top5DriversProps> = ({ onDriverClick, selectedSegment,selectedCategory  }) => {
   return (
     <div className="flex flex-col w-[100%]  gap-3">
         <div className="w-[100%] shadow h-[325px] bg-white rounded-xl  px-3 gap-3">
@@ -26,9 +27,13 @@ const Top5Drivers: React.FC<Top5DriversProps> = ({ onDriverClick, selectedSegmen
           <div
             key={driver.driver} 
             className={`flex justify-between items-center h-[50px] cursor-pointer rounded-lg px-2 ${
-              selectedSegment === driver.driver ? "border-violet-600 border-2" : ""
+              selectedCategory === "insights" &&  selectedSegment === driver.driver ? "border-violet-600 border-2" : ""
             }`}
-            onClick={() => onDriverClick(driver.driver)} 
+            onClick={() => {
+              if (selectedCategory === "insights") {
+                onDriverClick(driver.driver);
+              }
+            }}
           >
             <p className="w-[40%] text-[black] font-['DM Sans'] font-[400] text-[14px] leading-[21px]">
               {driver.driver}

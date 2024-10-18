@@ -17,11 +17,17 @@ import ShareOfBalance from "../../components/Diagnostics/ShareOfBalance";
 import DiagnosticSegementationDashboard from "../../components/Diagnostics/DiagnosticSegementationDashboard";
 import DiagnosticInsightandvalidationHeader from "../../components/Diagnostics/DiagnosticInsightandvalidationHeader";
 import AUCROCCurve from "../../components/Diagnostics/AUCROCurve";
+import ConfusionMatrix from "../../components/Diagnostics/ConfusionMatrix";
 
 const categories = [
   { id: "segmentation", name: "Segmentation" },
   { id: "insights", name: "Insights" },
   { id: "validation", name: "Validation" },
+];
+
+const matrixData = [
+  [500, 500],    // True 0 row
+  [500, 500],  // True 1 row (scaled for simplicity)
 ];
 
 const Diagnostics: React.FC = () => {
@@ -80,6 +86,7 @@ const Diagnostics: React.FC = () => {
         <Top5Drivers
           onDriverClick={handleDriverClick}
           selectedSegment={selectedSegment}
+          selectedCategory={selectedCategory}
         />
         <TwoCards selectedCategory={selectedCategory} />
       </div> 
@@ -112,30 +119,32 @@ const Diagnostics: React.FC = () => {
         
         <div className="bg-[white] w-[100%] shadow rounded-xl p-4 mt-3">
          <p className="text-[black] font-['DM Sans'] font-[700] text-[16px] leading-[21px] ">Header</p>
-         {/* <div className="flex flex-wrap gap-4 mt-3">
+         <div className="flex flex-wrap gap-4 mt-3">
          <ExpectedRecovery selectedSegment={selectedSegment} />
           <Segmentation selectedSegment={selectedSegment} />
   
           <ActualBalance selectedSegment={selectedSegment} />
           <ShareOfBalance selectedSegment={selectedSegment} />
-         </div> */}
-         <div className="CommonBodyWrap">
+         </div> 
+         {/* <div className="CommonBodyWrap">
           <div className="h-[80vh] flex items-center justify-center">
             <div className="bg-yellow-200 p-6 rounded-lg shadow-lg text-center">
               <h1 className="text-2xl font-bold mb-2">Work in Progress</h1>
               <p className="text-gray-700">This page is under construction.</p>
             </div>
           </div>
-        </div>
+        </div> */}
         </div>
     
     )}
      
 
       {selectedCategory === "validation" && (
-        // <div className="md:w-[100%] sm:mb-5 md:mb-0 mt-3">
-        // <AUCROCCurve selectedSegment={selectedSegment} />
-        // </div>
+        <div className="md:w-[100%] pb-2 mt-3 bg-[white] shadow rounded-xl">
+        <AUCROCCurve selectedSegment={selectedSegment} />
+        {/* <ConfusionMatrix />  */}
+        {/* <ConfusionMatrix selectedSegment={selectedSegment} /> */}
+        </div>
         // <div className=" w-[100%] flex items-start justify-center ml-3 mt-6 cursor-pointer">
         //   <div className="w-[100%] md:flex items-start flex justify-start gap-[42px] flex-wrap lg:flex-nowrap">
         //     <div className="md:w-[49%] sm:mb-5 md:mb-0">
@@ -149,16 +158,16 @@ const Diagnostics: React.FC = () => {
         //     </div>
         //   </div>
         // </div>
-        <div className="bg-[white] mt-3 rounded-xl">
-            <div className="CommonBodyWrap">
-          <div className="h-[80vh] flex items-center justify-center">
-            <div className="bg-yellow-200 p-6 rounded-lg shadow-lg text-center">
-              <h1 className="text-2xl font-bold mb-2">Work in Progress</h1>
-              <p className="text-gray-700">This page is under construction.</p>
-            </div>
-          </div>
-        </div>
-        </div>
+        // <div className="bg-[white] mt-3 rounded-xl">
+        //     <div className="CommonBodyWrap">
+        //   <div className="h-[80vh] flex items-center justify-center">
+        //     <div className="bg-yellow-200 p-6 rounded-lg shadow-lg text-center">
+        //       <h1 className="text-2xl font-bold mb-2">Work in Progress</h1>
+        //       <p className="text-gray-700">This page is under construction.</p>
+        //     </div>
+        //   </div>
+        // </div>
+        // </div>
       
       )} 
 </div>
