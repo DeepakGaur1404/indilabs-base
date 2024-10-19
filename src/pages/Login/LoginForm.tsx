@@ -46,7 +46,7 @@ const LoginForm: React.FC = () => {
     console.log(value, "value");
 
     const admin_email = "admin@indilabs.com";
-    const admin_password = "admin@123";
+    const admin_password = "admin123@456";
     const staticToken = "your-static-token";
     console.log("value", admin_email, admin_password);
     if (admin_email === value.email && admin_password === value.password) {
@@ -57,14 +57,13 @@ const LoginForm: React.FC = () => {
       //navigate("/strategy")
       toast.success("Login Sucessful !", {
         position: "top-right",
-        
       });
-      setButtonDisable(true)
+      setButtonDisable(true);
     } else {
       toast.error("Invalid credentials !", {
         position: "top-right",
       });
-      setButtonDisable(true)
+      setButtonDisable(true);
     }
   };
 
