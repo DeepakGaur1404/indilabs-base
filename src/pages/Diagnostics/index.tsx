@@ -142,7 +142,7 @@ const Diagnostics: React.FC = () => {
       {selectedCategory === "validation" && (
         <div className="md:w-[100%] pb-2 mt-3 bg-[white] shadow rounded-xl">
         <AUCROCCurve selectedSegment={selectedSegment} />
-        {/* <ConfusionMatrix />  */}
+        <ConfusionMatrix /> 
         {/* <ConfusionMatrix selectedSegment={selectedSegment} /> */}
         </div>
         // <div className=" w-[100%] flex items-start justify-center ml-3 mt-6 cursor-pointer">

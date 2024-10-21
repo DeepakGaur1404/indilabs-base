@@ -47,35 +47,26 @@ const COLORS = ["#FFB200", "#4169E1"];
 
 
 const renderCustomizedLabel = (props: any) => {
-  const {
-    cx,
-    cy,
-    midAngle,
-    outerRadius,
-    innerRadius,
-    percent,
-    value,
-    payload,
-  } = props;
-  
+  const { cx, cy, midAngle, innerRadius, value, payload } = props;
   const RADIAN = Math.PI / 180; // Declare RADIAN here
-  const radius = innerRadius + (outerRadius - innerRadius) * 0.3;
-  const x = cx + radius * Math.cos(-midAngle * RADIAN);
-  const y = cy + radius * Math.sin(-midAngle * RADIAN);
+  const radius = innerRadius + 40; // Increase radius to move labels outside
+  const x = cx + radius * Math.cos(-midAngle * RADIAN); // Correct usage of Math.cos
+  const y = cy + radius * Math.sin(-midAngle * RADIAN); // Correct usage of Math.sin
+ 
 
   return (
     <text
       x={x}
       y={y}
-      fill="white"
-      textAnchor={x > cx ? "start" : "end"}
+      textAnchor="middle"
       dominantBaseline="central"
+      fontSize={16}
+      fill="white"
     >
-      {`${(percent * 100).toFixed(2)}%`}
+      {`${value.toFixed(2)}%`}
     </text>
   );
 };
-
 const getColorBySubSegment = ["#FFB200", "#4169E1"];
 const ShareOfBalances: React.FC<AIProps> = ({ selectedSegment},percentage) => {
   return (

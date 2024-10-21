@@ -97,6 +97,7 @@ const data:any = {
 
 const getColorBySubSegment = ["#FFB200", "#4169E1"];
 
+
 const formatYAxisTick = (tick: any) => (tick === 0 ? `${tick}` : `${tick}%`);
 
 const AUCROCCurve: React.FC<ExpandRecoveryProps> = ({ selectedSegment }) => {
@@ -253,16 +254,17 @@ const AUCROCCurve: React.FC<ExpandRecoveryProps> = ({ selectedSegment }) => {
                 return [formattedValue, `${name}`];
               }}
             />
-          {/* <Line
+          <Line
             type="linear"
             dataKey="Low"
-            name="L"
-            stroke={getColorBySubSegment[0]}
+            name="Random Classifier"
+            stroke="#E51B1B"
             dot={false}
             strokeWidth={2}
-          /> */}
-           <ReferenceLine segment={[{ x: 0, y: 0 }, { x: 5, y: 1 }]} stroke="#E51B1B" strokeDasharray="5 5"  strokeWidth={2} /> 
-          <Line
+            strokeDasharray="7 7"
+          />
+           {/* <ReferenceLine segment={[{ x: 0, y: 0 }, { x: 5, y: 1 }]} stroke="#E51B1B" strokeDasharray="5 5"  strokeWidth={2} />  */}
+           <Line
             type="linear"
             dataKey="Medium/High"
             name="AUC-ROC Curve"

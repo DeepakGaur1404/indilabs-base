@@ -211,7 +211,7 @@ import { position } from "html2canvas/dist/types/css/property-descriptors/positi
 import React, { useState, useEffect } from "react";
 import ReactApexChart from "react-apexcharts";
 
-const AllocationStackedBarChart: React.FC = () => {
+const  ConfusionMatrix: React.FC = () => {
   const [selectedReactApexCharts, setSelectedReactApexCharts] = useState<boolean>(false); // Initialize with false
 
   const state: any = {
@@ -278,7 +278,7 @@ const AllocationStackedBarChart: React.FC = () => {
               0: "1.5",
               20: "1",
               50: "0.5",
-              70: "0",
+              80: "0",
               100: "-0.5",
             };
             return customLabels[val] || ''; // Custom labels for X-axis
@@ -361,7 +361,7 @@ const AllocationStackedBarChart: React.FC = () => {
           <div className="-rotate-90 absolute -left-2 top-[40%] text-[11px] font-[400] text-[#3B414B]">
             True Label
           </div>
-          <table cellPadding={8} className="h-[300px] -mt-8 -mr-7 ml-5">
+          <table cellPadding={8} className="h-[300px] -mt-11 -mr-7 ml-5">
             <tbody>
               <tr className="h-[5px] text-center text-[#000000] font-[400] text-[12px] font-['DM Sans']">
                 <td>1.5</td>
@@ -397,4 +397,4 @@ const AllocationStackedBarChart: React.FC = () => {
   );
 };
 
-export default AllocationStackedBarChart;
+export default ConfusionMatrix;
