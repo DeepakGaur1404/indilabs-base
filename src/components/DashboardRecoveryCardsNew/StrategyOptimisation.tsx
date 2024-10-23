@@ -1,6 +1,7 @@
 import { IoIosArrowForward } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import DynamoImage from "../../assets/images/Dynamo.svg";
+import React, { useState, useEffect } from "react";
 import {
   BarChart,
   Bar,
@@ -16,162 +17,21 @@ import {
   ComposedChart,
 } from "recharts";
 
-const data = [
-  {
-    name: "Jan2024",
-    "recovery": 106408875.30999999,
-    "cost": 22821460.718999997,
-    "roi": 4.662667154403895
-  },
-  {
-    name: "Feb2024",
-    "recovery": 106096191.75000003,
-    "cost": 23182819.435000006,
-    "roi": 4.57650080256513
-  },
-  {
-    name: "Mar2024",
-    "recovery": 118404084.03,
-    "cost": 26632359.834499996,
-    "roi": 4.445872794066766
-  },
-  {
-    name: "Apr2024",
-    "recovery": 81356821.92999999,
-            "cost": 17701628.674999997,
-            "roi": 4.596007713397593
-  },
-  {
-    name: "May2024",
-    "recovery": 100396115.69,
-    "cost": 22087852.378499996,
-    "roi": 4.545309067156034
-  },
-  {
-    name: "Jun2024",
-    "recovery": 87351346.91,
-    "cost": 19000130.264000002,
-    "roi": 4.597407791224814
-  },
-];
-
-const payersData = [
-  // {
-  //   label: "Very High Payer",
-  //   amount: "12000",
-  //   currentRate: "65%",
-  //   previousRate: "68%",
-  //   isSpecialRate: false,
-  //   specialRateColor: "",
-  // },
-  {
-    label: "High Payer",
-    amount: "3345",
-    currentRate: "24.182574279046456",
-    previousRate: "0",
-    isSpecialRate: false,
-    specialRateColor: "",
-  },
-  {
-    label: "Medium Payer",
-    amount: " 6120",
-    currentRate: "14.001059013855127",
-    previousRate: "0",
-    isSpecialRate: true,
-    specialRateColor: "#10B981",
-  },
-  {
-    label: "Low Payer",
-    amount: " 2886",
-    currentRate: " 6.487951568189118",
-    previousRate: "0",
-    isSpecialRate: true,
-    specialRateColor: "#F9C700",
-  },
-  // {
-  //   label: "H Balance",
-  //   amount: "1560",
-  //   currentRate: "20%",
-  //   previousRate: "18%",
-  //   isSpecialRate: true,
-  //   specialRateColor: "#F9C700",
-  // },
-];
-
-const dynamoCard =   
-{"last roi": 4.597407791224814,
-    "roi change": 0.05209872406878002
-}
-
-const arrTicks: any = (data: any[]): number[] => {
-  let arr: number[] = [];
-  let maxNum = 0;
-
-  if (data && data.length > 0) {
-    maxNum = Math.max(
-      ...data.flatMap((item) => {
-        return Object.values(item).filter(
-          (value): value is number => typeof value === "number"
-        );
-      })
-    );
-  } else {
-    return [0];
-  }
-
-  const numberOfTicks = 10;
-  let stepSize = maxNum / numberOfTicks;
-  maxNum = Math.ceil(maxNum / stepSize) * stepSize;
-  let num1 = 0;
-  for (let i = 0; i <= numberOfTicks; i++) {
-    arr.push(parseFloat(num1.toFixed(1)));
-    num1 += stepSize;
-  }
-
-  return arr;
-};
-
-const formatNumberMillion = (num: any) => {
-  if (num === 0) {
-    return "0";
-  } else if (num >= 1e7) {
-    // 10 million and above
-    return (num / 1e6).toFixed(2);
-  } else if (num >= 1e6) {
-    // 1 million to 10 million
-    return (num / 1e6).toFixed(2);
-  } else if (num >= 1e5) {
-    // 100,000 to 1 million
-    return (num / 1e6).toFixed(2);
-  } else {
-    // Less than 100,000
-    return (num / 1e6).toFixed(2); // You can adjust this if needed
-  }
-};
-
-const formatYAxisTick = (tick: any) => {
-  if (tick == 0) {
-    return `${tick}`;
-  } else {
-    return `${tick.toFixed(1)}`;
-  }
-};
-
-const arrGraphTicks = () => {
-  let arr = [];
-  let maxNum = 0;
-  if (data) {
-    maxNum = Math.max(...data?.map((item: any) => item["roi"]));
-  } else {
-    return [0];
-  }
-  let num1 = 0;
-  for (let i = 0; i <= 10; i++) {
-    arr.push(parseFloat(num1.toFixed(1)));
-    num1 += Math.ceil(maxNum) / 10;
-  }
-  return arr;
-};
+// const arrGraphTicks = () => {
+//   let arr = [];
+//   let maxNum = 0;
+//   if (data) {
+//     maxNum = Math.max(...data?.map((item: any) => item["roi"]));
+//   } else {
+//     return [0];
+//   }
+//   let num1 = 0;
+//   for (let i = 0; i <= 10; i++) {
+//     arr.push(parseFloat(num1.toFixed(1)));
+//     num1 += Math.ceil(maxNum) / 10;
+//   }
+//   return arr;
+// };
 
 const StrategyOptimisation = () => {
   // const formatYAxisTick = (tick: any) => `${tick}%`;
@@ -183,6 +43,157 @@ const StrategyOptimisation = () => {
 
   const handleStrategyReviewClick = () => {
     navigate("/strategy/recovery");
+  };
+
+  const [newData, setNewData] = useState<any>(null); // Ensure initial state is null or an empty object
+  const [error, setError] = useState<string | null>(null);
+
+  const fetchData = async (blob: any) => {
+    const url = `https://indilab-apim.azure-api.net/blobapi?blob=dynamo_home`;
+    const headers = {
+      "Ocp-Apim-Subscription-Key": "9a4cebcda5b449bdb29fe6b2b75a4dfa",
+    };
+    const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+    try {
+      const response = await fetch(url, { method: "GET", headers });
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const result = await response.json();
+      console.log(result.data, "fetched data");
+      setNewData(result.data);
+      // setHotspotCounts(result.data.Hotspot_Counts);
+      // setpieChart(result.data.Hotspot_Percentages);
+      // console.log(result.data.Hotspot_Percentages);
+      // setBarData(result.data.Top_5_Segments);
+      // console.log(result.data.Top_5_Segments);
+    } catch (err: any) {
+      setError(err.message);
+    }
+  };
+
+  useEffect(() => {
+    fetchData("dynamo_home");
+  }, []);
+  // if (!newData || !newData.data) {
+  //   return <div>Loading...</div>; // Render loading or fallback UI
+  // }
+
+  const returnOnInvestment = newData?.["Return On Investment"] || {};
+
+  // Safely map over the keys of "Return On Investment" to create the data array
+  const data = Object.keys(returnOnInvestment).length
+    ? Object.keys(returnOnInvestment).map((key) => ({
+        name: key,
+        recovery: returnOnInvestment[key].recovery || 0,
+        cost: returnOnInvestment[key].cost || 0,
+        roi: returnOnInvestment[key].roi || 0,
+      }))
+    : []; // Default empty array if no data is available
+
+  const segmentation = newData?.Segmentation || {};
+
+  // Safely map over the keys of "Segmentation"
+  const payersData = Object.keys(segmentation).length
+    ? Object.keys(segmentation).map((key) => ({
+        label: key,
+        amount: segmentation[key]?.volume || 0, // Assuming amount is stored in segmentation[key]
+        currentRate: segmentation[key]?.percentage || 0, // Assuming currentRate is stored
+        previousRate: segmentation[key]?.benchmark || 0, // Assuming previousRate is stored
+      }))
+    : []; // Default empty array if no data is available
+
+  // const payersData = [
+  //   {
+  //     label: "High Payer",
+  //     amount: newData.data.Segmentation.H.volume,
+  //     currentRate: newData.data.Segmentation.H.percentage,
+  //     previousRate: newData.data.Segmentation.H.benchmark,
+  //     isSpecialRate: false,
+  //     specialRateColor: "",
+  //   },
+  //   {
+  //     label: "Medium Payer",
+  //     amount: newData.data.Segmentation.M.volume,
+  //     currentRate: newData.data.Segmentation.M.percentage,
+  //     previousRate: newData.data.Segmentation.M.benchmark,
+  //     isSpecialRate: true,
+  //     specialRateColor: "#10B981",
+  //   },
+  //   {
+  //     label: "Low Payer",
+  //     amount: newData.data.Segmentation.L.volume,
+  //     currentRate: newData.data.Segmentation.L.percentage,
+  //     previousRate: newData.data.Segmentation.L.benchmark,
+  //     isSpecialRate: true,
+  //     specialRateColor: "#F9C700",
+  //   },
+  // ];
+
+  const arrTicks: any = (data: any[]): number[] => {
+    let arr: number[] = [];
+    let maxNum = 0;
+
+    if (data && data.length > 0) {
+      maxNum = Math.max(
+        ...data.flatMap((item) => {
+          return Object.values(item).filter(
+            (value): value is number => typeof value === "number"
+          );
+        })
+      );
+    } else {
+      return [0];
+    }
+
+    const numberOfTicks = 10;
+    let stepSize = maxNum / numberOfTicks;
+    maxNum = Math.ceil(maxNum / stepSize) * stepSize;
+    let num1 = 0;
+    for (let i = 0; i <= numberOfTicks; i++) {
+      arr.push(parseFloat(num1.toFixed(1)));
+      num1 += stepSize;
+    }
+
+    return arr;
+  };
+
+  const formatNumberMillion = (num: any) => {
+    if (num === 0) {
+      return "0";
+    } else if (num >= 1e7) {
+      // 10 million and above
+      return (num / 1e6).toFixed(2);
+    } else if (num >= 1e6) {
+      // 1 million to 10 million
+      return (num / 1e6).toFixed(2);
+    } else if (num >= 1e5) {
+      // 100,000 to 1 million
+      return (num / 1e6).toFixed(2);
+    } else {
+      // Less than 100,000
+      return (num / 1e6).toFixed(2); // You can adjust this if needed
+    }
+  };
+
+  const formatYAxisTick = (tick: number) => {
+    return tick === 0 ? `${tick}` : `${tick.toFixed(1)}`;
+  };
+
+  const arrGraphTicks = () => {
+    let arr = [0];
+    let maxNum = 0;
+    if (data) {
+      maxNum = Math.max(...data?.map((item: any) => item["roi"]));
+    } else {
+      return [0];
+    }
+    let num1 = 0;
+    for (let i = 0; i <= 10; i++) {
+      arr.push(parseFloat(num1.toFixed(1)));
+      num1 += Math.ceil(maxNum) / 10;
+    }
+    return arr;
   };
 
   return (
@@ -199,11 +210,11 @@ const StrategyOptimisation = () => {
       </div>
       <div className="bg-white h-[116px] p-1 rounded-xl mt-4 flex flex-col items-center ">
         <span className="font-['DM Sans'] text-[32px] text-[#10B981] font-[500] customClassThird">
-       {dynamoCard["last roi"].toFixed(2)}
+          {newData?.["last roi"]?.toFixed(2) || "0.00"}
         </span>
         <p className="font-['DM Sans'] text-[14px] font-[500] ">ROI Value</p>
         <p className="font-['DM Sans'] text-[10px] font-[400] gap-[4px]">
-          {dynamoCard["roi change"].toFixed(2)} vs last month
+          {newData?.["roi change"]?.toFixed(2) || "0.00"} vs last month
         </p>
         <p className="font-['DM Sans'] text-[12px] text-[#9CA4B6] font-[400]">
           Improvement Opportunity: $15Ok
@@ -317,13 +328,13 @@ const StrategyOptimisation = () => {
             <div className="flex items-center gap-1">
               <div className="w-[8px] h-[8px] bg-[#4339F2] rounded-xl"></div>
               <div className="text-[12px] font-[400] font-['DM Sans'] text-[#000000] customClassThird">
-              ₹Cost
+                ₹Cost
               </div>
             </div>
             <div className="flex items-center gap-1">
               <div className="w-[8px] h-[8px] bg-[#FFB200] rounded-xl"></div>
               <div className="text-[12px] font-[400] font-['DM Sans'] text-[#493b3b] customClassThird">
-              ₹Recovery
+                ₹Recovery
               </div>
             </div>
             <div className="flex items-center gap-1">
@@ -374,7 +385,11 @@ const StrategyOptimisation = () => {
                 className="border-b-[1px] border-[#F3F4F6] flex justify-between items-center p-3"
               >
                 <td className="text-start text-[#161D29] font-[400] text-[12px] font-['DM Sans'] w-[87px]">
-                  {payer.label}
+                  {payer.label === "M"
+                    ? "Medium Payer"
+                    : payer.label === "L"
+                    ? "Low Payer"
+                    : "High Payer"}
                 </td>
 
                 <td className="text-center text-[#161D29] font-[400] text-[12px] font-['DM Sans'] w-[38px]">
@@ -382,16 +397,9 @@ const StrategyOptimisation = () => {
                 </td>
 
                 <td className="text-center text-[#ffffff] w-[52px] font-[400] text-[12px] font-['DM Sans']">
-                  {/* {payer.isSpecialRate ? (
-                    <div
-                      className="relative bottom-1 rounded-sm py-1 w-[52px] customClassSecond"
-                      style={{ backgroundColor: payer.specialRateColor }}
-                    >
+                  <span className="text-[#161D29]">
                     {parseFloat(payer.currentRate).toFixed(2)}%
-                    </div>
-                  ) : ( */}
-                    <span className="text-[#161D29]">{parseFloat(payer.currentRate).toFixed(2)}%</span>
-                  {/* )} */}
+                  </span>
                 </td>
 
                 <td className="text-center text-[#161D29] font-[400] text-[12px] font-['DM Sans'] w-[52px]">

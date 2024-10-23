@@ -2,7 +2,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import downorangeArrow from "../../assets/icons/down-orange-shift.svg";
 import UporangeArrow from "../../assets/icons/shift-orange.svg";
 import OptimusImage from "../../assets/images/Optimus.svg";
-import React, { PureComponent } from "react";
+import React, { PureComponent, useEffect, useState } from "react";
 import {
   PieChart,
   Pie,
@@ -22,10 +22,10 @@ interface DataItem {
   percentage: any;
 }
 
-const datakey: DataItem[] = [
-  { name: "Payer", percentage: 6.457267386772787 },
-  { name: "Non Payer", percentage: 93.54273261322722 },
-];
+// const datakey: DataItem[] = [
+//   { name: "Payer", percentage: 6.457267386772787 },
+//   { name: "Non Payer", percentage: 93.54273261322722 },
+// ];
 
 // interface DataKey {
 //   name:string;
@@ -33,43 +33,45 @@ const datakey: DataItem[] = [
 //   pv: number;
 // }
 
-const data = [
-  {
-    name: "Jan2024",
-    "Recovery from payment arrangements": 93239185.91,
-    "Recovery from settlements": 13169689.4,
-  },
-  {
-    name: "Feb2024",
-    "Recovery from payment arrangements": 93268836.75,
-    "Recovery from settlements": 12827355.0,
-  },
-  {
-    name: "Mar2024",
-    "Recovery from payment arrangements": 101068093.02999997,
-    "Recovery from settlements": 17335991.0,
-  },
-  {
-    name: "Apr2024",
-    "Recovery from payment arrangements": 66968657.75000002,
-    "Recovery from settlements": 14388164.18,
-  },
-  {
-    name: "May2024",
-    "Recovery from payment arrangements": 80638818.69000001,
-    "Recovery from settlements": 19757297.0,
-  },
-  {
-    name: "Jun2024",
-    "Recovery from payment arrangements": 68459450.91,
-    "Recovery from settlements": 18891896.0,
-  },
-];
+// const data: any = {
+//   "payer percentage": {
+//     payer_percent: 6.457267386772787,
+//     non_payer_percent: 93.542732613227216,
+//   },
+//   "settlement contributions": {
+//     Jan2024: {
+//       "Recovery from payment arrangements": 93239185.91,
+//       "Recovery from settlements": 13169689.4,
+//     },
+//     Feb2024: {
+//       "Recovery from payment arrangements": 93268836.75,
+//       "Recovery from settlements": 12827355.0,
+//     },
+//     Mar2024: {
+//       "Recovery from payment arrangements": 101068093.02999997,
+//       "Recovery from settlements": 17335991.0,
+//     },
+//     Apr2024: {
+//       "Recovery from payment arrangements": 66968657.750000022,
+//       "Recovery from settlements": 14388164.18,
+//     },
+//     May2024: {
+//       "Recovery from payment arrangements": 80638818.690000013,
+//       "Recovery from settlements": 19757297.0,
+//     },
+//     Jun2024: {
+//       "Recovery from payment arrangements": 68459450.91,
+//       "Recovery from settlements": 18891896.0,
+//     },
+//   },
+//   "last month recovery rate": 0.55029333613077869,
+//   "recovery rate change": -1.1900809306596056,
+// };
 
-const optimusCard = {
-  "last month recovery rate": 0.5502933361307787,
-  "recovery rate change": -1.1900809306596056,
-};
+// const optimusCard = {
+//   "last month recovery rate": 0.5502933361307787,
+//   "recovery rate change": -1.1900809306596056,
+// };
 
 const arrTicks = (data: any[]): number[] => {
   let arr: number[] = [];
@@ -117,10 +119,65 @@ const formatNumberMillion = (num: any) => {
   }
 };
 
-const COLORS = ["#C9C4D9", "#776BA1"];
-const CUSTOM_LEGEND_COLORS = ["black", "black", "black"];
-const recoveryRateChange:any = optimusCard["recovery rate change"].toFixed(2);
+const transformDataForChart = (settlementContributions: any) => {
+  return Object.keys(settlementContributions).map((month) => ({
+    name: month,
+    ...settlementContributions[month],
+  }));
+};
+
 const Execution = () => {
+  const [data, setData] = useState<any>();
+
+  // const [pieChartData, setPieChartData] = useState<any>("payer percentage");
+
+  const [error, setError] = useState();
+  const transformedData = transformDataForChart(
+    (data && data["settlement contributions"]) || 0
+  );
+
+  const COLORS = ["#C9C4D9", "#776BA1"];
+  const CUSTOM_LEGEND_COLORS = ["black", "black", "black"];
+  const recoveryRateChange: any =
+    data && data["recovery rate change"].toFixed(2);
+  const fetchData = async (blob: any) => {
+    const url = `https://indilab-apim.azure-api.net/blobapi?blob=optimus_home`;
+    const headers = {
+      "Ocp-Apim-Subscription-Key": "9a4cebcda5b449bdb29fe6b2b75a4dfa",
+    };
+    //  const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+    try {
+      const response = await fetch(url, { method: "GET", headers });
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const result = await response.json();
+      console.log(result.data);
+      setData(result.data);
+      // setHotspotCounts(result.data.Hotspot_Counts);
+      //  setPieChartData(result.data["payer percentage"]);
+      // console.log(result.data.Hotspot_Percentages);
+      // setBarData(result.data.Top_5_Segments);
+      // console.log(result.data.Top_5_Segments);
+    } catch (err: any) {
+      setError(err.message);
+    }
+  };
+
+  useEffect(() => {
+    fetchData("optimus_home");
+  }, []);
+
+  const pieChartData = [
+    {
+      name: "Payer",
+      percentage: data && data["payer percentage"].payer_percent,
+    },
+    {
+      name: "Non Payer",
+      percentage: data && data["payer percentage"].non_payer_percent,
+    },
+  ];
   return (
     <div className="lg:w-[32%] sm:w-[90%] h-full rounded-xl shadow p-4 gap-3 bg-[#E8F3ED]">
       <div className="cursor-pointer flex flex-col items-center">
@@ -135,7 +192,7 @@ const Execution = () => {
       </div>
       <div className="bg-white p-1 h-[116px] rounded-xl mt-4 flex flex-col items-center">
         <span className="font-['DM Sans'] text-[32px] text-[#EF4444] font-[500] customClassThird">
-          {optimusCard["last month recovery rate"].toFixed(2)}%
+          {data && data["last month recovery rate"].toFixed(2)}%
         </span>
         <p className="font-['DM Sans'] text-[14px] font-[500] ">
           Recovery Rate
@@ -147,7 +204,7 @@ const Execution = () => {
             className="w-[14px] h-[14px] customClass"
           />
           <p className="font-['DM Sans'] text-[10px] font-[400] gap-[4px]">
-          {recoveryRateChange} vs last month
+            {recoveryRateChange} vs last month
           </p>
         </div>
         <p className="font-['DM Sans'] text-[12px] text-[#9CA4B6] font-[400]">
@@ -169,7 +226,7 @@ const Execution = () => {
         <ResponsiveContainer width="100%" height={300}>
           <PieChart>
             <Pie
-              data={datakey}
+              data={pieChartData}
               cx="50%"
               cy="50%"
               labelLine={false}
@@ -177,7 +234,7 @@ const Execution = () => {
               fill="#8884d8"
               dataKey="percentage"
             >
-              {datakey.map((entry, index) => (
+              {pieChartData.map((entry, index) => (
                 <Cell
                   key={`cell-${index}`}
                   fill={COLORS[index]}
@@ -206,7 +263,10 @@ const Execution = () => {
             <div className="text-[12px] font-[400] font-['DM Sans'] text-[#000000] customClassThird">
               Payer:{" "}
               <span className="ml-[2px]">
-                {datakey[0].percentage.toFixed(2)}%
+                {typeof pieChartData[0]?.percentage === "number"
+                  ? pieChartData[0]?.percentage.toFixed(2)
+                  : "0.00"}
+                %{" "}
               </span>
             </div>
           </div>
@@ -215,7 +275,10 @@ const Execution = () => {
             <div className="text-[12px] font-[400] font-['DM Sans'] text-[#000000] customClassThird">
               Non Payer:{" "}
               <span className="ml-[2px]">
-                {datakey[1].percentage.toFixed(2)}%
+                {typeof pieChartData[1]?.percentage === "number"
+                  ? pieChartData[1]?.percentage.toFixed(2)
+                  : "0.00"}
+                %{" "}
               </span>
             </div>
           </div>
@@ -236,7 +299,7 @@ const Execution = () => {
         <div className="flex flex-col items-center w-[100%] mt-2">
           <ResponsiveContainer width="100%" height={270}>
             <BarChart
-              data={data}
+              data={transformedData} // Use transformed data here
               margin={{
                 top: 5,
                 right: 0,
@@ -246,7 +309,7 @@ const Execution = () => {
             >
               <CartesianGrid strokeDasharray="3 3" vertical={false} />
               <XAxis
-                dataKey="name"
+                dataKey="name" // Month name
                 axisLine={false}
                 tickLine={false}
                 fontWeight={400}
@@ -263,7 +326,7 @@ const Execution = () => {
                 tickLine={false}
                 domain={[0, (dataMax: any) => Math.ceil(dataMax)]}
                 tickFormatter={formatNumberMillion}
-                ticks={arrTicks(data)}
+                ticks={arrTicks(transformedData)} // Calculate ticks with transformed data
                 fontWeight={400}
                 fontSize={10}
                 fontFamily="DM Sans"
