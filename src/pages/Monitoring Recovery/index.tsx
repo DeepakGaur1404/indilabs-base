@@ -20,6 +20,7 @@ import MonitoringRecoveryLineChart from "../../components/Monitoring Recovery/Mo
 import HomeDashboard from "../../components/PerformanceDashboardHeader/HomeDashboard";
 import RiskMonitoringHotspot from "../../components/Monitoring Recovery/RiskmonitoringHotspot";
 import HeatmapChart from "../../components/Monitoring Recovery/HeatmapChart";
+import NewDiagnostics from "../../components/Diagnostics/NewDiagnostics";
 // import MonitoringRecoveryLineChart from "../../components/Monitoring Recovery/MonitoringRecoveryLineChart";
 const downloadReports = () => {};
 // import { useHistory } from "react-router-dom";
@@ -837,7 +838,7 @@ const MonitoringRecovery = (props: Props) => {
                 ))}
               </div>
               
-         
+         <div className="w-[370px]"><NewDiagnostics /></div>
             {/* <div className="w-full flex justify-end items-center ">
             <div
               className="w-[160px] min-w-[160px] h-[40px] flex justify-around items-center cursor-pointer "

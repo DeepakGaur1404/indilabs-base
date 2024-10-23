@@ -77,13 +77,20 @@
 }
 @media all and (min-width: 1024px) {
   .frequency_text {
-    top: 50%;
-    left: -20px;
+    top: 45%;
+    left: -10px;
     position: absolute;
    }
    
 }
-
+@media all and (min-width: 1024px) {
+  .frequency_text2 {
+    top: 45%;
+    left: -150px;
+    position: absolute;
+   }
+   
+}
   @media all and (min-width: 992px) and (max-width:1023px) {
     .frequency_text {
       position: absolute;

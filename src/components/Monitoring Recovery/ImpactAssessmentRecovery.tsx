@@ -7,6 +7,8 @@ import redimpactball from "../../assets/images/redimpactball.png";
 import peachimpactball from "../../assets/images/peachimpactball.png";
 import "../../NewPages/AllocationEngine/Allocation.scss";
 import Monitoring from "../../assets/images/monitoringrisk.svg";
+import Arrow1 from "../../assets/images/x-axisArrow1.svg";
+import Arrow2 from "../../assets/images/y-axisArrow2.svg";
 import { IoIosArrowForward } from "react-icons/io";
 import {
   ScatterChart,
@@ -63,13 +65,13 @@ const ImpactAssessmentRecovery = ({
           <p className="label text-black">{` ${metric}`}</p>
           <p className="label text-black">{` ${monthLable}`}</p>
           <p className="label text-black">{`X-Coordinate : ${x_coordinate.toFixed(
-            2
+            3
           )}`}</p>
           {/* <p className="label text-black">{`Circle-Size : ${
             circle_diameter.toFixed(4) * 200
           }`}</p> */}
           <p className="intro text-black">{`Y-Coordinate : ${yUpdated.toFixed(
-            2
+            3
           )}`}</p>
         </div>
       );
@@ -192,7 +194,7 @@ const ImpactAssessmentRecovery = ({
             "Month Labels": "Jun2024",
             x_coordinate: 1.5529443094291235,
             "Y Updated": 18.884513237352568,
-            circle_color: "Red",
+            circle_color: "#FD6363",
             circle_diameter: 0.35,
           },
           {
@@ -201,7 +203,7 @@ const ImpactAssessmentRecovery = ({
             "Month Labels": "Jun2024",
             x_coordinate: 1.3324822984162636,
             "Y Updated": 5.949828115924044,
-            circle_color: "Red",
+            circle_color: "#FD6363",
             circle_diameter: 0.35,
           },
           {
@@ -210,7 +212,7 @@ const ImpactAssessmentRecovery = ({
             "Month Labels": "Jun2024",
             x_coordinate: 1.882693012895705,
             "Y Updated": 15.302863187522924,
-            circle_color: "Red",
+            circle_color: "#FD6363",
             circle_diameter: 0.35,
           },
           {
@@ -219,7 +221,7 @@ const ImpactAssessmentRecovery = ({
             "Month Labels": "Jun2024",
             x_coordinate: 1.402910970469687,
             "Y Updated": 1.9582463888464459,
-            circle_color: "Red",
+            circle_color: "#FD6363",
             circle_diameter: 0.35,
           },
           {
@@ -228,7 +230,7 @@ const ImpactAssessmentRecovery = ({
             "Month Labels": "Jun2024",
             x_coordinate: 1.8450568955163977,
             "Y Updated": 0.8662625541077846,
-            circle_color: "Red",
+            circle_color: "#FD6363",
             circle_diameter: 0.35,
           },
           {
@@ -237,7 +239,7 @@ const ImpactAssessmentRecovery = ({
             "Month Labels": "Jun2024",
             x_coordinate: 1.9984854858686925,
             "Y Updated": 6.155637039285626,
-            circle_color: "Red",
+            circle_color: "#FD6363",
             circle_diameter: 0.35,
           },
           {
@@ -246,7 +248,7 @@ const ImpactAssessmentRecovery = ({
             "Month Labels": "Jun2024",
             x_coordinate: 1.8559211921766883,
             "Y Updated": 6.221873323313603,
-            circle_color: "Red",
+            circle_color: "#FD6363",
             circle_diameter: 0.35,
           },
           {
@@ -264,7 +266,7 @@ const ImpactAssessmentRecovery = ({
             "Month Labels": "Jun2024",
             x_coordinate: -1.0580417642776785,
             "Y Updated": 0.4271854693311965,
-            circle_color: "#FFBF00",
+            circle_color: "#FBE472",
             circle_diameter: 0.35,
           },
           {
@@ -273,7 +275,7 @@ const ImpactAssessmentRecovery = ({
             "Month Labels": "Jun2024",
             x_coordinate: -4.800256369889793,
             "Y Updated": -0.35325004009602345,
-            circle_color: "Green",
+            circle_color: "#6AC21A",
             circle_diameter: 0.35,
           },
           {
@@ -282,7 +284,7 @@ const ImpactAssessmentRecovery = ({
             "Month Labels": "Jun2024",
             x_coordinate: 1.6407626080106334,
             "Y Updated": 3.2245097031635184,
-            circle_color: "Red",
+            circle_color: "#FD6363",
             circle_diameter: 0.35,
           },
           {
@@ -309,7 +311,7 @@ const ImpactAssessmentRecovery = ({
             "Month Labels": "Jun2024",
             x_coordinate: 1.8390744670684946,
             "Y Updated": 3.16210326150182,
-            circle_color: "Red",
+            circle_color: "#FD6363",
             circle_diameter: 0.35,
           },
           {
@@ -318,7 +320,7 @@ const ImpactAssessmentRecovery = ({
             "Month Labels": "Jun2024",
             x_coordinate: 1.6302308168784307,
             "Y Updated": 8.620913621607626,
-            circle_color: "Red",
+            circle_color: "#FD6363",
             circle_diameter: 0.35,
           },
           {
@@ -327,7 +329,7 @@ const ImpactAssessmentRecovery = ({
             "Month Labels": "Jun2024",
             x_coordinate: 2.0051190590173986,
             "Y Updated": 5.061021086603231,
-            circle_color: "Red",
+            circle_color: "#FD6363",
             circle_diameter: 0.35,
           },
           {
@@ -336,7 +338,7 @@ const ImpactAssessmentRecovery = ({
             "Month Labels": "Jun2024",
             x_coordinate: 1.0704073055904242,
             "Y Updated": 2.7357506727196568,
-            circle_color: "Red",
+            circle_color: "#FD6363",
             circle_diameter: 0.35,
           },
           {
@@ -345,7 +347,7 @@ const ImpactAssessmentRecovery = ({
             "Month Labels": "Jun2024",
             x_coordinate: 0.2881871496928144,
             "Y Updated": 2.336107483110233,
-            circle_color: "Red",
+            circle_color: "#FD6363",
             circle_diameter: 0.35,
           },
           {
@@ -354,7 +356,7 @@ const ImpactAssessmentRecovery = ({
             "Month Labels": "Jun2024",
             x_coordinate: 1.2315527195183755,
             "Y Updated": 2.4921010057728226,
-            circle_color: "Red",
+            circle_color: "#FD6363",
             circle_diameter: 0.35,
           },
           {
@@ -363,7 +365,7 @@ const ImpactAssessmentRecovery = ({
             "Month Labels": "Jun2024",
             x_coordinate: 1.2292970789678372,
             "Y Updated": 2.8475567970705824,
-            circle_color: "Red",
+            circle_color: "#FD6363",
             circle_diameter: 0.35,
           },
           {
@@ -381,7 +383,7 @@ const ImpactAssessmentRecovery = ({
             "Month Labels": "Jun2024",
             x_coordinate: 0.39527198619258613,
             "Y Updated": -0.0032529041728100857,
-            circle_color: "#FFBF00",
+            circle_color: "#FD940F",
             circle_diameter: 0.35,
           },
           {
@@ -390,7 +392,7 @@ const ImpactAssessmentRecovery = ({
             "Month Labels": "Jun2024",
             x_coordinate: -0.15366897719046002,
             "Y Updated": 0.04514068873263216,
-            circle_color: "#FFBF00",
+            circle_color: "#FBE472",
             circle_diameter: 0.35,
           },
           {
@@ -398,7 +400,7 @@ const ImpactAssessmentRecovery = ({
             metric: "GO",
             x_coordinate: 0.9064295919726548,
             "Y Updated": 0.83248150875941,
-            circle_color: "Red",
+            circle_color: "#FD6363",
             circle_diameter: 0.35,
           },
           {
@@ -407,7 +409,7 @@ const ImpactAssessmentRecovery = ({
             "Month Labels": "Jun2024",
             x_coordinate: 1.8300564126817456,
             "Y Updated": 1.9252024328377813,
-            circle_color: "Red",
+            circle_color: "#FD6363",
             circle_diameter: 0.35,
           },
           {
@@ -621,7 +623,7 @@ const ImpactAssessmentRecovery = ({
       <h1 className="text-black text-[16px] font-[500] font-['DM Sans'] text-left  mb-1 customClassOpper -mt-3">
         Impact Assessment
       </h1>
-      <div className="relative w-[100%] mb-10 h-[575px] p-3 bg-white rounded-xl shadow flex-col justify-start  flex gap-5 2xl:w-[100%]">
+      <div className="relative w-[100%] mb-10 h-[590px] p-3 bg-white rounded-xl shadow flex-col justify-start  flex gap-5 2xl:w-[100%]">
         <div className="px-2 flex justify-between items-center">
           <div className=" w-[max] flex items-center gap-2 py-1 px-1 ">
             <img src={Monitoring} alt="" />
@@ -658,6 +660,18 @@ const ImpactAssessmentRecovery = ({
           </p>
         </div>
       </div> */}
+      <p
+          className=" flex justify-center  
+     text-[11px]  text-[#ADADAD] font-[500] 
+    font-['DM Sans' !important] 
+    -rotate-90 
+     frequency_text2 customClassfour  -ml-1
+  "
+          style={{ zIndex: 100 }}
+        >
+          {/* Value(₹ Millions) */}
+          Negative contribution to P&L <img src={Arrow2} alt=" " className="rotate-90 px-12 -mt-9" /> Positive contribution to P&L
+        </p>
         <p
           className="
      text-[11px]  text-[#ADADAD] font-[500] 
@@ -781,19 +795,23 @@ const ImpactAssessmentRecovery = ({
               </ScatterChart>
             </ResponsiveContainer>
             {maxY > 0 && minX < 0 && (
-              <div
+              <div className="px-2"
                 style={{
                   position: "absolute",
                   top: "18%",
                   left: "12%",
                   transform: "translate(-50%, -50%)",
                   fontFamily: "DM Sans",
-                  color: "#000000",
+                  color: "#5F4B06",
                   // fontStyle: "italic",
                   fontWeight: "500",
-                  fontSize: "12px",
+                  fontSize: "11px",
                   zIndex: 1,
                   cursor: "pointer",
+                  backgroundColor:"#FBE472",
+                  paddingLeft:"8px",
+                  paddingRight:"8px",
+                  borderRadius:"3px"
                 }}
               >
                 Bright Spot
@@ -807,11 +825,15 @@ const ImpactAssessmentRecovery = ({
                   left: "93%",
                   transform: "translate(-50%, -50%)",
                   fontFamily: "DM Sans",
-                  color: "#000000",
+                  color: "#FFFFFF",
                   fontWeight: "500",
-                  fontSize: "12px",
+                  fontSize: "11px",
                   zIndex: 1,
                   cursor: "pointer",
+                  backgroundColor:"#E51B1B",
+                  paddingLeft:"8px",
+                  paddingRight:"8px",
+                  borderRadius:"3px"
                 }}
                 className="hotspot_text"
               >
@@ -823,16 +845,20 @@ const ImpactAssessmentRecovery = ({
                 className="customClassfive "
                 style={{
                   position: "absolute",
-                  top: "82%",
+                  top: "80%",
                   left: "12%",
                   transform: "translate(-50%, -50%)",
                   fontFamily: "DM Sans",
-                  color: "#000000",
+                  color: "#0B4913",
                   // fontStyle: "italic",
                   fontWeight: "500",
-                  fontSize: "12px",
+                  fontSize: "11px",
                   zIndex: 1,
                   cursor: "pointer",
+                  backgroundColor:"#ABD974",
+                  paddingLeft:"8px",
+                  paddingRight:"8px",
+                  borderRadius:"3px"
                 }}
               >
                 High Return
@@ -842,25 +868,34 @@ const ImpactAssessmentRecovery = ({
               <div
                 style={{
                   position: "absolute",
-                  top: "82%",
+                  top: "80%",
                   left: "93%",
                   transform: "translate(-50%, -50%)",
                   fontFamily: "DM Sans",
-                  color: "#000000",
+                  color: "#FFFFFF",
                   // fontStyle: "italic",
                   fontWeight: "500",
-                  fontSize: "12px",
+                  fontSize: "11px",
                   zIndex: 1,
                   cursor: "pointer",
+                  backgroundColor:"#F36513",
+                  paddingLeft:"8px",
+                  paddingRight:"8px",
+                  borderRadius:"3px"
                 }}
                 className="Blind_Text customClassfive"
               >
                 Early Warning
               </div>
             )}
-            <p className="-mt-[25px]  text-center text-[11px] text-[#ADADAD] font-[500] font-['DM Sans'] benchmark_text customClasssix ">
+             <p className="-mt-[25px] pb-2  text-center text-[11px] text-[#ADADAD] font-[500] font-['DM Sans'] benchmark_text customClasssix ">
               {/* Performance / Benchmark */}
-              Current Performance vs Benchmark
+              Performance in the month
+            </p>
+            <p className="  -mt-[25px] w-[100%] flex justify-center item center text-center text-[11px] text-[#ADADAD] font-[500] font-['DM Sans'] benchmark_text customClasssix ">
+              {/* Performance / Benchmark */}
+              Better than benchmark <img className="px-2" src={Arrow1} alt="" />
+              Worse than benchmark
             </p>
           </>
         )}
