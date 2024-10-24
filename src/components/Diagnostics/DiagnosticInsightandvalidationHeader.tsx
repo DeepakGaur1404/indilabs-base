@@ -373,7 +373,7 @@ const DiagnosticInsightandvalidationHeader = (props: Props) => {
           </span>
        
           <span className="text-[#000000] text-[16px] font-[400] font-['DM Sans'] ml-1">
-            Personal Loan
+            Personal Loan Recovery
           </span>
         </div>
         <div>
