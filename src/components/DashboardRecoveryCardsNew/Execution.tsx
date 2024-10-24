@@ -141,7 +141,7 @@ const Execution = () => {
   const recoveryRateChange: any =
     data && data["recovery rate change"].toFixed(2);
   const fetchData = async (blob: any) => {
-    const url = `https://indilab-apim.azure-api.net/blobapi?blob=optimus_home`;
+    const url = `https://indilab-apim.azure-api.net/api/homedashboard/?blob=optimus_home`;
     const headers = {
       "Ocp-Apim-Subscription-Key": "9a4cebcda5b449bdb29fe6b2b75a4dfa",
     };

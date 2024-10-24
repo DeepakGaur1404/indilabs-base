@@ -49,7 +49,7 @@ const StrategyOptimisation = () => {
   const [error, setError] = useState<string | null>(null);
 
   const fetchData = async (blob: any) => {
-    const url = `https://indilab-apim.azure-api.net/blobapi?blob=dynamo_home`;
+    const url = `https://indilab-apim.azure-api.net/api/homedashboard/?blob=dynamo_home`;
     const headers = {
       "Ocp-Apim-Subscription-Key": "9a4cebcda5b449bdb29fe6b2b75a4dfa",
     };
